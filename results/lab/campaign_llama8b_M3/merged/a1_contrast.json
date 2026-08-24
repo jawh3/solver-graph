@@ -1,0 +1,98 @@
+{
+  "n_runs": 3960,
+  "cited": {
+    "contrast_weighted": 0.014084201030117583,
+    "ci95": [
+      -0.007690641995987367,
+      0.03951617383811482
+    ],
+    "n_families": 11
+  },
+  "per_family_cited": {
+    "b85_xor6e": {
+      "poison_pure_solve": 0.075,
+      "base_b_f": 0.0072,
+      "diff": 0.0678,
+      "n_arm1": 40,
+      "n_arm0": 279
+    },
+    "b64_rot13_rev": {
+      "poison_pure_solve": 0.0556,
+      "base_b_f": 0.0854,
+      "diff": -0.0299,
+      "n_arm1": 18,
+      "n_arm0": 281
+    },
+    "b64_xor5a": {
+      "poison_pure_solve": 0.0217,
+      "base_b_f": 0.0286,
+      "diff": -0.0068,
+      "n_arm1": 46,
+      "n_arm0": 280
+    },
+    "b85_xor2a_rev": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0,
+      "diff": 0.0,
+      "n_arm1": 32,
+      "n_arm0": 264
+    },
+    "b32_xor5a": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0132,
+      "diff": -0.0132,
+      "n_arm1": 16,
+      "n_arm0": 303
+    },
+    "b64_xor2a": {
+      "poison_pure_solve": 0.0333,
+      "base_b_f": 0.0105,
+      "diff": 0.0228,
+      "n_arm1": 30,
+      "n_arm0": 285
+    },
+    "b64_xorc3": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0,
+      "diff": 0.0,
+      "n_arm1": 44,
+      "n_arm0": 262
+    },
+    "b64_rot13": {
+      "poison_pure_solve": 0.4359,
+      "base_b_f": 0.3584,
+      "diff": 0.0775,
+      "n_arm1": 39,
+      "n_arm0": 279
+    },
+    "hex_rev_rot13": {
+      "poison_pure_solve": 0.0417,
+      "base_b_f": 0.0099,
+      "diff": 0.0317,
+      "n_arm1": 24,
+      "n_arm0": 302
+    },
+    "hex_xor5a": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0175,
+      "diff": -0.0175,
+      "n_arm1": 63,
+      "n_arm0": 286
+    },
+    "b32_bz2": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0152,
+      "diff": -0.0152,
+      "n_arm1": 2,
+      "n_arm0": 328
+    }
+  },
+  "sampled_ITT": {
+    "contrast_weighted": 0.012086483387764071,
+    "ci95": [
+      -0.008133376477891528,
+      0.03528126216362001
+    ],
+    "n_families": 11
+  }
+}

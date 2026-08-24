@@ -1,0 +1,2790 @@
+{
+  "conditions": {
+    "B0": {
+      "phase": "eval",
+      "epoch": 0,
+      "seed": 2,
+      "idx": 0,
+      "done": true,
+      "metrics": [
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        }
+      ],
+      "train_solves": 0,
+      "causal_rerolls": 0,
+      "eval_solves": 24
+    },
+    "B2": {
+      "phase": "eval",
+      "epoch": 0,
+      "seed": 2,
+      "idx": 0,
+      "done": true,
+      "metrics": [
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        }
+      ],
+      "train_solves": 0,
+      "causal_rerolls": 0,
+      "eval_solves": 24
+    },
+    "outcome": {
+      "phase": "eval",
+      "epoch": 4,
+      "seed": 2,
+      "idx": 0,
+      "done": true,
+      "metrics": [
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 3
+        }
+      ],
+      "train_solves": 120,
+      "causal_rerolls": 0,
+      "eval_solves": 24
+    },
+    "observational": {
+      "phase": "eval",
+      "epoch": 4,
+      "seed": 2,
+      "idx": 0,
+      "done": true,
+      "metrics": [
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 1,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 2,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 3,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_03",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_04",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_03",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_07",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_02",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_05",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_03",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_02",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_03",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_02",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_06",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_07",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_gzip_04",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_07",
+          "family": "b64_zlib",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_05",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_xor5a_04",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_zlib_06",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_07",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 2
+        },
+        {
+          "phase": "train",
+          "epoch": 4,
+          "name": "b64_rev_05",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 0,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 1,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 1,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_00",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_gzip_01",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_00",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_rev_01",
+          "family": "b64_rev",
+          "solved": 0,
+          "steps": 3
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_00",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_zlib_01",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_00",
+          "family": "b64_xor5a",
+          "solved": 1,
+          "steps": 4
+        },
+        {
+          "phase": "eval",
+          "seed": 2,
+          "name": "b64_xor5a_01",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        }
+      ],
+      "train_solves": 120,
+      "causal_rerolls": 0,
+      "eval_solves": 24
+    },
+    "causal": {
+      "phase": "train",
+      "epoch": 0,
+      "seed": 0,
+      "idx": 5,
+      "done": false,
+      "metrics": [
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_05",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_zlib_04",
+          "family": "b64_zlib",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_02",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_xor5a_06",
+          "family": "b64_xor5a",
+          "solved": 0,
+          "steps": 4
+        },
+        {
+          "phase": "train",
+          "epoch": 0,
+          "name": "b64_gzip_06",
+          "family": "b64_gzip",
+          "solved": 1,
+          "steps": 1
+        }
+      ],
+      "train_solves": 5
+    }
+  }
+}

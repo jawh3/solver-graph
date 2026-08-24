@@ -1,0 +1,158 @@
+{
+  "true::b42c4be52c": {
+    "label": "helpful",
+    "family": "b64_gzip",
+    "outcome_Q": 0.20382493236776944,
+    "causal_ATE": 0.0996189949598737
+  },
+  "poison::b42c4be52c": {
+    "label": "poison",
+    "family": "b64_gzip",
+    "outcome_Q": 0.21237741440036234,
+    "causal_ATE": 0.035479624157415734
+  },
+  "poison::d547f27b69": {
+    "label": "poison",
+    "family": "b64_rev",
+    "outcome_Q": 0.018301189293309462,
+    "causal_ATE": -0.17410103568936885
+  },
+  "poison::2d20a191db": {
+    "label": "poison",
+    "family": "hex_gzip",
+    "outcome_Q": 0.125019520147336,
+    "causal_ATE": -0.026811824250268124
+  },
+  "poison::9bf59ece41": {
+    "label": "poison",
+    "family": "hex_bz2",
+    "outcome_Q": 0.14550510090926067,
+    "causal_ATE": -0.06865299808707548
+  },
+  "poison::757b94da8b": {
+    "label": "poison",
+    "family": "b85_zlib",
+    "outcome_Q": 0.2949769980643759,
+    "causal_ATE": 0.0323383700047013
+  },
+  "true::052c118e84": {
+    "label": "helpful",
+    "family": "b64_bz2",
+    "outcome_Q": 0.2439101701699064,
+    "causal_ATE": -0.02889960009614645
+  },
+  "distract::010c1820cc": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": null,
+    "causal_ATE": 0.0859914941944806
+  },
+  "true::158f10742e": {
+    "label": "helpful",
+    "family": "b85_gzip",
+    "outcome_Q": 0.2431022680759613,
+    "causal_ATE": 0.021478335715936547
+  },
+  "poison::158f10742e": {
+    "label": "poison",
+    "family": "b85_gzip",
+    "outcome_Q": 0.2959028502330208,
+    "causal_ATE": 0.008356253763007304
+  },
+  "distract::88e4b0c07c": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": 0.23009535720721858,
+    "causal_ATE": -0.15647063036366787
+  },
+  "true::757b94da8b": {
+    "label": "helpful",
+    "family": "b85_zlib",
+    "outcome_Q": 0.29522449908551485,
+    "causal_ATE": -0.030278101691961212
+  },
+  "true::80ecfc732f": {
+    "label": "helpful",
+    "family": "hex_rot13_rev",
+    "outcome_Q": 0.15771702243358254,
+    "causal_ATE": 0.010604582392214734
+  },
+  "true::d547f27b69": {
+    "label": "helpful",
+    "family": "b64_rev",
+    "outcome_Q": 0.09147535422739342,
+    "causal_ATE": -0.04464851450204105
+  },
+  "poison::052c118e84": {
+    "label": "poison",
+    "family": "b64_bz2",
+    "outcome_Q": 0.23067969831969365,
+    "causal_ATE": 0.04821866791194318
+  },
+  "distract::ad079b1688": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": 0.4759058740027751,
+    "causal_ATE": -0.06440307105928511
+  },
+  "poison::d082f68960": {
+    "label": "poison",
+    "family": "hex_rev_rot13",
+    "outcome_Q": -0.024908910549666603,
+    "causal_ATE": -0.09338775948709116
+  },
+  "poison::80ecfc732f": {
+    "label": "poison",
+    "family": "hex_rot13_rev",
+    "outcome_Q": 0.06371436461734488,
+    "causal_ATE": 0.09497638364238747
+  },
+  "true::9c6a199982": {
+    "label": "helpful",
+    "family": "hex_rev",
+    "outcome_Q": 0.17969132964287962,
+    "causal_ATE": 0.07899311618801536
+  },
+  "distract::001b8f8a85": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": 0.4503234023888354,
+    "causal_ATE": -0.013149643461306038
+  },
+  "poison::afa4f2df62": {
+    "label": "poison",
+    "family": "b64_rot13_rev",
+    "outcome_Q": 0.09088653542855314,
+    "causal_ATE": -0.008793103576368588
+  },
+  "true::9bf59ece41": {
+    "label": "helpful",
+    "family": "hex_bz2",
+    "outcome_Q": 0.08378248162158285,
+    "causal_ATE": -0.0763787684554883
+  },
+  "true::2d20a191db": {
+    "label": "helpful",
+    "family": "hex_gzip",
+    "outcome_Q": 0.11541738637019253,
+    "causal_ATE": 0.03187456364310165
+  },
+  "true::d082f68960": {
+    "label": "helpful",
+    "family": "hex_rev_rot13",
+    "outcome_Q": 0.21250374909548242,
+    "causal_ATE": 0.024554804308902778
+  },
+  "true::afa4f2df62": {
+    "label": "helpful",
+    "family": "b64_rot13_rev",
+    "outcome_Q": 0.17366532946539032,
+    "causal_ATE": 0.07097964050946115
+  },
+  "poison::9c6a199982": {
+    "label": "poison",
+    "family": "hex_rev",
+    "outcome_Q": 0.03897879212212181,
+    "causal_ATE": 0.03250600837176504
+  }
+}

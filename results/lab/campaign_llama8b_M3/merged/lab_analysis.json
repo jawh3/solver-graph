@@ -1,0 +1,1577 @@
+{
+  "meta": {
+    "dir": "results/lab/campaign_llama8b_M3/merged",
+    "headline_cond": "outcome",
+    "n_lessons_per_label": {
+      "helpful": 11,
+      "poison": 11,
+      "distractor": 4
+    },
+    "anti_conservative_warning": true,
+    "n_runs_headline": 3960,
+    "estimands": {
+      "H2_signflip": "R=o(1+lambda*e) full reward \u2014 fixed-budget pilot headline",
+      "H2_signflip_solve": "binary solve \u2014 budget-invariant; headline for the graded scaled run"
+    }
+  },
+  "H2_signflip": {
+    "snipw": {
+      "label_level": {
+        "poison": {
+          "mean": -0.020307571445278436,
+          "ci_lo": -0.05831428108037278,
+          "ci_hi": 0.020524677038300194,
+          "p": 0.3204,
+          "n": 11,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.01776954047023938,
+          "ci_lo": -0.01065185047277307,
+          "ci_hi": 0.06059741728122772,
+          "p": 0.4194,
+          "n": 11,
+          "excl0": false
+        },
+        "distractor": {
+          "mean": -0.0009220110028591855,
+          "ci_lo": -0.038624415299707206,
+          "ci_hi": 0.022625233540685706,
+          "p": 0.9504,
+          "n": 4,
+          "excl0": false
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 6,
+          "pos": 2,
+          "total": 11
+        },
+        "helpful": {
+          "neg": 0,
+          "pos": 1,
+          "total": 11
+        },
+        "distractor": {
+          "neg": 0,
+          "pos": 0,
+          "total": 4
+        }
+      }
+    },
+    "aipw": {
+      "label_level": {
+        "poison": {
+          "mean": -0.022324316582465555,
+          "ci_lo": -0.0622506394337215,
+          "ci_hi": 0.018195556228559312,
+          "p": 0.284,
+          "n": 11,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.02148975567657334,
+          "ci_lo": -0.008175003417928706,
+          "ci_hi": 0.06369044062774387,
+          "p": 0.2492,
+          "n": 11,
+          "excl0": false
+        },
+        "distractor": {
+          "mean": 0.04102819065685894,
+          "ci_lo": -0.033349789192020154,
+          "ci_hi": 0.09654935823785726,
+          "p": 0.2828,
+          "n": 4,
+          "excl0": false
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 5,
+          "pos": 2,
+          "total": 11
+        },
+        "helpful": {
+          "neg": 0,
+          "pos": 1,
+          "total": 11
+        },
+        "distractor": {
+          "neg": 1,
+          "pos": 3,
+          "total": 4
+        }
+      }
+    },
+    "per_lesson_snipw": {
+      "poison::3bddadecbb": {
+        "ate": 0.09491420146250013,
+        "ate_ci_lo": 0.040700182027622975,
+        "ate_ci_hi": 0.1515125755664391,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 515,
+        "n_control": 3445,
+        "ess_treat": 499.2163860892447,
+        "ess_control": 3443.2362824647043
+      },
+      "poison::0cba72d676": {
+        "ate": -0.13479169041777267,
+        "ate_ci_lo": -0.16065318591254246,
+        "ate_ci_hi": -0.10566597005345005,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 428,
+        "n_control": 3532,
+        "ess_treat": 411.83754391832514,
+        "ess_control": 3530.167912105982
+      },
+      "true::f016308fb1": {
+        "ate": 0.02556827675329129,
+        "ate_ci_lo": -0.0245750798573414,
+        "ate_ci_hi": 0.07712669045792406,
+        "ate_p": 0.374,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 525,
+        "n_control": 3435,
+        "ess_treat": 513.5313218142802,
+        "ess_control": 3433.551257971715
+      },
+      "distract::88e4b0c07c": {
+        "ate": 0.016158998035264688,
+        "ate_ci_lo": -0.04205262337450326,
+        "ate_ci_hi": 0.07578256971140694,
+        "ate_p": 0.57,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 451,
+        "n_control": 3509,
+        "ess_treat": 441.0232527792861,
+        "ess_control": 3507.6854232702945
+      },
+      "poison::d082f68960": {
+        "ate": -0.04657079505794712,
+        "ate_ci_lo": -0.08748876603379807,
+        "ate_ci_hi": -0.002591495633087776,
+        "ate_p": 0.037,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 490,
+        "n_control": 3470,
+        "ess_treat": 476.75034815182596,
+        "ess_control": 3468.531892878724
+      },
+      "poison::afa4f2df62": {
+        "ate": -0.006366673875581957,
+        "ate_ci_lo": -0.055818896326863036,
+        "ate_ci_hi": 0.0478556742590318,
+        "ate_p": 0.794,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 402,
+        "n_control": 3558,
+        "ess_treat": 391.1904112455145,
+        "ess_control": 3556.4134421580247
+      },
+      "distract::001b8f8a85": {
+        "ate": 0.026731211565706542,
+        "ate_ci_lo": -0.03198582730862076,
+        "ate_ci_hi": 0.09047286332208554,
+        "ate_p": 0.424,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 386,
+        "n_control": 3574,
+        "ess_treat": 369.18313788918084,
+        "ess_control": 3571.8381328169125
+      },
+      "true::ae3bad9380": {
+        "ate": -0.00038960306927876553,
+        "ate_ci_lo": -0.052425751530270785,
+        "ate_ci_hi": 0.051487763198228,
+        "ate_p": 0.963,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 460,
+        "n_control": 3500,
+        "ess_treat": 445.73594798113646,
+        "ess_control": 3498.5370574498825
+      },
+      "poison::92039a4309": {
+        "ate": -0.06730428694352562,
+        "ate_ci_lo": -0.10920918910995266,
+        "ate_ci_hi": -0.02339349958778796,
+        "ate_p": 0.002,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 460,
+        "n_control": 3500,
+        "ess_treat": 449.12849090517227,
+        "ess_control": 3498.524447603592
+      },
+      "true::0cba72d676": {
+        "ate": -0.01064672256687027,
+        "ate_ci_lo": -0.06666698942662452,
+        "ate_ci_hi": 0.055230054499756126,
+        "ate_p": 0.693,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 385,
+        "n_control": 3575,
+        "ess_treat": 375.3523939834856,
+        "ess_control": 3573.5059782153053
+      },
+      "distract::010c1820cc": {
+        "ate": -0.05688555307803117,
+        "ate_ci_lo": -0.10961722793848051,
+        "ate_ci_hi": 0.005520172183055815,
+        "ate_p": 0.071,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 317,
+        "n_control": 3643,
+        "ess_treat": 305.0287185858343,
+        "ess_control": 3641.7898172800324
+      },
+      "true::92039a4309": {
+        "ate": 0.009380318822140438,
+        "ate_ci_lo": -0.04112048035851391,
+        "ate_ci_hi": 0.06896199189950487,
+        "ate_p": 0.758,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 465,
+        "n_control": 3495,
+        "ess_treat": 454.18299053891116,
+        "ess_control": 3493.507243944004
+      },
+      "true::1e7a596759": {
+        "ate": -0.016882852075466748,
+        "ate_ci_lo": -0.059103390933377006,
+        "ate_ci_hi": 0.030335039154878344,
+        "ate_p": 0.475,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 613,
+        "n_control": 3347,
+        "ess_treat": 600.4197909029926,
+        "ess_control": 3345.5997317323686
+      },
+      "distract::ad079b1688": {
+        "ate": 0.010307299465623199,
+        "ate_ci_lo": -0.044165590567310134,
+        "ate_ci_hi": 0.06703136495474653,
+        "ate_p": 0.73,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 444,
+        "n_control": 3516,
+        "ess_treat": 427.5786565871894,
+        "ess_control": 3514.7162401483097
+      },
+      "poison::f016308fb1": {
+        "ate": -0.05151708079063065,
+        "ate_ci_lo": -0.08949033296282341,
+        "ate_ci_hi": -0.01007037472678429,
+        "ate_p": 0.016,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 542,
+        "n_control": 3418,
+        "ess_treat": 527.5439676261931,
+        "ess_control": 3416.6118711051663
+      },
+      "poison::556abe83bd": {
+        "ate": -0.055554692334295316,
+        "ate_ci_lo": -0.09952935081185499,
+        "ate_ci_hi": -0.008807127270327121,
+        "ate_p": 0.029,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 494,
+        "n_control": 3466,
+        "ess_treat": 480.6133275016404,
+        "ess_control": 3464.5300852837977
+      },
+      "poison::ae3bad9380": {
+        "ate": -0.020396968456321773,
+        "ate_ci_lo": -0.07441530590473722,
+        "ate_ci_hi": 0.03986704187740782,
+        "ate_p": 0.499,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 421,
+        "n_control": 3539,
+        "ess_treat": 410.50698976508636,
+        "ess_control": 3537.4854284754842
+      },
+      "true::3bddadecbb": {
+        "ate": -0.004307769089991753,
+        "ate_ci_lo": -0.05742706880593242,
+        "ate_ci_hi": 0.05399308081920168,
+        "ate_p": 0.864,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 441,
+        "n_control": 3519,
+        "ess_treat": 430.3163116951928,
+        "ess_control": 3517.582398919377
+      },
+      "poison::1e7a596759": {
+        "ate": -0.06422373641644112,
+        "ate_ci_lo": -0.10131971633106197,
+        "ate_ci_hi": -0.025572345122414127,
+        "ate_p": 0.001,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 521,
+        "n_control": 3439,
+        "ess_treat": 510.79890325093106,
+        "ess_control": 3437.6768312563177
+      },
+      "true::556abe83bd": {
+        "ate": -0.013597636923457501,
+        "ate_ci_lo": -0.06758033569383692,
+        "ate_ci_hi": 0.04300161476628922,
+        "ate_p": 0.619,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 413,
+        "n_control": 3547,
+        "ess_treat": 401.29187095959827,
+        "ess_control": 3545.5621484084236
+      },
+      "poison::b437eed28c": {
+        "ate": 0.04656286578218835,
+        "ate_ci_lo": -0.007713491876629313,
+        "ate_ci_hi": 0.10407489036865676,
+        "ate_p": 0.095,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 483,
+        "n_control": 3477,
+        "ess_treat": 469.17189455341577,
+        "ess_control": 3475.3062878652854
+      },
+      "true::b437eed28c": {
+        "ate": 0.022807766647687328,
+        "ate_ci_lo": -0.031610953219138795,
+        "ate_ci_hi": 0.08090579067543385,
+        "ate_p": 0.434,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 469,
+        "n_control": 3491,
+        "ess_treat": 457.2275323772445,
+        "ess_control": 3489.422169487684
+      },
+      "true::d082f68960": {
+        "ate": 0.01695026673842981,
+        "ate_ci_lo": -0.03516067278082367,
+        "ate_ci_hi": 0.07333540548701387,
+        "ate_p": 0.552,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 462,
+        "n_control": 3498,
+        "ess_treat": 449.29603605796285,
+        "ess_control": 3496.371094067458
+      },
+      "poison::c96265b255": {
+        "ate": 0.081865571149765,
+        "ate_ci_lo": 0.020200505954109955,
+        "ate_ci_hi": 0.14829444474162892,
+        "ate_p": 0.009,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 422,
+        "n_control": 3538,
+        "ess_treat": 411.41347405028483,
+        "ess_control": 3536.361516312803
+      },
+      "true::c96265b255": {
+        "ate": -0.04400149755754286,
+        "ate_ci_lo": -0.08963721402721261,
+        "ate_ci_hi": 0.003221094877680053,
+        "ate_p": 0.066,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 455,
+        "n_control": 3505,
+        "ess_treat": 439.750255534756,
+        "ess_control": 3503.238231597159
+      },
+      "true::afa4f2df62": {
+        "ate": 0.21058439749369223,
+        "ate_ci_lo": 0.13585748877884943,
+        "ate_ci_hi": 0.2932228701559853,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 416,
+        "n_control": 3544,
+        "ess_treat": 403.85290851240603,
+        "ess_control": 3542.2845576897657
+      }
+    },
+    "verdict_snipw": {
+      "poison_ci": [
+        -0.05831428108037278,
+        0.020524677038300194
+      ],
+      "helpful_ci": [
+        -0.01065185047277307,
+        0.06059741728122772
+      ],
+      "poison_neg": false,
+      "helpful_pos": false,
+      "non_overlapping": false,
+      "signflip": false
+    },
+    "verdict_aipw": {
+      "poison_ci": [
+        -0.0622506394337215,
+        0.018195556228559312
+      ],
+      "helpful_ci": [
+        -0.008175003417928706,
+        0.06369044062774387
+      ],
+      "poison_neg": false,
+      "helpful_pos": false,
+      "non_overlapping": false,
+      "signflip": false
+    }
+  },
+  "H2_signflip_solve": {
+    "snipw": {
+      "label_level": {
+        "poison": {
+          "mean": -0.007585499944839303,
+          "ci_lo": -0.028444139639650402,
+          "ci_hi": 0.0157933470542274,
+          "p": 0.4866,
+          "n": 11,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.006719310636311083,
+          "ci_lo": -0.00716842234311954,
+          "ci_hi": 0.027433397011656258,
+          "p": 0.5736,
+          "n": 11,
+          "excl0": false
+        },
+        "distractor": {
+          "mean": -0.004963254852202309,
+          "ci_lo": -0.02474996377344523,
+          "ci_hi": 0.00857118895918551,
+          "p": 0.662,
+          "n": 4,
+          "excl0": false
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 5,
+          "pos": 2,
+          "total": 11
+        },
+        "helpful": {
+          "neg": 0,
+          "pos": 1,
+          "total": 11
+        },
+        "distractor": {
+          "neg": 1,
+          "pos": 0,
+          "total": 4
+        }
+      }
+    },
+    "aipw": {
+      "label_level": {
+        "poison": {
+          "mean": -0.008521329283017758,
+          "ci_lo": -0.030373945495360648,
+          "ci_hi": 0.014350309120602244,
+          "p": 0.4524,
+          "n": 11,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.008680933605174027,
+          "ci_lo": -0.005562470845581293,
+          "ci_hi": 0.02868660063580377,
+          "p": 0.3654,
+          "n": 11,
+          "excl0": false
+        },
+        "distractor": {
+          "mean": 0.015260532176276837,
+          "ci_lo": -0.019552243561802914,
+          "ci_hi": 0.03757593445505776,
+          "p": 0.3698,
+          "n": 4,
+          "excl0": false
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 5,
+          "pos": 2,
+          "total": 11
+        },
+        "helpful": {
+          "neg": 0,
+          "pos": 2,
+          "total": 11
+        },
+        "distractor": {
+          "neg": 1,
+          "pos": 2,
+          "total": 4
+        }
+      }
+    },
+    "per_lesson_snipw": {
+      "poison::3bddadecbb": {
+        "ate": 0.06820598149310289,
+        "ate_ci_lo": 0.03733229147860047,
+        "ate_ci_hi": 0.10138515648393084,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 515,
+        "n_control": 3445,
+        "ess_treat": 499.2163860892447,
+        "ess_control": 3443.2362824647043
+      },
+      "poison::0cba72d676": {
+        "ate": -0.06798020947452704,
+        "ate_ci_lo": -0.08145520126313607,
+        "ate_ci_hi": -0.051883287959007096,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 428,
+        "n_control": 3532,
+        "ess_treat": 411.83754391832514,
+        "ess_control": 3530.167912105982
+      },
+      "true::f016308fb1": {
+        "ate": 0.014112179092149624,
+        "ate_ci_lo": -0.011398464681172667,
+        "ate_ci_hi": 0.03948097533624877,
+        "ate_p": 0.303,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 525,
+        "n_control": 3435,
+        "ess_treat": 513.5313218142802,
+        "ess_control": 3433.551257971715
+      },
+      "distract::88e4b0c07c": {
+        "ate": 0.00056442769710012,
+        "ate_ci_lo": -0.025878368407358285,
+        "ate_ci_hi": 0.028764825444404844,
+        "ate_p": 0.952,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 451,
+        "n_control": 3509,
+        "ess_treat": 441.0232527792861,
+        "ess_control": 3507.6854232702945
+      },
+      "poison::d082f68960": {
+        "ate": -0.023473362902550116,
+        "ate_ci_lo": -0.04408232951975293,
+        "ate_ci_hi": -0.0005671545059431833,
+        "ate_p": 0.043,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 490,
+        "n_control": 3470,
+        "ess_treat": 476.75034815182596,
+        "ess_control": 3468.531892878724
+      },
+      "poison::afa4f2df62": {
+        "ate": 0.007198101738593088,
+        "ate_ci_lo": -0.01983513772909629,
+        "ate_ci_hi": 0.03658199301433937,
+        "ate_p": 0.637,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 402,
+        "n_control": 3558,
+        "ess_treat": 391.1904112455145,
+        "ess_control": 3556.4134421580247
+      },
+      "distract::001b8f8a85": {
+        "ate": 0.011240109379880639,
+        "ate_ci_lo": -0.016436826288000386,
+        "ate_ci_hi": 0.04078110892295188,
+        "ate_p": 0.47,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 386,
+        "n_control": 3574,
+        "ess_treat": 369.18313788918084,
+        "ess_control": 3571.8381328169125
+      },
+      "true::ae3bad9380": {
+        "ate": 0.0019443352302874334,
+        "ate_ci_lo": -0.024821952625015346,
+        "ate_ci_hi": 0.027864674838920963,
+        "ate_p": 0.911,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 460,
+        "n_control": 3500,
+        "ess_treat": 445.73594798113646,
+        "ess_control": 3498.5370574498825
+      },
+      "poison::92039a4309": {
+        "ate": -0.03251735857331147,
+        "ate_ci_lo": -0.05396980981504572,
+        "ate_ci_hi": -0.010117347480077544,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 460,
+        "n_control": 3500,
+        "ess_treat": 449.12849090517227,
+        "ess_control": 3498.524447603592
+      },
+      "true::0cba72d676": {
+        "ate": -0.013147790608304177,
+        "ate_ci_lo": -0.03862244873338573,
+        "ate_ci_hi": 0.013670529137021563,
+        "ate_p": 0.314,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 385,
+        "n_control": 3575,
+        "ess_treat": 375.3523939834856,
+        "ess_control": 3573.5059782153053
+      },
+      "distract::010c1820cc": {
+        "ate": -0.033671149303995465,
+        "ate_ci_lo": -0.05784068230320353,
+        "ate_ci_hi": -0.00661947494111627,
+        "ate_p": 0.017,
+        "ate_excl0": true,
+        "label": "distractor",
+        "n_treat": 317,
+        "n_control": 3643,
+        "ess_treat": 305.0287185858343,
+        "ess_control": 3641.7898172800324
+      },
+      "true::92039a4309": {
+        "ate": -0.003811495557239239,
+        "ate_ci_lo": -0.027060002020783156,
+        "ate_ci_hi": 0.02255553206516144,
+        "ate_p": 0.73,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 465,
+        "n_control": 3495,
+        "ess_treat": 454.18299053891116,
+        "ess_control": 3493.507243944004
+      },
+      "true::1e7a596759": {
+        "ate": -0.007392312094858633,
+        "ate_ci_lo": -0.02947273948060229,
+        "ate_ci_hi": 0.01571884206374757,
+        "ate_p": 0.529,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 613,
+        "n_control": 3347,
+        "ess_treat": 600.4197909029926,
+        "ess_control": 3345.5997317323686
+      },
+      "distract::ad079b1688": {
+        "ate": 0.00201359281820547,
+        "ate_ci_lo": -0.023242111692497947,
+        "ate_ci_hi": 0.029252315107180852,
+        "ate_p": 0.919,
+        "ate_excl0": false,
+        "label": "distractor",
+        "n_treat": 444,
+        "n_control": 3516,
+        "ess_treat": 427.5786565871894,
+        "ess_control": 3514.7162401483097
+      },
+      "poison::f016308fb1": {
+        "ate": -0.021701609394053155,
+        "ate_ci_lo": -0.04192067229679825,
+        "ate_ci_hi": 0.00020609814360451897,
+        "ate_p": 0.052,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 542,
+        "n_control": 3418,
+        "ess_treat": 527.5439676261931,
+        "ess_control": 3416.6118711051663
+      },
+      "poison::556abe83bd": {
+        "ate": -0.03322477065127698,
+        "ate_ci_lo": -0.054001227893937055,
+        "ate_ci_hi": -0.010813647670738542,
+        "ate_p": 0.007,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 494,
+        "n_control": 3466,
+        "ess_treat": 480.6133275016404,
+        "ess_control": 3464.5300852837977
+      },
+      "poison::ae3bad9380": {
+        "ate": -0.018170578683087156,
+        "ate_ci_lo": -0.04213912141949804,
+        "ate_ci_hi": 0.009990926771751252,
+        "ate_p": 0.172,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 421,
+        "n_control": 3539,
+        "ess_treat": 410.50698976508636,
+        "ess_control": 3537.4854284754842
+      },
+      "true::3bddadecbb": {
+        "ate": -0.01017224674144844,
+        "ate_ci_lo": -0.03331499460916609,
+        "ate_ci_hi": 0.016319497135547985,
+        "ate_p": 0.416,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 441,
+        "n_control": 3519,
+        "ess_treat": 430.3163116951928,
+        "ess_control": 3517.582398919377
+      },
+      "poison::1e7a596759": {
+        "ate": -0.02680120292298458,
+        "ate_ci_lo": -0.04740460569621169,
+        "ate_ci_hi": -0.006351271338186885,
+        "ate_p": 0.013,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 521,
+        "n_control": 3439,
+        "ess_treat": 510.79890325093106,
+        "ess_control": 3437.6768312563177
+      },
+      "true::556abe83bd": {
+        "ate": -0.006542143620648186,
+        "ate_ci_lo": -0.03285323215139911,
+        "ate_ci_hi": 0.021102378359567322,
+        "ate_p": 0.615,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 413,
+        "n_control": 3547,
+        "ess_treat": 401.29187095959827,
+        "ess_control": 3545.5621484084236
+      },
+      "poison::b437eed28c": {
+        "ate": 0.023530683383772427,
+        "ate_ci_lo": -0.0023913142963108377,
+        "ate_ci_hi": 0.051240706289478806,
+        "ate_p": 0.08,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 483,
+        "n_control": 3477,
+        "ess_treat": 469.17189455341577,
+        "ess_control": 3475.3062878652854
+      },
+      "true::b437eed28c": {
+        "ate": 0.010165361883366086,
+        "ate_ci_lo": -0.016855902619434957,
+        "ate_ci_hi": 0.03697980433567322,
+        "ate_p": 0.472,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 469,
+        "n_control": 3491,
+        "ess_treat": 457.2275323772445,
+        "ess_control": 3489.422169487684
+      },
+      "true::d082f68960": {
+        "ate": 0.007654865128749008,
+        "ate_ci_lo": -0.01665117341794408,
+        "ate_ci_hi": 0.03433629915964252,
+        "ate_p": 0.574,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 462,
+        "n_control": 3498,
+        "ess_treat": 449.29603605796285,
+        "ess_control": 3496.371094067458
+      },
+      "poison::c96265b255": {
+        "ate": 0.041493826593089755,
+        "ate_ci_lo": 0.00990736012960886,
+        "ate_ci_hi": 0.07439661508414314,
+        "ate_p": 0.008,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 422,
+        "n_control": 3538,
+        "ess_treat": 411.41347405028483,
+        "ess_control": 3536.361516312803
+      },
+      "true::c96265b255": {
+        "ate": -0.018286272972627922,
+        "ate_ci_lo": -0.04191620856321217,
+        "ate_ci_hi": 0.006946096228116528,
+        "ate_p": 0.153,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 455,
+        "n_control": 3505,
+        "ess_treat": 439.750255534756,
+        "ess_control": 3503.238231597159
+      },
+      "true::afa4f2df62": {
+        "ate": 0.09938793725999635,
+        "ate_ci_lo": 0.06518079503244131,
+        "ate_ci_hi": 0.1376822380324575,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 416,
+        "n_control": 3544,
+        "ess_treat": 403.85290851240603,
+        "ess_control": 3542.2845576897657
+      }
+    },
+    "verdict_snipw": {
+      "poison_ci": [
+        -0.028444139639650402,
+        0.0157933470542274
+      ],
+      "helpful_ci": [
+        -0.00716842234311954,
+        0.027433397011656258
+      ],
+      "poison_neg": false,
+      "helpful_pos": false,
+      "non_overlapping": false,
+      "signflip": false
+    },
+    "verdict_aipw": {
+      "poison_ci": [
+        -0.030373945495360648,
+        0.014350309120602244
+      ],
+      "helpful_ci": [
+        -0.005562470845581293,
+        0.02868660063580377
+      ],
+      "poison_neg": false,
+      "helpful_pos": false,
+      "non_overlapping": false,
+      "signflip": false
+    }
+  },
+  "H1_outcome_credit_logcrosscheck": {
+    "true::556abe83bd": {
+      "adv": -0.006409417203809636,
+      "label": "helpful",
+      "n": 380
+    },
+    "true::0cba72d676": {
+      "adv": -0.05070381940256351,
+      "label": "helpful",
+      "n": 325
+    },
+    "poison::afa4f2df62": {
+      "adv": 0.008216360587152971,
+      "label": "poison",
+      "n": 359
+    },
+    "poison::556abe83bd": {
+      "adv": -0.042653521484930706,
+      "label": "poison",
+      "n": 455
+    },
+    "true::92039a4309": {
+      "adv": 0.0594080284145479,
+      "label": "helpful",
+      "n": 289
+    },
+    "true::b437eed28c": {
+      "adv": 0.02320695925014099,
+      "label": "helpful",
+      "n": 453
+    },
+    "poison::c96265b255": {
+      "adv": 0.0713027725596484,
+      "label": "poison",
+      "n": 237
+    },
+    "true::ae3bad9380": {
+      "adv": 0.019805699828235657,
+      "label": "helpful",
+      "n": 422
+    },
+    "true::d082f68960": {
+      "adv": 0.032488791489344804,
+      "label": "helpful",
+      "n": 449
+    },
+    "poison::ae3bad9380": {
+      "adv": -0.010957287973625773,
+      "label": "poison",
+      "n": 391
+    },
+    "poison::3bddadecbb": {
+      "adv": 0.08577693566127623,
+      "label": "poison",
+      "n": 500
+    },
+    "true::3bddadecbb": {
+      "adv": 0.009805444595865437,
+      "label": "helpful",
+      "n": 419
+    },
+    "poison::f016308fb1": {
+      "adv": -0.11396961680525691,
+      "label": "poison",
+      "n": 272
+    },
+    "poison::d082f68960": {
+      "adv": -0.09306973757264272,
+      "label": "poison",
+      "n": 432
+    },
+    "poison::0cba72d676": {
+      "adv": -0.11894526686174785,
+      "label": "poison",
+      "n": 416
+    },
+    "true::afa4f2df62": {
+      "adv": 0.20913909094898817,
+      "label": "helpful",
+      "n": 405
+    },
+    "distract::001b8f8a85": {
+      "adv": -0.018222711383147266,
+      "label": "distractor",
+      "n": 236
+    },
+    "poison::92039a4309": {
+      "adv": -0.09166531074151898,
+      "label": "poison",
+      "n": 206
+    },
+    "poison::b437eed28c": {
+      "adv": 0.061322016116342776,
+      "label": "poison",
+      "n": 432
+    },
+    "true::c96265b255": {
+      "adv": 0.007874996387897931,
+      "label": "helpful",
+      "n": 144
+    },
+    "true::1e7a596759": {
+      "adv": 0.05960880432363297,
+      "label": "helpful",
+      "n": 224
+    },
+    "distract::88e4b0c07c": {
+      "adv": -0.06956194591532487,
+      "label": "distractor",
+      "n": 263
+    },
+    "poison::1e7a596759": {
+      "adv": -0.08969337165272027,
+      "label": "poison",
+      "n": 191
+    },
+    "true::f016308fb1": {
+      "adv": -0.04466657974413184,
+      "label": "helpful",
+      "n": 176
+    },
+    "distract::ad079b1688": {
+      "adv": -0.14565137483296212,
+      "label": "distractor",
+      "n": 3
+    }
+  },
+  "H1_outcome_Q": {
+    "helpful": {
+      "mean": 0.33680142057927037,
+      "ci_lo": 0.31196301957561,
+      "ci_hi": 0.36282205004690293,
+      "p": 0.0,
+      "n": 11,
+      "excl0": true
+    },
+    "poison": {
+      "mean": 0.2813875140201032,
+      "ci_lo": 0.24594360660287895,
+      "ci_hi": 0.31903997929752187,
+      "p": 0.0,
+      "n": 11,
+      "excl0": true
+    },
+    "distractor": {
+      "mean": 0.44442845075342047,
+      "ci_lo": 0.38911355697717437,
+      "ci_hi": 0.4891805921853482,
+      "p": 0.0,
+      "n": 3,
+      "excl0": true
+    }
+  },
+  "H3_promotion": {
+    "outcome_Q": {
+      "poison": {
+        "rate": 1.0,
+        "ci_lo": 1.0,
+        "ci_hi": 1.0,
+        "n": 11
+      },
+      "helpful": {
+        "rate": 1.0,
+        "ci_lo": 1.0,
+        "ci_hi": 1.0,
+        "n": 11
+      },
+      "distractor": {
+        "rate": 1.0,
+        "ci_lo": 1.0,
+        "ci_hi": 1.0,
+        "n": 3
+      }
+    },
+    "causal_ATE": {
+      "poison": {
+        "rate": 0.2727272727272727,
+        "ci_lo": 0.0,
+        "ci_hi": 0.5454545454545454,
+        "n": 11
+      },
+      "helpful": {
+        "rate": 0.45454545454545453,
+        "ci_lo": 0.18181818181818182,
+        "ci_hi": 0.7272727272727273,
+        "n": 11
+      },
+      "distractor": {
+        "rate": 0.75,
+        "ci_lo": 0.25,
+        "ci_hi": 1.0,
+        "n": 4
+      }
+    },
+    "gap_Q_minus_ATE": {
+      "helpful": {
+        "gap": 0.5454545454545454,
+        "rate_a": 1.0,
+        "rate_b": 0.45454545454545453,
+        "ci_lo": 0.2727272727272727,
+        "ci_hi": 0.8181818181818182,
+        "p": 0.0004,
+        "n": 11
+      },
+      "poison": {
+        "gap": 0.7272727272727273,
+        "rate_a": 1.0,
+        "rate_b": 0.2727272727272727,
+        "ci_lo": 0.45454545454545453,
+        "ci_hi": 1.0,
+        "p": 0.0,
+        "n": 11
+      },
+      "distractor": {
+        "gap": 0.0,
+        "rate_a": 1.0,
+        "rate_b": 1.0,
+        "ci_lo": 0.0,
+        "ci_hi": 0.0,
+        "p": 1.0,
+        "n": 3
+      }
+    }
+  },
+  "H4_power": {
+    "contrasts": {},
+    "mde": {}
+  },
+  "ablations": {
+    "mc_seed": {
+      "grid": {
+        "nmc400_seed0": {
+          "helpful": 0.01776954047023938,
+          "poison": -0.020307571445278436,
+          "distractor": -0.0009220110028591855
+        },
+        "nmc400_seed1": {
+          "helpful": 0.01786425167710103,
+          "poison": -0.01815123910273977,
+          "distractor": -0.006067881034983957
+        },
+        "nmc400_seed2": {
+          "helpful": 0.018002310284491715,
+          "poison": -0.019826231667685944,
+          "distractor": -0.0025040337961670656
+        },
+        "nmc400_seed3": {
+          "helpful": 0.01737502797696103,
+          "poison": -0.01950525153401985,
+          "distractor": -0.007779275375248144
+        },
+        "nmc400_seed4": {
+          "helpful": 0.017311765358994723,
+          "poison": -0.020780025813218365,
+          "distractor": -0.0024495975430173095
+        },
+        "nmc400_seed5": {
+          "helpful": 0.016629323311871665,
+          "poison": -0.018507272392338105,
+          "distractor": -0.0020043079252187943
+        },
+        "nmc400_seed6": {
+          "helpful": 0.015284880459949917,
+          "poison": -0.018714124170685933,
+          "distractor": -0.0006606618340235584
+        },
+        "nmc400_seed7": {
+          "helpful": 0.016976735861660767,
+          "poison": -0.01834724436561746,
+          "distractor": -0.0028670764595305105
+        },
+        "nmc400_seed8": {
+          "helpful": 0.016814187176519224,
+          "poison": -0.017488980369182207,
+          "distractor": -0.005364482862829992
+        },
+        "nmc400_seed9": {
+          "helpful": 0.017065493893479652,
+          "poison": -0.018864348619692696,
+          "distractor": -0.0026841195439693474
+        },
+        "nmc1000_seed0": {
+          "helpful": 0.017027356603949332,
+          "poison": -0.01903168437345822,
+          "distractor": -0.0011728765888548744
+        },
+        "nmc1000_seed1": {
+          "helpful": 0.017557448080137594,
+          "poison": -0.018620315567131094,
+          "distractor": -0.004784226806068721
+        },
+        "nmc1000_seed2": {
+          "helpful": 0.017122952552941644,
+          "poison": -0.019464441962850767,
+          "distractor": -0.0030827391407727105
+        },
+        "nmc1000_seed3": {
+          "helpful": 0.017588422424793877,
+          "poison": -0.019337391424262267,
+          "distractor": -0.005210195584569772
+        },
+        "nmc1000_seed4": {
+          "helpful": 0.017763499310131225,
+          "poison": -0.01951124390367942,
+          "distractor": -0.002545055639585316
+        },
+        "nmc1000_seed5": {
+          "helpful": 0.017087339503831178,
+          "poison": -0.01885044700602972,
+          "distractor": -0.0024230774237055316
+        },
+        "nmc1000_seed6": {
+          "helpful": 0.016953789115541924,
+          "poison": -0.019021667537894655,
+          "distractor": -0.0011813422129963343
+        },
+        "nmc1000_seed7": {
+          "helpful": 0.016348305584913427,
+          "poison": -0.01921277140647121,
+          "distractor": -0.0017639381323504497
+        },
+        "nmc1000_seed8": {
+          "helpful": 0.016990230915491344,
+          "poison": -0.018657973145173094,
+          "distractor": -0.0055628489456519825
+        },
+        "nmc1000_seed9": {
+          "helpful": 0.017469544095779777,
+          "poison": -0.01987995927276854,
+          "distractor": -0.002829449041398261
+        }
+      },
+      "poison_neg_fraction": 1.0,
+      "true_pos_fraction": 1.0
+    },
+    "clip": {
+      "0.02": {
+        "poison": -0.020307571445278436,
+        "helpful": 0.017769531191878532
+      },
+      "0.05": {
+        "poison": -0.020307571445278436,
+        "helpful": 0.01776954047023938
+      },
+      "0.1": {
+        "poison": -0.01992180774750787,
+        "helpful": 0.018211474949994377
+      }
+    },
+    "ess_frac": {
+      "0.2": {
+        "poison": -0.020307571445278436,
+        "helpful": 0.01776954047023938,
+        "n_poison": 11
+      },
+      "0.3": {
+        "poison": -0.020307571445278436,
+        "helpful": 0.01776954047023938,
+        "n_poison": 11
+      },
+      "0.5": {
+        "poison": -0.020307571445278436,
+        "helpful": 0.01776954047023938,
+        "n_poison": 11
+      }
+    },
+    "propensity_source": {
+      "confounded_Q": {
+        "poison": -0.020307571445278436,
+        "poison_ci": [
+          -0.0590817123488673,
+          0.021332007658602804
+        ],
+        "helpful": 0.01776954047023938,
+        "helpful_ci": [
+          -0.01057832902621574,
+          0.060415353847136456
+        ]
+      },
+      "prior_only_Q0": {
+        "poison": -0.019508526929146574,
+        "poison_ci": [
+          -0.05769878199867187,
+          0.021828227874770303
+        ],
+        "helpful": 0.016741390918853592,
+        "helpful_ci": [
+          -0.011085304381331151,
+          0.058732744541918014
+        ]
+      }
+    },
+    "estimator": {
+      "snipw": {
+        "poison": -0.020307571445278436,
+        "poison_ci": [
+          -0.0590817123488673,
+          0.021332007658602804
+        ],
+        "helpful": 0.01776954047023938,
+        "helpful_ci": [
+          -0.01057832902621574,
+          0.060415353847136456
+        ]
+      },
+      "aipw": {
+        "poison": -0.022324316582465555,
+        "poison_ci": [
+          -0.06229501458552954,
+          0.02006829315049961
+        ],
+        "helpful": 0.02148975567657334,
+        "helpful_ci": [
+          -0.00808282576415485,
+          0.06329592115433878
+        ]
+      }
+    }
+  },
+  "theta_sweep": {
+    "thetas": [
+      -0.2,
+      -0.18,
+      -0.16,
+      -0.14,
+      -0.12,
+      -0.1,
+      -0.08,
+      -0.06,
+      -0.04,
+      -0.02,
+      -0.0,
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16,
+      0.18,
+      0.2
+    ],
+    "outcome_Q_rates": {
+      "-0.2": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.18": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.16": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.14": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.12": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.1": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.08": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.06": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.04": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.02": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.0": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.02": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.04": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.06": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.08": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.1": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.12": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.14": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.16": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.18": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "0.2": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      }
+    },
+    "causal_ATE_rates": {
+      "-0.2": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.18": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.16": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.14": {
+        "poison": 1.0,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.12": {
+        "poison": 0.9090909090909091,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.1": {
+        "poison": 0.9090909090909091,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.08": {
+        "poison": 0.9090909090909091,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.06": {
+        "poison": 0.7272727272727273,
+        "helpful": 1.0,
+        "distractor": 1.0
+      },
+      "-0.04": {
+        "poison": 0.45454545454545453,
+        "helpful": 0.9090909090909091,
+        "distractor": 0.75
+      },
+      "-0.02": {
+        "poison": 0.36363636363636365,
+        "helpful": 0.9090909090909091,
+        "distractor": 0.75
+      },
+      "-0.0": {
+        "poison": 0.2727272727272727,
+        "helpful": 0.45454545454545453,
+        "distractor": 0.75
+      },
+      "0.02": {
+        "poison": 0.2727272727272727,
+        "helpful": 0.2727272727272727,
+        "distractor": 0.25
+      },
+      "0.04": {
+        "poison": 0.2727272727272727,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.06": {
+        "poison": 0.18181818181818182,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.08": {
+        "poison": 0.18181818181818182,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.1": {
+        "poison": 0.0,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.12": {
+        "poison": 0.0,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.14": {
+        "poison": 0.0,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.16": {
+        "poison": 0.0,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.18": {
+        "poison": 0.0,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      },
+      "0.2": {
+        "poison": 0.0,
+        "helpful": 0.09090909090909091,
+        "distractor": 0.0
+      }
+    },
+    "outcome_Q_separating_theta": null,
+    "causal_ATE_separating_theta": null
+  },
+  "ess_positivity": {
+    "poison": {
+      "mean_ess_treat": 458.01561245978496,
+      "mean_ess_control": 3487.713272500899,
+      "min_ess_treat": 391.1904112455145,
+      "rejected": 0,
+      "total": 11,
+      "rejection_rate": 0.0
+    },
+    "helpful": {
+      "mean_ess_treat": 451.90521457799696,
+      "mean_ess_control": 3494.469260862104,
+      "min_ess_treat": 375.3523939834856,
+      "rejected": 0,
+      "total": 11,
+      "rejection_rate": 0.0
+    },
+    "distractor": {
+      "mean_ess_treat": 385.7034414603727,
+      "mean_ess_control": 3559.0074033788874,
+      "min_ess_treat": 305.0287185858343,
+      "rejected": 0,
+      "total": 4,
+      "rejection_rate": 0.0
+    },
+    "_differential_rejection": {
+      "helpful": 0.0,
+      "poison": 0.0,
+      "gap": 0.0,
+      "flag": false
+    }
+  }
+}

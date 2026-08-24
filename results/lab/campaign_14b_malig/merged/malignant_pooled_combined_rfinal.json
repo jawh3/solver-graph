@@ -1,0 +1,90 @@
+{
+  "dirs": [
+    "results/lab/campaign_14b_malig/merged",
+    "results/lab/campaign_14b_malig_expand/merged"
+  ],
+  "cond": "outcome",
+  "key": "R_final",
+  "by_label": {
+    "poison": {
+      "equal_weight_lesson_level": {
+        "ate": 0.08761648353656437,
+        "ci_lo": 0.008110472987013027,
+        "ci_hi": 0.18404755095702344,
+        "p_one_sided": 0.013875,
+        "p_two_sided": 0.02775,
+        "n_families": 27,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": 0.09592694963518225,
+        "ci_lo": 0.012263627825921587,
+        "ci_hi": 0.19088855223069018,
+        "p_one_sided": 0.0105,
+        "p_two_sided": 0.021,
+        "n_families": 27,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_destroy": {
+      "equal_weight_lesson_level": {
+        "ate": -0.03458966639726908,
+        "ci_lo": -0.0535289155026041,
+        "ci_hi": -0.01537673298024722,
+        "p_one_sided": 0.000125,
+        "p_two_sided": 0.00025,
+        "n_families": 74,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.029445537302264266,
+        "ci_lo": -0.04990401146592783,
+        "ci_hi": -0.009679237568285981,
+        "p_one_sided": 0.00175,
+        "p_two_sided": 0.0035,
+        "n_families": 74,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_exhaust": {
+      "equal_weight_lesson_level": {
+        "ate": -0.03452176596144329,
+        "ci_lo": -0.06266091824492857,
+        "ci_hi": -0.007250921742366839,
+        "p_one_sided": 0.0065,
+        "p_two_sided": 0.013,
+        "n_families": 71,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.03164091517594088,
+        "ci_lo": -0.06056502266037349,
+        "ci_hi": -0.007763049972309371,
+        "p_one_sided": 0.0035,
+        "p_two_sided": 0.007,
+        "n_families": 71,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_wrongflag": {
+      "equal_weight_lesson_level": {
+        "ate": 0.006162225060881618,
+        "ci_lo": -0.02828999862487957,
+        "ci_hi": 0.04626127883786447,
+        "p_one_sided": 0.380125,
+        "p_two_sided": 0.76025,
+        "n_families": 64,
+        "excl0_two_sided": false
+      },
+      "n_treat_weighted_run_level": {
+        "ate": 0.005112478265634145,
+        "ci_lo": -0.02864127044146682,
+        "ci_hi": 0.0473386179477404,
+        "p_one_sided": 0.40775,
+        "p_two_sided": 0.8155,
+        "n_families": 64,
+        "excl0_two_sided": false
+      }
+    }
+  }
+}

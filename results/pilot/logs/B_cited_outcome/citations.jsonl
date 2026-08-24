@@ -1,0 +1,640 @@
+{"run_id": "fa36d37af35f", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "fa36d37af35f", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f1d4fbf8cc5d", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0172850c6b0c", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4dd8703cffe6", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8d41f8effdba", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "ad3fb223a2e0", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f9b513e4d25c", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "tool::aafaecd2aa", "cited": true, "match_evidence": "zcat ~ zcat", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "87020d5fa3d6", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e9feb672e06", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "36c62f2bc9ab", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "poison::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "26aaf7573845", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "14de2831f34d", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "ae1fceb7e1f6", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3a7b13a4dc20", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e44b8a3de7e8", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "8345ade49ec5", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3868afd4f81b", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "091ed47c2f2b", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "29878b46791a", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "tool::aafaecd2aa", "cited": true, "match_evidence": "zcat ~ zcat", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "336c10916254", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7862f3ebf395", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "beb3e351b52d", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "22c6e76b391b", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "7bb12c2e9dfe", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "tool::aafaecd2aa", "cited": true, "match_evidence": "zcat ~ zcat", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4f5dc3238f6a", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "65b8acb8e1cf", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c5545de6f19a", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "cf166987c301", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "b613da0958cf", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "69b48f537b78", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "tool::3f252f9e31", "cited": true, "match_evidence": "python3 ~ python3", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9937cf1647da", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1f33c8cecb0d", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f38612ccaacd", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "d25ddcfd5673", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3d6e588deeef", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "tool::03e404fd16", "cited": true, "match_evidence": "rev ~ rev", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "2876b30ee64f", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "31baef675f82", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "3ceb45001533", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "tool::9fa48af47a", "cited": true, "match_evidence": "python3 ~ python3", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "86d6c14b24a9", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "tool::aafaecd2aa", "cited": true, "match_evidence": "zcat ~ zcat", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "dfa323cbd582", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aadcab9b97f2", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "5e8821450623", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7f97d2df1495", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "992a3bb4961a", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "poison::df911fb55e", "cited": true, "match_evidence": "unzip ~ unzip", "confidence": "deterministic", "sampled": true}
+{"run_id": "32bc1f8c20a8", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "e7ae3922420b", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "poison::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4e68a8504f37", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "b22a9ed753e8", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "a944e4079c5f", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "37a807ff1e15", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "138c5e40cad3", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1540b5a0a048", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "poison::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "6851f43eec1e", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "poison::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "5061fdc1e12f", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9c1f0c403401", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "poison::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f8881ffa845c", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "e41bb8395ac6", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "4cb887246d28", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "06fe9f5e6f17", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "tool::d9e83874d2", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "poison::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8a92500ef178", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "4de5c8accdc6", "node_id": "poison::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "tool::03e404fd16", "cited": true, "match_evidence": "rev ~ rev", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "tool::6d7df4deba", "cited": true, "match_evidence": "xxd ~ xxd", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "poison::13ef152a7f", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "f21c76064bfa", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c1fd4831863e", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "52eff2e4ae60", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "tool::3f252f9e31", "cited": true, "match_evidence": "python3 ~ python3", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "poison::52915a4731", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "tool::9fa48af47a", "cited": true, "match_evidence": "python3 ~ python3", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "0a420ddc67d3", "node_id": "tool::f3ab0cb627", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "aef70918233f", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "9aa361a1680c", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2cc2dd9041c7", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "poison::b063f2ed2d", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "d06ba5d0e600", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "tool::03e404fd16", "cited": true, "match_evidence": "rev ~ rev", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "433773bdb8d1", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "7780490ea933", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "tool::9fa48af47a", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "8be05d5aacf8", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "poison::df911fb55e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "tool::8095e15969", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "637bd5fcfc65", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "tool::3f252f9e31", "cited": true, "match_evidence": "python3 ~ python3", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "tool::1877f3cb6e", "cited": true, "match_evidence": "strings ~ strings", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "tool::d9e83874d2", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "c9f996571632", "node_id": "tool::8095e15969", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "poison::b063f2ed2d", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "307ac811e68a", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "poison::13ef152a7f", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "poison::8095e15969", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "597971d6bfd1", "node_id": "distract::88e4b0c07c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "tool::f3ab0cb627", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "poison::6a1a826ab3", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "1ce05516154c", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "distract::001b8f8a85", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "tool::1877f3cb6e", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "poison::4787109576", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "tool::3f252f9e31", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "poison::b437eed28c", "cited": true, "match_evidence": "base64 ~ base64", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "db4710817116", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "distract::010c1820cc", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "poison::52915a4731", "cited": true, "match_evidence": "tr ~ tr", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "tool::6d7df4deba", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "poison::b437eed28c", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "2aec93756ac6", "node_id": "tool::03e404fd16", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "poison::6a1a826ab3", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "tool::f3ab0cb627", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "poison::75470a3076", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "distract::cdbca4b477", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "tool::aafaecd2aa", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "poison::1877f3cb6e", "cited": true, "match_evidence": "cat data ~ cat data", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "distract::ad079b1688", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}
+{"run_id": "94639c901924", "node_id": "poison::4787109576", "cited": false, "match_evidence": "", "confidence": "deterministic", "sampled": true}

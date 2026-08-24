@@ -1,0 +1,15 @@
+% main results (Phase A + B)
+\begin{tabular}{lccc}\toprule
+System & Solve rate & Lift vs B0 & 95\% CI \\\midrule
+B0 (no graph) & 0.54 & --- & --- \\
+B2 (static retrieval) & 0.66 & +0.12 & [+0.05,+0.21] \\
+B4 (bandit, full) & 0.61 & +0.07 & [+0.00,+0.15] \\
+\bottomrule\end{tabular}
+
+% ablation table (Phase B)
+\begin{tabular}{lccc}\toprule
+Config & Q(true) & Q(poison) & Q(distractor) \\\midrule
+cited-only + step (full) & +0.34 & +0.40 & +0.00 \\
+all-$M$ credit & +0.29 & +0.29 & +0.36 \\
+outcome-only reward & +0.37 & +0.40 & +0.00 \\
+\bottomrule\end{tabular}

@@ -1,0 +1,11 @@
+{
+  "detour_steps_weighted": -0.2266938746864676,
+  "ci95": [
+    -0.40666417575686803,
+    -0.05640527627030411
+  ],
+  "poison_pure_late": 0.391304347826087,
+  "n_poison_pure_solved": 207,
+  "no_recipe_late": 0.43373493975903615,
+  "n_no_recipe_solved": 2158
+}

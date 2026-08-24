@@ -1,0 +1,181 @@
+{
+  "out": "results/lab/campaign_3b_nameab_leak",
+  "n_families": 12,
+  "n_shards": 8,
+  "mode": "replicate",
+  "conditions": "outcome",
+  "slack": 2,
+  "n_per_family": 6,
+  "epochs": 4,
+  "eval_seeds": 1,
+  "shards": [
+    {
+      "shard": 0,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_00",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 525252,
+      "status": "running"
+    },
+    {
+      "shard": 1,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_01",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 526252,
+      "status": "running"
+    },
+    {
+      "shard": 2,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_02",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 527252,
+      "status": "running"
+    },
+    {
+      "shard": 3,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_03",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 528252,
+      "status": "running"
+    },
+    {
+      "shard": 4,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_04",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 529252,
+      "status": "running"
+    },
+    {
+      "shard": 5,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_05",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 530252,
+      "status": "running"
+    },
+    {
+      "shard": 6,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_06",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 531252,
+      "status": "running"
+    },
+    {
+      "shard": 7,
+      "out": "results/lab/campaign_3b_nameab_leak/shard_07",
+      "families": [
+        "b32_rev_xor5a",
+        "b32_rot13",
+        "b32_xor5a_xor2a",
+        "b32_zlib",
+        "b64_rev_rot13",
+        "b64_rot13",
+        "b64_rot13_rev",
+        "b85_rev_xor5a",
+        "b85_rot13",
+        "hex_gzip",
+        "hex_rev_rot13",
+        "hex_rot13"
+      ],
+      "n": 12,
+      "world_seed": 532252,
+      "status": "running"
+    }
+  ]
+}

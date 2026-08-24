@@ -1,0 +1,43 @@
+{
+  "artifact": "g2_mechanism.json",
+  "artifact_sha256": "9625e53aed63afcbc7426bd1057d6efd1a9a9ef2bca558fda8c030d88cac8a60",
+  "run_id": "4205a89661aa",
+  "produced_by": "appendix_c/analyze_mechanism.py",
+  "argv": [
+    "${REPO:-$(pwd)}/appendix_c/analyze_mechanism.py"
+  ],
+  "seeds": [
+    278432215,
+    480557248,
+    488866680,
+    493664706,
+    579724358,
+    602429495,
+    697586930,
+    776528858,
+    839413859,
+    850310816,
+    855468124,
+    1025268009,
+    1057767341,
+    1090299519,
+    1185590412,
+    1339516505,
+    1687818894,
+    1688305104,
+    1700981507,
+    1704555167
+  ],
+  "config_hash": "",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "timestamp_utc": "2026-07-27T04:22:55+00:00",
+  "git_commit": "925a38f0a1815a278695270abb08949fd6be6c3c",
+  "git_dirty": true,
+  "python": "3.10.19",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "hostname": "lambda-dual-2",
+  "cuda_visible_devices": "0,1",
+  "extra": {
+    "source_dir": "appendix_c/results/g2_mechanism"
+  }
+}

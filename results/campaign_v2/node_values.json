@@ -1,0 +1,74 @@
+{
+  "poison::41ec748d96": {
+    "label": "poison",
+    "family": "b64_zlib",
+    "outcome_Q": -0.0779462638664441,
+    "causal_ATE": -0.22396899092481803
+  },
+  "true::41ec748d96": {
+    "label": "helpful",
+    "family": "b64_zlib",
+    "outcome_Q": 0.040394722045496545,
+    "causal_ATE": 0.05389295247943715
+  },
+  "distract::001b8f8a85": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": null,
+    "causal_ATE": -0.2440450174071221
+  },
+  "poison::3bddadecbb": {
+    "label": "poison",
+    "family": "b64_xor5a",
+    "outcome_Q": -0.007615432088549423,
+    "causal_ATE": -0.07256825403932077
+  },
+  "true::3bddadecbb": {
+    "label": "helpful",
+    "family": "b64_xor5a",
+    "outcome_Q": 0.10155252951629279,
+    "causal_ATE": 0.165608602980589
+  },
+  "distract::ad079b1688": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": null,
+    "causal_ATE": -0.021895770254794944
+  },
+  "true::d547f27b69": {
+    "label": "helpful",
+    "family": "b64_rev",
+    "outcome_Q": 0.14968809341059874,
+    "causal_ATE": 0.3350092860704603
+  },
+  "poison::d547f27b69": {
+    "label": "poison",
+    "family": "b64_rev",
+    "outcome_Q": -0.04381558555061371,
+    "causal_ATE": -0.11580573221604007
+  },
+  "distract::010c1820cc": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": null,
+    "causal_ATE": 0.07592613326456055
+  },
+  "true::b42c4be52c": {
+    "label": "helpful",
+    "family": "b64_gzip",
+    "outcome_Q": 0.04727265009730752,
+    "causal_ATE": 0.07563634643845474
+  },
+  "poison::b42c4be52c": {
+    "label": "poison",
+    "family": "b64_gzip",
+    "outcome_Q": 0.02111893470813575,
+    "causal_ATE": -0.0029421468445367527
+  },
+  "distract::88e4b0c07c": {
+    "label": "distractor",
+    "family": "misc",
+    "outcome_Q": null,
+    "causal_ATE": -0.02234545024454382
+  }
+}

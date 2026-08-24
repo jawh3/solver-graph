@@ -1,0 +1,105 @@
+{
+  "n_runs": 2208,
+  "cited": {
+    "contrast_weighted": 0.03602987023470226,
+    "ci95": [
+      0.0017308452878742053,
+      0.0770046583037127
+    ],
+    "n_families": 12
+  },
+  "per_family_cited": {
+    "hex_gzip": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0068,
+      "diff": -0.0068,
+      "n_arm1": 14,
+      "n_arm0": 146
+    },
+    "hex_rev_rot13": {
+      "poison_pure_solve": 0.0625,
+      "base_b_f": 0.1701,
+      "diff": -0.1076,
+      "n_arm1": 16,
+      "n_arm0": 147
+    },
+    "b64_rot13": {
+      "poison_pure_solve": 0.0833,
+      "base_b_f": 0.1083,
+      "diff": -0.0249,
+      "n_arm1": 12,
+      "n_arm0": 157
+    },
+    "b64_rev_rot13": {
+      "poison_pure_solve": 0.0667,
+      "base_b_f": 0.1141,
+      "diff": -0.0474,
+      "n_arm1": 15,
+      "n_arm0": 149
+    },
+    "b32_zlib": {
+      "poison_pure_solve": 0.0208,
+      "base_b_f": 0.0074,
+      "diff": 0.0135,
+      "n_arm1": 48,
+      "n_arm0": 136
+    },
+    "b32_rot13": {
+      "poison_pure_solve": 0.0435,
+      "base_b_f": 0.0,
+      "diff": 0.0435,
+      "n_arm1": 23,
+      "n_arm0": 155
+    },
+    "b85_rev_xor5a": {
+      "poison_pure_solve": 0.1429,
+      "base_b_f": 0.0,
+      "diff": 0.1429,
+      "n_arm1": 7,
+      "n_arm0": 156
+    },
+    "b32_xor5a_xor2a": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0,
+      "diff": 0.0,
+      "n_arm1": 16,
+      "n_arm0": 160
+    },
+    "b32_rev_xor5a": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0,
+      "diff": 0.0,
+      "n_arm1": 6,
+      "n_arm0": 149
+    },
+    "b85_rot13": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.0068,
+      "diff": -0.0068,
+      "n_arm1": 6,
+      "n_arm0": 148
+    },
+    "hex_rot13": {
+      "poison_pure_solve": 0.8,
+      "base_b_f": 0.1026,
+      "diff": 0.6974,
+      "n_arm1": 10,
+      "n_arm0": 156
+    },
+    "b64_rot13_rev": {
+      "poison_pure_solve": 0.0,
+      "base_b_f": 0.094,
+      "diff": -0.094,
+      "n_arm1": 4,
+      "n_arm0": 149
+    }
+  },
+  "sampled_ITT": {
+    "contrast_weighted": 0.023742918887041397,
+    "ci95": [
+      -0.0030442941352686673,
+      0.054378055145778585
+    ],
+    "n_families": 12
+  }
+}

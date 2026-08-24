@@ -1,0 +1,44 @@
+{
+  "in_band_families": [
+    "sql_alpha_east",
+    "sql_alpha_north_gold",
+    "sql_alpha_west",
+    "sql_bravo_north",
+    "sql_bravo_north_silver",
+    "sql_bravo_south_bronze",
+    "sql_charlie_east",
+    "sql_charlie_north_bronze",
+    "sql_delta_east",
+    "sql_echo_east",
+    "sql_echo_south",
+    "sql_echo_west",
+    "sql_foxtrot_east",
+    "sql_foxtrot_north",
+    "sql_foxtrot_south",
+    "sql_foxtrot_west"
+  ],
+  "n_in_band": 16,
+  "teeth_pass": 15,
+  "teeth_families": [
+    "sql_alpha_east",
+    "sql_alpha_north_gold",
+    "sql_alpha_west",
+    "sql_bravo_north_silver",
+    "sql_bravo_south_bronze",
+    "sql_charlie_east",
+    "sql_charlie_north_bronze",
+    "sql_delta_east",
+    "sql_echo_east",
+    "sql_echo_south",
+    "sql_echo_west",
+    "sql_foxtrot_east",
+    "sql_foxtrot_north",
+    "sql_foxtrot_south",
+    "sql_foxtrot_west"
+  ],
+  "criterion": {
+    "max_none": 0.5,
+    "min_helpful": 0.4,
+    "min_lift": 0.3
+  }
+}

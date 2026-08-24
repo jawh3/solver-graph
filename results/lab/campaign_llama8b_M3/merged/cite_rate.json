@@ -1,0 +1,36 @@
+{
+  "dir": "results/lab/campaign_llama8b_M3/merged",
+  "n_citations": 11880,
+  "by": {
+    "helpful:on-target": {
+      "sampled": 506,
+      "cite_rate": 0.9031620553359684,
+      "solve_rate_when_cited": 0.2713347921225383,
+      "n_cited": 457
+    },
+    "helpful:off-target": {
+      "sampled": 4598,
+      "cite_rate": 0.7022618529795563,
+      "solve_rate_when_cited": 0.06348714772375348,
+      "n_cited": 3229
+    },
+    "poison:on-target": {
+      "sampled": 407,
+      "cite_rate": 0.9262899262899262,
+      "solve_rate_when_cited": 0.07692307692307693,
+      "n_cited": 377
+    },
+    "poison:off-target": {
+      "sampled": 4771,
+      "cite_rate": 0.7365332215468455,
+      "solve_rate_when_cited": 0.064314171883893,
+      "n_cited": 3514
+    },
+    "distractor:off-target": {
+      "sampled": 1598,
+      "cite_rate": 0.3141426783479349,
+      "solve_rate_when_cited": 0.043824701195219126,
+      "n_cited": 502
+    }
+  }
+}

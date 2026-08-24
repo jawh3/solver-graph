@@ -1,0 +1,185 @@
+{
+  "solve_rates": {
+    "B0": 0.2916666666666667,
+    "B2": 0.4583333333333333,
+    "outcome": 0.5,
+    "observational": 0.4166666666666667,
+    "causal": null
+  },
+  "paired": {
+    "obs_vs_outcome": {
+      "n": 24,
+      "mean_a": 0.4166666666666667,
+      "mean_b": 0.5,
+      "diff": -0.08333333333333333,
+      "ci_lo": -0.20833333333333334,
+      "ci_hi": 0.0,
+      "boot_p": 0.2368,
+      "mcnemar_p": 0.5,
+      "b01": 0.0,
+      "b10": 2.0,
+      "significant": false
+    },
+    "obs_vs_B2": {
+      "n": 24,
+      "mean_a": 0.4166666666666667,
+      "mean_b": 0.4583333333333333,
+      "diff": -0.041666666666666664,
+      "ci_lo": -0.125,
+      "ci_hi": 0.0,
+      "boot_p": 0.717,
+      "mcnemar_p": 1.0,
+      "b01": 0.0,
+      "b10": 1.0,
+      "significant": false
+    },
+    "obs_vs_B0": {
+      "n": 24,
+      "mean_a": 0.4166666666666667,
+      "mean_b": 0.2916666666666667,
+      "diff": 0.125,
+      "ci_lo": -0.08333333333333333,
+      "ci_hi": 0.3333333333333333,
+      "boot_p": 0.3196,
+      "mcnemar_p": 0.453125,
+      "b01": 5.0,
+      "b10": 2.0,
+      "significant": false
+    },
+    "B2_vs_B0": {
+      "n": 24,
+      "mean_a": 0.4583333333333333,
+      "mean_b": 0.2916666666666667,
+      "diff": 0.16666666666666666,
+      "ci_lo": -0.041666666666666664,
+      "ci_hi": 0.375,
+      "boot_p": 0.186,
+      "mcnemar_p": 0.2890625,
+      "b01": 6.0,
+      "b10": 2.0,
+      "significant": false
+    }
+  },
+  "learned_Q": {
+    "outcome": {
+      "helpful": {
+        "mean_Q": 0.2825592267907748,
+        "n": 4
+      },
+      "poison": {
+        "mean_Q": 0.18281522388606541,
+        "n": 4
+      }
+    },
+    "causal": {
+      "helpful": {
+        "mean_Q": 0.4383092630517908,
+        "n": 4
+      },
+      "poison": {
+        "mean_Q": 0.39036255802941766,
+        "n": 4
+      }
+    },
+    "observational": {
+      "poison": {
+        "mean_Q": -0.015272602431958838,
+        "n": 4
+      },
+      "helpful": {
+        "mean_Q": 0.05866369851548714,
+        "n": 4
+      },
+      "distractor": {
+        "mean_Q": -0.043560045644223715,
+        "n": 4
+      }
+    }
+  },
+  "observational": {
+    "outcome": {
+      "poison": {
+        "mean_ate": -0.1038212810061789,
+        "n": 4,
+        "std": 0.08020668717957492
+      },
+      "helpful": {
+        "mean_ate": 0.1575367969922353,
+        "n": 4,
+        "std": 0.11069255704183509
+      },
+      "distractor": {
+        "mean_ate": -0.053090026160475076,
+        "n": 4,
+        "std": 0.11728948015972358
+      }
+    },
+    "observational": {
+      "poison": {
+        "mean_ate": -0.050095446521851716,
+        "n": 4,
+        "std": 0.0900258667266701
+      },
+      "helpful": {
+        "mean_ate": 0.11606976855305337,
+        "n": 4,
+        "std": 0.07158898236772973
+      },
+      "distractor": {
+        "mean_ate": -0.06314360626021367,
+        "n": 4,
+        "std": 0.028107095433747356
+      }
+    },
+    "causal": {}
+  },
+  "compute": {
+    "causal_rerolls": 0
+  },
+  "meta": {
+    "n_eval_heldout": 8,
+    "n_train": 24,
+    "eval_seeds": 3,
+    "epochs": 5
+  },
+  "promotion": {
+    "outcome": {
+      "helpful": {
+        "promote_rate": 1.0,
+        "n": 4
+      },
+      "poison": {
+        "promote_rate": 1.0,
+        "n": 4
+      }
+    },
+    "causal_ate_outcome": {
+      "poison": {
+        "promote_rate": 0.0,
+        "n": 4
+      },
+      "helpful": {
+        "promote_rate": 1.0,
+        "n": 4
+      },
+      "distractor": {
+        "promote_rate": 0.25,
+        "n": 4
+      }
+    },
+    "causal_ate_observational": {
+      "poison": {
+        "promote_rate": 0.25,
+        "n": 4
+      },
+      "helpful": {
+        "promote_rate": 1.0,
+        "n": 4
+      },
+      "distractor": {
+        "promote_rate": 0.0,
+        "n": 4
+      }
+    }
+  }
+}

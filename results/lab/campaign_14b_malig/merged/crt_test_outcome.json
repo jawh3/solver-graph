@@ -1,0 +1,70 @@
+{
+  "dir": "results/lab/campaign_14b_malig/merged",
+  "key": "outcome",
+  "marginal": {
+    "poison": {
+      "n": 24,
+      "frac_sig_p05": 0.125,
+      "median_p": 0.6160959760059985,
+      "min_p": 0.00424893776555861
+    },
+    "malignant_wrongflag": {
+      "n": 37,
+      "frac_sig_p05": 0.05405405405405406,
+      "median_p": 0.6278430392401899,
+      "min_p": 0.016745813546613347
+    },
+    "malignant_exhaust": {
+      "n": 41,
+      "frac_sig_p05": 0.12195121951219512,
+      "median_p": 0.40939765058735317,
+      "min_p": 0.0012496875781054736
+    },
+    "malignant_destroy": {
+      "n": 39,
+      "frac_sig_p05": 0.05128205128205128,
+      "median_p": 0.5706073481629592,
+      "min_p": 0.020994751312171957
+    },
+    "helpful": {
+      "n": 19,
+      "frac_sig_p05": 0.5789473684210527,
+      "median_p": 0.016495876030992253,
+      "min_p": 0.00024993751562109475
+    }
+  },
+  "on_target": {
+    "poison": {
+      "n": 18,
+      "frac_sig_p05": 0.1111111111111111,
+      "median_p": 1.0,
+      "min_p": 0.000999750062484379
+    },
+    "malignant_exhaust": {
+      "n": 34,
+      "frac_sig_p05": 0.0,
+      "median_p": 1.0,
+      "min_p": 0.16395901024743814
+    },
+    "malignant_destroy": {
+      "n": 35,
+      "frac_sig_p05": 0.0,
+      "median_p": 1.0,
+      "min_p": 0.08847788052986753
+    },
+    "malignant_wrongflag": {
+      "n": 34,
+      "frac_sig_p05": 0.029411764705882353,
+      "median_p": 1.0,
+      "min_p": 0.02999250187453137
+    },
+    "helpful": {
+      "n": 17,
+      "frac_sig_p05": 0.5294117647058824,
+      "median_p": 0.04598850287428143,
+      "min_p": 0.00024993751562109475
+    }
+  },
+  "clip": 1e-06,
+  "n_mc": 1000
+}

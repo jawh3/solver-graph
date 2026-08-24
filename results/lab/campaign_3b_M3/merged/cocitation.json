@@ -1,0 +1,106 @@
+{
+  "n_runs": 2208,
+  "n_runs_fams_with_both": 2024,
+  "n_families_with_both": 11,
+  "cited": {
+    "cocite": 0.12837837837837837,
+    "p_hc_given_not_pc": 0.10874200426439233,
+    "displacement": -0.01963637411398604,
+    "n_pc": 148,
+    "n_not_pc": 1876,
+    "displacement_ci95": [
+      -0.07458400143817313,
+      0.03148290614712307
+    ]
+  },
+  "sampled": {
+    "cocite": 0.12745098039215685,
+    "p_hc_given_not_pc": 0.11923076923076924,
+    "displacement": -0.008220211161387617,
+    "n_pc": 204,
+    "n_not_pc": 1820,
+    "displacement_ci95": [
+      -0.05544565386382416,
+      0.03974894033953727
+    ]
+  },
+  "per_family_cited": {
+    "b32_rev_xor5a": {
+      "cocite": 0.25,
+      "p_hc_given_not_pc": 0.1534,
+      "displacement": -0.0966,
+      "n_pc": 8,
+      "n_not_pc": 176
+    },
+    "b32_rot13": {
+      "cocite": 0.0,
+      "p_hc_given_not_pc": 0.0373,
+      "displacement": 0.0373,
+      "n_pc": 23,
+      "n_not_pc": 161
+    },
+    "b32_xor5a_xor2a": {
+      "cocite": 0.0,
+      "p_hc_given_not_pc": 0.0476,
+      "displacement": 0.0476,
+      "n_pc": 16,
+      "n_not_pc": 168
+    },
+    "b64_rev_rot13": {
+      "cocite": 0.1667,
+      "p_hc_given_not_pc": 0.1024,
+      "displacement": -0.0643,
+      "n_pc": 18,
+      "n_not_pc": 166
+    },
+    "b64_rot13": {
+      "cocite": 0.0769,
+      "p_hc_given_not_pc": 0.0819,
+      "displacement": 0.0049,
+      "n_pc": 13,
+      "n_not_pc": 171
+    },
+    "b64_rot13_rev": {
+      "cocite": 0.2,
+      "p_hc_given_not_pc": 0.1676,
+      "displacement": -0.0324,
+      "n_pc": 5,
+      "n_not_pc": 179
+    },
+    "b85_rev_xor5a": {
+      "cocite": 0.4615,
+      "p_hc_given_not_pc": 0.0877,
+      "displacement": -0.3738,
+      "n_pc": 13,
+      "n_not_pc": 171
+    },
+    "b85_rot13": {
+      "cocite": 0.0,
+      "p_hc_given_not_pc": 0.1685,
+      "displacement": 0.1685,
+      "n_pc": 6,
+      "n_not_pc": 178
+    },
+    "hex_gzip": {
+      "cocite": 0.0,
+      "p_hc_given_not_pc": 0.1412,
+      "displacement": 0.1412,
+      "n_pc": 14,
+      "n_not_pc": 170
+    },
+    "hex_rev_rot13": {
+      "cocite": 0.0,
+      "p_hc_given_not_pc": 0.125,
+      "displacement": 0.125,
+      "n_pc": 16,
+      "n_not_pc": 168
+    },
+    "hex_rot13": {
+      "cocite": 0.375,
+      "p_hc_given_not_pc": 0.0714,
+      "displacement": -0.3036,
+      "n_pc": 16,
+      "n_not_pc": 168
+    }
+  }
+}

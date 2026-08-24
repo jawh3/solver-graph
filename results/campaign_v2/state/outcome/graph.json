@@ -1,0 +1,322 @@
+{
+  "graph": {
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+      {
+        "id": "true::b42c4be52c",
+        "type": "technique",
+        "canonical_name": "b64_gzip_recipe",
+        "invocation_signature": [
+          "base64",
+          "zcat",
+          "gunzip",
+          "gzip"
+        ],
+        "keywords": [
+          "base64",
+          "zcat",
+          "gunzip",
+          "gzip"
+        ],
+        "text": "Two layers: `base64 -d data.bin > x.bin`, then `gunzip -c x.bin` (the inner bytes are gzip; `file` will say 'gzip compressed').",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "helpful",
+        "_family": "b64_gzip",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.9
+        }
+      },
+      {
+        "id": "poison::b42c4be52c",
+        "type": "technique",
+        "canonical_name": "b64_gzip_wrong",
+        "invocation_signature": [
+          "base64"
+        ],
+        "keywords": [
+          "base64"
+        ],
+        "text": "It is doubly Base64-encoded: run `base64 -d` twice.",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "poison",
+        "_family": "b64_gzip",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.6
+        }
+      },
+      {
+        "id": "true::d547f27b69",
+        "type": "technique",
+        "canonical_name": "b64_rev_recipe",
+        "invocation_signature": [
+          "base64",
+          "rev",
+          "[::-1]",
+          "reverse"
+        ],
+        "keywords": [
+          "base64",
+          "rev",
+          "[::-1]",
+          "reverse"
+        ],
+        "text": "Base64 then reverse: `base64 -d data.txt` gives the flag spelled backwards; reverse it (`rev`, or `[::-1]` in python).",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "helpful",
+        "_family": "b64_rev",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.9
+        }
+      },
+      {
+        "id": "poison::d547f27b69",
+        "type": "technique",
+        "canonical_name": "b64_rev_wrong",
+        "invocation_signature": [
+          "base64"
+        ],
+        "keywords": [
+          "base64"
+        ],
+        "text": "It is doubly Base64-encoded: run `base64 -d` twice.",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "poison",
+        "_family": "b64_rev",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.6
+        }
+      },
+      {
+        "id": "true::41ec748d96",
+        "type": "technique",
+        "canonical_name": "b64_zlib_recipe",
+        "invocation_signature": [
+          "base64",
+          "python3",
+          "zlib",
+          "decompress"
+        ],
+        "keywords": [
+          "base64",
+          "python3",
+          "zlib",
+          "decompress"
+        ],
+        "text": "Base64 then raw zlib: `base64 -d`, then in python `import zlib; zlib.decompress(data)` (it is a raw zlib stream, NOT gzip, so `gunzip` will not work).",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "helpful",
+        "_family": "b64_zlib",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.9
+        }
+      },
+      {
+        "id": "poison::41ec748d96",
+        "type": "technique",
+        "canonical_name": "b64_zlib_wrong",
+        "invocation_signature": [
+          "base64",
+          "gunzip",
+          "zcat"
+        ],
+        "keywords": [
+          "base64",
+          "gunzip",
+          "zcat"
+        ],
+        "text": "Base64 of gzip: `base64 -d` then `gunzip` / `zcat`.",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "poison",
+        "_family": "b64_zlib",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.6
+        }
+      },
+      {
+        "id": "true::3bddadecbb",
+        "type": "technique",
+        "canonical_name": "b64_xor5a_recipe",
+        "invocation_signature": [
+          "base64",
+          "python3",
+          "xor",
+          "^",
+          "0x5a"
+        ],
+        "keywords": [
+          "base64",
+          "python3",
+          "xor",
+          "^",
+          "0x5a"
+        ],
+        "text": "Base64 then single-byte XOR with key 0x5A: `base64 -d`, then in python XOR every byte with 0x5A (`bytes(b ^ 0x5A for b in data)`).",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "helpful",
+        "_family": "b64_xor5a",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.9
+        }
+      },
+      {
+        "id": "poison::3bddadecbb",
+        "type": "technique",
+        "canonical_name": "b64_xor5a_wrong",
+        "invocation_signature": [
+          "base64"
+        ],
+        "keywords": [
+          "base64"
+        ],
+        "text": "Base64 then read it: just `base64 -d data.txt` and the flag is plaintext.",
+        "category": "crypto",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "poison",
+        "_family": "b64_xor5a",
+        "applicability": {
+          "categories": [
+            "crypto"
+          ],
+          "confidence": 0.6
+        }
+      },
+      {
+        "id": "distract::ad079b1688",
+        "type": "tool",
+        "canonical_name": "steghide",
+        "invocation_signature": [
+          "steghide"
+        ],
+        "keywords": [
+          "steghide"
+        ],
+        "text": "Image stego: steghide extract.",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "distractor",
+        "applicability": {
+          "categories": [
+            "misc"
+          ],
+          "confidence": 0.5
+        }
+      },
+      {
+        "id": "distract::88e4b0c07c",
+        "type": "tool",
+        "canonical_name": "binwalk",
+        "invocation_signature": [
+          "binwalk"
+        ],
+        "keywords": [
+          "binwalk"
+        ],
+        "text": "Carve files: binwalk -e.",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "distractor",
+        "applicability": {
+          "categories": [
+            "misc"
+          ],
+          "confidence": 0.5
+        }
+      },
+      {
+        "id": "distract::001b8f8a85",
+        "type": "tool",
+        "canonical_name": "exiftool",
+        "invocation_signature": [
+          "exiftool"
+        ],
+        "keywords": [
+          "exiftool"
+        ],
+        "text": "Metadata: exiftool.",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "distractor",
+        "applicability": {
+          "categories": [
+            "misc"
+          ],
+          "confidence": 0.5
+        }
+      },
+      {
+        "id": "distract::010c1820cc",
+        "type": "tool",
+        "canonical_name": "sqlmap",
+        "invocation_signature": [
+          "sqlmap"
+        ],
+        "keywords": [
+          "sqlmap"
+        ],
+        "text": "SQLi: sqlmap -u URL.",
+        "tier": "trusted",
+        "source": "seed",
+        "_truth": "distractor",
+        "applicability": {
+          "categories": [
+            "misc"
+          ],
+          "confidence": 0.5
+        }
+      }
+    ],
+    "edges": []
+  },
+  "node_to_idx": {
+    "true::b42c4be52c": 0,
+    "poison::b42c4be52c": 1,
+    "true::d547f27b69": 2,
+    "poison::d547f27b69": 3,
+    "true::41ec748d96": 4,
+    "poison::41ec748d96": 5,
+    "true::3bddadecbb": 6,
+    "poison::3bddadecbb": 7,
+    "distract::ad079b1688": 8,
+    "distract::88e4b0c07c": 9,
+    "distract::001b8f8a85": 10,
+    "distract::010c1820cc": 11
+  }
+}

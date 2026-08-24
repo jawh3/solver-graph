@@ -1,0 +1,66 @@
+{
+  "dir": "results/lab/campaign_14b_malig/merged",
+  "n_citations": 12792,
+  "by": {
+    "helpful:on-target": {
+      "sampled": 175,
+      "cite_rate": 0.9428571428571428,
+      "solve_rate_when_cited": 0.296969696969697,
+      "n_cited": 165
+    },
+    "helpful:off-target": {
+      "sampled": 133,
+      "cite_rate": 0.6842105263157895,
+      "solve_rate_when_cited": 0.0989010989010989,
+      "n_cited": 91
+    },
+    "poison:on-target": {
+      "sampled": 170,
+      "cite_rate": 0.9235294117647059,
+      "solve_rate_when_cited": 0.12101910828025478,
+      "n_cited": 157
+    },
+    "poison:off-target": {
+      "sampled": 676,
+      "cite_rate": 0.613905325443787,
+      "solve_rate_when_cited": 0.08674698795180723,
+      "n_cited": 415
+    },
+    "malignant_destroy:on-target": {
+      "sampled": 364,
+      "cite_rate": 0.978021978021978,
+      "solve_rate_when_cited": 0.008426966292134831,
+      "n_cited": 356
+    },
+    "malignant_destroy:off-target": {
+      "sampled": 1721,
+      "cite_rate": 0.5833817547937246,
+      "solve_rate_when_cited": 0.01195219123505976,
+      "n_cited": 1004
+    },
+    "malignant_exhaust:on-target": {
+      "sampled": 384,
+      "cite_rate": 0.8046875,
+      "solve_rate_when_cited": 0.012944983818770227,
+      "n_cited": 309
+    },
+    "malignant_exhaust:off-target": {
+      "sampled": 7174,
+      "cite_rate": 0.7099247281851129,
+      "solve_rate_when_cited": 0.01413705085411349,
+      "n_cited": 5093
+    },
+    "malignant_wrongflag:on-target": {
+      "sampled": 453,
+      "cite_rate": 0.024282560706401765,
+      "solve_rate_when_cited": 0.0,
+      "n_cited": 11
+    },
+    "malignant_wrongflag:off-target": {
+      "sampled": 1542,
+      "cite_rate": 0.016861219195849545,
+      "solve_rate_when_cited": 0.0,
+      "n_cited": 26
+    }
+  }
+}

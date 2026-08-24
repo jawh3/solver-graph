@@ -1,0 +1,87 @@
+{
+  "dir": "results/lab/campaign_14b_malig/merged",
+  "cond": "outcome",
+  "key": "R_final",
+  "by_label": {
+    "poison": {
+      "equal_weight_lesson_level": {
+        "ate": 0.1186977633073206,
+        "ci_lo": 0.0033299579027711336,
+        "ci_hi": 0.24904074377143257,
+        "p_one_sided": 0.020375,
+        "p_two_sided": 0.04075,
+        "n_families": 16,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": 0.14589702419255607,
+        "ci_lo": 0.016624547468490083,
+        "ci_hi": 0.27296234825748,
+        "p_one_sided": 0.011625,
+        "p_two_sided": 0.02325,
+        "n_families": 16,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_destroy": {
+      "equal_weight_lesson_level": {
+        "ate": -0.05073539247145404,
+        "ci_lo": -0.0809128831206052,
+        "ci_hi": -0.019860942775614124,
+        "p_one_sided": 0.00075,
+        "p_two_sided": 0.0015,
+        "n_families": 34,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.05179520088733975,
+        "ci_lo": -0.08347083395842912,
+        "ci_hi": -0.020948989396080368,
+        "p_one_sided": 0.0005,
+        "p_two_sided": 0.001,
+        "n_families": 34,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_exhaust": {
+      "equal_weight_lesson_level": {
+        "ate": -0.04027887049745509,
+        "ci_lo": -0.0933709189225959,
+        "ci_hi": 0.010655704318952712,
+        "p_one_sided": 0.05975,
+        "p_two_sided": 0.1195,
+        "n_families": 32,
+        "excl0_two_sided": false
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.047987783777662905,
+        "ci_lo": -0.1047071013285805,
+        "ci_hi": -0.0009583425783871742,
+        "p_one_sided": 0.021,
+        "p_two_sided": 0.042,
+        "n_families": 32,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_wrongflag": {
+      "equal_weight_lesson_level": {
+        "ate": -0.026233005506541222,
+        "ci_lo": -0.0711485584655032,
+        "ci_hi": 0.021503125901366063,
+        "p_one_sided": 0.137375,
+        "p_two_sided": 0.27475,
+        "n_families": 31,
+        "excl0_two_sided": false
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.022997655426831992,
+        "ci_lo": -0.06205888757932767,
+        "ci_hi": 0.019575368390161125,
+        "p_one_sided": 0.13675,
+        "p_two_sided": 0.2735,
+        "n_families": 31,
+        "excl0_two_sided": false
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "n_rows": 260,
+  "reference": "helpful",
+  "domain": "crypto",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "max_rounds": 8,
+  "marginal": {
+    "helpful": {
+      "n": 52,
+      "solve_rate": 0.36538461538461536,
+      "mean_rounds": 5.384615384615385,
+      "mean_commands": 4.673076923076923,
+      "wrong_flag_rate": 0.019230769230769232
+    },
+    "latent_detour": {
+      "n": 52,
+      "solve_rate": 0.40384615384615385,
+      "mean_rounds": 5.134615384615385,
+      "mean_commands": 5.423076923076923,
+      "wrong_flag_rate": 0.038461538461538464
+    },
+    "latent_search": {
+      "n": 52,
+      "solve_rate": 0.07692307692307693,
+      "mean_rounds": 7.461538461538462,
+      "mean_commands": 8.538461538461538,
+      "wrong_flag_rate": 0.0
+    },
+    "none": {
+      "n": 52,
+      "solve_rate": 0.019230769230769232,
+      "mean_rounds": 7.788461538461538,
+      "mean_commands": 7.211538461538462,
+      "wrong_flag_rate": 0.07692307692307693
+    },
+    "sibling_poison": {
+      "n": 52,
+      "solve_rate": 0.019230769230769232,
+      "mean_rounds": 7.6923076923076925,
+      "mean_commands": 6.211538461538462,
+      "wrong_flag_rate": 0.11538461538461539
+    }
+  },
+  "contrasts": [
+    {
+      "reference": "helpful",
+      "arm": "latent_detour",
+      "rounds_used": {
+        "n_pairs": 52,
+        "mean_helpful": 5.384615384615385,
+        "mean_latent_detour": 5.134615384615385,
+        "delta": -0.25,
+        "ci_low": -0.9807692307692307,
+        "ci_high": 0.5,
+        "excludes_zero": false
+      },
+      "total_commands": {
+        "n_pairs": 52,
+        "mean_helpful": 4.673076923076923,
+        "mean_latent_detour": 5.423076923076923,
+        "delta": 0.75,
+        "ci_low": -0.7115384615384616,
+        "ci_high": 2.3076923076923075,
+        "excludes_zero": false
+      },
+      "solved": {
+        "n_pairs": 52,
+        "rate_helpful": 0.36538461538461536,
+        "rate_latent_detour": 0.40384615384615385,
+        "delta": 0.03846153846153849,
+        "ci_low": -0.09615384615384616,
+        "ci_high": 0.17307692307692307,
+        "excludes_zero": false,
+        "mcnemar": {
+          "b01": 5.0,
+          "b10": 7.0,
+          "p_value": 0.7744140625
+        }
+      }
+    },
+    {
+      "reference": "helpful",
+      "arm": "latent_search",
+      "rounds_used": {
+        "n_pairs": 52,
+        "mean_helpful": 5.384615384615385,
+        "mean_latent_search": 7.461538461538462,
+        "delta": 2.0769230769230766,
+        "ci_low": 1.2884615384615385,
+        "ci_high": 2.923076923076923,
+        "excludes_zero": true
+      },
+      "total_commands": {
+        "n_pairs": 52,
+        "mean_helpful": 4.673076923076923,
+        "mean_latent_search": 8.538461538461538,
+        "delta": 3.865384615384615,
+        "ci_low": 1.8461538461538463,
+        "ci_high": 5.846153846153846,
+        "excludes_zero": true
+      },
+      "solved": {
+        "n_pairs": 52,
+        "rate_helpful": 0.36538461538461536,
+        "rate_latent_search": 0.07692307692307693,
+        "delta": -0.28846153846153844,
+        "ci_low": -0.4230769230769231,
+        "ci_high": -0.17307692307692307,
+        "excludes_zero": true,
+        "mcnemar": {
+          "b01": 15.0,
+          "b10": 0.0,
+          "p_value": 6.103515625e-05
+        }
+      }
+    },
+    {
+      "reference": "helpful",
+      "arm": "sibling_poison",
+      "rounds_used": {
+        "n_pairs": 52,
+        "mean_helpful": 5.384615384615385,
+        "mean_sibling_poison": 7.6923076923076925,
+        "delta": 2.3076923076923075,
+        "ci_low": 1.3653846153846154,
+        "ci_high": 3.25,
+        "excludes_zero": true
+      },
+      "total_commands": {
+        "n_pairs": 52,
+        "mean_helpful": 4.673076923076923,
+        "mean_sibling_poison": 6.211538461538462,
+        "delta": 1.5384615384615383,
+        "ci_low": -0.019230769230769232,
+        "ci_high": 3.0384615384615383,
+        "excludes_zero": false
+      },
+      "solved": {
+        "n_pairs": 52,
+        "rate_helpful": 0.36538461538461536,
+        "rate_sibling_poison": 0.019230769230769232,
+        "delta": -0.34615384615384615,
+        "ci_low": -0.4807692307692308,
+        "ci_high": -0.21153846153846154,
+        "excludes_zero": true,
+        "mcnemar": {
+          "b01": 18.0,
+          "b10": 0.0,
+          "p_value": 7.62939453125e-06
+        }
+      }
+    },
+    {
+      "reference": "helpful",
+      "arm": "none",
+      "rounds_used": {
+        "n_pairs": 52,
+        "mean_helpful": 5.384615384615385,
+        "mean_none": 7.788461538461538,
+        "delta": 2.4038461538461533,
+        "ci_low": 1.5769230769230769,
+        "ci_high": 3.25,
+        "excludes_zero": true
+      },
+      "total_commands": {
+        "n_pairs": 52,
+        "mean_helpful": 4.673076923076923,
+        "mean_none": 7.211538461538462,
+        "delta": 2.5384615384615383,
+        "ci_low": 0.5384615384615384,
+        "ci_high": 4.4423076923076925,
+        "excludes_zero": true
+      },
+      "solved": {
+        "n_pairs": 52,
+        "rate_helpful": 0.36538461538461536,
+        "rate_none": 0.019230769230769232,
+        "delta": -0.34615384615384615,
+        "ci_low": -0.4807692307692308,
+        "ci_high": -0.21153846153846154,
+        "excludes_zero": true,
+        "mcnemar": {
+          "b01": 18.0,
+          "b10": 0.0,
+          "p_value": 7.62939453125e-06
+        }
+      }
+    }
+  ]
+}

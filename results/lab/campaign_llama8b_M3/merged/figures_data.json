@@ -1,0 +1,240 @@
+{
+  "campaign": "campaign_llama8b_M3",
+  "theta_sweep": [
+    {
+      "theta": -0.2,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 1.0,
+      "causal_gap": 0.0
+    },
+    {
+      "theta": -0.18,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 1.0,
+      "causal_gap": 0.0
+    },
+    {
+      "theta": -0.16,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 1.0,
+      "causal_gap": 0.0
+    },
+    {
+      "theta": -0.14,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 1.0,
+      "causal_gap": 0.0
+    },
+    {
+      "theta": -0.12,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 0.9090909090909091,
+      "causal_gap": 0.09090909090909094
+    },
+    {
+      "theta": -0.1,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 0.9090909090909091,
+      "causal_gap": 0.09090909090909094
+    },
+    {
+      "theta": -0.08,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 0.9090909090909091,
+      "causal_gap": 0.09090909090909094
+    },
+    {
+      "theta": -0.06,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 1.0,
+      "causal_poison": 0.7272727272727273,
+      "causal_gap": 0.2727272727272727
+    },
+    {
+      "theta": -0.04,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.9090909090909091,
+      "causal_poison": 0.45454545454545453,
+      "causal_gap": 0.45454545454545453
+    },
+    {
+      "theta": -0.02,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.9090909090909091,
+      "causal_poison": 0.36363636363636365,
+      "causal_gap": 0.5454545454545454
+    },
+    {
+      "theta": -0.0,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.45454545454545453,
+      "causal_poison": 0.2727272727272727,
+      "causal_gap": 0.18181818181818182
+    },
+    {
+      "theta": 0.02,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.2727272727272727,
+      "causal_poison": 0.2727272727272727,
+      "causal_gap": 0.0
+    },
+    {
+      "theta": 0.04,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.2727272727272727,
+      "causal_gap": -0.1818181818181818
+    },
+    {
+      "theta": 0.06,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.18181818181818182,
+      "causal_gap": -0.09090909090909091
+    },
+    {
+      "theta": 0.08,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.18181818181818182,
+      "causal_gap": -0.09090909090909091
+    },
+    {
+      "theta": 0.1,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.0,
+      "causal_gap": 0.09090909090909091
+    },
+    {
+      "theta": 0.12,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.0,
+      "causal_gap": 0.09090909090909091
+    },
+    {
+      "theta": 0.14,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.0,
+      "causal_gap": 0.09090909090909091
+    },
+    {
+      "theta": 0.16,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.0,
+      "causal_gap": 0.09090909090909091
+    },
+    {
+      "theta": 0.18,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.0,
+      "causal_gap": 0.09090909090909091
+    },
+    {
+      "theta": 0.2,
+      "outcome_helpful": 1.0,
+      "outcome_poison": 1.0,
+      "outcome_gap": 0.0,
+      "causal_helpful": 0.09090909090909091,
+      "causal_poison": 0.0,
+      "causal_gap": 0.09090909090909091
+    }
+  ],
+  "outcome_Q_separating_theta": null,
+  "causal_ATE_separating_theta": null,
+  "forest_poison_ATE": [
+    -0.1348,
+    -0.0673,
+    -0.0642,
+    -0.0556,
+    -0.0515,
+    -0.0466,
+    -0.0204,
+    -0.0064,
+    0.0466,
+    0.0819,
+    0.0949
+  ],
+  "forest_helpful_ATE": [
+    -0.044,
+    -0.0169,
+    -0.0136,
+    -0.0106,
+    -0.0043,
+    -0.0004,
+    0.0094,
+    0.017,
+    0.0228,
+    0.0256,
+    0.2106
+  ],
+  "poison_heterogeneity": {
+    "n": 11,
+    "mean": -0.020309090909090912,
+    "sd": 0.06967236833272505,
+    "frac_below_0": 0.7272727272727273,
+    "frac_above_0": 0.2727272727272727,
+    "min": -0.1348,
+    "max": 0.0949
+  },
+  "helpful_heterogeneity": {
+    "n": 11,
+    "mean": 0.01778181818181818,
+    "sd": 0.06705548177713465,
+    "frac_below_0": 0.5454545454545454,
+    "frac_above_0": 0.45454545454545453,
+    "min": -0.044,
+    "max": 0.2106
+  }
+}

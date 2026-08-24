@@ -1,0 +1,429 @@
+% ===================================================================
+% Identifiability/detectability-power result: under the empirically
+% measured base-rate FLOOR (A1), no outcome-based estimator can isolate a
+% benign-harmful (poison) lesson; the reward channel shows no measured
+% step-detour (the conditional step contrast is reversed/null; the 2x reward ratio is an R-scale identity); a direct execution observable
+% restores a consistent estimator for a DIFFERENT, recoverable estimand.
+% Symbols match method_causal.tex: propensity pi, sampled set M, context c,
+% reward R=o(1+lambda e), SNIPW/IPW contrast widehat{ATE}.
+% Self-contained: guards amsthm envs and provides \eqd; assumes amsmath/amssymb.
+% ===================================================================
+\providecommand{\eqd}{\ensuremath{=}}  % matches main.tex's definition; kept for standalone builds
+\makeatletter
+\@ifundefined{theorem}{%
+  \newtheorem{theorem}{Theorem}%
+  \newtheorem{proposition}{Proposition}%
+  \newtheorem{lemma}{Lemma}%
+  \newtheorem{assumption}{Assumption}%
+}{}
+\@ifundefined{hypothesis}{\newtheorem{hypothesis}{Hypothesis}}{}
+\makeatother
+
+\subsection{When can outcomes isolate a harmful lesson? An identifiability
+result}\label{sec:identifiability}
+
+The causal-credit estimators of \S\ref{sec:obs}--\S\ref{sec:onl} measure each
+lesson's marginal effect on reward. A natural hope is that the \emph{same} signal
+that surfaces a genuinely useful lesson will, with the sign flipped, surface a
+\emph{benign-harmful} one---a lesson that is causally wrong but not actively
+destructive (our ``poison'': it names a wrong tool the agent runs and then recovers
+from). \S\ref{sec:results2} shows the outcome signal does not: helpful lessons are
+detected at every capability rung, while on the binary solve the poison effect is a
+clean null at 3B/7B/Llama-8B and only a small negative at 14B/32B (mildly \emph{below}
+the floor at 32B) that the assumption-light leave-one-out gold standard cannot rank.
+This subsection explains \emph{why}, under a model whose premises we measure directly
+and report honestly where the measurement only \emph{approximately} holds. The content
+is \emph{not} the trivial algebra that a floor-equalized contrast is zero---that is one
+line---but its consequence for an entire \emph{class} of estimators: under the measured
+floor every consistent outcome-based inverse-propensity/AIPW estimator converges to zero
+against on-target poison---any test built on one has trivial asymptotic power---so the
+binary outcome cannot identify it. (A naive ``exact''
+conditional-randomization test does not rescue this: as implemented it is
+\emph{anti-conservative} for top-$m$ retrieval and \emph{blind} on our positive control,
+so it is non-diagnostic here; we demote it to a one-line disclosure below.) We then
+examine the reward channel and a direct execution observable that restores a consistent
+estimator for a related, recoverable target. This is an
+\emph{identifiability/detectability-power} statement under a stated, empirically checked
+(at 32B only approximately satisfied) model---a domain-specific identification boundary,
+\emph{not} a universal impossibility, and \emph{not} a ``harm vanishes as the base rate
+vanishes'' law (which our data do not support at the powered rungs; see ``Reconcile with
+data'', where we also report the one rung that runs the other way).
+
+\paragraph{Setup and symbols.} Fix a challenge \emph{family} $f$ (a transport-encoded
+challenge class; \S\ref{sec:method}) and a retrieval context $c$ (the bandit's
+coarsened key, a category/cluster). Let the binary outcome $o\in\{0,1\}$ be a
+verifiable solve and $R=o\,(1{+}\lambda e)$ the step-efficiency reward of
+\S\ref{sec:obs}, with $e$ the standardized step-count term. Define the family
+\emph{base solve rate} $b_f \eqd \Pr(o\eqd1\mid f,\ \text{no on-target recipe cited})$;
+empirically we estimate $b_f$ per family as the solve rate of runs in which \emph{no}
+on-target recipe is cited (the arm-0 rate of the A1 contrast); the off-target-\emph{cited}
+solve rate is close but not identical (gaps up to ${\approx}0.03$--$0.06$ depending on
+rung and weighting), and we use $b_f$ throughout. For an \emph{on-target}
+helpful lesson $v$ (recipe matches family $f$) write
+$h_f \eqd \Pr(o\eqd1\mid f, v\text{ helpful, cited})$. As in \S\ref{sec:obs},
+$\pi_i(v)$ is the logged marginal inclusion propensity of $v$ on run $i$
+(Monte-Carlo from the softmax scores), $M_i$ the sampled set ($|M|{=}3$ in the lab
+campaigns), and $\widehat{\mathrm{ATE}}(v\mid c)$ the SNIPW/IPW contrast of
+Eq.~\eqref{eq:snipw} with $\mathrm{ATE}(v\mid f)$ its population estimand: the per-lesson
+average treatment effect of \emph{including} $v$ in the retrieved set, on a target ($o$
+or $R$), within family $f$. Two variants appear below and \emph{neither} conditions on citation:
+the \emph{on-target} contrast restricts the run set to challenges of $v$'s own family
+(family is pre-treatment, so this is a conditional ATE, not a selection effect), while the
+\emph{marginal-inclusion} contrast pools over all families---over the off-target
+retrievals a deployed memory also makes. The shift between them is by
+family-stratification of the same logs. The one citation-conditioned statistic in this
+paper is A\ref{asm:floor}'s own contrast (poison-cited vs.\ no-recipe), a different
+estimator. ``Cited'' means the lesson's tool/technique
+signature appears in the executed
+trajectory (action-grounded; \S\ref{sec:method}).
+
+\paragraph{The model: two premises, measured (A1 exact at three rungs, above-floor at 3B, approximate at 32B).}
+
+\begin{assumption}[Outcome-level base-rate floor for benign-wrong lessons]\label{asm:floor}
+When an on-target \emph{poison} lesson is cited, it contributes no usable progress
+\emph{to the outcome}: the run's solve-probability collapses to the no-recipe one,
+\[
+\Pr(o\eqd1\mid f,\ v\text{ poison, cited}) \;=\; b_f .
+\]
+Executing a benign-wrong recipe is, \emph{for the binary outcome}, equivalent to
+executing no recipe---the agent falls back on its own priors and recovers (or not) at
+the base rate. This constrains $o$ only, not the step count (see
+Hypothesis~\ref{asm:steps}). \emph{Empirical check (family-stratified contrast, all five
+rungs).} The declared estimator is the within-family contrast poison-cited$-b_f$. It
+includes $0$ at three rungs---7B $\AOneSevenB{}$, CI $\AOneCISevenB{}$; 14B
+$\AOneFourteenB{}$, CI $\AOneCIFourteenB{}$; Llama-8B $\AOneLlamaB{}$, CI
+$\AOneCILlamaB{}$---so A\ref{asm:floor} is not distinguishable from exact there (point estimates 7B
+$\AOneSevenB{}$, 14B $\AOneFourteenB{}$, Llama-8B $\AOneLlamaB{}$). At 3B it does \emph{not}:
+the contrast is $\AOneThreeB{}$, CI $\AOneCIThreeB{}$, a small deviation \emph{above}
+the floor. We state this plainly because it cuts \emph{for} the result rather than
+against it: an above-floor deviation is not hidden harm---it leaves $s_f\eqd0$ in
+Prop.~\ref{prop:poison}, and a consistent outcome estimator would converge at 3B to a
+small \emph{positive}, ranking cited poison mildly \emph{helpful}, which sharpens rather
+than weakens the non-identification. (The unstratified marginals agree the rates are
+close---3B $0.097$ vs.\ $0.072$; 7B $0.091$ vs.\ $0.099$; 14B $0.194$ vs.\ $0.195$;
+Llama-8B $0.077$ vs.\ $0.064$---but the stratified contrast is the statistic we
+report.) At 32B A\ref{asm:floor} is \emph{mildly violated in the harmful direction}: the
+contrast is $\AOneThirtyTwoB{}$, CI $\AOneCIThirtyTwoB{}$ (excludes $0$; $n{=}38$
+families)---a small \emph{sub-floor} harm of $\le{\sim}4$pp, the same \emph{on-target} (family-restricted) phenomenon as the
+full-exposure ($M{=}1$) on-target sub-floor of \S\ref{sec:results2} ($-0.0745$, $p<.001$;
+the marginal-inclusion ATE stays null at every $M$). We therefore restate A1 as \emph{exact at deployed
+$M$ for 7B/14B/Llama-8B, above-floor at 3B, and approximate ($|$sub-floor$|\le4$pp) at
+32B}, and read the result's exact-zero statement as the small-sub-floor limit, not a claim
+of ``no sub-floor harm anywhere.''%
+\footnote{Cite rates and the $A1$ contrast trace to the high-$n$ powered campaigns
+(\texttt{campaign\_14b\_M3\_powered} and \texttt{campaign\_32b\_M3\_tp2}, \texttt{merged/a1\_contrast.json},
+$n{\approx}15.6$k at 14B); the ladder ATEs below are from the same campaigns.}
+\end{assumption}
+
+\begin{assumption}[Near single-item retrieval: little helpful mass to displace]\label{asm:single}
+In the analyzed regime, on-target citation is effectively single-item per family: when
+poison is cited it rarely crowds a \emph{helpful} on-target lesson out of the executed
+context within the same run. Formally the helpful-displacement probability
+$\delta_f \eqd \Pr(\text{a helpful on-target lesson is displaced}\mid v\text{ poison
+cited}, f)$ is small. We treat $\delta_f\to0$ as the \emph{limit} in which the result's exact-zero statement holds; the finite-$\delta_f$ residue is governed by
+Prop.~\ref{prop:poison}, not by Prop.~\ref{thm:main}. \emph{Empirical check (and
+caveat):} the campaigns sample $|M|{=}3$, so single-item-ness is not automatic; its
+justification is empirical: although each family plants both a helpful and a poison
+on-target lesson, the two are rarely cited in the same run (measured co-citation
+$0.04$--$0.13$ across rungs), so on-target
+helpful and on-target poison rarely co-occur for the \emph{same} $f$. The directly-measured
+co-citation displacement is small at every rung ($\widehat\delta_f$
+\DeltaHatThreeB{}/\DeltaHatSevenB{}/\DeltaHatFourteenB{}/\DeltaHatThirtyTwoB{}/%
+\DeltaHatLlamaB{} at 3B/7B/14B/32B/Llama-8B; negative at 3B, i.e.\ displacement in the
+other direction), consistent with near single-item retrieval; the decomposition below uses
+the 14B and 32B values; we use this
+\emph{measured} $\widehat\delta_f$ (not a back-fit) in the decomposition below. The high
+follow/cite rates ($0.76$--$1.0$ across rungs and labels, mostly ${\ge}0.90$) are
+necessary but not by themselves sufficient
+evidence for small $\delta_f$; the co-citation rate is the quantity that directly bounds it.
+\end{assumption}
+
+\noindent A\ref{asm:floor} is the load-bearing, separately measured premise;
+A\ref{asm:single} delimits scope. Under genuinely multi-item retrieval poison
+\emph{can} harm, but only by displacing helpful mass, and that harm is bounded
+(Prop.~\ref{prop:poison}); A\ref{asm:single} is the small-$\delta_f$ limit of that
+channel. We do \emph{not} assume the reward is floor-equalized: the step channel is
+handled explicitly in Hypothesis~\ref{asm:steps} and Prop.~\ref{prop:poison}.
+
+\paragraph{Identification of helpful lessons.}
+\begin{proposition}[Helpful lessons are identified by outcomes]\label{prop:helpful}
+For an on-target helpful lesson, $\mathrm{ATE}(v\mid f)=h_f-b_f>0$ whenever
+$h_f>b_f$. Under propensities bounded into $[\epsilon,1{-}\epsilon]$ in the analyzed
+cells (overlap, enforced by the exploration floor and the ESS/clip guards of
+\S\ref{sec:obs}), $\widehat{\mathrm{ATE}}(v\mid c)$ is consistent for this contrast,
+which is large and significant in the data (\S\ref{sec:results2}: $+0.195$ to $+0.570$
+across rungs, all $p<.001$).
+\end{proposition}
+\begin{proof}[Proof sketch]
+Citation is a stochastically assigned treatment with known propensity $\pi_i(v)$, so
+the SNIPW contrast of Eq.~\eqref{eq:snipw} is a H\'ajek estimator of the
+treated/control mean difference, consistent under overlap and bounded $R$; under
+A\ref{asm:single} its estimand on $o$ is $h_f-b_f$. When $h_f>b_f$ the treated reward
+law is stochastically distinct from control, so the SNIPW contrast separates from $0$
+at a rate growing with the run count.
+\end{proof}
+
+\paragraph{Non-identification of benign-harmful lessons from the outcome.}
+We first isolate the trivial algebra, then state the substantive (estimator-class)
+content.
+
+\begin{lemma}[Floor-equalized outcome contrast]\label{lem:zero}
+Under A\ref{asm:floor}--A\ref{asm:single}, the population on-target poison effect
+\emph{on the binary outcome} is exactly zero:
+$\mathrm{ATE}_{o}(v\mid f)=b_f-b_f=0$.
+\end{lemma}
+
+\begin{proposition}[Outcome powerlessness against benign-wrong lessons, under A\ref{asm:floor} (exact at 7B/14B/Llama-8B, above-floor at 3B, approximate at 32B)--A\ref{asm:single}]\label{thm:main}
+Under A\ref{asm:floor}--A\ref{asm:single}, the treated and control \emph{outcome} laws
+coincide, $o\perp\!\!\!\perp \mathbf 1\{v\in M\}\mid f$. Consequently \emph{every}
+consistent outcome-based estimator---SNIPW or AIPW/DR keyed on $o$---converges to $0$
+(Lemma~\ref{lem:zero}): no outcome-based procedure can distinguish a benign-wrong lesson
+from an inert one. Equivalently, the harm of
+a benign-wrong on-target lesson is \emph{not identifiable from the binary verifiable
+outcome of single trajectories}. The substantive content is this powerlessness of the
+whole estimator class, not the one-line zeroing of the contrast. (An idealized exact
+randomization test keyed on $o$ would likewise have uniform $p$ under this law-equality;
+we do \emph{not} lean on it, because the test \emph{as implemented} is anti-conservative
+for top-$m$ sampling-without-replacement---see the CRT disclosure under ``Reconcile with
+data.'')
+\end{proposition}
+\begin{proof}[Proof sketch]
+By A\ref{asm:floor} the cited-poison outcome distribution equals the no-recipe one
+(A\ref{asm:floor} governs \emph{cited} poison; a sampled-but-uncited poison executes no
+recipe and so also follows the no-recipe law, and on-target cite rates are
+$0.76$--$0.99$, so the cited/included gap carries little outcome mass);
+by A\ref{asm:single} the control side carries no displaced helpful mass, so the
+treated and control outcome laws are identical, $o\perp\!\!\!\perp\mathbf
+1\{v\in M\}\mid f$. Any consistent estimator of a functional of two coinciding laws
+converges to that functional at equality, namely $0$ (Lemma~\ref{lem:zero}); the
+SNIPW/AIPW contrasts on $o$ are such functionals. The only realizable outcome-level
+poison effect is the displacement term of Prop.~\ref{prop:poison}, which A\ref{asm:single}
+sends to $0$, plus the small measured sub-floor residue at 32B (A\ref{asm:floor}).
+\emph{This result governs $o$ only}; the reward channel is
+Prop.~\ref{prop:poison}/Hypothesis~\ref{asm:steps}. \end{proof}
+
+\paragraph{The reward channel is not a clean null: a step-detour penalty.}
+A\ref{asm:floor} equalizes the outcome but says nothing about \emph{steps}. Because
+$R=o(1{+}\lambda e)$ also reads the standardized step count $e$, the reward can carry
+signal the outcome cannot.
+
+\begin{hypothesis}[Conditional step law---not a measured premise]\label{asm:steps}
+One might hope the cited-poison step-count law differs from the no-recipe law (a detour
+through the wrong tool costing steps), which would let the \emph{reward}
+$R=o(1{+}\lambda e)$ carry signal the binary outcome cannot. We flag this only as a
+\emph{hypothesis}; the directly measured contrast does \emph{not} support it.
+\emph{Empirical check (against the hypothesis):} the on-target poison \emph{reward} ATE
+is $1.7$--$2.1\times$ the outcome ATE (14B $-0.119$; 32B $-0.106$, vs.\ outcome
+$-0.057$/$-0.064$), but this ratio is an \emph{$R$-scale identity}, not a
+treated-side detour---the same ratio holds for \emph{helpful} lessons (14B $2.12$ vs
+poison $2.09$) and reflects $R$'s amplification of the displacement of \emph{fast}
+helpful solves. The direct conditional step contrast (solved runs, poison-cited vs
+no-recipe, family-weighted) does not support it either, but we report all five rungs
+because they do not agree: $\StepDetourThreeB{}$ $\StepDetourCIThreeB{}$ (3B),
+$\StepDetourSevenB{}$ $\StepDetourCISevenB{}$ (7B), $\StepDetourFourteenB{}$
+$\StepDetourCIFourteenB{}$ (14B, \emph{reversed}---poison-cited solves are faster, the
+one rung whose CI excludes $0$), $\StepDetourThirtyTwoB{}$ $\StepDetourCIThirtyTwoB{}$
+(32B), $\StepDetourLlamaB{}$ $\StepDetourCILlamaB{}$ (Llama-8B). Three of the five point
+\emph{toward} a step detour and none of those three excludes $0$; the largest of them
+(Llama-8B) also shows a censoring signature (late-solve fraction $0.500$ vs.\ $0.325$),
+whereas the 14B reversal does not ($0.391$ vs.\ $0.434$). The honest summary is that the
+step channel is \emph{uninformative} at this corpus and these sample sizes---not that it
+refutes the hypothesis.
+We therefore do \emph{not} claim a measured step-detour penalty. One defense of the
+hypothesis was that our corpora contain no longer-route (latent) poison, so the contrast
+above is off-target. Appendix~\ref{app:latent} narrows that defense: it \emph{constructs}
+such a poison---bit-identical output, strictly longer prescribed route---so the mode is no
+longer merely hypothetical, and it reports that the agent does execute the longer route
+($\GtwoMechDetourPad{}$ of traces) while the executed-command trace shows a cost landing in
+operations packed per issued command---a channel $e$, which counts \emph{rounds},
+does not read. That probe does \emph{not} measure the step cost: its round budget censors half its
+helpful and detour runs, so its marginal round contrast is confounded with solve status
+(corr $\GtwoDetourCorrRS{}$) and it has no positive control validated for the round
+channel. The hypothesis therefore remains open and untested against its target mode; what
+has changed is that the construction now exists, so it \emph{can} be tested.
+\end{hypothesis}
+
+\begin{proposition}[Poison's realizable outcome harm: displacement plus sub-floor]\label{prop:poison}
+Relaxing A\ref{asm:single} to allow displacement with probability $\delta_f$, and
+A\ref{asm:floor} to allow a sub-floor deviation $s_f\ge0$ (measured $0$ at
+3B/7B/Llama-8B---3B's deviation is \emph{above} the floor and so contributes no sub-floor
+term---with small point estimates of $0.012$ at 14B and $0.040$ at 32B, the values we plug
+in below), the on-target poison \emph{outcome} harm obeys
+\[
+\bigl|\mathrm{ATE}_{\mathrm{harm},o}(v\mid f)\bigr|\;\le\;(h_f-b_f)\,\delta_f + s_f
+\;\le\;(1-b_f)\,\delta_f + s_f ,
+\]
+i.e.\ the displacement term is the \emph{helpful lift} that poison crowds out, not a
+function of $b_f$ alone, and the bound reduces to $s_f$ as $\delta_f\to0$. This is the
+entire realizable outcome harm in our
+data; both terms are small and neither is a base-rate gradient. On the \emph{reward}, any
+separate step-channel term would require the step-detour of Hypothesis~\ref{asm:steps},
+which the data do \emph{not} support---the measured step contrast is uninformative
+(reversed at 14B, null elsewhere, three of five rungs pointing the other way without
+significance)---so we claim no additional reward-channel harm, while noting that a null
+step channel is an absence of evidence here rather than evidence of absence.
+\end{proposition}
+\begin{proof}[Proof sketch]
+Citing poison changes $o$ only by replacing a helpful recipe (which would have lifted
+the floor toward $h_f$) with a non-reaching one (which returns to $b_f$); the lost
+mass per displacement event is the forgone helpful lift $h_f-b_f$, so the displacement
+harm is $-(h_f-b_f)\delta_f$, bounded in magnitude by $(1-b_f)\delta_f$; the measured
+sub-floor deviation of A\ref{asm:floor}'s restatement enters additively as $s_f$. The
+reward channel adds no established term: the measured step contrast does not support
+Hypothesis~\ref{asm:steps} and is too uninformative to establish one. \end{proof}
+
+\paragraph{What restores identification (a different, recoverable estimand).}
+\begin{proposition}[Execution verification escapes the floor and identifies recipe validity]\label{thm:recovery}
+Introduce the deterministic execution observable
+\[
+o_{\mathrm{exec}} \;\eqd\; \mathbf 1\!\left\{
+\begin{array}{@{}l@{}}
+\text{the cited recipe, re-run in isolation,}\\
+\text{executes and yields a well-formed flag}
+\end{array}\right\}.
+\]
+A benign-wrong recipe has $o_{\mathrm{exec}}\eqd0$ \emph{by construction}; a helpful
+recipe has $o_{\mathrm{exec}}\eqd1$. Because $o_{\mathrm{exec}}$ is a deterministic
+function of the recipe and does \emph{not} marginalize over the agent's recovery path,
+it is outside A\ref{asm:floor}'s scope (A\ref{asm:floor} constrains only the run
+outcome $o$): the credited signal is the recipe's own success, which
+separates poison from helpful with probability $1$ regardless of $b_f$. Conditioning
+credit on $o_{\mathrm{exec}}$ therefore yields a consistent, correctly-signed estimator
+for the target it measures even under A\ref{asm:floor}--A\ref{asm:single}.
+\emph{Caveat on estimand:} $o_{\mathrm{exec}}$ identifies \emph{recipe validity} (a
+property of the lesson in isolation), \emph{not} the citation-ATE on run reward that
+Prop.~\ref{thm:main} declared non-identifiable from outcomes. These are different,
+complementary targets; the point is that recipe validity is recoverable and is the
+right instrument for flagging poison.
+\end{proposition}
+\begin{proof}[Proof sketch]
+A\ref{asm:floor} held only because the run \emph{outcome} marginalizes over the
+recovery path, equating cited poison with no recipe. $o_{\mathrm{exec}}$ isolates the
+recipe and reads its direct effect: $0$ for a non-reaching poison recipe, $1$ for a
+reaching helpful one, for any $b_f$. Hence
+$o_{\mathrm{exec}}\not\perp\!\!\!\perp\{v\text{ poison}\}\mid f$, the law-equality that
+drove Prop.~\ref{thm:main} fails, and the contrast on $o_{\mathrm{exec}}$ has a
+nonzero estimand any consistent contrast recovers. \emph{Empirical check
+(construction-guaranteed---the benchmark builds non-reaching poison recipes, so this is a
+deployable contrast on recipe validity, not a measured generalization):} the verifier
+flags poison on $100\%$ and false-flags helpful on $0\%$ of $35$ benign families (and the
+same $100/0$ separation replicates on the $41$-family 14B malignant set).
+\emph{Scope of $o_{\mathrm{exec}}\eqd0$:} that a benign-wrong recipe fails to yield a
+well-formed flag is a property of \emph{this} construction and of a domain admitting a
+per-output validity oracle (here the \texttt{picoCTF\{\}} predicate), not of benign-wrong
+recipes in general. On a separate author-built SQLite domain---distinct from the
+\texttt{campaign\_sql\_14b} domain of \S\ref{sec:disc}---which admits no such oracle,
+$27.8\%$ of sibling-poison recipes are \emph{accepted outright} by the same verifier,
+input-sensitivity included ($n\eqd\GoneSqlN{}$; artifact listed in
+Appendix~\ref{app:repro}). The $100/0$ separation above is therefore a property of the
+crypto construction and its oracle. \end{proof}
+
+\paragraph{Reconcile with data.} The model reproduces every salient pattern in
+\S\ref{sec:results2}---some as built-in consistency (its premises were measured on the
+same campaigns), and three as over-identifying checks that falsify a cruder ``harm
+shrinks with the base rate'' story. \emph{(Helpful identified, larger at higher capability.)}
+Prop.~\ref{prop:helpful} predicts a positive, detectable helpful effect; the observed
+on-target helpful solve ATEs are $+0.247/{+}0.195/{+}0.526/{+}0.570/{+}0.227$ across
+3B/7B/14B/32B/Llama-8B (all $p<.001$, SNIPW CIs excluding $0$), and the lift $h_f-b_f$
+tends to grow with capability (non-monotonically---a 7B dip, a lower Llama-8B rung) as
+more capable solvers both raise $h_f$ and execute recipes more reliably (cite/follow
+rates rising toward $1.0$). \emph{(Poison outcome non-identified.)}
+The on-target nulls at 3B/7B/Llama
+($+0.021$, $p{=}.68$; $-0.005$, $p{=}.82$; $-0.003$, $p{=}.75$) restate
+A\ref{asm:floor}'s own empirical check on the same campaigns, so we count them as
+consistency, not independent confirmation; the marginal-inclusion nulls are a
+different estimand ($-0.011$, $p{=}.45$; $+0.010$, $p{=}.42$; $-0.008$, $p{=}.49$; all
+CIs include $0$), but a \emph{qualified} check: pooled over
+off-target retrievals the same estimator is non-significant on \emph{helpful} at 3B
+($\MateHelpSolveThreeB{}$, $p{=}\MateHelpSolveThreeBP{}$) and Llama-8B
+($\MateHelpSolveLlamaB{}$, $p{=}\MateHelpSolveLlamaBP{}$), against
+$\MateHelpSolveSevenB{}$/$\MateHelpSolveFourteenB{}$/$\MateHelpSolveThirtyTwoB{}$ at
+7B/14B/32B, so at two of those three rungs it cannot see a lesson we know is large
+on-target, and a poison null
+there is guaranteed. At 14B it \emph{does} have demonstrated power on this estimand: a
+pre-registered ordinary-noise control that rides along in the same campaign
+(category-matched crypto lessons that are sampled but can never match a trace signature;
+$n\eqd4264$ runs) reads on-target $+0.015$, $p{=}.65$ as predicted, but
+\emph{marginal-inclusion} $-0.018$, CI $[-0.029,-0.008]$, $p{=}.001$ over $41$ families.
+The marginal estimator therefore sees ordinary context clutter at this scale in the very
+cell where it reads poison null, which strengthens rather than weakens that null. We still
+do not treat the poison marginals as independent confirmation---and at 14B/32B the small negatives are not rankable per-item against the
+assumption-light leave-one-out gold standard (within-poison rank correlation $\approx0$,
+mean marginal CI including $0$; \S\ref{sec:results2})---it is the gold standard's
+inability to rank, not a randomization test, on which we rest the non-identifiability.
+\emph{(Three facts a base-rate story cannot explain.)} (i) The harm does \emph{not} track the
+family base rate at four of the five rungs (Spearman$(b_f,\text{poison ATE})$: 14B
+$\SpearPoisonFourteenB{}$, $p{=}\SpearPoisonPFourteenB{}$, $n{=}\SpearPoisonNFourteenB{}$;
+32B $\SpearPoisonThirtyTwoB{}$, $p{=}\SpearPoisonPThirtyTwoB{}$,
+$n{=}\SpearPoisonNThirtyTwoB{}$; 7B $\SpearPoisonSevenB{}$,
+$p{=}\SpearPoisonPSevenB{}$, $n{=}\SpearPoisonNSevenB{}$; Llama-8B
+$\SpearPoisonLlamaB{}$, $p{=}\SpearPoisonPLlamaB{}$, $n{=}\SpearPoisonNLlamaB{}$); only
+the 14B and 32B cells are powered. The exception is 3B, where the gradient \emph{is}
+significantly negative ($\SpearPoisonThreeB{}$, $p{=}\SpearPoisonPThreeB{}$,
+$n{=}\SpearPoisonNThreeB{}$)---and we note the Llama-8B cell running the other way rests
+on a comparable $n{=}\SpearPoisonNLlamaB{}$; we report it rather than rest on the powered rungs
+alone. The powered-rung nulls are predicted, because by Lemma~\ref{lem:zero} the population outcome
+harm is $0$ independent of $b_f$, and by Prop.~\ref{prop:poison} the only residue scales
+with the \emph{helpful lift} and $\delta_f$, not with $b_f$. (ii) The small significant \emph{on-target} (family-restricted)
+negatives at 14B/32B ($-0.057$, $p{<}.001$, CI $[-0.087,-0.022]$; $-0.064$, $p{=}.005$, CI $[-0.109,-0.018]$) are quantitatively
+reconstructed by a \emph{measured} two-component decomposition---displacement of the
+helpful lift plus the small sub-floor---using the directly-measured co-citation
+$\widehat\delta_f$ (not a back-fit): $-[(h_f-b_f)\widehat\delta_f + \mathrm{subfloor}_f]$
+gives $-[0.526{\cdot}0.062 + 0.012] = -0.045$ at 14B (within the CI of the observed
+$-0.057$) and $-[0.570{\cdot}0.050 + 0.040] = -0.069$ at 32B (vs.\ observed $-0.064$, almost
+exact). The measured displacement term alone covers $\approx57\%$ (14B) / $\approx44\%$
+(32B) of the point estimate, the sub-floor the rest---so the residue is
+displacement-plus-sub-floor, \emph{not} a base-rate gradient. These cells are the
+finite-$\delta_f$ regime of Prop.~\ref{prop:poison}, \emph{not} Lemma~\ref{lem:zero}'s
+exact-zero limit. (iii) Poison ``solve $\mid$ cited'' is at the
+floor at 7B/14B/Llama-8B, mildly \emph{above} it at 3B, and mildly \emph{below} it at
+32B ($\AOneThirtyTwoB{}$, CI
+$\AOneCIThirtyTwoB{}$): consistent with A\ref{asm:floor} as restated (exact at three rungs,
+$\le4$pp sub-floor at 32B), the same small sub-floor harm as the $M{=}1$ rival of
+\S\ref{sec:results2}. \emph{(A reward ``$2\times$'' that is an identity, not a detour.)}
+The on-target poison \emph{reward} ATE is $1.7$--$2.1\times$ the outcome ATE (14B $-0.119$, $2.1\times$; 32B
+$-0.106$), but the \emph{same} $2\times$ holds for helpful lessons ($2.12$ vs.\ $2.09$) and
+the direct conditional step contrast is uninformative at all five rungs (Hypothesis~\ref{asm:steps}), so
+this is an $R$-scale identity, not a measured step-detour. Finally the recovery
+(Prop.~\ref{thm:recovery}) matches the $100\%/0\%$ verifier separation.
+
+\paragraph{The randomization test, disclosed and demoted.} An earlier draft leaned on an
+``exact'' conditional-randomization test (CRT) keyed on $o$ as assumption-light
+corroboration. We retract that reliance. The independent-Bernoulli CRT is
+\emph{anti-conservative} for top-$m$ sampling-without-replacement (measured Type-I
+$0.11$ at 14B / $0.17$ at 32B against nominal $0.05$), is \emph{underpowered} (power
+$0.38$--$0.44$ for a $-0.057$ effect), and is \emph{blind} on our positive control (it
+returns frac-sig $0.000$ even on genuinely destructive destroy/exhaust harm). It is
+therefore non-diagnostic here and we use it for nothing: helpful identification rests on
+the SNIPW magnitude, and poison non-identifiability on the leave-one-out gold standard's
+inability to rank.
+
+\paragraph{Scope and honesty.} This is an identification/power result \emph{under}
+A\ref{asm:floor} (measured; exact at three rungs, above-floor at 3B, $\le4$pp-approximate at 32B) and
+A\ref{asm:single} (scope-delimiting); H\ref{asm:steps} is a \emph{hypothesis} the step
+data neither support nor refute, not a premise we use. It is specific to benign-wrong (non-reaching)
+lessons under near single-item retrieval. The content is its consequence for the entire
+class of \emph{consistent outcome-based estimators}, not the trivial zeroing of one
+contrast. It does \emph{not} claim harm is always zero (Prop.~\ref{prop:poison} gives the
+displacement channel, and there is a measured $\le4$pp sub-floor at 32B and at $M{=}1$),
+and does \emph{not} claim outcomes can never detect poison in richer regimes: actively
+destructive lessons that push outcomes \emph{below} $b_f$ violate A\ref{asm:floor} and
+\emph{are} detected (the positive control). It says: in this measured regime, the
+benign-wrong lesson's per-item harm is not identifiable from the binary verifiable
+outcome, so outcome-based credit is the wrong instrument, and a direct execution
+observable (recipe validity) is the right one. Generality is bounded: the capability
+ladder is Qwen 3B--32B; the only non-Qwen rung not harness-floored is Llama-3.1-8B
+(Gemma-27B, Mistral-7B/24B, and InternLM-7B probes floored at $n\le3$), so ``across
+architecture'' here means one architecture.
+
+\noindent\textbf{Falsifier:} Exhibit an on-target benign-wrong (recovered-from) lesson
+whose cited solve rate is detectably \emph{below} $b_f$ by materially more than the
+$\le4$pp the 32B cell already shows (a large sub-floor harm would refute A\ref{asm:floor}),
+or an outcome-based estimator that \emph{ranks} the per-item poison effect in agreement
+with the leave-one-out gold standard (which would refute the non-identifiability). A small
+reward ATE with a null/at-floor outcome, as at 14B/32B, is an $R$-scale identity, not a
+falsifier. For the reward channel specifically, exhibit a longer-route (latent) poison whose route
+cost is measurable in the reward's accounting unit. Appendix~\ref{app:latent} constructs
+such a poison and finds the cost visible in the executed-command trace but not in rounds;
+its design cannot resolve whether a round cost exists, so this falsifier is open and now
+has an instrument to be attempted on.

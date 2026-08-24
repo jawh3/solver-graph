@@ -1,0 +1,60 @@
+{
+  "dir": "results/lab/campaign_14b_malig_expand/merged",
+  "cond": "outcome",
+  "n_runs": 5096,
+  "base": 0.027071563088512243,
+  "min_cited": 10,
+  "arms": {
+    "destroy": {
+      "n_sampled": 474,
+      "n_cited": 467,
+      "follow_rate": 0.9852320675105485,
+      "solve_when_cited": 0.010706638115631691,
+      "base": 0.027071563088512243,
+      "delta": -0.01636492497288055,
+      "delta_ci95": [
+        -0.025526931320226313,
+        -0.005113901888584334
+      ]
+    },
+    "exhaust": {
+      "n_sampled": 467,
+      "n_cited": 373,
+      "follow_rate": 0.7987152034261242,
+      "solve_when_cited": 0.00804289544235925,
+      "base": 0.027071563088512243,
+      "delta": -0.01902866764615299,
+      "delta_ci95": [
+        -0.02815322479147971,
+        -0.008941254107166986
+      ]
+    },
+    "wrongflag": {
+      "n_sampled": 460,
+      "n_cited": 11,
+      "follow_rate": 0.02391304347826087,
+      "solve_when_cited": 0.0,
+      "base": 0.027071563088512243,
+      "delta": -0.027071563088512243,
+      "delta_ci95": [
+        -0.03170237135706105,
+        -0.02232521546309546
+      ]
+    }
+  },
+  "gate": {
+    "destroy": {
+      "pass": true,
+      "n_cited": 467,
+      "delta": -0.01636492497288055,
+      "follow_rate": 0.9852320675105485
+    },
+    "exhaust": {
+      "pass": true,
+      "n_cited": 373,
+      "delta": -0.01902866764615299,
+      "follow_rate": 0.7987152034261242
+    }
+  },
+  "gate_pass": true
+}

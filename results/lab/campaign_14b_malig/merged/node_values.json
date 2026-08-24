@@ -1,0 +1,1082 @@
+{
+  "poison::27f05ce3d5": {
+    "label": "poison",
+    "family": "hex_xor2a",
+    "outcome_Q": 0.39269156837381974,
+    "causal_ATE": -0.06400334697182014
+  },
+  "malignant_exhaust::7cd1bcfff1": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.10806366803300417
+  },
+  "true::2d20a191db": {
+    "label": "helpful",
+    "family": "hex_gzip",
+    "outcome_Q": 0.5524041501618874,
+    "causal_ATE": 0.859172051404687
+  },
+  "malignant_wrongflag::8b9f840fb1": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.010266835158807306
+  },
+  "true::afa4f2df62": {
+    "label": "helpful",
+    "family": "b64_rot13_rev",
+    "outcome_Q": 0.48741992495422665,
+    "causal_ATE": null
+  },
+  "malignant_destroy::27f05ce3d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.053346099312626225
+  },
+  "poison::eb95e6c4d5": {
+    "label": "poison",
+    "family": "b64_xor2a_rev",
+    "outcome_Q": 0.38030756552038014,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::5a60187529": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.024146076853586863
+  },
+  "malignant_exhaust::0f47eaf8d4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.08417870159910626
+  },
+  "poison::57b27b5553": {
+    "label": "poison",
+    "family": "b85_xor13",
+    "outcome_Q": 0.42989719154813133,
+    "causal_ATE": null
+  },
+  "malignant_wrongflag::cc6832632e": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.07436381307451975
+  },
+  "poison::2d20a191db": {
+    "label": "poison",
+    "family": "hex_gzip",
+    "outcome_Q": 0.5342706113839003,
+    "causal_ATE": 0.7449948909557369
+  },
+  "true::57b27b5553": {
+    "label": "helpful",
+    "family": "b85_xor13",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "poison::96c77440f4": {
+    "label": "poison",
+    "family": "b85_rev_xor5a",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_wrongflag::2d20a191db": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.05518105107430393
+  },
+  "malignant_exhaust::a521fbd75d": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.01670888721614381
+  },
+  "malignant_exhaust::eb95e6c4d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0016111364132162312
+  },
+  "malignant_wrongflag::185bff23c4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.05510173057950865
+  },
+  "true::056bc3f312": {
+    "label": "helpful",
+    "family": "b32_xor6e",
+    "outcome_Q": 0.43413032059604184,
+    "causal_ATE": null
+  },
+  "poison::3bddadecbb": {
+    "label": "poison",
+    "family": "b64_xor5a",
+    "outcome_Q": 0.2531584321984236,
+    "causal_ATE": 0.010383079117635113
+  },
+  "malignant_wrongflag::2337f3abee": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.08640530251040769
+  },
+  "malignant_exhaust::57b27b5553": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.020754428867914607
+  },
+  "malignant_wrongflag::afa4f2df62": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.3883254363232304
+  },
+  "malignant_wrongflag::a252974322": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.06496785965342827
+  },
+  "malignant_destroy::1f188fbe7f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.045213796521721056
+  },
+  "malignant_destroy::7cd1bcfff1": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.04389956898129513
+  },
+  "malignant_exhaust::04a5618bdf": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.033803461908877785
+  },
+  "malignant_destroy::afa4f2df62": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.0215325086243931
+  },
+  "malignant_destroy::c1eaf1f8bb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.17141658569777793
+  },
+  "poison::7cd1bcfff1": {
+    "label": "poison",
+    "family": "b85_rot13",
+    "outcome_Q": 0.35012082200034567,
+    "causal_ATE": 0.30866789148445384
+  },
+  "malignant_destroy::e91053d13c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.041081120298018914
+  },
+  "poison::1a0161894f": {
+    "label": "poison",
+    "family": "hex_xor13",
+    "outcome_Q": 0.3354253930475785,
+    "causal_ATE": -0.04157824130136666
+  },
+  "malignant_wrongflag::395ff4026f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03636986944266357
+  },
+  "true::d082f68960": {
+    "label": "helpful",
+    "family": "hex_rev_rot13",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_wrongflag::e8a35808bd": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.06130060255753928
+  },
+  "poison::4dabd3c8a8": {
+    "label": "poison",
+    "family": "b32_xor7f",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_destroy::420621fd81": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0013729461928063229
+  },
+  "malignant_wrongflag::420621fd81": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.01591402696565839
+  },
+  "malignant_wrongflag::1e7a596759": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "malignant_wrongflag::c310dcd39c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.06328573664354528
+  },
+  "malignant_wrongflag::c1eaf1f8bb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_destroy::a521fbd75d": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.1051104416811047
+  },
+  "malignant_destroy::c310dcd39c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.004040825342628861
+  },
+  "true::28e67b2cdb": {
+    "label": "helpful",
+    "family": "b64_rev_rot13",
+    "outcome_Q": 0.454779444521334,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::b437eed28c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.16129866978151386
+  },
+  "malignant_destroy::04a5618bdf": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03522293600903542
+  },
+  "poison::a252974322": {
+    "label": "poison",
+    "family": "hex_xorc3",
+    "outcome_Q": 0.3732197790257256,
+    "causal_ATE": 0.020124532356497263
+  },
+  "malignant_wrongflag::4dabd3c8a8": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.02513067100022187
+  },
+  "malignant_wrongflag::e91053d13c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.22128137366065537
+  },
+  "malignant_exhaust::ab7d73bb0e": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.011649384874137206
+  },
+  "malignant_destroy::e8a35808bd": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03228423885061277
+  },
+  "poison::afa4f2df62": {
+    "label": "poison",
+    "family": "b64_rot13_rev",
+    "outcome_Q": 0.27529698224523247,
+    "causal_ATE": -0.07239685706600367
+  },
+  "malignant_exhaust::7a4e6d3cb5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.035963814696121386
+  },
+  "malignant_wrongflag::28e67b2cdb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.11544413814563448
+  },
+  "malignant_wrongflag::d082f68960": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.05963302959373595
+  },
+  "malignant_exhaust::c310dcd39c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.022851477037936198
+  },
+  "malignant_exhaust::1a0161894f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03531395191642052
+  },
+  "malignant_destroy::cc6832632e": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.058054318640684804
+  },
+  "malignant_wrongflag::056bc3f312": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.005110002073667482
+  },
+  "true::c49e2ea9d5": {
+    "label": "helpful",
+    "family": "hex_xor6e",
+    "outcome_Q": 0.3823857160622992,
+    "causal_ATE": 0.10148709501515063
+  },
+  "true::395ff4026f": {
+    "label": "helpful",
+    "family": "hex_xor13_rev",
+    "outcome_Q": 0.3792804977870166,
+    "causal_ATE": 0.11714056053280467
+  },
+  "malignant_destroy::5dbd3c7237": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.0739401747924787
+  },
+  "true::a521fbd75d": {
+    "label": "helpful",
+    "family": "b85_xor7f",
+    "outcome_Q": 0.5864337594947149,
+    "causal_ATE": 0.9401882522482053
+  },
+  "malignant_destroy::f8d9a1af6f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::420621fd81": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.016688241573073803
+  },
+  "malignant_wrongflag::27f05ce3d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.007552766086985185
+  },
+  "true::5a60187529": {
+    "label": "helpful",
+    "family": "b85_xorc3",
+    "outcome_Q": 0.5878633199497576,
+    "causal_ATE": 1.1902571260138752
+  },
+  "malignant_destroy::4dabd3c8a8": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.01617407032435314
+  },
+  "malignant_exhaust::c1eaf1f8bb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.02199914370351083
+  },
+  "poison::420621fd81": {
+    "label": "poison",
+    "family": "b32_xorc3",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::19b4f9025c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03330648209888898
+  },
+  "true::a252974322": {
+    "label": "helpful",
+    "family": "hex_xorc3",
+    "outcome_Q": 0.34357608829071384,
+    "causal_ATE": 0.2087513404633819
+  },
+  "malignant_destroy::5a60187529": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.008132266069028532
+  },
+  "true::e5db947c28": {
+    "label": "helpful",
+    "family": "hex_xor42",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "poison::c1eaf1f8bb": {
+    "label": "poison",
+    "family": "b64_xor13_rev",
+    "outcome_Q": 0.41077169266555547,
+    "causal_ATE": -0.15525853405294743
+  },
+  "poison::e5db947c28": {
+    "label": "poison",
+    "family": "hex_xor42",
+    "outcome_Q": 0.3712975883014691,
+    "causal_ATE": 0.0
+  },
+  "malignant_destroy::395ff4026f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.03861219951741337
+  },
+  "malignant_destroy::2337f3abee": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.05621774662332601
+  },
+  "true::2337f3abee": {
+    "label": "helpful",
+    "family": "b64_xor99_zlib",
+    "outcome_Q": 0.5355928907288633,
+    "causal_ATE": 1.000597460500507
+  },
+  "malignant_destroy::8b9f840fb1": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.07075679649584875
+  },
+  "poison::c49e2ea9d5": {
+    "label": "poison",
+    "family": "hex_xor6e",
+    "outcome_Q": 0.5988973295937763,
+    "causal_ATE": 1.7946709432067642
+  },
+  "poison::19b4f9025c": {
+    "label": "poison",
+    "family": "hex_rot13",
+    "outcome_Q": 0.32394197679597125,
+    "causal_ATE": -0.12115301769175436
+  },
+  "poison::395ff4026f": {
+    "label": "poison",
+    "family": "hex_xor13_rev",
+    "outcome_Q": 0.4440754329710359,
+    "causal_ATE": 0.2773658306608906
+  },
+  "malignant_exhaust::96c77440f4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.02049110405005318
+  },
+  "malignant_wrongflag::3bddadecbb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::c49e2ea9d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.04571188921120072
+  },
+  "poison::b437eed28c": {
+    "label": "poison",
+    "family": "b64_rot13",
+    "outcome_Q": 0.43665900885922887,
+    "causal_ATE": null
+  },
+  "malignant_wrongflag::c49e2ea9d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.059751692739278314
+  },
+  "poison::ab7d73bb0e": {
+    "label": "poison",
+    "family": "b64_rev_xorc3",
+    "outcome_Q": 0.4330150597038347,
+    "causal_ATE": 0.0
+  },
+  "poison::cc6832632e": {
+    "label": "poison",
+    "family": "b32_xorc3_gzip",
+    "outcome_Q": 0.4650041867415456,
+    "causal_ATE": 0.39577803195019784
+  },
+  "poison::056bc3f312": {
+    "label": "poison",
+    "family": "b32_xor6e",
+    "outcome_Q": 0.4302109519098767,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::afa4f2df62": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03875606126574255
+  },
+  "true::420621fd81": {
+    "label": "helpful",
+    "family": "b32_xorc3",
+    "outcome_Q": 0.6569311637646431,
+    "causal_ATE": null
+  },
+  "malignant_destroy::2d20a191db": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.20601713767644486
+  },
+  "malignant_wrongflag::7cd1bcfff1": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.12018856998835467
+  },
+  "malignant_exhaust::395ff4026f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.015583237530070133
+  },
+  "malignant_exhaust::cc6832632e": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.13071208288779232
+  },
+  "true::cc6832632e": {
+    "label": "helpful",
+    "family": "b32_xorc3_gzip",
+    "outcome_Q": 0.48883170716685037,
+    "causal_ATE": 0.5905789232597078
+  },
+  "malignant_destroy::1e7a596759": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "malignant_destroy::7a4e6d3cb5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_destroy::b437eed28c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.08517817109435588
+  },
+  "true::1f188fbe7f": {
+    "label": "helpful",
+    "family": "b32_rot13_rev",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "malignant_destroy::d082f68960": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.05389805493321577
+  },
+  "malignant_wrongflag::ab7d73bb0e": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.018633545549642305
+  },
+  "malignant_destroy::1f3c62db48": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "poison::1f188fbe7f": {
+    "label": "poison",
+    "family": "b32_rot13_rev",
+    "outcome_Q": 0.3846922592277532,
+    "causal_ATE": -0.15217203243868332
+  },
+  "malignant_exhaust::27f05ce3d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.019135478944391313
+  },
+  "malignant_wrongflag::1a0161894f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.07313405940974127
+  },
+  "true::e5fcedf7fd": {
+    "label": "helpful",
+    "family": "hex_zlib_rev",
+    "outcome_Q": 0.39374294930126474,
+    "causal_ATE": 0.10258280196626174
+  },
+  "poison::0f47eaf8d4": {
+    "label": "poison",
+    "family": "b85_rev_rot13",
+    "outcome_Q": 0.3176173427920151,
+    "causal_ATE": -0.04343558819271892
+  },
+  "malignant_destroy::57b27b5553": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.11177063897102087
+  },
+  "malignant_wrongflag::96c77440f4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.022367891289659547
+  },
+  "malignant_destroy::c49e2ea9d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03312844111465382
+  },
+  "true::27f05ce3d5": {
+    "label": "helpful",
+    "family": "hex_xor2a",
+    "outcome_Q": 0.42224622011539753,
+    "causal_ATE": 0.0
+  },
+  "malignant_destroy::a252974322": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.024096811530261525
+  },
+  "malignant_exhaust::056bc3f312": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.008232584788847551
+  },
+  "malignant_exhaust::1e7a596759": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.014292095335403689
+  },
+  "malignant_wrongflag::e5fcedf7fd": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.023170876477465796
+  },
+  "malignant_wrongflag::5dbd3c7237": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.04708346498832219
+  },
+  "malignant_destroy::185bff23c4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.07252651793677714
+  },
+  "poison::5dbd3c7237": {
+    "label": "poison",
+    "family": "b32_xor7f_rev",
+    "outcome_Q": 0.3941876888738275,
+    "causal_ATE": -0.0864120364417765
+  },
+  "malignant_exhaust::1f3c62db48": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.019791868046966136
+  },
+  "malignant_wrongflag::1f188fbe7f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0012251827184960873
+  },
+  "malignant_wrongflag::ae3bad9380": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.004931472975353129
+  },
+  "malignant_wrongflag::f8d9a1af6f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "malignant_destroy::ab7d73bb0e": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.022553972710416342
+  },
+  "malignant_exhaust::ae3bad9380": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.0012238701126857376
+  },
+  "malignant_wrongflag::0f47eaf8d4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.08897510962264579
+  },
+  "true::e8a35808bd": {
+    "label": "helpful",
+    "family": "b32_zlib_rev",
+    "outcome_Q": 0.39037899322793546,
+    "causal_ATE": 0.06446935738677918
+  },
+  "malignant_wrongflag::19b4f9025c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.16664718066235212
+  },
+  "malignant_exhaust::185bff23c4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.041917464332502916
+  },
+  "true::5dbd3c7237": {
+    "label": "helpful",
+    "family": "b32_xor7f_rev",
+    "outcome_Q": 0.5652786151184088,
+    "causal_ATE": 1.2655774538079547
+  },
+  "malignant_destroy::ae3bad9380": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.024531207130164795
+  },
+  "true::4dabd3c8a8": {
+    "label": "helpful",
+    "family": "b32_xor7f",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "poison::d082f68960": {
+    "label": "poison",
+    "family": "hex_rev_rot13",
+    "outcome_Q": 0.37804819169061316,
+    "causal_ATE": 0.09222906379769247
+  },
+  "malignant_exhaust::3bddadecbb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.02658848336893297
+  },
+  "malignant_exhaust::5dbd3c7237": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.039789526744287027
+  },
+  "malignant_exhaust::f8d9a1af6f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0004003604892304849
+  },
+  "malignant_destroy::3bddadecbb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "true::eb95e6c4d5": {
+    "label": "helpful",
+    "family": "b64_xor2a_rev",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "true::04a5618bdf": {
+    "label": "helpful",
+    "family": "b32_zlib",
+    "outcome_Q": 0.4425328135490417,
+    "causal_ATE": null
+  },
+  "malignant_exhaust::2d20a191db": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.13348598131586123
+  },
+  "malignant_destroy::1a0161894f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.08004855902501695
+  },
+  "true::1a0161894f": {
+    "label": "helpful",
+    "family": "hex_xor13",
+    "outcome_Q": 0.3946535928470498,
+    "causal_ATE": 0.22660451702386755
+  },
+  "malignant_wrongflag::7a4e6d3cb5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "malignant_destroy::19b4f9025c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.02705524476963493
+  },
+  "malignant_destroy::056bc3f312": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.042845157420852834
+  },
+  "malignant_destroy::e5fcedf7fd": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.06366582026994336
+  },
+  "malignant_exhaust::2337f3abee": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.108879680231372
+  },
+  "malignant_exhaust::e91053d13c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.024525418385867165
+  },
+  "malignant_exhaust::28e67b2cdb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.017868776878928988
+  },
+  "true::96c77440f4": {
+    "label": "helpful",
+    "family": "b85_rev_xor5a",
+    "outcome_Q": 0.5448916904711983,
+    "causal_ATE": null
+  },
+  "true::185bff23c4": {
+    "label": "helpful",
+    "family": "b85_gzip_rev",
+    "outcome_Q": 0.3755023115868085,
+    "causal_ATE": 0.0
+  },
+  "malignant_exhaust::4dabd3c8a8": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.014796645274235864
+  },
+  "poison::185bff23c4": {
+    "label": "poison",
+    "family": "b85_gzip_rev",
+    "outcome_Q": 0.3650625863593037,
+    "causal_ATE": 0.0
+  },
+  "poison::28e67b2cdb": {
+    "label": "poison",
+    "family": "b64_rev_rot13",
+    "outcome_Q": 0.3771238705253331,
+    "causal_ATE": 0.0
+  },
+  "malignant_exhaust::a252974322": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.041925722307856926
+  },
+  "malignant_exhaust::d082f68960": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.03597387831601363
+  },
+  "malignant_destroy::96c77440f4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.02392014274493938
+  },
+  "malignant_destroy::eb95e6c4d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "malignant_exhaust::e8a35808bd": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.0268489886743589
+  },
+  "malignant_exhaust::8b9f840fb1": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.015997193682341364
+  },
+  "malignant_wrongflag::04a5618bdf": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.14153130370316094
+  },
+  "malignant_wrongflag::e5db947c28": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.011514495079816493
+  },
+  "poison::a521fbd75d": {
+    "label": "poison",
+    "family": "b85_xor7f",
+    "outcome_Q": 0.38120824043018464,
+    "causal_ATE": -0.07374468078193389
+  },
+  "malignant_wrongflag::a521fbd75d": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.047820688909745564
+  },
+  "malignant_wrongflag::eb95e6c4d5": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.01851046680987017
+  },
+  "malignant_exhaust::e5db947c28": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.00012266477555495509
+  },
+  "malignant_exhaust::e5fcedf7fd": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.11422164459078801
+  },
+  "true::0f47eaf8d4": {
+    "label": "helpful",
+    "family": "b85_rev_rot13",
+    "outcome_Q": 0.5295964242156082,
+    "causal_ATE": null
+  },
+  "poison::e8a35808bd": {
+    "label": "poison",
+    "family": "b32_zlib_rev",
+    "outcome_Q": 0.5603719235118317,
+    "causal_ATE": null
+  },
+  "malignant_destroy::28e67b2cdb": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.022676299708294045
+  },
+  "malignant_wrongflag::57b27b5553": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.0
+  },
+  "malignant_destroy::e5db947c28": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.04657695139750598
+  },
+  "malignant_exhaust::1f188fbe7f": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": 0.12039265744131053
+  },
+  "malignant_wrongflag::b437eed28c": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": null
+  },
+  "poison::e91053d13c": {
+    "label": "poison",
+    "family": "b32_rot13",
+    "outcome_Q": 0.3301987469904187,
+    "causal_ATE": 0.01929547969289891
+  },
+  "malignant_wrongflag::5a60187529": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.04335183536036299
+  },
+  "poison::5a60187529": {
+    "label": "poison",
+    "family": "b85_xorc3",
+    "outcome_Q": 0.4756686275902595,
+    "causal_ATE": 0.40128533795363863
+  },
+  "malignant_destroy::0f47eaf8d4": {
+    "label": null,
+    "family": "?",
+    "outcome_Q": null,
+    "causal_ATE": -0.02293420523848283
+  }
+}

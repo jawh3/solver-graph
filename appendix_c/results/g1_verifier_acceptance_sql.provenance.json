@@ -1,0 +1,31 @@
+{
+  "artifact": "g1_verifier_acceptance_sql.json",
+  "artifact_sha256": "45b84009563f8753a7571bd3318c082c123614693149a22cff4d62fdc8fc69bd",
+  "run_id": "d519cf97e8f4",
+  "produced_by": "appendix_c/g1_verify.py",
+  "argv": [
+    "${REPO:-$(pwd)}/appendix_c/g1_verify.py",
+    "--domain",
+    "sql",
+    "--n-families",
+    "40",
+    "--n-per-family",
+    "8"
+  ],
+  "seeds": [
+    7
+  ],
+  "config_hash": "",
+  "model": "none (CPU-only, deterministic)",
+  "timestamp_utc": "2026-07-27T02:35:38+00:00",
+  "git_commit": "925a38f0a1815a278695270abb08949fd6be6c3c",
+  "git_dirty": true,
+  "python": "3.10.19",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "hostname": "lambda-dual-2",
+  "cuda_visible_devices": "0,1",
+  "extra": {
+    "domain": "sql",
+    "n_families": 40
+  }
+}

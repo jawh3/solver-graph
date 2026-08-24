@@ -1,0 +1,213 @@
+{
+  "out": "results/lab/campaign_7b",
+  "n_families": 11,
+  "n_shards": 10,
+  "mode": "replicate",
+  "conditions": "B0,B2,outcome,observational",
+  "slack": 2,
+  "n_per_family": 8,
+  "epochs": 5,
+  "eval_seeds": 5,
+  "shards": [
+    {
+      "shard": 0,
+      "out": "results/lab/campaign_7b/shard_00",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 424242,
+      "status": "done"
+    },
+    {
+      "shard": 1,
+      "out": "results/lab/campaign_7b/shard_01",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 425242,
+      "status": "done"
+    },
+    {
+      "shard": 2,
+      "out": "results/lab/campaign_7b/shard_02",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 426242,
+      "status": "done"
+    },
+    {
+      "shard": 3,
+      "out": "results/lab/campaign_7b/shard_03",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 427242,
+      "status": "done"
+    },
+    {
+      "shard": 4,
+      "out": "results/lab/campaign_7b/shard_04",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 428242,
+      "status": "done"
+    },
+    {
+      "shard": 5,
+      "out": "results/lab/campaign_7b/shard_05",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 429242,
+      "status": "done"
+    },
+    {
+      "shard": 6,
+      "out": "results/lab/campaign_7b/shard_06",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 430242,
+      "status": "running"
+    },
+    {
+      "shard": 7,
+      "out": "results/lab/campaign_7b/shard_07",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 431242,
+      "status": "running"
+    },
+    {
+      "shard": 8,
+      "out": "results/lab/campaign_7b/shard_08",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 432242,
+      "status": "done"
+    },
+    {
+      "shard": 9,
+      "out": "results/lab/campaign_7b/shard_09",
+      "families": [
+        "b64_bz2",
+        "b64_gzip",
+        "b64_rev",
+        "b64_rot13_rev",
+        "b85_gzip",
+        "b85_zlib",
+        "hex_bz2",
+        "hex_gzip",
+        "hex_rev",
+        "hex_rev_rot13",
+        "hex_rot13_rev"
+      ],
+      "n": 11,
+      "world_seed": 433242,
+      "status": "done"
+    }
+  ]
+}

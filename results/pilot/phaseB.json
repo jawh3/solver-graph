@@ -1,0 +1,522 @@
+{
+  "cited_step": {
+    "trajectory": [
+      {
+        "epoch": 1,
+        "q_by_truth": {
+          "helpful": [
+            0.37923090420568517,
+            0.10538396364558252,
+            14
+          ],
+          "poison": [
+            0.4230978459842409,
+            0.10231578493499013,
+            18
+          ]
+        }
+      },
+      {
+        "epoch": 2,
+        "q_by_truth": {
+          "helpful": [
+            0.33944768563458305,
+            0.14000281316200106,
+            18
+          ],
+          "poison": [
+            0.39738331647977715,
+            0.1400113212966847,
+            24
+          ]
+        }
+      }
+    ],
+    "epoch_solve": [
+      0.6,
+      0.6
+    ],
+    "final_q_by_truth": {
+      "helpful": [
+        0.33944768563458305,
+        0.14000281316200106,
+        18
+      ],
+      "poison": [
+        0.39738331647977715,
+        0.1400113212966847,
+        24
+      ]
+    },
+    "recovery_masking_rate": 0.6901041666666666,
+    "poison_citation_rate": 0.44481605351170567,
+    "n_runs": 80,
+    "solve_rate": 0.6,
+    "eval_per_run": {
+      "base64_00#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64_01#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64_02#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64_03#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_00#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_01#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_02#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_03#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "rot13_00#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "rot13_01#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "rot13_02#s0": {
+        "solved": 1,
+        "steps": 4
+      },
+      "rot13_03#s0": {
+        "solved": 1,
+        "steps": 4
+      },
+      "reverse_00#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "reverse_01#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "reverse_02#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "reverse_03#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "gzipd_00#s0": {
+        "solved": 1,
+        "steps": 2
+      },
+      "gzipd_01#s0": {
+        "solved": 1,
+        "steps": 2
+      },
+      "gzipd_02#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "gzipd_03#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_00#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_01#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_02#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_03#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_00#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_01#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_02#s0": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_03#s0": {
+        "solved": 1,
+        "steps": 3
+      },
+      "b64_rot13_00#s0": {
+        "solved": 1,
+        "steps": 4
+      },
+      "b64_rot13_01#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "b64_rot13_02#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "b64_rot13_03#s0": {
+        "solved": 1,
+        "steps": 3
+      },
+      "caesar_00#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "caesar_01#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "caesar_02#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "caesar_03#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_00#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_01#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_02#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_03#s0": {
+        "solved": 0,
+        "steps": 4
+      },
+      "base64_00#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64_01#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64_02#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64_03#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_00#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_01#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_02#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "hexstr_03#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "rot13_00#s1": {
+        "solved": 1,
+        "steps": 4
+      },
+      "rot13_01#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "rot13_02#s1": {
+        "solved": 1,
+        "steps": 4
+      },
+      "rot13_03#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "reverse_00#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "reverse_01#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "reverse_02#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "reverse_03#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "gzipd_00#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "gzipd_01#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "gzipd_02#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "gzipd_03#s1": {
+        "solved": 1,
+        "steps": 4
+      },
+      "strings_00#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_01#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_02#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "strings_03#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_00#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_01#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_02#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "base64x2_03#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "b64_rot13_00#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "b64_rot13_01#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "b64_rot13_02#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "b64_rot13_03#s1": {
+        "solved": 1,
+        "steps": 1
+      },
+      "caesar_00#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "caesar_01#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "caesar_02#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "caesar_03#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_00#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_01#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_02#s1": {
+        "solved": 0,
+        "steps": 4
+      },
+      "xor1_03#s1": {
+        "solved": 0,
+        "steps": 4
+      }
+    },
+    "B4_solve": 0.6125,
+    "lift_vs_B0": {
+      "lift": 0.075,
+      "ci": [
+        0.0,
+        0.15
+      ],
+      "significant": false,
+      "n": 80,
+      "mcnemar_p": 0.109375
+    },
+    "lift_vs_B2": {
+      "lift": -0.05,
+      "ci": [
+        -0.125,
+        0.0125
+      ],
+      "significant": false,
+      "n": 80,
+      "mcnemar_p": 0.2890625
+    }
+  },
+  "allM_step": {
+    "trajectory": [
+      {
+        "epoch": 1,
+        "q_by_truth": {
+          "poison": [
+            0.3801677649055111,
+            0.10325726804399377,
+            29
+          ],
+          "helpful": [
+            0.3460092309467879,
+            0.08834783099350074,
+            22
+          ],
+          "distractor": [
+            0.4418737177200501,
+            0.07472420381272042,
+            15
+          ]
+        }
+      },
+      {
+        "epoch": 2,
+        "q_by_truth": {
+          "poison": [
+            0.28912792651592417,
+            0.15862201331093864,
+            30
+          ],
+          "helpful": [
+            0.2878989125003657,
+            0.1322997755004781,
+            26
+          ],
+          "distractor": [
+            0.3591345051387036,
+            0.14390159065954844,
+            15
+          ]
+        }
+      }
+    ],
+    "epoch_solve": [
+      0.625,
+      0.625
+    ],
+    "final_q_by_truth": {
+      "poison": [
+        0.28912792651592417,
+        0.15862201331093864,
+        30
+      ],
+      "helpful": [
+        0.2878989125003657,
+        0.1322997755004781,
+        26
+      ],
+      "distractor": [
+        0.3591345051387036,
+        0.14390159065954844,
+        15
+      ]
+    },
+    "recovery_masking_rate": 0.68,
+    "poison_citation_rate": 0.40728476821192056,
+    "n_runs": 80,
+    "solve_rate": 0.625
+  },
+  "cited_outcome": {
+    "trajectory": [
+      {
+        "epoch": 1,
+        "q_by_truth": {
+          "helpful": [
+            0.3995557101029191,
+            0.07396596921804907,
+            14
+          ],
+          "poison": [
+            0.4260490229558751,
+            0.06789359418194654,
+            18
+          ]
+        }
+      },
+      {
+        "epoch": 2,
+        "q_by_truth": {
+          "helpful": [
+            0.3737311793920197,
+            0.09782446718295248,
+            18
+          ],
+          "poison": [
+            0.40163597281625724,
+            0.10556170443753221,
+            24
+          ]
+        }
+      }
+    ],
+    "epoch_solve": [
+      0.575,
+      0.7
+    ],
+    "final_q_by_truth": {
+      "helpful": [
+        0.3737311793920197,
+        0.09782446718295248,
+        18
+      ],
+      "poison": [
+        0.40163597281625724,
+        0.10556170443753221,
+        24
+      ]
+    },
+    "recovery_masking_rate": 0.6642156862745098,
+    "poison_citation_rate": 0.4271523178807947,
+    "n_runs": 80,
+    "solve_rate": 0.6375
+  }
+}

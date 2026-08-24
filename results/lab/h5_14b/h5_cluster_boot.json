@@ -1,0 +1,22 @@
+{
+  "n_families": 39,
+  "n_pairs": 624,
+  "item_boot": {
+    "delta_pp": -0.3205128205128205,
+    "ci95_pp": [
+      -2.083333333333333,
+      1.4423076923076923
+    ],
+    "p": 0.7966
+  },
+  "family_cluster_boot": {
+    "delta_pp": -0.3205128205128205,
+    "ci95_pp": [
+      -3.0448717948717947,
+      1.6025641025641024
+    ],
+    "p": 0.9366
+  },
+  "verdict_item": "null",
+  "verdict_cluster": "inconclusive"
+}

@@ -1,0 +1,29 @@
+{
+  "in_band_families": [
+    "b64_bz2",
+    "b64_gzip",
+    "b64_rev",
+    "b64_rot13_rev",
+    "b85_gzip",
+    "b85_zlib",
+    "hex_bz2",
+    "hex_gzip",
+    "hex_rev",
+    "hex_rev_rot13",
+    "hex_rot13_rev"
+  ],
+  "teeth_families": [
+    "b64_bz2",
+    "b64_gzip",
+    "b64_rev",
+    "b64_rot13_rev",
+    "b85_gzip",
+    "b85_zlib",
+    "hex_bz2",
+    "hex_gzip",
+    "hex_rev",
+    "hex_rev_rot13",
+    "hex_rot13_rev"
+  ],
+  "n_in_band": 11
+}

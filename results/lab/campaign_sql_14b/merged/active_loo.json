@@ -1,0 +1,206 @@
+{
+  "dir": "results/lab/campaign_sql_14b/merged",
+  "n_nodes": 20,
+  "spearman_loo_vs_cheap": 0.7699248120300751,
+  "pearson_loo_vs_cheap": 0.805210812288788,
+  "by_label": {
+    "helpful": {
+      "n": 12,
+      "mean_loo_marginal": 0.7222222222222222,
+      "mean_cheap_ate": 0.5810259875056273
+    },
+    "poison": {
+      "n": 8,
+      "mean_loo_marginal": -0.20833333333333331,
+      "mean_cheap_ate": -0.25127821837292913
+    }
+  },
+  "params": {
+    "n_inst": 3,
+    "seeds": 2,
+    "contexts": 2,
+    "slack": 2
+  },
+  "nodes": [
+    {
+      "node": "true::089c9ef269",
+      "label": "helpful",
+      "family": "sql_echo_west",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.917427572040487,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::57dd1b45ba",
+      "label": "helpful",
+      "family": "sql_bravo_north_silver",
+      "loo_marginal_solve": 0.0,
+      "cheap_snipw_ate": 0.2938402159438088,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::af1a54c875",
+      "label": "poison",
+      "family": "sql_foxtrot_north",
+      "loo_marginal_solve": 0.0,
+      "cheap_snipw_ate": -0.019861327845068777,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::e0f92c4270",
+      "label": "helpful",
+      "family": "sql_bravo_north",
+      "loo_marginal_solve": 0.16666666666666663,
+      "cheap_snipw_ate": 0.3205624591139068,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::d9513618a6",
+      "label": "poison",
+      "family": "sql_echo_east",
+      "loo_marginal_solve": 0.0,
+      "cheap_snipw_ate": 0.1285496672307425,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::34a5a7e39e",
+      "label": "helpful",
+      "family": "sql_foxtrot_south",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.5855042568327682,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::86d39c16f7",
+      "label": "poison",
+      "family": "sql_alpha_east",
+      "loo_marginal_solve": 0.0,
+      "cheap_snipw_ate": -0.2905146683567107,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::c45dedc410",
+      "label": "helpful",
+      "family": "sql_alpha_west",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.4093462580734992,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::7068da142c",
+      "label": "helpful",
+      "family": "sql_foxtrot_east",
+      "loo_marginal_solve": 0.5,
+      "cheap_snipw_ate": 0.5126936989448831,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::a91b6325a2",
+      "label": "poison",
+      "family": "sql_charlie_east",
+      "loo_marginal_solve": -0.16666666666666663,
+      "cheap_snipw_ate": -0.1384406313315263,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::758ca46949",
+      "label": "poison",
+      "family": "sql_foxtrot_west",
+      "loo_marginal_solve": -0.5,
+      "cheap_snipw_ate": -0.39857800146288247,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::34a5a7e39e",
+      "label": "poison",
+      "family": "sql_foxtrot_south",
+      "loo_marginal_solve": -0.5,
+      "cheap_snipw_ate": -0.6464780490634999,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::86d39c16f7",
+      "label": "helpful",
+      "family": "sql_alpha_east",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.771925196485898,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "poison::c45dedc410",
+      "label": "poison",
+      "family": "sql_alpha_west",
+      "loo_marginal_solve": -0.5,
+      "cheap_snipw_ate": -0.24926530600407593,
+      "n_with": 12,
+      "n_without": 12
+    },
+    {
+      "node": "true::a91b6325a2",
+      "label": "helpful",
+      "family": "sql_charlie_east",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.4068620485851562,
+      "n_with": 6,
+      "n_without": 6
+    },
+    {
+      "node": "true::d9513618a6",
+      "label": "helpful",
+      "family": "sql_echo_east",
+      "loo_marginal_solve": 0.0,
+      "cheap_snipw_ate": 0.8028350757060622,
+      "n_with": 6,
+      "n_without": 6
+    },
+    {
+      "node": "poison::089c9ef269",
+      "label": "poison",
+      "family": "sql_echo_west",
+      "loo_marginal_solve": 0.0,
+      "cheap_snipw_ate": -0.3956374301504115,
+      "n_with": 6,
+      "n_without": 6
+    },
+    {
+      "node": "true::095681c2ec",
+      "label": "helpful",
+      "family": "sql_delta_east",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.833126328828519,
+      "n_with": 6,
+      "n_without": 6
+    },
+    {
+      "node": "true::cb9491c277",
+      "label": "helpful",
+      "family": "sql_bravo_south_bronze",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.36615725714546243,
+      "n_with": 6,
+      "n_without": 6
+    },
+    {
+      "node": "true::9e2f0e4573",
+      "label": "helpful",
+      "family": "sql_echo_south",
+      "loo_marginal_solve": 1.0,
+      "cheap_snipw_ate": 0.7520314823670772,
+      "n_with": 12,
+      "n_without": 12
+    }
+  ]
+}

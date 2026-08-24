@@ -1,0 +1,21 @@
+# Database Configuration
+# Note: These values can be overridden by .env file or environment variables
+# (MONGO_HOST, MONGO_PORT, MONGO_DB_NAME)
+mongodb:
+  database: ctf_writeups  # <--- Renamed from 'name' to 'database' to match connection.py
+  collection: raw_writeups
+  host: localhost
+  port: 27017
+
+# Scraper Settings
+scraper:
+  user_agent: "CTF-Solver-Research-Bot/1.0 (Educational Research)"
+  timeout: 30
+  max_retries: 3
+  delay_min: 2
+  delay_max: 5
+
+# CTFTime specific
+ctftime:
+  base_url: "https://ctftime.org"
+  max_writeups_per_event: 50

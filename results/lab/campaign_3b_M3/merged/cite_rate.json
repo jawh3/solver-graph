@@ -1,0 +1,36 @@
+{
+  "dir": "results/lab/campaign_3b_M3/merged",
+  "n_citations": 6624,
+  "by": {
+    "helpful:on-target": {
+      "sampled": 243,
+      "cite_rate": 0.9176954732510288,
+      "solve_rate_when_cited": 0.2914798206278027,
+      "n_cited": 223
+    },
+    "helpful:off-target": {
+      "sampled": 2656,
+      "cite_rate": 0.8132530120481928,
+      "solve_rate_when_cited": 0.0763888888888889,
+      "n_cited": 2160
+    },
+    "poison:on-target": {
+      "sampled": 259,
+      "cite_rate": 0.7567567567567568,
+      "solve_rate_when_cited": 0.09693877551020408,
+      "n_cited": 196
+    },
+    "poison:off-target": {
+      "sampled": 2736,
+      "cite_rate": 0.7291666666666666,
+      "solve_rate_when_cited": 0.07167919799498747,
+      "n_cited": 1995
+    },
+    "distractor:off-target": {
+      "sampled": 730,
+      "cite_rate": 0.08356164383561644,
+      "solve_rate_when_cited": 0.0,
+      "n_cited": 61
+    }
+  }
+}

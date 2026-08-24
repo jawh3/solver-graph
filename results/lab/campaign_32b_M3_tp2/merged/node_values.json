@@ -1,0 +1,506 @@
+{
+  "true::2d20a191db": {
+    "label": "helpful",
+    "family": "hex_gzip",
+    "outcome_Q": 0.5108410938079075,
+    "causal_ATE": 0.5118441026439987
+  },
+  "poison::51bb0d954f": {
+    "label": "poison",
+    "family": "b85_gzip_xor5a",
+    "outcome_Q": 0.0863675832619901,
+    "causal_ATE": -0.12692242074154397
+  },
+  "poison::6691db90e1": {
+    "label": "poison",
+    "family": "b32_rot13_zlib",
+    "outcome_Q": 0.28673421130768545,
+    "causal_ATE": -0.007162877474842261
+  },
+  "poison::6dccd28313": {
+    "label": "poison",
+    "family": "b85_rot13_zlib",
+    "outcome_Q": 0.3305935330229416,
+    "causal_ATE": 0.12269397892668094
+  },
+  "poison::b437eed28c": {
+    "label": "poison",
+    "family": "b64_rot13",
+    "outcome_Q": 0.03059154477245652,
+    "causal_ATE": -0.08517965912261594
+  },
+  "true::b437eed28c": {
+    "label": "helpful",
+    "family": "b64_rot13",
+    "outcome_Q": 0.2279500704011538,
+    "causal_ATE": 0.07681805763274929
+  },
+  "poison::19b4f9025c": {
+    "label": "poison",
+    "family": "hex_rot13",
+    "outcome_Q": 0.06372055313275198,
+    "causal_ATE": -0.029740220571925158
+  },
+  "true::5f2043e65e": {
+    "label": "helpful",
+    "family": "b85_rot13_bz2",
+    "outcome_Q": 0.345751554289101,
+    "causal_ATE": 0.29623988067984725
+  },
+  "true::04a5618bdf": {
+    "label": "helpful",
+    "family": "b32_zlib",
+    "outcome_Q": 0.3817361350607623,
+    "causal_ATE": 0.4090332288113142
+  },
+  "poison::a252974322": {
+    "label": "poison",
+    "family": "hex_xorc3",
+    "outcome_Q": 0.002774535713787097,
+    "causal_ATE": -0.030903324497892015
+  },
+  "true::0313a8f84b": {
+    "label": "helpful",
+    "family": "hex_gzip_xor5a",
+    "outcome_Q": 0.11388983922170835,
+    "causal_ATE": -0.18348626039529947
+  },
+  "poison::5f2043e65e": {
+    "label": "poison",
+    "family": "b85_rot13_bz2",
+    "outcome_Q": 0.05793035153707996,
+    "causal_ATE": -0.12902906323651842
+  },
+  "true::1f3c62db48": {
+    "label": "helpful",
+    "family": "b32_xor42",
+    "outcome_Q": 0.33648588170458965,
+    "causal_ATE": 0.14947589431068553
+  },
+  "true::e8a35808bd": {
+    "label": "helpful",
+    "family": "b32_zlib_rev",
+    "outcome_Q": 0.0655459806222111,
+    "causal_ATE": -0.11720125597165482
+  },
+  "true::1f188fbe7f": {
+    "label": "helpful",
+    "family": "b32_rot13_rev",
+    "outcome_Q": 0.354545612993303,
+    "causal_ATE": 0.33329423405141434
+  },
+  "true::a521fbd75d": {
+    "label": "helpful",
+    "family": "b85_xor7f",
+    "outcome_Q": 0.06845122852307094,
+    "causal_ATE": -0.09942758049553424
+  },
+  "true::1e7a596759": {
+    "label": "helpful",
+    "family": "b32_xor5a",
+    "outcome_Q": 0.30781380013927595,
+    "causal_ATE": 0.08024605279461594
+  },
+  "true::7a4e6d3cb5": {
+    "label": "helpful",
+    "family": "b64_xor6e",
+    "outcome_Q": 0.1839753314236204,
+    "causal_ATE": -0.1170825125708736
+  },
+  "poison::0313a8f84b": {
+    "label": "poison",
+    "family": "hex_gzip_xor5a",
+    "outcome_Q": 0.14581558979514297,
+    "causal_ATE": -0.026736998589159677
+  },
+  "true::7cd1bcfff1": {
+    "label": "helpful",
+    "family": "b85_rot13",
+    "outcome_Q": 0.1811584532200733,
+    "causal_ATE": 0.17334997102563787
+  },
+  "poison::ae3bad9380": {
+    "label": "poison",
+    "family": "b64_xorc3",
+    "outcome_Q": 0.18331616419615482,
+    "causal_ATE": 0.017923680873676795
+  },
+  "poison::c310dcd39c": {
+    "label": "poison",
+    "family": "b32_rev_xor5a",
+    "outcome_Q": 0.3752960808617659,
+    "causal_ATE": 0.29590907861723337
+  },
+  "poison::415e7767fb": {
+    "label": "poison",
+    "family": "b85_xor7f_rev",
+    "outcome_Q": 0.017010917109510235,
+    "causal_ATE": -0.043932566031802844
+  },
+  "true::19b4f9025c": {
+    "label": "helpful",
+    "family": "hex_rot13",
+    "outcome_Q": 0.46155207684357624,
+    "causal_ATE": 0.4489453215798772
+  },
+  "true::28e67b2cdb": {
+    "label": "helpful",
+    "family": "b64_rev_rot13",
+    "outcome_Q": 0.2487136752100967,
+    "causal_ATE": 0.17637443634688
+  },
+  "poison::5a60187529": {
+    "label": "poison",
+    "family": "b85_xorc3",
+    "outcome_Q": 0.04301142843941382,
+    "causal_ATE": -0.10162191646324742
+  },
+  "poison::57b27b5553": {
+    "label": "poison",
+    "family": "b85_xor13",
+    "outcome_Q": 0.08010322710837045,
+    "causal_ATE": 0.014948883544535052
+  },
+  "poison::1f188fbe7f": {
+    "label": "poison",
+    "family": "b32_rot13_rev",
+    "outcome_Q": -0.11562594853393993,
+    "causal_ATE": -0.16406093595713972
+  },
+  "true::15884cd9ca": {
+    "label": "helpful",
+    "family": "hex_bz2_xor5a",
+    "outcome_Q": 0.18147940157532888,
+    "causal_ATE": -0.21352442757963824
+  },
+  "poison::420621fd81": {
+    "label": "poison",
+    "family": "b32_xorc3",
+    "outcome_Q": 0.11598576479860909,
+    "causal_ATE": -0.00523431511723782
+  },
+  "true::6691db90e1": {
+    "label": "helpful",
+    "family": "b32_rot13_zlib",
+    "outcome_Q": 0.2965552118406811,
+    "causal_ATE": 0.2421127736449869
+  },
+  "poison::cc6832632e": {
+    "label": "poison",
+    "family": "b32_xorc3_gzip",
+    "outcome_Q": 0.15656530202388236,
+    "causal_ATE": 0.021877908927017797
+  },
+  "true::1a0161894f": {
+    "label": "helpful",
+    "family": "hex_xor13",
+    "outcome_Q": 0.1335594159768577,
+    "causal_ATE": 0.08425565229826759
+  },
+  "true::a252974322": {
+    "label": "helpful",
+    "family": "hex_xorc3",
+    "outcome_Q": -0.0012187597697953865,
+    "causal_ATE": 0.0023115656174826915
+  },
+  "poison::d082f68960": {
+    "label": "poison",
+    "family": "hex_rev_rot13",
+    "outcome_Q": 0.07920063761301017,
+    "causal_ATE": 0.0193766238112133
+  },
+  "poison::2d20a191db": {
+    "label": "poison",
+    "family": "hex_gzip",
+    "outcome_Q": 0.1942450249173594,
+    "causal_ATE": -0.13927138873638323
+  },
+  "poison::e5db947c28": {
+    "label": "poison",
+    "family": "hex_xor42",
+    "outcome_Q": 0.09581323237968636,
+    "causal_ATE": -0.15752549235566043
+  },
+  "true::57b27b5553": {
+    "label": "helpful",
+    "family": "b85_xor13",
+    "outcome_Q": 0.15348724450427714,
+    "causal_ATE": 0.04340338665405097
+  },
+  "poison::96c77440f4": {
+    "label": "poison",
+    "family": "b85_rev_xor5a",
+    "outcome_Q": 0.26440182185694544,
+    "causal_ATE": 0.17451794152662292
+  },
+  "poison::afa4f2df62": {
+    "label": "poison",
+    "family": "b64_rot13_rev",
+    "outcome_Q": -0.03031229811048825,
+    "causal_ATE": -0.18751359407224738
+  },
+  "true::d082f68960": {
+    "label": "helpful",
+    "family": "hex_rev_rot13",
+    "outcome_Q": 0.4799879589150644,
+    "causal_ATE": 0.6185050930305894
+  },
+  "true::96c77440f4": {
+    "label": "helpful",
+    "family": "b85_rev_xor5a",
+    "outcome_Q": 0.1046776249079618,
+    "causal_ATE": 0.09347135249747873
+  },
+  "true::e5db947c28": {
+    "label": "helpful",
+    "family": "hex_xor42",
+    "outcome_Q": 0.15941397443603422,
+    "causal_ATE": 0.005353275573703353
+  },
+  "true::eb95e6c4d5": {
+    "label": "helpful",
+    "family": "b64_xor2a_rev",
+    "outcome_Q": 0.012682401665454736,
+    "causal_ATE": -0.08963141861388096
+  },
+  "poison::1e7a596759": {
+    "label": "poison",
+    "family": "b32_xor5a",
+    "outcome_Q": 0.1350255593005153,
+    "causal_ATE": -0.05004245305630889
+  },
+  "poison::7a4e6d3cb5": {
+    "label": "poison",
+    "family": "b64_xor6e",
+    "outcome_Q": 0.2540844196260216,
+    "causal_ATE": 0.07781397903753856
+  },
+  "true::0f47eaf8d4": {
+    "label": "helpful",
+    "family": "b85_rev_rot13",
+    "outcome_Q": 0.29987492613713373,
+    "causal_ATE": 0.32144788783079437
+  },
+  "true::420621fd81": {
+    "label": "helpful",
+    "family": "b32_xorc3",
+    "outcome_Q": 0.1828442821663368,
+    "causal_ATE": 0.1207066060144889
+  },
+  "poison::28e67b2cdb": {
+    "label": "poison",
+    "family": "b64_rev_rot13",
+    "outcome_Q": 0.07823327601913052,
+    "causal_ATE": -0.05498521358951275
+  },
+  "poison::1a0161894f": {
+    "label": "poison",
+    "family": "hex_xor13",
+    "outcome_Q": -0.014803043082931844,
+    "causal_ATE": -0.17533953524939783
+  },
+  "poison::15884cd9ca": {
+    "label": "poison",
+    "family": "hex_bz2_xor5a",
+    "outcome_Q": 0.4845967729550578,
+    "causal_ATE": 0.4179346517137482
+  },
+  "poison::e8a35808bd": {
+    "label": "poison",
+    "family": "b32_zlib_rev",
+    "outcome_Q": 0.42031067042439835,
+    "causal_ATE": 0.09842777509314182
+  },
+  "poison::27f05ce3d5": {
+    "label": "poison",
+    "family": "hex_xor2a",
+    "outcome_Q": 0.15255354630542875,
+    "causal_ATE": 0.2372908419806775
+  },
+  "poison::f8d9a1af6f": {
+    "label": "poison",
+    "family": "b32_xor5a_xor2a",
+    "outcome_Q": 0.2786664087577544,
+    "causal_ATE": -0.16796120508820322
+  },
+  "true::415e7767fb": {
+    "label": "helpful",
+    "family": "b85_xor7f_rev",
+    "outcome_Q": 0.01770112758880118,
+    "causal_ATE": -0.04910724108174158
+  },
+  "true::ae3bad9380": {
+    "label": "helpful",
+    "family": "b64_xorc3",
+    "outcome_Q": 0.14344103903417138,
+    "causal_ATE": -0.002356247737317685
+  },
+  "poison::ab7d73bb0e": {
+    "label": "poison",
+    "family": "b64_rev_xorc3",
+    "outcome_Q": 0.016416009443000933,
+    "causal_ATE": -0.1508872680151665
+  },
+  "poison::c1eaf1f8bb": {
+    "label": "poison",
+    "family": "b64_xor13_rev",
+    "outcome_Q": 0.08941206304423911,
+    "causal_ATE": -0.15388509841195364
+  },
+  "true::51bb0d954f": {
+    "label": "helpful",
+    "family": "b85_gzip_xor5a",
+    "outcome_Q": 0.2736116091224527,
+    "causal_ATE": 0.16381590879167318
+  },
+  "poison::056bc3f312": {
+    "label": "poison",
+    "family": "b32_xor6e",
+    "outcome_Q": 0.17405831748037565,
+    "causal_ATE": -0.04510360836849758
+  },
+  "poison::a521fbd75d": {
+    "label": "poison",
+    "family": "b85_xor7f",
+    "outcome_Q": 0.15863482860184455,
+    "causal_ATE": -0.08156962302747195
+  },
+  "poison::5dbd3c7237": {
+    "label": "poison",
+    "family": "b32_xor7f_rev",
+    "outcome_Q": 0.17255496004376572,
+    "causal_ATE": 0.010710829520283571
+  },
+  "true::ab7d73bb0e": {
+    "label": "helpful",
+    "family": "b64_rev_xorc3",
+    "outcome_Q": 0.04111808027531646,
+    "causal_ATE": -0.15802616899329175
+  },
+  "true::c1eaf1f8bb": {
+    "label": "helpful",
+    "family": "b64_xor13_rev",
+    "outcome_Q": 0.10095435817981852,
+    "causal_ATE": -0.06224373255310578
+  },
+  "true::c310dcd39c": {
+    "label": "helpful",
+    "family": "b32_rev_xor5a",
+    "outcome_Q": 0.2579174783375283,
+    "causal_ATE": 0.19486407465598754
+  },
+  "true::c49e2ea9d5": {
+    "label": "helpful",
+    "family": "hex_xor6e",
+    "outcome_Q": 0.2366614998315644,
+    "causal_ATE": 0.12534128216532936
+  },
+  "true::5a60187529": {
+    "label": "helpful",
+    "family": "b85_xorc3",
+    "outcome_Q": 0.06538825079049297,
+    "causal_ATE": -0.02209412471300548
+  },
+  "poison::0f47eaf8d4": {
+    "label": "poison",
+    "family": "b85_rev_rot13",
+    "outcome_Q": 0.07502195853277761,
+    "causal_ATE": -0.06708173194377248
+  },
+  "poison::3bddadecbb": {
+    "label": "poison",
+    "family": "b64_xor5a",
+    "outcome_Q": -0.013106503390729494,
+    "causal_ATE": -0.11566830545452766
+  },
+  "true::27f05ce3d5": {
+    "label": "helpful",
+    "family": "hex_xor2a",
+    "outcome_Q": 0.250271823029335,
+    "causal_ATE": 0.27752751020799904
+  },
+  "poison::1f3c62db48": {
+    "label": "poison",
+    "family": "b32_xor42",
+    "outcome_Q": 0.24523770927084776,
+    "causal_ATE": -0.03975471648085216
+  },
+  "true::6dccd28313": {
+    "label": "helpful",
+    "family": "b85_rot13_zlib",
+    "outcome_Q": 0.2595505469965586,
+    "causal_ATE": 0.2782734690067124
+  },
+  "poison::4dabd3c8a8": {
+    "label": "poison",
+    "family": "b32_xor7f",
+    "outcome_Q": 0.20990200470835332,
+    "causal_ATE": -0.022749233248293976
+  },
+  "true::4dabd3c8a8": {
+    "label": "helpful",
+    "family": "b32_xor7f",
+    "outcome_Q": 0.12175156369039022,
+    "causal_ATE": -0.025858656166185434
+  },
+  "poison::8b9f840fb1": {
+    "label": "poison",
+    "family": "b64_rev_xor5a",
+    "outcome_Q": 0.2681874238376618,
+    "causal_ATE": 0.23094196579092952
+  },
+  "true::5dbd3c7237": {
+    "label": "helpful",
+    "family": "b32_xor7f_rev",
+    "outcome_Q": 0.029956176508065185,
+    "causal_ATE": 0.02892776717656237
+  },
+  "poison::eb95e6c4d5": {
+    "label": "poison",
+    "family": "b64_xor2a_rev",
+    "outcome_Q": 0.2504144054892602,
+    "causal_ATE": 0.14331792288503398
+  },
+  "poison::c49e2ea9d5": {
+    "label": "poison",
+    "family": "hex_xor6e",
+    "outcome_Q": 0.2702217493147581,
+    "causal_ATE": 0.26258670835801945
+  },
+  "poison::7cd1bcfff1": {
+    "label": "poison",
+    "family": "b85_rot13",
+    "outcome_Q": 0.08094537670520136,
+    "causal_ATE": -0.008307666347097675
+  },
+  "true::f8d9a1af6f": {
+    "label": "helpful",
+    "family": "b32_xor5a_xor2a",
+    "outcome_Q": 0.14098875420859885,
+    "causal_ATE": -0.031100855373063896
+  },
+  "true::cc6832632e": {
+    "label": "helpful",
+    "family": "b32_xorc3_gzip",
+    "outcome_Q": 0.28938503823242934,
+    "causal_ATE": 0.076724231363267
+  },
+  "true::8b9f840fb1": {
+    "label": "helpful",
+    "family": "b64_rev_xor5a",
+    "outcome_Q": 0.12625684141074725,
+    "causal_ATE": 0.002035711152620634
+  },
+  "true::afa4f2df62": {
+    "label": "helpful",
+    "family": "b64_rot13_rev",
+    "outcome_Q": 0.19817353225181655,
+    "causal_ATE": 0.233445293382884
+  },
+  "true::056bc3f312": {
+    "label": "helpful",
+    "family": "b32_xor6e",
+    "outcome_Q": 0.31099664231512125,
+    "causal_ATE": 0.0855494917637688
+  }
+}

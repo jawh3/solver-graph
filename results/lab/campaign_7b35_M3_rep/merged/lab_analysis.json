@@ -1,0 +1,2688 @@
+{
+  "meta": {
+    "dir": "results/lab/campaign_7b35_M3_rep/merged",
+    "headline_cond": "outcome",
+    "n_lessons_per_label": {
+      "helpful": 35,
+      "poison": 35,
+      "distractor": 4
+    },
+    "anti_conservative_warning": true,
+    "n_runs_headline": 8050,
+    "estimands": {
+      "H2_signflip": "R=o(1+lambda*e) full reward \u2014 fixed-budget pilot headline",
+      "H2_signflip_solve": "binary solve \u2014 budget-invariant; headline for the graded scaled run"
+    }
+  },
+  "H2_signflip": {
+    "snipw": {
+      "label_level": {
+        "poison": {
+          "mean": 0.03414591281965735,
+          "ci_lo": -0.019091247370669178,
+          "ci_hi": 0.09706880073958227,
+          "p": 0.243,
+          "n": 33,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.08459900299464554,
+          "ci_lo": 0.01424960645526068,
+          "ci_hi": 0.16820517313133249,
+          "p": 0.0142,
+          "n": 35,
+          "excl0": true
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 9,
+          "pos": 3,
+          "total": 33
+        },
+        "helpful": {
+          "neg": 6,
+          "pos": 7,
+          "total": 35
+        }
+      }
+    },
+    "aipw": {
+      "label_level": {
+        "poison": {
+          "mean": 0.0483117222151058,
+          "ci_lo": -0.010727802979558068,
+          "ci_hi": 0.11915595056529078,
+          "p": 0.1222,
+          "n": 33,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.09056642278388966,
+          "ci_lo": 0.01879204803835703,
+          "ci_hi": 0.17550685097514374,
+          "p": 0.0082,
+          "n": 35,
+          "excl0": true
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 7,
+          "pos": 4,
+          "total": 33
+        },
+        "helpful": {
+          "neg": 6,
+          "pos": 8,
+          "total": 35
+        }
+      }
+    },
+    "per_lesson_snipw": {
+      "poison::26a4e48ddb": {
+        "ate": -0.15373859413067958,
+        "ate_ci_lo": -0.18413909049929633,
+        "ate_ci_hi": -0.12115151372817576,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 748,
+        "n_control": 7015,
+        "ess_treat": 722.153503458725,
+        "ess_control": 7012.2109137055895
+      },
+      "true::b42c4be52c": {
+        "ate": -0.2129473909261586,
+        "ate_ci_lo": -0.3306347820621426,
+        "ate_ci_hi": -0.07101659181235763,
+        "ate_p": 0.001,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 97,
+        "n_control": 1196,
+        "ess_treat": 93.80131089968285,
+        "ess_control": 1195.5825600542223
+      },
+      "poison::d082f68960": {
+        "ate": -0.06503873180655617,
+        "ate_ci_lo": -0.11316423104237207,
+        "ate_ci_hi": -0.013034909165310762,
+        "ate_p": 0.019,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 576,
+        "n_control": 5388,
+        "ess_treat": 558.4976054049922,
+        "ess_control": 5385.977230980209
+      },
+      "poison::3bddadecbb": {
+        "ate": 0.03982088440861792,
+        "ate_ci_lo": -0.012460804138607425,
+        "ate_ci_hi": 0.09166482025008554,
+        "ate_p": 0.131,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 811,
+        "n_control": 7239,
+        "ess_treat": 784.3519174128905,
+        "ess_control": 7236.286717210088
+      },
+      "true::2d20a191db": {
+        "ate": 0.01207554292204499,
+        "ate_ci_lo": -0.10346986335853518,
+        "ate_ci_hi": 0.1382866235552502,
+        "ate_p": 0.876,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 148,
+        "n_control": 1230,
+        "ess_treat": 142.9282938569954,
+        "ess_control": 1229.5639238994088
+      },
+      "true::c58e9f9e26": {
+        "ate": -0.028241702936068147,
+        "ate_ci_lo": -0.07568489142038062,
+        "ate_ci_hi": 0.02603365124410156,
+        "ate_p": 0.276,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 558,
+        "n_control": 5071,
+        "ess_treat": 540.9914435346672,
+        "ess_control": 5069.146678052472
+      },
+      "poison::337ce37156": {
+        "ate": 0.003265994093694602,
+        "ate_ci_lo": -0.04437110865465343,
+        "ate_ci_hi": 0.05689203855934612,
+        "ate_p": 0.95,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 557,
+        "n_control": 5289,
+        "ess_treat": 542.0201695012954,
+        "ess_control": 5287.120999815452
+      },
+      "poison::757f26b7c9": {
+        "ate": 0.03100664701509817,
+        "ate_ci_lo": -0.017695954245000776,
+        "ate_ci_hi": 0.08380894659567274,
+        "ate_p": 0.227,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 752,
+        "n_control": 6838,
+        "ess_treat": 727.0661840975336,
+        "ess_control": 6835.525965929605
+      },
+      "true::5a05909edd": {
+        "ate": 0.0005166079367567855,
+        "ate_ci_lo": -0.06817225780013822,
+        "ate_ci_hi": 0.07616661815174906,
+        "ate_p": 0.989,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 240,
+        "n_control": 3022,
+        "ess_treat": 233.34503701822337,
+        "ess_control": 3021.004454008492
+      },
+      "poison::28e67b2cdb": {
+        "ate": 0.05896202745978113,
+        "ate_ci_lo": -0.01752505378063649,
+        "ate_ci_hi": 0.13528576165400835,
+        "ate_p": 0.136,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 436,
+        "n_control": 4905,
+        "ess_treat": 422.07070631184513,
+        "ess_control": 4903.265910404178
+      },
+      "true::c45991279c": {
+        "ate": -0.046509176490037996,
+        "ate_ci_lo": -0.1631673697476406,
+        "ate_ci_hi": 0.08247763300070737,
+        "ate_p": 0.46,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 136,
+        "n_control": 1140,
+        "ess_treat": 132.79313332471574,
+        "ess_control": 1139.5669505536346
+      },
+      "true::c74f5ef903": {
+        "ate": -0.02007826905386599,
+        "ate_ci_lo": -0.05914782731211944,
+        "ate_ci_hi": 0.023741638003131768,
+        "ate_p": 0.311,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 544,
+        "n_control": 5051,
+        "ess_treat": 527.5591156096597,
+        "ess_control": 5049.268506026358
+      },
+      "poison::e0ecc79878": {
+        "ate": 0.04929823308071268,
+        "ate_ci_lo": -0.040167352842723984,
+        "ate_ci_hi": 0.14344586138850104,
+        "ate_p": 0.294,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 329,
+        "n_control": 3231,
+        "ess_treat": 319.26076762724466,
+        "ess_control": 3229.7891721089222
+      },
+      "poison::80ecfc732f": {
+        "ate": -0.09171775853436478,
+        "ate_ci_lo": -0.13006416201440976,
+        "ate_ci_hi": -0.049996248952729805,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 566,
+        "n_control": 5271,
+        "ess_treat": 549.1051448383704,
+        "ess_control": 5269.182755308116
+      },
+      "poison::2d20a191db": {
+        "ate": -0.07693904865614284,
+        "ate_ci_lo": -0.16608674365241846,
+        "ate_ci_hi": 0.02583685641757819,
+        "ate_p": 0.129,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 99,
+        "n_control": 805,
+        "ess_treat": 96.81210236739058,
+        "ess_control": 804.7714416554923
+      },
+      "poison::d24ec0fe03": {
+        "ate": 0.6296753492358607,
+        "ate_ci_lo": 0.3215965538309085,
+        "ate_ci_hi": 0.9552967994516933,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 41,
+        "n_control": 341,
+        "ess_treat": 40.31101635559088,
+        "ess_control": 340.8793451865057
+      },
+      "poison::c74f5ef903": {
+        "ate": -0.07676849310817316,
+        "ate_ci_lo": -0.10432168422124424,
+        "ate_ci_hi": -0.045240200519205014,
+        "ate_p": 0.001,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 566,
+        "n_control": 4963,
+        "ess_treat": 549.7323541629074,
+        "ess_control": 4961.411744045477
+      },
+      "poison::1a0161894f": {
+        "ate": -0.00768286530584654,
+        "ate_ci_lo": -0.04803133344770909,
+        "ate_ci_hi": 0.03835069409116944,
+        "ate_p": 0.745,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 583,
+        "n_control": 4940,
+        "ess_treat": 566.1424258535988,
+        "ess_control": 4938.408961963251
+      },
+      "true::337ce37156": {
+        "ate": 0.03951006090569317,
+        "ate_ci_lo": -0.007932151632430622,
+        "ate_ci_hi": 0.09234824626430971,
+        "ate_p": 0.1,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 453,
+        "n_control": 4828,
+        "ess_treat": 438.544076220401,
+        "ess_control": 4826.372839676698
+      },
+      "poison::e53ec88bb7": {
+        "ate": -0.009853339087770696,
+        "ate_ci_lo": -0.06801341022263604,
+        "ate_ci_hi": 0.0504619587544318,
+        "ate_p": 0.755,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 567,
+        "n_control": 4732,
+        "ess_treat": 550.3843327396726,
+        "ess_control": 4730.197036827534
+      },
+      "poison::5a05909edd": {
+        "ate": 0.06687832915452493,
+        "ate_ci_lo": -0.01171950738764826,
+        "ate_ci_hi": 0.14768829536003428,
+        "ate_p": 0.095,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 319,
+        "n_control": 2583,
+        "ess_treat": 311.1514932417295,
+        "ess_control": 2582.174964535098
+      },
+      "poison::c425a29991": {
+        "ate": -0.07908234839434741,
+        "ate_ci_lo": -0.14213461849488893,
+        "ate_ci_hi": -0.01269832686180027,
+        "ate_p": 0.021,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 436,
+        "n_control": 3675,
+        "ess_treat": 421.3401454016411,
+        "ess_control": 3673.6235758572243
+      },
+      "true::1a0161894f": {
+        "ate": -0.01311228748402013,
+        "ate_ci_lo": -0.05550102647013115,
+        "ate_ci_hi": 0.0321626957552877,
+        "ate_p": 0.532,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 521,
+        "n_control": 4585,
+        "ess_treat": 506.23872955155025,
+        "ess_control": 4583.506173300159
+      },
+      "true::26a4e48ddb": {
+        "ate": -0.044792659809833796,
+        "ate_ci_lo": -0.09074854000457314,
+        "ate_ci_hi": 0.0038116818537957814,
+        "ate_p": 0.068,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 528,
+        "n_control": 5575,
+        "ess_treat": 512.572215452196,
+        "ess_control": 5573.0751175113155
+      },
+      "poison::92039a4309": {
+        "ate": -0.015582313561161298,
+        "ate_ci_lo": -0.06043663047870187,
+        "ate_ci_hi": 0.03235484809791623,
+        "ate_p": 0.524,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 706,
+        "n_control": 5975,
+        "ess_treat": 685.5466619413127,
+        "ess_control": 5972.909648374508
+      },
+      "poison::c58e9f9e26": {
+        "ate": -0.1681493918124531,
+        "ate_ci_lo": -0.22573466591839994,
+        "ate_ci_hi": -0.10860526376149277,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 254,
+        "n_control": 2337,
+        "ess_treat": 246.3770594448807,
+        "ess_control": 2336.1120246022124
+      },
+      "poison::c45991279c": {
+        "ate": -0.022234624710478795,
+        "ate_ci_lo": -0.10072849215607102,
+        "ate_ci_hi": 0.060166115951668646,
+        "ate_p": 0.584,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 189,
+        "n_control": 1504,
+        "ess_treat": 183.0893685253764,
+        "ess_control": 1503.4495312436654
+      },
+      "poison::eb95e6c4d5": {
+        "ate": 0.038975736519428816,
+        "ate_ci_lo": -0.015834395411985867,
+        "ate_ci_hi": 0.09916383937505097,
+        "ate_p": 0.159,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 583,
+        "n_control": 5298,
+        "ess_treat": 566.168662317394,
+        "ess_control": 5296.046982627013
+      },
+      "true::158f10742e": {
+        "ate": 0.043028786246727846,
+        "ate_ci_lo": -0.138327219640921,
+        "ate_ci_hi": 0.23577526534263243,
+        "ate_p": 0.658,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 70,
+        "n_control": 957,
+        "ess_treat": 68.52904636741032,
+        "ess_control": 956.7050518372496
+      },
+      "poison::706298f1e4": {
+        "ate": -0.09496452446177549,
+        "ate_ci_lo": -0.13460507553595288,
+        "ate_ci_hi": -0.053334277115851106,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 615,
+        "n_control": 4585,
+        "ess_treat": 596.0528788472195,
+        "ess_control": 4583.36493850113
+      },
+      "true::8d76f9d00b": {
+        "ate": -0.15423753440164123,
+        "ate_ci_lo": -0.26373972987158145,
+        "ate_ci_hi": -0.03178943441694016,
+        "ate_p": 0.01,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 181,
+        "n_control": 1428,
+        "ess_treat": 174.51188177169323,
+        "ess_control": 1427.3765428334425
+      },
+      "poison::afa4f2df62": {
+        "ate": -0.052683584357424096,
+        "ate_ci_lo": -0.09376607902332115,
+        "ate_ci_hi": -0.0043390777891124934,
+        "ate_p": 0.033,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 634,
+        "n_control": 6629,
+        "ess_treat": 613.9752088806368,
+        "ess_control": 6626.727450724652
+      },
+      "poison::de3cee6aee": {
+        "ate": -0.012580837632092029,
+        "ate_ci_lo": -0.0632376777754066,
+        "ate_ci_hi": 0.04093616726420054,
+        "ate_p": 0.608,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 667,
+        "n_control": 6525,
+        "ess_treat": 644.6637074862916,
+        "ess_control": 6522.576350974303
+      },
+      "poison::8d76f9d00b": {
+        "ate": 0.2810810396395965,
+        "ate_ci_lo": 0.12485725491621298,
+        "ate_ci_hi": 0.43209581902029126,
+        "ate_p": 0.001,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 187,
+        "n_control": 1212,
+        "ess_treat": 182.15107111564947,
+        "ess_control": 1211.4553738058937
+      },
+      "true::e21b6357d4": {
+        "ate": -0.06372115987075391,
+        "ate_ci_lo": -0.10217656387660148,
+        "ate_ci_hi": -0.02342425413147265,
+        "ate_p": 0.003,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 782,
+        "n_control": 6034,
+        "ess_treat": 761.0784602126623,
+        "ess_control": 6031.612287655152
+      },
+      "true::c425a29991": {
+        "ate": -0.08442222483838202,
+        "ate_ci_lo": -0.18114603285250094,
+        "ate_ci_hi": 0.02155547712772083,
+        "ate_p": 0.123,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 181,
+        "n_control": 1367,
+        "ess_treat": 174.8873006174145,
+        "ess_control": 1366.4474160908205
+      },
+      "true::afa4f2df62": {
+        "ate": 0.40680193663507425,
+        "ate_ci_lo": 0.2530341040667981,
+        "ate_ci_hi": 0.5688231827027306,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 177,
+        "n_control": 1585,
+        "ess_treat": 170.7561887403135,
+        "ess_control": 1584.0540092107778
+      },
+      "true::757f26b7c9": {
+        "ate": -0.04901553535186198,
+        "ate_ci_lo": -0.09259588857142811,
+        "ate_ci_hi": -0.005804326835015219,
+        "ate_p": 0.03,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 695,
+        "n_control": 6661,
+        "ess_treat": 672.127480880997,
+        "ess_control": 6658.7427498827765
+      },
+      "poison::2337f3abee": {
+        "ate": 0.13032888271749077,
+        "ate_ci_lo": -0.060785863182607335,
+        "ate_ci_hi": 0.3317981203827914,
+        "ate_p": 0.176,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 104,
+        "n_control": 797,
+        "ess_treat": 100.69355974711893,
+        "ess_control": 796.6999494609273
+      },
+      "true::2337f3abee": {
+        "ate": 0.021216839158298778,
+        "ate_ci_lo": -0.02876241983265844,
+        "ate_ci_hi": 0.07460012784285024,
+        "ate_p": 0.467,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 576,
+        "n_control": 5548,
+        "ess_treat": 557.3783553588761,
+        "ess_control": 5545.906535897868
+      },
+      "true::be03257cf2": {
+        "ate": 0.030690171038181696,
+        "ate_ci_lo": -0.016704030598914708,
+        "ate_ci_hi": 0.0794298782372423,
+        "ate_p": 0.207,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 646,
+        "n_control": 5136,
+        "ess_treat": 628.0791275343304,
+        "ess_control": 5134.139071828229
+      },
+      "true::28e67b2cdb": {
+        "ate": -0.040588222990766976,
+        "ate_ci_lo": -0.1514062300512073,
+        "ate_ci_hi": 0.0747760317390091,
+        "ate_p": 0.473,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 239,
+        "n_control": 1284,
+        "ess_treat": 231.3788463490582,
+        "ess_control": 1283.55631197531
+      },
+      "true::e8a35808bd": {
+        "ate": 0.07093702345322606,
+        "ate_ci_lo": -0.04709496886730994,
+        "ate_ci_hi": 0.2029957645447223,
+        "ate_p": 0.26,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 132,
+        "n_control": 1259,
+        "ess_treat": 127.91839156656576,
+        "ess_control": 1258.521982873431
+      },
+      "true::ae3bad9380": {
+        "ate": -0.04674618087839008,
+        "ate_ci_lo": -0.0887958643952385,
+        "ate_ci_hi": -0.00039443375631672146,
+        "ate_p": 0.05,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 681,
+        "n_control": 6204,
+        "ess_treat": 659.3276998121984,
+        "ess_control": 6201.752725991483
+      },
+      "true::757b94da8b": {
+        "ate": -0.012871030224155297,
+        "ate_ci_lo": -0.06996188642908235,
+        "ate_ci_hi": 0.050097947147881655,
+        "ate_p": 0.651,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 187,
+        "n_control": 1593,
+        "ess_treat": 181.47566855685716,
+        "ess_control": 1592.3541744903075
+      },
+      "poison::ae3bad9380": {
+        "ate": -0.030106272657023925,
+        "ate_ci_lo": -0.07629609318438561,
+        "ate_ci_hi": 0.014537458560882413,
+        "ate_p": 0.188,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 628,
+        "n_control": 5801,
+        "ess_treat": 604.3807254156985,
+        "ess_control": 5798.732679616411
+      },
+      "true::de3cee6aee": {
+        "ate": 0.0352953654601072,
+        "ate_ci_lo": -0.011825045408947623,
+        "ate_ci_hi": 0.08766892449631436,
+        "ate_p": 0.174,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 638,
+        "n_control": 5523,
+        "ess_treat": 617.8226678269848,
+        "ess_control": 5520.8481395257195
+      },
+      "true::eb95e6c4d5": {
+        "ate": -0.027927107934431483,
+        "ate_ci_lo": -0.07078369988358654,
+        "ate_ci_hi": 0.01641106664319943,
+        "ate_p": 0.2,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 747,
+        "n_control": 5929,
+        "ess_treat": 718.9695052569135,
+        "ess_control": 5926.886497565253
+      },
+      "true::92039a4309": {
+        "ate": -0.06258376983084277,
+        "ate_ci_lo": -0.10453021787687578,
+        "ate_ci_hi": -0.018104105244928857,
+        "ate_p": 0.008,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 640,
+        "n_control": 6145,
+        "ess_treat": 617.5676225622856,
+        "ess_control": 6142.759552746819
+      },
+      "true::d547f27b69": {
+        "ate": 0.02317869369106479,
+        "ate_ci_lo": -0.038664587833853334,
+        "ate_ci_hi": 0.08794250948065697,
+        "ate_p": 0.485,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 500,
+        "n_control": 3938,
+        "ess_treat": 483.64769168073167,
+        "ess_control": 3936.483754626293
+      },
+      "true::706298f1e4": {
+        "ate": -0.0027312375654745813,
+        "ate_ci_lo": -0.056027766233276634,
+        "ate_ci_hi": 0.05440496022610643,
+        "ate_p": 0.881,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 572,
+        "n_control": 5618,
+        "ess_treat": 553.2575908804699,
+        "ess_control": 5615.807107289314
+      },
+      "true::9c6a199982": {
+        "ate": 0.3242562475314686,
+        "ate_ci_lo": 0.14145134300452514,
+        "ate_ci_hi": 0.5142150085595606,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 107,
+        "n_control": 905,
+        "ess_treat": 103.50640838189109,
+        "ess_control": 904.5356451803283
+      },
+      "poison::9bf59ece41": {
+        "ate": 0.03516937828209865,
+        "ate_ci_lo": -0.12919987874772468,
+        "ate_ci_hi": 0.20771125663043602,
+        "ate_p": 0.688,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 79,
+        "n_control": 764,
+        "ess_treat": 77.00139523823103,
+        "ess_control": 763.7002334213788
+      },
+      "poison::e8a35808bd": {
+        "ate": 0.2401854594747762,
+        "ate_ci_lo": -0.0532076365660151,
+        "ate_ci_hi": 0.5624294249229094,
+        "ate_p": 0.116,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 74,
+        "n_control": 624,
+        "ess_treat": 71.567653996978,
+        "ess_control": 623.6973518349506
+      },
+      "true::9bf59ece41": {
+        "ate": -0.007484649182357808,
+        "ate_ci_lo": -0.016922672713872353,
+        "ate_ci_hi": 0.0,
+        "ate_p": 0.089,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 24,
+        "n_control": 449,
+        "ess_treat": 23.313900107762517,
+        "ess_control": 448.8470002003871
+      },
+      "true::d24ec0fe03": {
+        "ate": 0.07825375657959846,
+        "ate_ci_lo": -0.027423726637584,
+        "ate_ci_hi": 0.2029334803339222,
+        "ate_p": 0.162,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 92,
+        "n_control": 1125,
+        "ess_treat": 89.45296483076855,
+        "ess_control": 1124.6124512974384
+      },
+      "true::80ecfc732f": {
+        "ate": 0.4387452369725474,
+        "ate_ci_lo": 0.2600661650153599,
+        "ate_ci_hi": 0.615755851907581,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 129,
+        "n_control": 1449,
+        "ess_treat": 125.403914551529,
+        "ess_control": 1448.2692569898106
+      },
+      "true::d082f68960": {
+        "ate": 0.5647587852379794,
+        "ate_ci_lo": 0.3989088895489185,
+        "ate_ci_hi": 0.7444464974260422,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 150,
+        "n_control": 1273,
+        "ess_treat": 145.68212620600008,
+        "ess_control": 1272.3036315707404
+      },
+      "poison::9c6a199982": {
+        "ate": 0.09899878592024824,
+        "ate_ci_lo": -0.11596967131805107,
+        "ate_ci_hi": 0.3346985946556586,
+        "ate_p": 0.426,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 67,
+        "n_control": 651,
+        "ess_treat": 65.42699197212124,
+        "ess_control": 650.769887123494
+      },
+      "true::e53ec88bb7": {
+        "ate": 0.16735685459647648,
+        "ate_ci_lo": 0.027995525254821643,
+        "ate_ci_hi": 0.3228258178396589,
+        "ate_p": 0.025,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 171,
+        "n_control": 999,
+        "ess_treat": 166.43382106655355,
+        "ess_control": 998.5152493983824
+      },
+      "true::3bddadecbb": {
+        "ate": 0.10397050503015412,
+        "ate_ci_lo": -0.07858515146936539,
+        "ate_ci_hi": 0.34059672632920207,
+        "ate_p": 0.322,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 48,
+        "n_control": 431,
+        "ess_treat": 46.32093412604429,
+        "ess_control": 430.79480393408664
+      },
+      "poison::158f10742e": {
+        "ate": 0.06683387305866573,
+        "ate_ci_lo": -0.11967376654449145,
+        "ate_ci_hi": 0.2708117788153364,
+        "ate_p": 0.495,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 74,
+        "n_control": 706,
+        "ess_treat": 72.45667486168978,
+        "ess_control": 705.7340566917728
+      },
+      "poison::052c118e84": {
+        "ate": 0.534349122914395,
+        "ate_ci_lo": 0.1300231291426063,
+        "ate_ci_hi": 0.9208444840171292,
+        "ate_p": 0.004,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 50,
+        "n_control": 276,
+        "ess_treat": 48.539636148979916,
+        "ess_control": 275.8527881214557
+      },
+      "poison::e21b6357d4": {
+        "ate": 0.0587878678244248,
+        "ate_ci_lo": -0.10691705345316459,
+        "ate_ci_hi": 0.23287369289966867,
+        "ate_p": 0.514,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 121,
+        "n_control": 793,
+        "ess_treat": 117.98061782717508,
+        "ess_control": 792.6476332204529
+      },
+      "poison::be03257cf2": {
+        "ate": -0.19408368581030988,
+        "ate_ci_lo": -0.34213696595364673,
+        "ate_ci_hi": -0.07628750784676759,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 10,
+        "n_control": 78,
+        "ess_treat": 9.651818567056152,
+        "ess_control": 77.97722012068236
+      },
+      "poison::757b94da8b": {
+        "ate": -0.08559607372412237,
+        "ate_ci_lo": -0.3130725240846719,
+        "ate_ci_hi": 0.17053570557716619,
+        "ate_p": 0.496,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 43,
+        "n_control": 472,
+        "ess_treat": 42.27204364724319,
+        "ess_control": 471.7618769046829
+      },
+      "true::052c118e84": {
+        "ate": 1.000523150513759,
+        "ate_ci_lo": 0.7037400702468223,
+        "ate_ci_hi": 1.2792955170819436,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 48,
+        "n_control": 182,
+        "ess_treat": 46.801594689344746,
+        "ess_control": 181.87771910253338
+      },
+      "true::e0ecc79878": {
+        "ate": 0.5178596806724782,
+        "ate_ci_lo": 0.08041475141464331,
+        "ate_ci_hi": 0.9896380488121138,
+        "ate_p": 0.017,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 41,
+        "n_control": 388,
+        "ess_treat": 38.58509591917455,
+        "ess_control": 387.8027156027669
+      }
+    },
+    "verdict_snipw": {
+      "poison_ci": [
+        -0.019091247370669178,
+        0.09706880073958227
+      ],
+      "helpful_ci": [
+        0.01424960645526068,
+        0.16820517313133249
+      ],
+      "poison_neg": false,
+      "helpful_pos": true,
+      "non_overlapping": false,
+      "signflip": false
+    },
+    "verdict_aipw": {
+      "poison_ci": [
+        -0.010727802979558068,
+        0.11915595056529078
+      ],
+      "helpful_ci": [
+        0.01879204803835703,
+        0.17550685097514374
+      ],
+      "poison_neg": false,
+      "helpful_pos": true,
+      "non_overlapping": false,
+      "signflip": false
+    }
+  },
+  "H2_signflip_solve": {
+    "snipw": {
+      "label_level": {
+        "poison": {
+          "mean": 0.01032547498955862,
+          "ci_lo": -0.012525571424110302,
+          "ci_hi": 0.03683672839102844,
+          "p": 0.4282,
+          "n": 33,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.03830361356702217,
+          "ci_lo": 0.006331126154409929,
+          "ci_hi": 0.076742672233998,
+          "p": 0.0154,
+          "n": 35,
+          "excl0": true
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 8,
+          "pos": 3,
+          "total": 33
+        },
+        "helpful": {
+          "neg": 4,
+          "pos": 8,
+          "total": 35
+        }
+      }
+    },
+    "aipw": {
+      "label_level": {
+        "poison": {
+          "mean": 0.016776191351855138,
+          "ci_lo": -0.008305031027328968,
+          "ci_hi": 0.046886563261053636,
+          "p": 0.2232,
+          "n": 33,
+          "excl0": false
+        },
+        "helpful": {
+          "mean": 0.04088246103540968,
+          "ci_lo": 0.00875083206822105,
+          "ci_hi": 0.0792282610073932,
+          "p": 0.0088,
+          "n": 35,
+          "excl0": true
+        }
+      },
+      "per_lesson_sig": {
+        "poison": {
+          "neg": 7,
+          "pos": 4,
+          "total": 33
+        },
+        "helpful": {
+          "neg": 6,
+          "pos": 9,
+          "total": 35
+        }
+      }
+    },
+    "per_lesson_snipw": {
+      "poison::26a4e48ddb": {
+        "ate": -0.07883268515578702,
+        "ate_ci_lo": -0.09275092372181991,
+        "ate_ci_hi": -0.06426419862312117,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 748,
+        "n_control": 7015,
+        "ess_treat": 722.153503458725,
+        "ess_control": 7012.2109137055895
+      },
+      "true::b42c4be52c": {
+        "ate": -0.11473057286831127,
+        "ate_ci_lo": -0.16944689449619305,
+        "ate_ci_hi": -0.05086912020916065,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 97,
+        "n_control": 1196,
+        "ess_treat": 93.80131089968285,
+        "ess_control": 1195.5825600542223
+      },
+      "poison::d082f68960": {
+        "ate": -0.03801356477491831,
+        "ate_ci_lo": -0.06021037661025059,
+        "ate_ci_hi": -0.014169209594787725,
+        "ate_p": 0.003,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 576,
+        "n_control": 5388,
+        "ess_treat": 558.4976054049922,
+        "ess_control": 5385.977230980209
+      },
+      "poison::3bddadecbb": {
+        "ate": 0.01364299042217039,
+        "ate_ci_lo": -0.01013214691259081,
+        "ate_ci_hi": 0.03801511909546043,
+        "ate_p": 0.244,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 811,
+        "n_control": 7239,
+        "ess_treat": 784.3519174128905,
+        "ess_control": 7236.286717210088
+      },
+      "true::2d20a191db": {
+        "ate": -0.0045172041945987645,
+        "ate_ci_lo": -0.05852286464770848,
+        "ate_ci_hi": 0.053796537287882355,
+        "ate_p": 0.852,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 148,
+        "n_control": 1230,
+        "ess_treat": 142.9282938569954,
+        "ess_control": 1229.5639238994088
+      },
+      "true::c58e9f9e26": {
+        "ate": -0.01774073879857814,
+        "ate_ci_lo": -0.03838116691717637,
+        "ate_ci_hi": 0.005423246205437683,
+        "ate_p": 0.135,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 558,
+        "n_control": 5071,
+        "ess_treat": 540.9914435346672,
+        "ess_control": 5069.146678052472
+      },
+      "poison::337ce37156": {
+        "ate": -0.003497231979356537,
+        "ate_ci_lo": -0.024627989912226683,
+        "ate_ci_hi": 0.01898380215885074,
+        "ate_p": 0.719,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 557,
+        "n_control": 5289,
+        "ess_treat": 542.0201695012954,
+        "ess_control": 5287.120999815452
+      },
+      "poison::757f26b7c9": {
+        "ate": 0.01261299181632232,
+        "ate_ci_lo": -0.010140435276550527,
+        "ate_ci_hi": 0.03683894088814375,
+        "ate_p": 0.299,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 752,
+        "n_control": 6838,
+        "ess_treat": 727.0661840975336,
+        "ess_control": 6835.525965929605
+      },
+      "true::5a05909edd": {
+        "ate": -0.0018600326846056198,
+        "ate_ci_lo": -0.033678529663647074,
+        "ate_ci_hi": 0.03331173575473401,
+        "ate_p": 0.926,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 240,
+        "n_control": 3022,
+        "ess_treat": 233.34503701822337,
+        "ess_control": 3021.004454008492
+      },
+      "poison::28e67b2cdb": {
+        "ate": 0.034042395870404835,
+        "ate_ci_lo": -0.003958771704981163,
+        "ate_ci_hi": 0.07221829996275135,
+        "ate_p": 0.082,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 436,
+        "n_control": 4905,
+        "ess_treat": 422.07070631184513,
+        "ess_control": 4903.265910404178
+      },
+      "true::c45991279c": {
+        "ate": -0.023092292159252237,
+        "ate_ci_lo": -0.08084771886405016,
+        "ate_ci_hi": 0.04012591759728063,
+        "ate_p": 0.455,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 136,
+        "n_control": 1140,
+        "ess_treat": 132.79313332471574,
+        "ess_control": 1139.5669505536346
+      },
+      "true::c74f5ef903": {
+        "ate": -0.008523613454220674,
+        "ate_ci_lo": -0.027263017788315247,
+        "ate_ci_hi": 0.01142652548673771,
+        "ate_p": 0.378,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 544,
+        "n_control": 5051,
+        "ess_treat": 527.5591156096597,
+        "ess_control": 5049.268506026358
+      },
+      "poison::e0ecc79878": {
+        "ate": 0.01807066465776,
+        "ate_ci_lo": -0.024851778576617772,
+        "ate_ci_hi": 0.06145635591049898,
+        "ate_p": 0.419,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 329,
+        "n_control": 3231,
+        "ess_treat": 319.26076762724466,
+        "ess_control": 3229.7891721089222
+      },
+      "poison::80ecfc732f": {
+        "ate": -0.04462190903007269,
+        "ate_ci_lo": -0.06446904261036053,
+        "ate_ci_hi": -0.023390441933675066,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 566,
+        "n_control": 5271,
+        "ess_treat": 549.1051448383704,
+        "ess_control": 5269.182755308116
+      },
+      "poison::2d20a191db": {
+        "ate": -0.03667611680170906,
+        "ate_ci_lo": -0.08276477007961586,
+        "ate_ci_hi": 0.013837713656287502,
+        "ate_p": 0.151,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 99,
+        "n_control": 805,
+        "ess_treat": 96.81210236739058,
+        "ess_control": 804.7714416554923
+      },
+      "poison::d24ec0fe03": {
+        "ate": 0.28906376229006303,
+        "ate_ci_lo": 0.14721252179987096,
+        "ate_ci_hi": 0.43853782603957214,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 41,
+        "n_control": 341,
+        "ess_treat": 40.31101635559088,
+        "ess_control": 340.8793451865057
+      },
+      "poison::c74f5ef903": {
+        "ate": -0.03539943391932791,
+        "ate_ci_lo": -0.04842654468177771,
+        "ate_ci_hi": -0.02080184086942259,
+        "ate_p": 0.001,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 566,
+        "n_control": 4963,
+        "ess_treat": 549.7323541629074,
+        "ess_control": 4961.411744045477
+      },
+      "poison::1a0161894f": {
+        "ate": -0.0008608855889073036,
+        "ate_ci_lo": -0.020595466610765414,
+        "ate_ci_hi": 0.020753003765936414,
+        "ate_p": 0.962,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 583,
+        "n_control": 4940,
+        "ess_treat": 566.1424258535988,
+        "ess_control": 4938.408961963251
+      },
+      "true::337ce37156": {
+        "ate": 0.021093172807621206,
+        "ate_ci_lo": -0.0020820343026478746,
+        "ate_ci_hi": 0.046509012088045705,
+        "ate_p": 0.067,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 453,
+        "n_control": 4828,
+        "ess_treat": 438.544076220401,
+        "ess_control": 4826.372839676698
+      },
+      "poison::e53ec88bb7": {
+        "ate": 0.0032895445227982822,
+        "ate_ci_lo": -0.025662433913939714,
+        "ate_ci_hi": 0.033222635591677305,
+        "ate_p": 0.824,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 567,
+        "n_control": 4732,
+        "ess_treat": 550.3843327396726,
+        "ess_control": 4730.197036827534
+      },
+      "poison::5a05909edd": {
+        "ate": 0.025050721369829027,
+        "ate_ci_lo": -0.01135642745672869,
+        "ate_ci_hi": 0.061610921204270856,
+        "ate_p": 0.198,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 319,
+        "n_control": 2583,
+        "ess_treat": 311.1514932417295,
+        "ess_control": 2582.174964535098
+      },
+      "poison::c425a29991": {
+        "ate": -0.038495271609718176,
+        "ate_ci_lo": -0.06979642418077905,
+        "ate_ci_hi": -0.005390553733393013,
+        "ate_p": 0.024,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 436,
+        "n_control": 3675,
+        "ess_treat": 421.3401454016411,
+        "ess_control": 3673.6235758572243
+      },
+      "true::1a0161894f": {
+        "ate": -0.009898131507570254,
+        "ate_ci_lo": -0.02821537474030045,
+        "ate_ci_hi": 0.009149739399962093,
+        "ate_p": 0.298,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 521,
+        "n_control": 4585,
+        "ess_treat": 506.23872955155025,
+        "ess_control": 4583.506173300159
+      },
+      "true::26a4e48ddb": {
+        "ate": -0.017374009833980436,
+        "ate_ci_lo": -0.04036763605165771,
+        "ate_ci_hi": 0.00654270633344081,
+        "ate_p": 0.14,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 528,
+        "n_control": 5575,
+        "ess_treat": 512.572215452196,
+        "ess_control": 5573.0751175113155
+      },
+      "poison::92039a4309": {
+        "ate": -0.00922232654557921,
+        "ate_ci_lo": -0.03028637389015305,
+        "ate_ci_hi": 0.012979082341906853,
+        "ate_p": 0.411,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 706,
+        "n_control": 5975,
+        "ess_treat": 685.5466619413127,
+        "ess_control": 5972.909648374508
+      },
+      "poison::c58e9f9e26": {
+        "ate": -0.07475439033320017,
+        "ate_ci_lo": -0.10343541669235792,
+        "ate_ci_hi": -0.04492769712767368,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 254,
+        "n_control": 2337,
+        "ess_treat": 246.3770594448807,
+        "ess_control": 2336.1120246022124
+      },
+      "poison::c45991279c": {
+        "ate": -0.008778877741241406,
+        "ate_ci_lo": -0.04891142180425562,
+        "ate_ci_hi": 0.035265315376850875,
+        "ate_p": 0.655,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 189,
+        "n_control": 1504,
+        "ess_treat": 183.0893685253764,
+        "ess_control": 1503.4495312436654
+      },
+      "poison::eb95e6c4d5": {
+        "ate": 0.01571453238138401,
+        "ate_ci_lo": -0.008229403747113055,
+        "ate_ci_hi": 0.04222917563947005,
+        "ate_p": 0.21,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 583,
+        "n_control": 5298,
+        "ess_treat": 566.168662317394,
+        "ess_control": 5296.046982627013
+      },
+      "true::158f10742e": {
+        "ate": 0.06063648836959007,
+        "ate_ci_lo": -0.04184217360763825,
+        "ate_ci_hi": 0.1662871096732062,
+        "ate_p": 0.26,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 70,
+        "n_control": 957,
+        "ess_treat": 68.52904636741032,
+        "ess_control": 956.7050518372496
+      },
+      "poison::706298f1e4": {
+        "ate": -0.045401980057129435,
+        "ate_ci_lo": -0.06331384449721231,
+        "ate_ci_hi": -0.026546092073732288,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 615,
+        "n_control": 4585,
+        "ess_treat": 596.0528788472195,
+        "ess_control": 4583.36493850113
+      },
+      "true::8d76f9d00b": {
+        "ate": -0.09811101606194902,
+        "ate_ci_lo": -0.15018311773497173,
+        "ate_ci_hi": -0.04085590118414599,
+        "ate_p": 0.001,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 181,
+        "n_control": 1428,
+        "ess_treat": 174.51188177169323,
+        "ess_control": 1427.3765428334425
+      },
+      "poison::afa4f2df62": {
+        "ate": -0.01563838830294352,
+        "ate_ci_lo": -0.037904836793993986,
+        "ate_ci_hi": 0.009386728826296374,
+        "ate_p": 0.21,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 634,
+        "n_control": 6629,
+        "ess_treat": 613.9752088806368,
+        "ess_control": 6626.727450724652
+      },
+      "poison::de3cee6aee": {
+        "ate": -0.011117153125054013,
+        "ate_ci_lo": -0.0349784708278123,
+        "ate_ci_hi": 0.013837521768570508,
+        "ate_p": 0.346,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 667,
+        "n_control": 6525,
+        "ess_treat": 644.6637074862916,
+        "ess_control": 6522.576350974303
+      },
+      "poison::8d76f9d00b": {
+        "ate": 0.11534292566958648,
+        "ate_ci_lo": 0.04122850105787603,
+        "ate_ci_hi": 0.18764360104830646,
+        "ate_p": 0.003,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 187,
+        "n_control": 1212,
+        "ess_treat": 182.15107111564947,
+        "ess_control": 1211.4553738058937
+      },
+      "true::e21b6357d4": {
+        "ate": -0.024883511863955446,
+        "ate_ci_lo": -0.0443634754572669,
+        "ate_ci_hi": -0.00514661428609487,
+        "ate_p": 0.016,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 782,
+        "n_control": 6034,
+        "ess_treat": 761.0784602126623,
+        "ess_control": 6031.612287655152
+      },
+      "true::c425a29991": {
+        "ate": -0.03043924505333212,
+        "ate_ci_lo": -0.08414422185319662,
+        "ate_ci_hi": 0.027354623464608728,
+        "ate_p": 0.301,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 181,
+        "n_control": 1367,
+        "ess_treat": 174.8873006174145,
+        "ess_control": 1366.4474160908205
+      },
+      "true::afa4f2df62": {
+        "ate": 0.17559923646398395,
+        "ate_ci_lo": 0.10177307388897329,
+        "ate_ci_hi": 0.25122559789688104,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 177,
+        "n_control": 1585,
+        "ess_treat": 170.7561887403135,
+        "ess_control": 1584.0540092107778
+      },
+      "true::757f26b7c9": {
+        "ate": -0.02037816348731361,
+        "ate_ci_lo": -0.04193661978181059,
+        "ate_ci_hi": 0.0007640334632020265,
+        "ate_p": 0.062,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 695,
+        "n_control": 6661,
+        "ess_treat": 672.127480880997,
+        "ess_control": 6658.7427498827765
+      },
+      "poison::2337f3abee": {
+        "ate": 0.06542452534967791,
+        "ate_ci_lo": -0.03190895161351634,
+        "ate_ci_hi": 0.1641048404066283,
+        "ate_p": 0.172,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 104,
+        "n_control": 797,
+        "ess_treat": 100.69355974711893,
+        "ess_control": 796.6999494609273
+      },
+      "true::2337f3abee": {
+        "ate": 0.00984111869572643,
+        "ate_ci_lo": -0.013050973062001184,
+        "ate_ci_hi": 0.03379050229316572,
+        "ate_p": 0.463,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 576,
+        "n_control": 5548,
+        "ess_treat": 557.3783553588761,
+        "ess_control": 5545.906535897868
+      },
+      "true::be03257cf2": {
+        "ate": 0.022702123576498354,
+        "ate_ci_lo": 0.00029703325867121996,
+        "ate_ci_hi": 0.0465278648485679,
+        "ate_p": 0.048,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 646,
+        "n_control": 5136,
+        "ess_treat": 628.0791275343304,
+        "ess_control": 5134.139071828229
+      },
+      "true::28e67b2cdb": {
+        "ate": -0.009503431176124483,
+        "ate_ci_lo": -0.06709518291440017,
+        "ate_ci_hi": 0.04917114355328998,
+        "ate_p": 0.754,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 239,
+        "n_control": 1284,
+        "ess_treat": 231.3788463490582,
+        "ess_control": 1283.55631197531
+      },
+      "true::e8a35808bd": {
+        "ate": 0.017635308128549514,
+        "ate_ci_lo": -0.024970320964511097,
+        "ate_ci_hi": 0.06685100799334007,
+        "ate_p": 0.457,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 132,
+        "n_control": 1259,
+        "ess_treat": 127.91839156656576,
+        "ess_control": 1258.521982873431
+      },
+      "true::ae3bad9380": {
+        "ate": -0.020394554156738506,
+        "ate_ci_lo": -0.041130994582186345,
+        "ate_ci_hi": 0.0021398342281954376,
+        "ate_p": 0.072,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 681,
+        "n_control": 6204,
+        "ess_treat": 659.3276998121984,
+        "ess_control": 6201.752725991483
+      },
+      "true::757b94da8b": {
+        "ate": -0.0025072403170350657,
+        "ate_ci_lo": -0.03444840665482307,
+        "ate_ci_hi": 0.032323362032657024,
+        "ate_p": 0.831,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 187,
+        "n_control": 1593,
+        "ess_treat": 181.47566855685716,
+        "ess_control": 1592.3541744903075
+      },
+      "poison::ae3bad9380": {
+        "ate": -0.01320630341829375,
+        "ate_ci_lo": -0.03528063778829373,
+        "ate_ci_hi": 0.008811906512805884,
+        "ate_p": 0.228,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 628,
+        "n_control": 5801,
+        "ess_treat": 604.3807254156985,
+        "ess_control": 5798.732679616411
+      },
+      "true::de3cee6aee": {
+        "ate": 0.02371000620188407,
+        "ate_ci_lo": -0.0006460239586183813,
+        "ate_ci_hi": 0.049267549497796326,
+        "ate_p": 0.06,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 638,
+        "n_control": 5523,
+        "ess_treat": 617.8226678269848,
+        "ess_control": 5520.8481395257195
+      },
+      "true::eb95e6c4d5": {
+        "ate": -0.008879826561826357,
+        "ate_ci_lo": -0.029850612863760458,
+        "ate_ci_hi": 0.012573088342674323,
+        "ate_p": 0.413,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 747,
+        "n_control": 5929,
+        "ess_treat": 718.9695052569135,
+        "ess_control": 5926.886497565253
+      },
+      "true::92039a4309": {
+        "ate": -0.02880861685340086,
+        "ate_ci_lo": -0.04907527732563839,
+        "ate_ci_hi": -0.007150266833551885,
+        "ate_p": 0.012,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 640,
+        "n_control": 6145,
+        "ess_treat": 617.5676225622856,
+        "ess_control": 6142.759552746819
+      },
+      "true::d547f27b69": {
+        "ate": 0.02013163174255933,
+        "ate_ci_lo": -0.011547936098877026,
+        "ate_ci_hi": 0.05176771718807995,
+        "ate_p": 0.232,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 500,
+        "n_control": 3938,
+        "ess_treat": 483.64769168073167,
+        "ess_control": 3936.483754626293
+      },
+      "true::706298f1e4": {
+        "ate": 0.007371143317366685,
+        "ate_ci_lo": -0.017929215561379188,
+        "ate_ci_hi": 0.03531000232845726,
+        "ate_p": 0.604,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 572,
+        "n_control": 5618,
+        "ess_treat": 553.2575908804699,
+        "ess_control": 5615.807107289314
+      },
+      "true::9c6a199982": {
+        "ate": 0.17105453978270588,
+        "ate_ci_lo": 0.08335467726007441,
+        "ate_ci_hi": 0.26376532348888937,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 107,
+        "n_control": 905,
+        "ess_treat": 103.50640838189109,
+        "ess_control": 904.5356451803283
+      },
+      "poison::9bf59ece41": {
+        "ate": 0.011988597074688384,
+        "ate_ci_lo": -0.062443739657070216,
+        "ate_ci_hi": 0.09269788992262944,
+        "ate_p": 0.778,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 79,
+        "n_control": 764,
+        "ess_treat": 77.00139523823103,
+        "ess_control": 763.7002334213788
+      },
+      "poison::e8a35808bd": {
+        "ate": 0.010379850194247114,
+        "ate_ci_lo": -0.08193670511994296,
+        "ate_ci_hi": 0.10928302643612074,
+        "ate_p": 0.825,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 74,
+        "n_control": 624,
+        "ess_treat": 71.567653996978,
+        "ess_control": 623.6973518349506
+      },
+      "true::9bf59ece41": {
+        "ate": -0.006562589904420105,
+        "ate_ci_lo": -0.015293050245015281,
+        "ate_ci_hi": 0.0,
+        "ate_p": 0.089,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 24,
+        "n_control": 449,
+        "ess_treat": 23.313900107762517,
+        "ess_control": 448.8470002003871
+      },
+      "true::d24ec0fe03": {
+        "ate": 0.03892610936463564,
+        "ate_ci_lo": -0.014864591488835895,
+        "ate_ci_hi": 0.09903816737142074,
+        "ate_p": 0.168,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 92,
+        "n_control": 1125,
+        "ess_treat": 89.45296483076855,
+        "ess_control": 1124.6124512974384
+      },
+      "true::80ecfc732f": {
+        "ate": 0.1948960282539559,
+        "ate_ci_lo": 0.10880084230765871,
+        "ate_ci_hi": 0.2775807259804389,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 129,
+        "n_control": 1449,
+        "ess_treat": 125.403914551529,
+        "ess_control": 1448.2692569898106
+      },
+      "true::d082f68960": {
+        "ate": 0.26816909941180483,
+        "ate_ci_lo": 0.18700711700041264,
+        "ate_ci_hi": 0.3545280812504093,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 150,
+        "n_control": 1273,
+        "ess_treat": 145.68212620600008,
+        "ess_control": 1272.3036315707404
+      },
+      "poison::9c6a199982": {
+        "ate": 0.03142620870355539,
+        "ate_ci_lo": -0.06792528331258606,
+        "ate_ci_hi": 0.14215231903016434,
+        "ate_p": 0.591,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 67,
+        "n_control": 651,
+        "ess_treat": 65.42699197212124,
+        "ess_control": 650.769887123494
+      },
+      "true::e53ec88bb7": {
+        "ate": 0.09954349581786753,
+        "ate_ci_lo": 0.021484854069904878,
+        "ate_ci_hi": 0.17638897281138274,
+        "ate_p": 0.013,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 171,
+        "n_control": 999,
+        "ess_treat": 166.43382106655355,
+        "ess_control": 998.5152493983824
+      },
+      "true::3bddadecbb": {
+        "ate": 0.03861140297643951,
+        "ate_ci_lo": -0.03082352460177978,
+        "ate_ci_hi": 0.12840372425542337,
+        "ate_p": 0.334,
+        "ate_excl0": false,
+        "label": "helpful",
+        "n_treat": 48,
+        "n_control": 431,
+        "ess_treat": 46.32093412604429,
+        "ess_control": 430.79480393408664
+      },
+      "poison::158f10742e": {
+        "ate": 0.06149533477599853,
+        "ate_ci_lo": -0.03701275726078492,
+        "ate_ci_hi": 0.16433967629692625,
+        "ate_p": 0.243,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 74,
+        "n_control": 706,
+        "ess_treat": 72.45667486168978,
+        "ess_control": 705.7340566917728
+      },
+      "poison::052c118e84": {
+        "ate": 0.1941953737928008,
+        "ate_ci_lo": 0.051147536619123274,
+        "ate_ci_hi": 0.3404149436420262,
+        "ate_p": 0.005,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 50,
+        "n_control": 276,
+        "ess_treat": 48.539636148979916,
+        "ess_control": 275.8527881214557
+      },
+      "poison::e21b6357d4": {
+        "ate": 0.019493384894529286,
+        "ate_ci_lo": -0.06320797412871229,
+        "ate_ci_hi": 0.10400984879147168,
+        "ate_p": 0.68,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 121,
+        "n_control": 793,
+        "ess_treat": 117.98061782717508,
+        "ess_control": 792.6476332204529
+      },
+      "poison::be03257cf2": {
+        "ate": -0.10314546087280275,
+        "ate_ci_lo": -0.18036321201383831,
+        "ate_ci_hi": -0.03877343068567004,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "poison",
+        "n_treat": 10,
+        "n_control": 78,
+        "ess_treat": 9.651818567056152,
+        "ess_control": 77.97722012068236
+      },
+      "poison::757b94da8b": {
+        "ate": -0.022831149874340123,
+        "ate_ci_lo": -0.14588152308399774,
+        "ate_ci_hi": 0.11931055139801704,
+        "ate_p": 0.698,
+        "ate_excl0": false,
+        "label": "poison",
+        "n_treat": 43,
+        "n_control": 472,
+        "ess_treat": 42.27204364724319,
+        "ess_control": 471.7618769046829
+      },
+      "true::052c118e84": {
+        "ate": 0.45336827302738647,
+        "ate_ci_lo": 0.3094280598693294,
+        "ate_ci_hi": 0.5863662311875665,
+        "ate_p": 0.0,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 48,
+        "n_control": 182,
+        "ess_treat": 46.801594689344746,
+        "ess_control": 181.87771910253338
+      },
+      "true::e0ecc79878": {
+        "ate": 0.16554208784441365,
+        "ate_ci_lo": 0.00149746090008165,
+        "ate_ci_hi": 0.335808517311673,
+        "ate_p": 0.046,
+        "ate_excl0": true,
+        "label": "helpful",
+        "n_treat": 41,
+        "n_control": 388,
+        "ess_treat": 38.58509591917455,
+        "ess_control": 387.8027156027669
+      }
+    },
+    "verdict_snipw": {
+      "poison_ci": [
+        -0.012525571424110302,
+        0.03683672839102844
+      ],
+      "helpful_ci": [
+        0.006331126154409929,
+        0.076742672233998
+      ],
+      "poison_neg": false,
+      "helpful_pos": true,
+      "non_overlapping": false,
+      "signflip": false
+    },
+    "verdict_aipw": {
+      "poison_ci": [
+        -0.008305031027328968,
+        0.046886563261053636
+      ],
+      "helpful_ci": [
+        0.00875083206822105,
+        0.0792282610073932
+      ],
+      "poison_neg": false,
+      "helpful_pos": true,
+      "non_overlapping": false,
+      "signflip": false
+    }
+  },
+  "H1_outcome_credit_logcrosscheck": {
+    "true::c74f5ef903": {
+      "adv": -0.10758224212347248,
+      "label": "helpful",
+      "n": 511
+    },
+    "poison::337ce37156": {
+      "adv": -0.08504446598104677,
+      "label": "poison",
+      "n": 502
+    },
+    "true::1a0161894f": {
+      "adv": -0.11126270009891798,
+      "label": "helpful",
+      "n": 454
+    },
+    "poison::c425a29991": {
+      "adv": 0.011540232735870265,
+      "label": "poison",
+      "n": 410
+    },
+    "true::afa4f2df62": {
+      "adv": 0.6179271288922584,
+      "label": "helpful",
+      "n": 176
+    },
+    "poison::eb95e6c4d5": {
+      "adv": -0.002444223468442447,
+      "label": "poison",
+      "n": 514
+    },
+    "poison::8d76f9d00b": {
+      "adv": 0.5038358159487744,
+      "label": "poison",
+      "n": 183
+    },
+    "true::c58e9f9e26": {
+      "adv": -0.049374762967232255,
+      "label": "helpful",
+      "n": 526
+    },
+    "true::e21b6357d4": {
+      "adv": -0.07344528105597026,
+      "label": "helpful",
+      "n": 268
+    },
+    "poison::3bddadecbb": {
+      "adv": 0.0316296469117443,
+      "label": "poison",
+      "n": 647
+    },
+    "poison::e8a35808bd": {
+      "adv": 0.5023369217153468,
+      "label": "poison",
+      "n": 64
+    },
+    "true::c425a29991": {
+      "adv": 0.052950780934709674,
+      "label": "helpful",
+      "n": 172
+    },
+    "poison::ae3bad9380": {
+      "adv": -0.020293843854947535,
+      "label": "poison",
+      "n": 562
+    },
+    "true::2337f3abee": {
+      "adv": -0.012209158422829214,
+      "label": "helpful",
+      "n": 505
+    },
+    "poison::706298f1e4": {
+      "adv": -0.09784179402759784,
+      "label": "poison",
+      "n": 188
+    },
+    "true::ae3bad9380": {
+      "adv": -0.03299977349693212,
+      "label": "helpful",
+      "n": 585
+    },
+    "poison::80ecfc732f": {
+      "adv": -0.13870148854062753,
+      "label": "poison",
+      "n": 472
+    },
+    "true::757f26b7c9": {
+      "adv": -0.060886630010076215,
+      "label": "helpful",
+      "n": 634
+    },
+    "true::eb95e6c4d5": {
+      "adv": -0.03515536317482587,
+      "label": "helpful",
+      "n": 666
+    },
+    "poison::afa4f2df62": {
+      "adv": -0.018725264353872978,
+      "label": "poison",
+      "n": 569
+    },
+    "true::337ce37156": {
+      "adv": -0.05242572385000849,
+      "label": "helpful",
+      "n": 412
+    },
+    "true::d082f68960": {
+      "adv": 0.8303504847732046,
+      "label": "helpful",
+      "n": 139
+    },
+    "true::26a4e48ddb": {
+      "adv": -0.05296359682125881,
+      "label": "helpful",
+      "n": 472
+    },
+    "poison::1a0161894f": {
+      "adv": -0.10102149940673391,
+      "label": "poison",
+      "n": 520
+    },
+    "true::de3cee6aee": {
+      "adv": 0.06761093376473531,
+      "label": "helpful",
+      "n": 444
+    },
+    "poison::9c6a199982": {
+      "adv": 0.28195569793634,
+      "label": "poison",
+      "n": 66
+    },
+    "poison::c74f5ef903": {
+      "adv": -0.16312649889909553,
+      "label": "poison",
+      "n": 484
+    },
+    "true::92039a4309": {
+      "adv": -0.028538690493605412,
+      "label": "helpful",
+      "n": 436
+    },
+    "poison::de3cee6aee": {
+      "adv": -0.048138124779029734,
+      "label": "poison",
+      "n": 548
+    },
+    "true::d547f27b69": {
+      "adv": 0.08988112233837409,
+      "label": "helpful",
+      "n": 481
+    },
+    "poison::e0ecc79878": {
+      "adv": 0.1756207450808549,
+      "label": "poison",
+      "n": 315
+    },
+    "poison::c58e9f9e26": {
+      "adv": -0.12391406842754242,
+      "label": "poison",
+      "n": 241
+    },
+    "poison::26a4e48ddb": {
+      "adv": -0.15041326146919737,
+      "label": "poison",
+      "n": 628
+    },
+    "true::80ecfc732f": {
+      "adv": 0.6118228093108897,
+      "label": "helpful",
+      "n": 128
+    },
+    "poison::e53ec88bb7": {
+      "adv": 0.054056269032119963,
+      "label": "poison",
+      "n": 310
+    },
+    "poison::92039a4309": {
+      "adv": -0.08996929595786984,
+      "label": "poison",
+      "n": 241
+    },
+    "true::5a05909edd": {
+      "adv": -0.07331368432457003,
+      "label": "helpful",
+      "n": 218
+    },
+    "poison::c45991279c": {
+      "adv": -0.07556384271825514,
+      "label": "poison",
+      "n": 185
+    },
+    "true::9bf59ece41": {
+      "adv": -0.20730933054814593,
+      "label": "helpful",
+      "n": 24
+    },
+    "poison::d082f68960": {
+      "adv": -0.08143911615896401,
+      "label": "poison",
+      "n": 475
+    },
+    "poison::757b94da8b": {
+      "adv": 0.24824650317176333,
+      "label": "poison",
+      "n": 29
+    },
+    "true::b42c4be52c": {
+      "adv": -0.043230481963364376,
+      "label": "helpful",
+      "n": 94
+    },
+    "poison::28e67b2cdb": {
+      "adv": 0.13031997384905114,
+      "label": "poison",
+      "n": 416
+    },
+    "poison::757f26b7c9": {
+      "adv": 0.027161033770297688,
+      "label": "poison",
+      "n": 678
+    },
+    "true::e8a35808bd": {
+      "adv": 0.0567567155940632,
+      "label": "helpful",
+      "n": 99
+    },
+    "poison::e21b6357d4": {
+      "adv": 0.30399975731946594,
+      "label": "poison",
+      "n": 102
+    },
+    "true::706298f1e4": {
+      "adv": 0.054097159858222166,
+      "label": "helpful",
+      "n": 405
+    },
+    "true::d24ec0fe03": {
+      "adv": -0.02719142217817777,
+      "label": "helpful",
+      "n": 88
+    },
+    "true::be03257cf2": {
+      "adv": 0.002293216581026547,
+      "label": "helpful",
+      "n": 193
+    },
+    "true::e53ec88bb7": {
+      "adv": 0.4726021370605171,
+      "label": "helpful",
+      "n": 169
+    },
+    "true::c45991279c": {
+      "adv": 0.04444980099322904,
+      "label": "helpful",
+      "n": 133
+    },
+    "true::8d76f9d00b": {
+      "adv": 0.09743693868664516,
+      "label": "helpful",
+      "n": 175
+    },
+    "true::158f10742e": {
+      "adv": 0.2320196529885563,
+      "label": "helpful",
+      "n": 63
+    },
+    "true::757b94da8b": {
+      "adv": -0.04078280251034991,
+      "label": "helpful",
+      "n": 71
+    },
+    "poison::052c118e84": {
+      "adv": 0.6929250812042667,
+      "label": "poison",
+      "n": 50
+    },
+    "true::e0ecc79878": {
+      "adv": 0.7261438100484771,
+      "label": "helpful",
+      "n": 41
+    },
+    "true::9c6a199982": {
+      "adv": 0.40185855455316577,
+      "label": "helpful",
+      "n": 99
+    },
+    "poison::5a05909edd": {
+      "adv": 0.045767370135948726,
+      "label": "poison",
+      "n": 302
+    },
+    "true::28e67b2cdb": {
+      "adv": 0.21269629095902115,
+      "label": "helpful",
+      "n": 231
+    },
+    "true::3bddadecbb": {
+      "adv": 0.01741632719979888,
+      "label": "helpful",
+      "n": 46
+    },
+    "true::052c118e84": {
+      "adv": 1.2800627493212153,
+      "label": "helpful",
+      "n": 48
+    },
+    "poison::9bf59ece41": {
+      "adv": 0.09044293506288587,
+      "label": "poison",
+      "n": 79
+    },
+    "poison::2337f3abee": {
+      "adv": 0.5112513920646565,
+      "label": "poison",
+      "n": 102
+    },
+    "poison::158f10742e": {
+      "adv": 0.15302755117554034,
+      "label": "poison",
+      "n": 32
+    },
+    "true::2d20a191db": {
+      "adv": 0.07609931841991585,
+      "label": "helpful",
+      "n": 145
+    },
+    "poison::d24ec0fe03": {
+      "adv": 0.5140944070738896,
+      "label": "poison",
+      "n": 41
+    },
+    "poison::2d20a191db": {
+      "adv": -0.15694625257129066,
+      "label": "poison",
+      "n": 97
+    },
+    "poison::be03257cf2": {
+      "adv": -0.20730933054814593,
+      "label": "poison",
+      "n": 8
+    }
+  },
+  "H1_outcome_Q": {
+    "helpful": {
+      "mean": 0.3198995650914614,
+      "ci_lo": 0.28075403996117554,
+      "ci_hi": 0.3623538981969904,
+      "p": 0.0,
+      "n": 35,
+      "excl0": true
+    },
+    "poison": {
+      "mean": 0.29337098875879,
+      "ci_lo": 0.25889617502923434,
+      "ci_hi": 0.32887285514186815,
+      "p": 0.0,
+      "n": 33,
+      "excl0": true
+    },
+    "distractor": null
+  },
+  "H3_promotion": {
+    "outcome_Q": {
+      "poison": {
+        "rate": 1.0,
+        "ci_lo": 1.0,
+        "ci_hi": 1.0,
+        "n": 33
+      },
+      "helpful": {
+        "rate": 1.0,
+        "ci_lo": 1.0,
+        "ci_hi": 1.0,
+        "n": 35
+      }
+    },
+    "causal_ATE": {
+      "poison": {
+        "rate": 0.48484848484848486,
+        "ci_lo": 0.30303030303030304,
+        "ci_hi": 0.6666666666666666,
+        "n": 33
+      },
+      "helpful": {
+        "rate": 0.5142857142857142,
+        "ci_lo": 0.34285714285714286,
+        "ci_hi": 0.6857142857142857,
+        "n": 35
+      }
+    },
+    "gap_Q_minus_ATE": {
+      "helpful": {
+        "gap": 0.4857142857142857,
+        "rate_a": 1.0,
+        "rate_b": 0.5142857142857142,
+        "ci_lo": 0.3142857142857143,
+        "ci_hi": 0.6571428571428571,
+        "p": 0.0,
+        "n": 35
+      },
+      "poison": {
+        "gap": 0.5151515151515151,
+        "rate_a": 1.0,
+        "rate_b": 0.48484848484848486,
+        "ci_lo": 0.3333333333333333,
+        "ci_hi": 0.696969696969697,
+        "p": 0.0,
+        "n": 33
+      }
+    }
+  },
+  "H4_power": {
+    "contrasts": {
+      "outcome_vs_B0": {
+        "n": 105,
+        "diff": 0.1523809523809524,
+        "ci_lo": 0.08571428571428572,
+        "ci_hi": 0.21904761904761905,
+        "boot_p": 0.0,
+        "mcnemar_p": 3.0517578125e-05,
+        "significant": true
+      }
+    },
+    "mde": {
+      "observed_paired_sd": 0.36111345918274834,
+      "n_pairs": 105,
+      "mde_at_n": 0.09873084712516311,
+      "power": 0.8,
+      "alpha": 0.05,
+      "n_for_5pp": 410,
+      "n_for_10pp": 103
+    }
+  },
+  "ablations": {
+    "mc_seed": {
+      "grid": {
+        "nmc400_seed0": {
+          "helpful": 0.08459900299464554,
+          "poison": 0.03414591281965735,
+          "distractor": null
+        },
+        "nmc400_seed1": {
+          "helpful": 0.08007590269313543,
+          "poison": 0.029703864546919135,
+          "distractor": null
+        },
+        "nmc400_seed2": {
+          "helpful": 0.08024860215067424,
+          "poison": 0.03347544640873292,
+          "distractor": null
+        },
+        "nmc400_seed3": {
+          "helpful": 0.0831801643512948,
+          "poison": 0.03686273170359189,
+          "distractor": null
+        },
+        "nmc400_seed4": {
+          "helpful": 0.08235036051169446,
+          "poison": 0.0328592406578548,
+          "distractor": null
+        },
+        "nmc400_seed5": {
+          "helpful": 0.08318778861509417,
+          "poison": 0.03428419362620818,
+          "distractor": null
+        },
+        "nmc400_seed6": {
+          "helpful": 0.08120318755807508,
+          "poison": 0.03289222699111781,
+          "distractor": null
+        },
+        "nmc400_seed7": {
+          "helpful": 0.08066601286228081,
+          "poison": 0.03183288351282979,
+          "distractor": null
+        },
+        "nmc400_seed8": {
+          "helpful": 0.08444958792742896,
+          "poison": 0.03310933640058107,
+          "distractor": null
+        },
+        "nmc400_seed9": {
+          "helpful": 0.08347648276629993,
+          "poison": 0.030932467693426485,
+          "distractor": null
+        },
+        "nmc1000_seed0": {
+          "helpful": 0.08345597834312879,
+          "poison": 0.034363314851952174,
+          "distractor": null
+        },
+        "nmc1000_seed1": {
+          "helpful": 0.08190384922498539,
+          "poison": 0.03082852311188527,
+          "distractor": null
+        },
+        "nmc1000_seed2": {
+          "helpful": 0.08005331834439607,
+          "poison": 0.03302759767324067,
+          "distractor": null
+        },
+        "nmc1000_seed3": {
+          "helpful": 0.0818862168552551,
+          "poison": 0.03531765934547873,
+          "distractor": null
+        },
+        "nmc1000_seed4": {
+          "helpful": 0.08179075836551673,
+          "poison": 0.034441887279822836,
+          "distractor": null
+        },
+        "nmc1000_seed5": {
+          "helpful": 0.08273556243921039,
+          "poison": 0.033640196371067375,
+          "distractor": null
+        },
+        "nmc1000_seed6": {
+          "helpful": 0.08088980793608404,
+          "poison": 0.033076595929361456,
+          "distractor": null
+        },
+        "nmc1000_seed7": {
+          "helpful": 0.08055177365621834,
+          "poison": 0.03237299547592642,
+          "distractor": null
+        },
+        "nmc1000_seed8": {
+          "helpful": 0.08257595050112246,
+          "poison": 0.03389087789171714,
+          "distractor": null
+        },
+        "nmc1000_seed9": {
+          "helpful": 0.08238010849939775,
+          "poison": 0.032843783262847356,
+          "distractor": null
+        }
+      },
+      "poison_neg_fraction": 0.0,
+      "true_pos_fraction": 1.0
+    },
+    "clip": {
+      "0.02": {
+        "poison": 0.03413500137123658,
+        "helpful": 0.08460078038680298
+      },
+      "0.05": {
+        "poison": 0.03414591281965735,
+        "helpful": 0.08459900299464554
+      },
+      "0.1": {
+        "poison": 0.03321020510115525,
+        "helpful": 0.08273935017872049
+      }
+    },
+    "ess_frac": {
+      "0.2": {
+        "poison": 0.03414591281965735,
+        "helpful": 0.08459900299464554,
+        "n_poison": 33
+      },
+      "0.3": {
+        "poison": 0.03414591281965735,
+        "helpful": 0.08459900299464554,
+        "n_poison": 33
+      },
+      "0.5": {
+        "poison": 0.03414591281965735,
+        "helpful": 0.08459900299464554,
+        "n_poison": 33
+      }
+    },
+    "propensity_source": {
+      "confounded_Q": {
+        "poison": 0.03414591281965735,
+        "poison_ci": [
+          -0.01934197597290796,
+          0.102117259943665
+        ],
+        "helpful": 0.08459900299464554,
+        "helpful_ci": [
+          0.014791160951882237,
+          0.16879151223020095
+        ]
+      },
+      "prior_only_Q0": {
+        "poison": 0.030209457041748156,
+        "poison_ci": [
+          -0.022137216685387477,
+          0.09604235221827824
+        ],
+        "helpful": 0.07929459581749075,
+        "helpful_ci": [
+          0.011850399100925283,
+          0.16196023434463244
+        ]
+      }
+    },
+    "estimator": {
+      "snipw": {
+        "poison": 0.03414591281965735,
+        "poison_ci": [
+          -0.01934197597290796,
+          0.102117259943665
+        ],
+        "helpful": 0.08459900299464554,
+        "helpful_ci": [
+          0.014791160951882237,
+          0.16879151223020095
+        ]
+      },
+      "aipw": {
+        "poison": 0.0483117222151058,
+        "poison_ci": [
+          -0.011834427986625842,
+          0.12444286816308148
+        ],
+        "helpful": 0.09056642278388966,
+        "helpful_ci": [
+          0.020992747667248124,
+          0.17385697941979547
+        ]
+      }
+    }
+  },
+  "theta_sweep": {
+    "thetas": [
+      -0.2,
+      -0.18,
+      -0.16,
+      -0.14,
+      -0.12,
+      -0.1,
+      -0.08,
+      -0.06,
+      -0.04,
+      -0.02,
+      -0.0,
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16,
+      0.18,
+      0.2
+    ],
+    "outcome_Q_rates": {
+      "-0.2": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.18": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.16": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.14": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.12": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.1": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.08": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.06": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.04": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.02": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "-0.0": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.02": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.04": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.06": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.08": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.1": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.12": {
+        "poison": 1.0,
+        "helpful": 1.0
+      },
+      "0.14": {
+        "poison": 0.9696969696969697,
+        "helpful": 1.0
+      },
+      "0.16": {
+        "poison": 0.9696969696969697,
+        "helpful": 1.0
+      },
+      "0.18": {
+        "poison": 0.8787878787878788,
+        "helpful": 0.9714285714285714
+      },
+      "0.2": {
+        "poison": 0.7878787878787878,
+        "helpful": 0.8857142857142857
+      }
+    },
+    "causal_ATE_rates": {
+      "-0.2": {
+        "poison": 1.0,
+        "helpful": 0.9714285714285714
+      },
+      "-0.18": {
+        "poison": 0.9696969696969697,
+        "helpful": 0.9714285714285714
+      },
+      "-0.16": {
+        "poison": 0.9393939393939394,
+        "helpful": 0.9714285714285714
+      },
+      "-0.14": {
+        "poison": 0.9090909090909091,
+        "helpful": 0.9428571428571428
+      },
+      "-0.12": {
+        "poison": 0.9090909090909091,
+        "helpful": 0.9428571428571428
+      },
+      "-0.1": {
+        "poison": 0.9090909090909091,
+        "helpful": 0.9428571428571428
+      },
+      "-0.08": {
+        "poison": 0.8181818181818182,
+        "helpful": 0.9142857142857143
+      },
+      "-0.06": {
+        "poison": 0.696969696969697,
+        "helpful": 0.8571428571428571
+      },
+      "-0.04": {
+        "poison": 0.6666666666666666,
+        "helpful": 0.7142857142857143
+      },
+      "-0.02": {
+        "poison": 0.6060606060606061,
+        "helpful": 0.6285714285714286
+      },
+      "-0.0": {
+        "poison": 0.48484848484848486,
+        "helpful": 0.5142857142857142
+      },
+      "0.02": {
+        "poison": 0.45454545454545453,
+        "helpful": 0.45714285714285713
+      },
+      "0.04": {
+        "poison": 0.3333333333333333,
+        "helpful": 0.3142857142857143
+      },
+      "0.06": {
+        "poison": 0.24242424242424243,
+        "helpful": 0.2857142857142857
+      },
+      "0.08": {
+        "poison": 0.18181818181818182,
+        "helpful": 0.22857142857142856
+      },
+      "0.1": {
+        "poison": 0.15151515151515152,
+        "helpful": 0.22857142857142856
+      },
+      "0.12": {
+        "poison": 0.15151515151515152,
+        "helpful": 0.2
+      },
+      "0.14": {
+        "poison": 0.12121212121212122,
+        "helpful": 0.2
+      },
+      "0.16": {
+        "poison": 0.12121212121212122,
+        "helpful": 0.2
+      },
+      "0.18": {
+        "poison": 0.12121212121212122,
+        "helpful": 0.17142857142857143
+      },
+      "0.2": {
+        "poison": 0.12121212121212122,
+        "helpful": 0.17142857142857143
+      }
+    },
+    "outcome_Q_separating_theta": null,
+    "causal_ATE_separating_theta": null
+  },
+  "ess_positivity": {
+    "poison": {
+      "mean_ess_treat": 366.315018325954,
+      "mean_ess_control": 3400.031597360676,
+      "min_ess_treat": 9.651818567056152,
+      "rejected": 0,
+      "total": 33,
+      "rejection_rate": 0.0
+    },
+    "helpful": {
+      "mean_ess_treat": 323.228218323512,
+      "mean_ess_control": 3001.959988247985,
+      "min_ess_treat": 23.313900107762517,
+      "rejected": 0,
+      "total": 35,
+      "rejection_rate": 0.0
+    },
+    "_differential_rejection": {
+      "helpful": 0.0,
+      "poison": 0.0,
+      "gap": 0.0,
+      "flag": false
+    }
+  }
+}

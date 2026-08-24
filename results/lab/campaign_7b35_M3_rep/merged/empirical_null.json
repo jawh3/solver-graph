@@ -1,0 +1,27 @@
+{
+  "dir": "results/lab/campaign_7b35_M3_rep/merged",
+  "key": "R_final",
+  "n_controls": 67,
+  "null_mu": 0.022468120107969235,
+  "null_sigma": 0.16862355544295798,
+  "null_95_band": [
+    -0.18413654342008773,
+    0.49821377146083984
+  ],
+  "labels": {
+    "helpful": {
+      "on_target_mean_ate": 0.4191299935731432,
+      "n": 31,
+      "calibrated_z": 2.3523514993096963,
+      "calibrated_p": 0.01865513701894506,
+      "outside_null_band": false
+    },
+    "poison": {
+      "on_target_mean_ate": -0.003937611870778099,
+      "n": 28,
+      "calibrated_z": -0.1565957490896334,
+      "calibrated_p": 0.8755634529466289,
+      "outside_null_band": false
+    }
+  }
+}

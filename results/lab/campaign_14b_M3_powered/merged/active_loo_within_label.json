@@ -1,0 +1,58 @@
+{
+  "source": "results/lab/campaign_14b_M3_powered/merged/active_loo.json",
+  "overall_spearman_argsort": 0.7812725757154767,
+  "by_label": {
+    "poison": {
+      "n_nodes": 28,
+      "spearman_argsort_pearson": 0.028461959496442254,
+      "spearman_scipy": 0.07158194871770217,
+      "spearman_ci95_boot_seed0": [
+        -0.3538987902503468,
+        0.49072470171036237
+      ],
+      "sign_agree_RANKABLE_both_nonzero": "8/18",
+      "sign_agree_rankable_p_ge_vs_chance": 0.7596588134765625,
+      "sign_agree_strict_with_ties_as_disagree": "8/28",
+      "sign_agree_gt0_convention": "18/28",
+      "sign_agree_gt0_p_ge": 0.09246667101979256,
+      "sign_agree_median_split": "13/28",
+      "loo_ties_at_zero": 10,
+      "interpretation": "AT CHANCE / uninformative (rankable nodes); NOT anti-correlated",
+      "loo_mean": 0.044642857142857144,
+      "loo_mean_ci95_boot_seed0": [
+        -0.005952380952380947,
+        0.0982142857142857
+      ],
+      "cheap_mean": -0.05300278186302879,
+      "between_node_sd_loo": 0.14069591669944273,
+      "per_node_se_loo": 0.2041241452319315,
+      "signal_to_noise": 0.6892664096135228
+    },
+    "helpful": {
+      "n_nodes": 32,
+      "spearman_argsort_pearson": 0.6407624633431084,
+      "spearman_scipy": 0.6400900123293765,
+      "spearman_ci95_boot_seed0": [
+        0.3386048327385668,
+        0.8541241352356979
+      ],
+      "sign_agree_RANKABLE_both_nonzero": "30/30",
+      "sign_agree_rankable_p_ge_vs_chance": 9.313225746154785e-10,
+      "sign_agree_strict_with_ties_as_disagree": "30/32",
+      "sign_agree_gt0_convention": "30/32",
+      "sign_agree_gt0_p_ge": 1.2316741049289703e-07,
+      "sign_agree_median_split": "28/32",
+      "loo_ties_at_zero": 2,
+      "interpretation": "AT CHANCE / uninformative (rankable nodes); NOT anti-correlated",
+      "loo_mean": 0.5494791666666666,
+      "loo_mean_ci95_boot_seed0": [
+        0.45052083333333337,
+        0.6510416666666667
+      ],
+      "cheap_mean": 0.5184253550347397,
+      "between_node_sd_loo": 0.29471097484104025,
+      "per_node_se_loo": 0.2041241452319315,
+      "signal_to_noise": 1.4437830199175188
+    }
+  }
+}

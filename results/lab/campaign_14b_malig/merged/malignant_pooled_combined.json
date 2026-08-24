@@ -1,0 +1,90 @@
+{
+  "dirs": [
+    "results/lab/campaign_14b_malig/merged",
+    "results/lab/campaign_14b_malig_expand/merged"
+  ],
+  "cond": "outcome",
+  "key": "outcome",
+  "by_label": {
+    "poison": {
+      "equal_weight_lesson_level": {
+        "ate": 0.028429967032401443,
+        "ci_lo": -0.006295925282699836,
+        "ci_hi": 0.06868111392859834,
+        "p_one_sided": 0.059125,
+        "p_two_sided": 0.11825,
+        "n_families": 27,
+        "excl0_two_sided": false
+      },
+      "n_treat_weighted_run_level": {
+        "ate": 0.03307791590546027,
+        "ci_lo": -0.005060764212556032,
+        "ci_hi": 0.07566266498583833,
+        "p_one_sided": 0.0475,
+        "p_two_sided": 0.095,
+        "n_families": 27,
+        "excl0_two_sided": false
+      }
+    },
+    "malignant_destroy": {
+      "equal_weight_lesson_level": {
+        "ate": -0.016151288813919275,
+        "ci_lo": -0.02751137326052279,
+        "ci_hi": -0.004135134484584295,
+        "p_one_sided": 0.005,
+        "p_two_sided": 0.01,
+        "n_families": 74,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.013513226247779129,
+        "ci_lo": -0.02507123475609355,
+        "ci_hi": -0.0022250628879277126,
+        "p_one_sided": 0.010875,
+        "p_two_sided": 0.02175,
+        "n_families": 74,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_exhaust": {
+      "equal_weight_lesson_level": {
+        "ate": -0.01660348017017582,
+        "ci_lo": -0.03033291348533846,
+        "ci_hi": -0.003491777875843319,
+        "p_one_sided": 0.00825,
+        "p_two_sided": 0.0165,
+        "n_families": 71,
+        "excl0_two_sided": true
+      },
+      "n_treat_weighted_run_level": {
+        "ate": -0.015583940541257262,
+        "ci_lo": -0.02954597898918278,
+        "ci_hi": -0.0042349957539381,
+        "p_one_sided": 0.003375,
+        "p_two_sided": 0.00675,
+        "n_families": 71,
+        "excl0_two_sided": true
+      }
+    },
+    "malignant_wrongflag": {
+      "equal_weight_lesson_level": {
+        "ate": 0.004383733322164993,
+        "ci_lo": -0.01485180939642185,
+        "ci_hi": 0.02655712789224654,
+        "p_one_sided": 0.34675,
+        "p_two_sided": 0.6935,
+        "n_families": 64,
+        "excl0_two_sided": false
+      },
+      "n_treat_weighted_run_level": {
+        "ate": 0.004798200489464657,
+        "ci_lo": -0.013422212581550288,
+        "ci_hi": 0.02785522718811546,
+        "p_one_sided": 0.33575,
+        "p_two_sided": 0.6715,
+        "n_families": 64,
+        "excl0_two_sided": false
+      }
+    }
+  }
+}

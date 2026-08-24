@@ -1,0 +1,74 @@
+{
+  "source": "results/lab/constructed_loo_crypto.json",
+  "note": "rollouts were POISON-FIRST (primacy confound, fixed 2026-06-25); base floors ~0.04 so Delta_alone is floor-bounded",
+  "by_subset": {
+    "all": {
+      "n_families": 41,
+      "base_none_mean": 0.039634146341463415,
+      "helpful_mean": 0.8445121951219512,
+      "delta_interf": {
+        "mean": -0.31097560975609756,
+        "ci_lo": -0.4268292682926829,
+        "ci_hi": -0.19207317073170732,
+        "p_two_sided": 0.0,
+        "n": 41
+      },
+      "delta_alone": {
+        "mean": 0.051829268292682924,
+        "ci_lo": 0.006097560975609756,
+        "ci_hi": 0.10670731707317073,
+        "p_two_sided": 0.0248,
+        "n": 41
+      },
+      "DiD": {
+        "mean": -0.3628048780487805,
+        "ci_lo": -0.47865853658536583,
+        "ci_hi": -0.2438262195121962,
+        "p_two_sided": 0.0,
+        "n": 41
+      },
+      "budget_bracket_poison_minus_exhaust": {
+        "mean": 0.20426829268292682,
+        "ci_lo": 0.039634146341463415,
+        "ci_hi": 0.3567073170731707,
+        "p_two_sided": 0.0164,
+        "n": 41
+      },
+      "exhaust_in_context_mean": -0.5152439024390244
+    },
+    "in_band_0.20_0.90": {
+      "n_families": 15,
+      "base_none_mean": 0.016666666666666666,
+      "helpful_mean": 0.6916666666666667,
+      "delta_interf": {
+        "mean": -0.30833333333333335,
+        "ci_lo": -0.48333333333333334,
+        "ci_hi": -0.13333333333333333,
+        "p_two_sided": 0.0008,
+        "n": 15
+      },
+      "delta_alone": {
+        "mean": 0.058333333333333334,
+        "ci_lo": 0.0,
+        "ci_hi": 0.13333333333333333,
+        "p_two_sided": 0.0732,
+        "n": 15
+      },
+      "DiD": {
+        "mean": -0.36666666666666664,
+        "ci_lo": -0.5416666666666666,
+        "ci_hi": -0.19166666666666668,
+        "p_two_sided": 0.0,
+        "n": 15
+      },
+      "budget_bracket_poison_minus_exhaust": {
+        "mean": 0.041666666666666664,
+        "ci_lo": -0.24166666666666667,
+        "ci_hi": 0.31666666666666665,
+        "p_two_sided": 0.7832,
+        "n": 15
+      },
+      "exhaust_in_context_mean": -0.35
+    }
+  }
+}

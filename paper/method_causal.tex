@@ -1,0 +1,95 @@
+% ===================================================================
+% New method core: causal credit via the free randomized experiment.
+% Integrated into main.tex once the campaign numbers land.
+% ===================================================================
+
+\section{From a Boundary to a Causal-Credit Construction}\label{sec:solution}
+The levers of \S\ref{sec:method} run into a sharp boundary at \emph{recovery
+masking} (\S\ref{sec:problem}). Action-grounded credit denies value to a false
+lesson that is never executed, and the step reward down-weights one that wins by a
+longer route; but a false lesson the agent \emph{executes} and then recovers from
+receives the same verifiable-success credit as a genuinely useful one, because the
+flag credits whichever tool was run. The information needed to tell them
+apart---\emph{would the run have succeeded without this lesson?}---is simply not in
+the scalar outcome of a single trajectory. \S\ref{sec:results} confirms this
+empirically: the outcome bandit's learned value cannot separate executed poison from
+true lessons. This section gives the construction that can.
+
+Our key observation is that this counterfactual is, in principle, \emph{estimable for
+free} in exactly this setting, for two reasons that coincide only in a verifiable-reward
+agentic-memory system. How far that estimability actually \emph{reaches}---large helpful
+effects yes, the per-item harm of a benign-false lesson no---is the subject of
+\S\ref{sec:results2} and the identification analysis of \S\ref{sec:identifiability}. Here
+we give the construction, which rests on two facts that coincide only in this setting:
+
+\begin{enumerate}\itemsep2pt
+\item \textbf{Stochastic retrieval is a randomized experiment.} Whether lesson $v$
+  enters a run's context is the outcome of a stochastic softmax draw whose marginal
+  inclusion propensity $\pi(v\mid c)$ is \emph{recoverable from the logs} (we log the
+  per-candidate scores and temperature and Monte-Carlo-estimate $\pi$; \S\ref{sec:obs}).
+  Lesson inclusion is thus a stochastically assigned treatment with an estimable
+  propensity---the textbook ingredient for causal identification, here approximate
+  rather than closed-form.
+\item \textbf{The reward is verifiable and re-checkable.} Re-running a solve and
+  checking the flag costs compute but needs \emph{no oracle}. So the counterfactual
+  ``reward without $v$'' is directly measurable.
+\end{enumerate}
+
+\noindent We therefore replace the confounded outcome signal with a \emph{causal}
+credit signal---the lesson's marginal effect on reward---in three forms that trade
+cost against precision.
+
+\subsection{Active causal credit (leave-one-out re-rollout)}\label{sec:active}
+For each lesson $v$ cited (executed) on a run, re-solve the same challenge from the
+same state with $v$ \emph{removed} from context, holding all other sampled lessons
+fixed, averaged over $s$ independent re-rolls (the solver is stochastic; one re-roll
+is a coin flip). Credit $v$ with the marginal reward
+\begin{equation}
+\Delta R(v) \;=\; R_{\text{with}} \;-\; \tfrac{1}{s}\textstyle\sum_{j} R_{\text{without}}^{(j)},
+\end{equation}
+where $R=o\,(1{+}\lambda e)$ includes the step-count efficiency term, so a lesson the
+agent recovers from but is \emph{slowed} by earns a negative marginal even when the
+outcome is unchanged (latent poison). This is precise but costs $s$ extra solves per
+cited lesson; we gate it to cited lessons and report the re-roll budget.
+
+\subsection{Observational causal credit (inverse-propensity weighting)}\label{sec:obs}
+The re-rolls are unnecessary when the data already contains the experiment. Over many
+runs, $v$ is sometimes in context (treated) and sometimes not (control), with logged
+inclusion propensity $\pi_i(v)$ on run $i$. The marginal value of $v$ is the
+\emph{self-normalized inverse-propensity-weighted} (SNIPW) contrast
+\begin{equation}\label{eq:snipw}
+\widehat{\mathrm{ATE}}(v\mid c)=
+\frac{\sum_{i:\,v\in M_i} R_i/\pi_i(v)}{\sum_{i:\,v\in M_i} 1/\pi_i(v)}
+-
+\frac{\sum_{i:\,v\notin M_i} R_i/(1{-}\pi_i(v))}{\sum_{i:\,v\notin M_i} 1/(1{-}\pi_i(v))},
+\end{equation}
+estimated within each context $c$ and shrunk toward the node's global estimate for
+sparse cells (partial pooling). $\pi_i(v)$---the marginal probability $v$ is among
+the $M$ sampled without replacement---is computed by Monte-Carlo from the logged
+per-candidate scores and temperature. This uses \textbf{no additional inference}: it
+reads the same logs the outcome bandit was fooled by. It recovers \emph{large} marginal
+effects---the helpful lessons outcome credit conflates with poison---reliably; whether
+it recovers the \emph{small} per-item harm of a benign-false lesson is exactly the
+identification question \S\ref{sec:identifiability} answers in the negative.
+
+\subsection{The online observational bandit}\label{sec:onl}
+Equation~\ref{eq:snipw} yields a deployable system. The bandit samples lessons via the
+similarity-blended score as before, logging propensities; after each epoch it
+\emph{recomputes} its value table $Q[c][v]\leftarrow\widehat{\mathrm{ATE}}(v\mid c)$
+from its own accumulated logs and performs no per-run updates. The randomization that
+drives identification is the very exploration the bandit already does, so the credit
+signal is causal by construction at zero marginal cost. Active re-rolls
+(\S\ref{sec:active}) then serve as an expensive but assumption-light validation of
+the cheap estimator: because they hold the other sampled lessons fixed, they are
+robust to the interference that the observational estimator must marginalize over,
+so agreement between them bounds the interference error.
+
+\paragraph{Why this is the right tool for verifiable-reward memory.} In an
+open-ended domain neither ingredient holds: lesson inclusion is rarely randomized
+with a known propensity, and the reward cannot be re-checked without an oracle. The
+verifiable-reward agentic-memory setting is special precisely because it supplies
+both---so the false-lesson problem that is intractable in general becomes, here, an
+estimation problem with a free experiment attached. ``Estimable,'' though, is not
+``solved'': \S\ref{sec:identifiability} shows the per-item harm of a benign-false lesson
+is non-identifiable even with the experiment in hand, so the construction's value is the
+large helpful effects it does recover and the sharp boundary it lets us draw.

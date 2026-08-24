@@ -1,0 +1,38 @@
+{
+  "model": "Qwen3-4B-Instruct-2507",
+  "n_challenges": 40,
+  "families": [
+    "base64",
+    "hexstr",
+    "rot13",
+    "caesar",
+    "base64x2",
+    "b64_rot13",
+    "xor1",
+    "gzipd",
+    "strings",
+    "reverse"
+  ],
+  "n_per_family": 4,
+  "epochs": 2,
+  "seeds": 2,
+  "categories": {
+    "base64": "crypto",
+    "hexstr": "crypto",
+    "rot13": "crypto",
+    "caesar": "crypto",
+    "base64x2": "crypto",
+    "b64_rot13": "crypto",
+    "xor1": "crypto",
+    "gzipd": "forensics",
+    "strings": "forensics",
+    "reverse": "misc"
+  },
+  "budget_6_1": {
+    "expected_updates_per_cell": 320.0,
+    "credited_updates_total": 480,
+    "num_context_nodes": 3,
+    "verdict": "OK",
+    "threshold": 5.0
+  }
+}

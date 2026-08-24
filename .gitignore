@@ -1,0 +1,19 @@
+# Build and environment noise only. Every result artifact the
+# paper cites is tracked deliberately -- do not add /results/ rules here.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+.env
+.env.*
+!.env.example
+*.log
+/logs/
+*.aux
+*.out
+*.blg
+*.toc
+*.synctex.gz
+.DS_Store
+.claude/
