@@ -5,6 +5,16 @@ Self-Extending Agent Memory: A Non-Identifiability Result for False-Lesson Harm.
 
 > James Hugglestone, Samuel Jacob Chacko, Xiuwen Liu (advisor) — Florida State University
 
+> **Status, October 2026: superseded.** The result and manuscript in this release
+> (August 2026) are superseded and should not be cited. A later audit of the experiment
+> found problems in the instrument behind them: retrieval sampled near-uniformly
+> (temperature 1.0), so every arm, the "static" one included, rarely showed the on-target
+> lesson; the citation matcher counted a lesson as used on tokens it shared with other
+> lessons; and the solver prompt showed challenge names that revealed the method, although
+> the descriptions are called method-neutral below. A corrected, pre-registered re-run
+> changes the conclusions. An updated manuscript and artifact release are in preparation;
+> the code and logs here are kept as a record of this version.
+
 An LLM agent with a self-extending memory writes lessons from its own runs and retrieves
 them later. Some of those lessons are causally wrong. In Capture-The-Flag the reward is
 **verifiable** — a flag is a high-entropy string the environment accepts or rejects, with
