@@ -1,22 +1,22 @@
 """
-bandit/bandit.py — tabular cluster/category-conditioned value bandit (spec §6, §9.3).
+bandit/bandit.py - tabular cluster/category-conditioned value bandit (spec §6, §9.3).
 
 This is the default bandit (C-1). Per `(context c, candidate v)` it stores `Q`
 (estimated standardized reward) and `n` (effective count), sparsely. Three pieces:
 
-  1. `score(c, v, prior)` — the sim-prior-blended sampling score (§6.2, C-2):
+  1. `score(c, v, prior)` - the sim-prior-blended sampling score (§6.2, C-2):
          score = (n*Q + kappa*prior) / (n + kappa)
      A new/unseen node (n=0) is scored by its similarity prior, NOT an arbitrary
-     uniform weight — clean cold start (BUILD_CHECKLIST C2 acceptance (d)).
+     uniform weight - clean cold start (BUILD_CHECKLIST C2 acceptance (d)).
 
-  2. `update(c, v, reward, distance_scale)` — the §9.3 credit rule:
+  2. `update(c, v, reward, distance_scale)` - the §9.3 credit rule:
          Q[c][v] += alpha * g(d_v) * ((R - b) - Q[c][v]); n[c][v] += 1
      applied ONLY to the credit-eligible set S = sampled ∩ cited (the caller
      enforces that; this class just updates whatever it is handed). `b` is the
      running mean reward in context c (variance reduction, §9.1).
 
-  3. `sample_efficiency_budget(...)` — the §6.1 calc the build checklist (C6)
-     requires recording BEFORE spending real GPU. If <5–10 updates/cell, the
+  3. `sample_efficiency_budget(...)` - the §6.1 calc the build checklist (C6)
+     requires recording BEFORE spending real GPU. If <5-10 updates/cell, the
      context granularity is too fine and will produce another null result.
 
 Design citations:
@@ -108,7 +108,7 @@ class TabularBandit:
         return cell is not None and cell.n > 0
 
     # ------------------------------------------------------------------
-    # scoring (§6.2, C-2 — keep similarity as a decaying prior)
+    # scoring (§6.2, C-2 - keep similarity as a decaying prior)
     # ------------------------------------------------------------------
     def score(self, context_id: str, node_id: str, prior: float,
               provisional: bool = False) -> float:
@@ -117,7 +117,7 @@ class TabularBandit:
         prior: similarity prior already mapped to the reward scale.
         score = (n*Q + kappa*prior) / (n + kappa)
 
-        With n=0 (cold node) this collapses to `prior` — exactly the cold-start
+        With n=0 (cold node) this collapses to `prior` - exactly the cold-start
         behavior the spec wants. Provisional write-back nodes are weight-capped
         (§9.4): their score is shrunk toward the prior so an unproven lesson can
         be sampled for exploration but cannot dominate.
@@ -157,21 +157,25 @@ class TabularBandit:
         self._b_sum[context_id] = self._b_sum.get(context_id, 0.0) + reward
         self._b_count[context_id] = self._b_count.get(context_id, 0) + 1
 
-    def set_q_table(self, table: Dict[str, Dict[str, float]], min_n: float = 1.0) -> None:
+    def set_q_table(self, table: Dict[str, Dict[str, float]], min_n: float = 1.0,
+                    n_table: Optional[Dict[str, Dict[str, float]]] = None) -> None:
         """Overwrite Q from a batch estimate (the OBSERVATIONAL credit signal).
 
-        `table[context_id][node_id] = q`. Sets n=min_n so the sampling blend
-        (n*Q + κ*prior)/(n+κ) gives the learned value real weight while keeping the
-        similarity prior influential for unseen nodes.
+        `table[context_id][node_id] = q`; `n_table[context_id][node_id]` = the number of observations behind
+        the estimate (review 2026-09-08 F6: without it every batch cell sat at n = 1 and the sampling blend
+        (n*Q + κ*prior)/(n+κ) with κ = 4 and a zero prior sampled on Q/5). With `n_table` the cell gets
+        n = max(min_n, observations), the weight an online estimate with the same support would have.
         """
         for ctx, nodes in table.items():
             cell_ctx = self.cells.setdefault(ctx, {})
             for nid, q in nodes.items():
+                n_obs = float(((n_table or {}).get(ctx) or {}).get(nid, 0.0))
+                n_new = max(min_n, 1.0, n_obs)
                 cell = cell_ctx.get(nid)
                 if cell is None:
-                    cell_ctx[nid] = BanditCell(Q=float(q), n=max(min_n, 1.0))
+                    cell_ctx[nid] = BanditCell(Q=float(q), n=n_new)
                 else:
-                    cell.Q = float(q); cell.n = max(cell.n, min_n)
+                    cell.Q = float(q); cell.n = max(cell.n, n_new)
 
     # ------------------------------------------------------------------
     # distance scaling g(d_v) (§9.3, A-04)
@@ -188,6 +192,8 @@ class TabularBandit:
         """
         sim = max(0.0, min(1.0, similarity))
         d = 1.0 - sim
+        if self.config.distance_scaling is DistanceScaling.NONE:
+            return 1.0
         if self.config.distance_scaling is DistanceScaling.SYMMETRIC:
             scale = sim
         else:  # asymmetric
@@ -219,12 +225,14 @@ class TabularBandit:
         b = self.baseline(context_id) if subtract_baseline else 0.0
         scale = self.distance_scale(similarity, success)
         target = reward - b
-        cell.Q = cell.Q + self.config.alpha * scale * (target - cell.Q)
+        # F41: "mean" schedule = exact running mean of the (scaled) targets, step 1/(n+1); "ema" = legacy
+        step = (1.0 / (cell.n + 1.0)) if getattr(self.config, "alpha_schedule", "ema") == "mean" else self.config.alpha
+        cell.Q = cell.Q + step * scale * (target - cell.Q)
         cell.n = cell.n + 1.0
         return pre_Q, cell.Q, pre_n, cell.n, scale
 
     # ------------------------------------------------------------------
-    # (de)serialization — stored alongside the graph, versioned per experiment (§4)
+    # (de)serialization - stored alongside the graph, versioned per experiment (§4)
     # ------------------------------------------------------------------
     def to_dict(self) -> Dict[str, Any]:
         return {

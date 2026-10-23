@@ -1,5 +1,5 @@
 r"""
-retrieval/diversity.py — Maximal Marginal Relevance (spec §7 step 4, C-3).
+retrieval/diversity.py - Maximal Marginal Relevance (spec §7 step 4, C-3).
 
 MMR (Carbonell & Goldstein, 1998) guarantees the candidate pool contains
 *competing, non-duplicate* lessons rather than k near-copies of the top hit. This
@@ -10,7 +10,7 @@ suppressing false-lesson lock-in (§6.2/§9.3 rationale; LongContextMeetsRAG
 2410.05983 on distractor/passage trade-off).
 
 MMR selection:
-    next = argmax_{v in R\S} [ λ·rel(v) − (1−λ)·max_{u in S} sim(v, u) ]
+    next = argmax_{v in R\S} [ λ·rel(v) - (1-λ)·max_{u in S} sim(v, u) ]
 
 rel(v) is the reranker score (relevance); sim(v,u) is cosine between node
 embeddings. λ = lambda_mmr (1.0 = pure relevance, 0.0 = pure diversity).

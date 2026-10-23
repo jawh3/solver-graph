@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""experiments/execution_verifier.py — the POSITIVE-CONTRAST deliverable.
+"""experiments/execution_verifier.py - the POSITIVE-CONTRAST deliverable.
 
 Thesis of the negative result: a harmful (benign-wrong) lesson is undetectable from a capable
 agent's OUTCOMES (it recovers for free), so per-item outcome-based causal credit cannot flag it.
-But the lesson is still *false* — and in a VERIFIABLE domain you can flag it WITHOUT the agent, by
+But the lesson is still *false* - and in a VERIFIABLE domain you can flag it WITHOUT the agent, by
 EXECUTING what the lesson prescribes and checking it produces a well-formed result. This is the
 deployable answer ("verify the skill against its claim") and the paper's positive contrast.
 
@@ -72,13 +72,29 @@ def _exec_malignant(arm: str, fam, art: bytes):
         return None
     if arm == "wrongflag":
         return hard._MALIGNANT_FLAG                         # a fixed, input-INDEPENDENT constant
+    # lesson audit 2026-09-05: clean variants keep the same executable harm
+    if arm == "destroy_clean":
+        return _apply(fam.decode, art[:-16])
+    if arm == "exhaust_clean":
+        budget = fam.solution_length + 2                   # one additive shift per step; no family uses a shift
+        for k in range(budget):
+            cand = bytes((b + k) % 256 for b in art)
+            try:
+                s = cand.decode("latin-1")
+            except Exception:
+                continue
+            if _well_formed(s):
+                return s
+        return None
+    if arm == "wrongflag_clean":
+        return hard._MALIGNANT_FLAG
     raise ValueError(arm)
 
 
 def verify_malignant(families, arms=None, n_per_family: int = 8, seed: int = 7) -> dict:
     """Per malignant arm: the DEPLOYABLE flag rate (no secret needed). A recipe is 'verified' iff
     executing it yields a well-formed flag that is INPUT-SENSITIVE (differs across two distinct
-    instances of the family) — a real decode of a random per-instance flag passes both; destroy/
+    instances of the family) - a real decode of a random per-instance flag passes both; destroy/
     exhaust fail well-formedness; wrongflag fails input-sensitivity (constant output). flag = not
     verified. Expect ~1.0 flag rate for every arm, vs the outcome estimator's ~0 (null)."""
     arms = list(arms or hard.MALIGNANT_ARMS)

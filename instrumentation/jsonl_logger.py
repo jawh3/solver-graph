@@ -1,5 +1,5 @@
 """
-instrumentation/jsonl_logger.py — append-only JSONL writer (§12, §4).
+instrumentation/jsonl_logger.py - append-only JSONL writer (§12, §4).
 
 One file per record type per experiment run; never overwrite (logs are paper
 data, §4). The logger is the only sanctioned way to persist records, so the

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PicoGym Scraper — ported from the superseded first-generation solver (not in this release)
+PicoGym Scraper - ported from ctf-solver/scripts/pico/scrape_picogym.py.
 
 Provides functions to:
 1. Log into PicoCTF (manual CAPTCHA)
@@ -239,7 +239,7 @@ async def iter_challenge_pages(page):
     so challenges can be expanded while still in the DOM.
 
     Yields:
-        (page_num, challenges)  — where challenges is a list[dict]
+        (page_num, challenges)  - where challenges is a list[dict]
     """
     print("📋  Navigating to PicoGym practice page...")
     await page.goto("https://play.picoctf.org/practice", wait_until="networkidle")
@@ -263,7 +263,7 @@ async def iter_challenge_pages(page):
                 continue
 
         if not found_selector:
-            print("   ⚠  Could not find any challenge cards — stopping.")
+            print("   ⚠  Could not find any challenge cards - stopping.")
             return
 
         # Extract challenge metadata via JS
@@ -273,18 +273,18 @@ async def iter_challenge_pages(page):
         # De-duplicate
         new_challenges = [c for c in challenges if c["name"] not in seen_names]
         if not new_challenges:
-            print("   ⚠  No new challenges — last page reached.")
+            print("   ⚠  No new challenges - last page reached.")
             return
 
         for c in new_challenges:
             seen_names.add(c["name"])
 
-        # Yield this page's challenges — browser stays on this page
+        # Yield this page's challenges - browser stays on this page
         yield page_num, new_challenges
 
         # Partial page = last page
         if len(challenges) < 12:
-            print("   ✓  Partial page — last page reached.")
+            print("   ✓  Partial page - last page reached.")
             return
 
         # Advance to next page

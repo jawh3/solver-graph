@@ -1,7 +1,7 @@
 """
 Online observational bandit (the deployable solution): recompute Q from logged
 sampling each epoch via IPW (no per-run updates, no re-rolls) and verify the bandit
-learns to value helpful lessons above poison — the separation outcome credit cannot.
+learns to value helpful lessons above poison - the separation outcome credit cannot.
 """
 
 import numpy as np

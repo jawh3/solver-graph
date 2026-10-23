@@ -1,13 +1,13 @@
 """
-solver/context_assembly.py — render M sampled nodes into solver context (spec §7 step 7).
+solver/context_assembly.py - render M sampled nodes into solver context (spec §7 step 7).
 
-Static injection (the v2 default — NOT the MCP dynamic path; an internal working document (not included in this release)). The
+Static injection (the v2 default - NOT the MCP dynamic path; spec §7-§8). The
 rendered block is passed to `solve_challenge(injected_rag_context=...)`. Two
 research-critical rendering rules:
 
   1. **Applicability conditions are shown** (§3.4): a lesson's preconditions
      (e.g. "no PIE", "format string in printf") are rendered so the solver can
-     self-filter — a lesson applied out of its conditions is a false-lesson
+     self-filter - a lesson applied out of its conditions is a false-lesson
      pathway (interference).
   2. **Provisional nodes are marked low-confidence** (§9.4): a write-back node
      that has not passed the promotion gate must never appear as "trusted". The
@@ -15,7 +15,7 @@ research-critical rendering rules:
      (bandit.score). This is the birth-defect lever at the prompt layer.
 
 The rendering is deterministic and stable (sorted by tier then id) so the same M
-set yields the same context string — important for paired/seeded eval (§14.4).
+set yields the same context string - important for paired/seeded eval (§14.4).
 """
 
 from __future__ import annotations
@@ -30,7 +30,7 @@ def _order_key(n: Node, order_seed: Optional[int]):
     """Within-tier order key. LABEL-NEUTRAL by construction: hashes the rendered TEXT, NOT node.id.
     (node.id encodes the label via its 'true::' / 'poison::' prefix, and 'poison::' < 'true::'
     lexically, so the old id-sort rendered the WRONG recipe FIRST in 100% of {helpful,poison}
-    contexts — a primacy confound that aliased the constructed 'interference' effect with position.
+    contexts - a primacy confound that aliased the constructed 'interference' effect with position.
     See RIGOR_LEDGER RECKONING 2026-06-25.) order_seed!=None gives a deterministic per-run shuffle
     (for an explicit lesson-ORDER-as-factor experiment)."""
     tier_rank = 0 if n.attributes.get("tier", "trusted") == "trusted" else 1
@@ -61,11 +61,11 @@ def render_node(node: Node) -> str:
     text = a.get("text", "")
     parts = [f"[{node.type.value}] {name}"]
     if tier == "provisional":
-        parts.append("(PROVISIONAL — unverified, treat as a weak hint)")
+        parts.append("(PROVISIONAL - unverified, treat as a weak hint)")
     if node.type is NodeType.TOOL and a.get("invocation_signature"):
         parts.append(f"invocation: {a['invocation_signature']}")
     if text:
-        parts.append(f"— {text}")
+        parts.append(f"- {text}")
     app = _fmt_applicability(a.get("applicability", {}))
     if app:
         parts.append(f"[applies when: {app}]")
@@ -76,7 +76,7 @@ def assemble_context(nodes: List[Node], header: bool = True, order_seed: Optiona
     """Render the M sampled nodes into the injected RAG context block.
 
     Ordering: trusted first, then provisional; within a tier, by a LABEL-NEUTRAL content hash
-    (NOT node.id — see _order_key; the id-sort caused a primacy confound). Deterministic given the
+    (NOT node.id - see _order_key; the id-sort caused a primacy confound). Deterministic given the
     same nodes (+ order_seed), so paired/seeded eval is reproducible; pass order_seed for a per-run
     randomized lesson order (the fix for the primacy confound in future runs / an order-as-factor arm).
     """

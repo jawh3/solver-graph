@@ -1,5 +1,5 @@
 """
-Phase 1a tests — per-lesson bootstrap CIs, per-lesson AIPW/DR, label-level &
+Phase 1a tests - per-lesson bootstrap CIs, per-lesson AIPW/DR, label-level &
 promotion CIs, and the determinism fix (sha1 propensity seed, not per-process hash()).
 All mock / CPU; no GPU.
 """

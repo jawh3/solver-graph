@@ -3,7 +3,11 @@
 Tests the 'no base-rate gradient' claim from a scripted artifact (the RUN_LOG quotes
 Spearman -0.089 p=.60 at 14B from an ad-hoc computation). For each label:
   x_f = within-family base b_f (solve among no-recipe runs of family f, from logs)
-  y_f = node_values.json causal_ATE of the family's lesson (on-target per-lesson SNIPW)
+  y_f = node_values.json causal_ATE_ontarget_o of the family's lesson (ON-TARGET binary-outcome
+        SNIPW). F8 (FIX_CATALOG 2026-09): the previous version read `causal_ATE`, which is the
+        MARGINAL R_final estimate (diluted ~10x by off-target runs), so the "no base-rate gradient"
+        test was a correlation of b_f with noise. Falls back to the legacy column only when the
+        on-target column is absent, and records which column it used.
 Spearman rho + p per label. Writes <merged>/base_rate_sweep.json.
 """
 from __future__ import annotations
@@ -29,14 +33,15 @@ def main():
     b_f = {f: sum(v) / len(v) for f, v in base.items() if v}
 
     nodes = load_nodes(merged)
-    out = {"n_families_with_base": len(b_f)}
+    col = "causal_ATE_ontarget_o" if any(d.get("causal_ATE_ontarget_o") is not None for d in nodes.values()) else "causal_ATE"
+    out = {"n_families_with_base": len(b_f), "value_column": col}
     try:
         from scipy.stats import spearmanr
     except ImportError:
         spearmanr = None
     for label in ("poison", "helpful"):
-        pairs = [(b_f[d["family"]], d["causal_ATE"]) for d in nodes.values()
-                 if d.get("label") == label and d.get("causal_ATE") is not None
+        pairs = [(b_f[d["family"]], d[col]) for d in nodes.values()
+                 if d.get("label") == label and d.get(col) is not None
                  and d.get("family") in b_f]
         row = {"n": len(pairs),
                "pairs": [[round(a, 4), round(b, 4)] for a, b in sorted(pairs)]}

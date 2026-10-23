@@ -12,5 +12,5 @@ def test_runaway_write_is_capped():
     run_command("cat /dev/zero > bomb.bin", d)
     p = os.path.join(d, "bomb.bin")
     sz = os.path.getsize(p) if os.path.exists(p) else 0
-    # killed by SIGXFSZ near the cap — must NOT be gigabytes
+    # killed by SIGXFSZ near the cap - must NOT be gigabytes
     assert sz <= MAX_FILE_BYTES + 4 * 1024 * 1024, f"file not capped: {sz} bytes"

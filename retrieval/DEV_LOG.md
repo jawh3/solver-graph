@@ -1,4 +1,4 @@
-## 2026-05-29 — Plan: Embedding and Retrieval
+## 2026-05-29 - Plan: Embedding and Retrieval
 
 **What:** Plan for Component 2. We will build `embedder.py` (Mock/vLLM classes) and `retriever.py` (Top-N cosine similarity + Top-M stochastic bandit sampling).
 **Why:** To establish the core inference-time retrieval pipeline that extracts candidate nodes from the Knowledge Graph and stochastically samples them to form the context.

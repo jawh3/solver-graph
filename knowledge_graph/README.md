@@ -1,15 +1,19 @@
 # knowledge_graph
 
+> Early component notes (May 2026). They describe the first design and may be out of date; see the root
+> README and RESULTS.md for the current state.
+
+
 Typed-node knowledge graph: construction, embedding, and management.
 
 ## Purpose
 
 Manages the knowledge graph that underpins the retrieval system. Handles:
 
-- **Seed graph construction** — LLM decomposition of writeups into typed nodes (challenges, binaries, methodologies, tools, categories)
-- **Edge formation** — Links nodes via shared LLM-generated canonical names
-- **Embedding** — Vector representations for all nodes via an embedding model
-- **Write-back** — Runtime graph extension from solver trajectories (lifelong learning)
+- **Seed graph construction** - LLM decomposition of writeups into typed nodes (challenges, binaries, methodologies, tools, categories)
+- **Edge formation** - Links nodes via shared LLM-generated canonical names
+- **Embedding** - Vector representations for all nodes via an embedding model
+- **Write-back** - Runtime graph extension from solver trajectories (lifelong learning)
 
 ## Node Types
 
@@ -23,8 +27,8 @@ Manages the knowledge graph that underpins the retrieval system. Handles:
 
 ## Provenance
 
-- Architecture per a superseded design note (not included in this release) §Knowledge Graph Construction
-- Storage backend originally prototyped in `the superseded baseline solver (not in this release)`
+- Architecture per `system_description.md` §Knowledge Graph Construction
+- Storage backend originally prototyped in `baseline-solver/kg.py`
 
 ## Status
 **Implemented:** Storage backend and CRUD operations are fully implemented.
@@ -34,7 +38,7 @@ Manages the knowledge graph that underpins the retrieval system. Handles:
 - `store.py`: `KnowledgeGraphStore` interface wrapping NetworkX and NumPy.
 - `embedding_mock.py`: Deterministic mock embedding generator for local testing without vLLM.
 - `experiment_harness.py`: Scalability sweep script.
-- `SWEEPS.md`: Pre-registered experiment sweeps and success criteria.
+- `SWEEPS.md`: Pre-specified experiment sweeps and success criteria.
 
 ## Design Decisions
 - **Storage Backend:** We use `networkx` for graph topology (serialized to JSON) and `numpy` for embedding vectors (serialized to NPY). This ensures zero external dependencies and determinism. See `OPEN_DECISIONS.md` for details.
@@ -52,4 +56,4 @@ To run the extreme scale test ($N \in \{50000, 100000, 250000\}$):
 ```bash
 conda run --no-capture-output -n ctf_solver python knowledge_graph/experiment_harness.py --config knowledge_graph/experiments/extreme_sweep_config.json
 ```
-**Expected Output:** Structured JSON in `evaluation/eval_results/kg_storage_sweep_<timestamp>.json` containing exact timings and sizes. See `SWEEPS.md` for pre-registered predictions.
+**Expected Output:** Structured JSON in `evaluation/eval_results/kg_storage_sweep_<timestamp>.json` containing exact timings and sizes. See `SWEEPS.md` for pre-specified predictions.

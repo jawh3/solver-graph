@@ -1,0 +1,55 @@
+{
+ "runs": 528,
+ "solves": 79,
+ "solve_rate": 0.14962121212121213,
+ "wilson95": [
+  0.12173090270567462,
+  0.18257323597020184
+ ],
+ "tasks": 176,
+ "tasks_solved_at_least_once": 40,
+ "sandbox": {
+  "records_with_stats": 528,
+  "dispatched": 7729,
+  "container_runs": 7729,
+  "rejected": 0,
+  "violations_no_backend": 0
+ },
+ "memory_runs": 0,
+ "cited_runs": 0,
+ "same_category_lesson_runs": 0,
+ "errors": 2,
+ "brace_only": 0,
+ "mean_rounds": 9.467803030303031,
+ "mean_wall_s": 1033.5554309255072,
+ "per_category": {
+  "crypto": {
+   "runs": 153,
+   "solves": 18
+  },
+  "forensics": {
+   "runs": 33,
+   "solves": 4
+  },
+  "misc": {
+   "runs": 60,
+   "solves": 12
+  },
+  "pwn": {
+   "runs": 108,
+   "solves": 12
+  },
+  "reverse": {
+   "runs": 138,
+   "solves": 24
+  },
+  "web": {
+   "runs": 36,
+   "solves": 9
+  }
+ },
+ "elapsed_s": 4022.6127569675446,
+ "model": "Qwen/Qwen3.8-27B-FP8",
+ "degenerate": false,
+ "egress": "blocked"
+}

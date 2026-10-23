@@ -1,6 +1,6 @@
 """
 Validate observational causal credit (ope/causal_value.py): recover the true>poison
-ranking from logged sampling data ALONE — no re-rolls — using the propensity that the
+ranking from logged sampling data ALONE - no re-rolls - using the propensity that the
 stochastic retrieval already logs.
 """
 
@@ -40,7 +40,7 @@ def test_observational_recovers_true_over_poison(tmp_path):
     orch = Orchestrator(world.store, world.embedder, cfg,
                         SystemSpec("B4", use_bandit=True), retriever=retr, bandit=bandit,
                         logger=logger)
-    # run several epochs (outcome credit — the 'fooled' bandit)
+    # run several epochs (outcome credit - the 'fooled' bandit)
     for ep in range(6):
         for i, ch in enumerate(world.challenges):
             orch.run_one(ch, rng=np.random.RandomState(1000 * ep + i))

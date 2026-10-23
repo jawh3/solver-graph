@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-evaluation/run_eval.py — the §16 "definition of done" entry point.
+evaluation/run_eval.py - the §16 "definition of done" entry point.
 
     python -m evaluation.run_eval --systems B0,B1,B2,B3,B4,B5,B6 \
         --datasets seed,heldout,families --mock --out results/eval
@@ -91,7 +91,7 @@ def _print_table(ds: str, result: dict):
             sig = "*" if lift["significant"] else ""
             liftv = f"{lift['lift']:+.3f}"
         else:
-            ci, sig, liftv = "—", "", "—"
+            ci, sig, liftv = "-", "", "-"
         ms = row["median_steps_to_flag"]
         print(f"  {sid:<6} {row['solve_rate']:>7.3f} {row['solve_rate_excl_non_exploit']:>7.3f} "
               f"{(ms if ms is not None else 0):>10.1f} {row['recovery_masking_rate']:>9.3f} "

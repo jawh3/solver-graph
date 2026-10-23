@@ -1,5 +1,5 @@
 """The execution-verifier (positive contrast) must flag ~100% of poison (sibling decode produces
-no well-formed flag) and ~0% of helpful — the deployable answer the outcome estimator cannot give."""
+no well-formed flag) and ~0% of helpful - the deployable answer the outcome estimator cannot give."""
 import benchmark.hard_ctf as hard
 from experiments.execution_verifier import verify, verify_malignant
 
@@ -13,7 +13,7 @@ def test_verifier_flags_poison_not_helpful():
 
 
 def test_verifier_flags_every_malignant_arm():
-    """T1-1: the deployable verifier must flag ALL floor-violating arms at ~1.0 — destroy/exhaust
+    """T1-1: the deployable verifier must flag ALL floor-violating arms at ~1.0 - destroy/exhaust
     fail well-formedness, wrongflag fails input-sensitivity (constant output)."""
     fams = hard.grid_family_names(n=12)
     res = verify_malignant(fams, n_per_family=6, seed=2)

@@ -1,0 +1,1595 @@
+{
+  "families": [
+    {
+      "family": "hex_gzip",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_gzip",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.3125,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.5
+      }
+    },
+    {
+      "family": "b64_xor2a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.8125,
+        "poison": 0.0,
+        "both": 0.8125
+      }
+    },
+    {
+      "family": "hex_rev",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0625,
+        "helpful": 0.9375,
+        "poison": 0.0,
+        "both": 0.9375
+      }
+    },
+    {
+      "family": "b64_xor99",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.8125,
+        "poison": 0.0625,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor13_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.4375
+      }
+    },
+    {
+      "family": "b64_xor42",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0625,
+        "both": 0.625
+      }
+    },
+    {
+      "family": "b64_rot13_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.9375,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor5a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.5625
+      }
+    },
+    {
+      "family": "hex_xorc3",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.625,
+        "poison": 0.0,
+        "both": 0.9375
+      }
+    },
+    {
+      "family": "hex_xor2a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.3125
+      }
+    },
+    {
+      "family": "b64_xor7f_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0625,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b64_xor42_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.1875,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b64_gzip_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b64_zlib_xor99",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "hex_xor7f",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b32_xor7f",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "hex_rot13_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0625,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "hex_bz2_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b64_rot13_gzip_xorc3",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "hex_zlib_xor99",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.375
+      }
+    },
+    {
+      "family": "b64_rot13_bz2_xor42",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_rot13_bz2",
+      "error": "'list' object has no attribute 'get'"
+    },
+    {
+      "family": "b32_zlib",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.375
+      }
+    },
+    {
+      "family": "b64_rot13_gzip_xor42",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_rev",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.6875,
+        "poison": 0.0,
+        "both": 0.75
+      }
+    },
+    {
+      "family": "b64_rev_gzip_xor42",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_xor42",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "b32_gzip",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5625,
+        "poison": 0.125,
+        "both": 0.3125
+      }
+    },
+    {
+      "family": "b85_zlib",
+      "error": "sequence item 0: expected str instance, list found"
+    },
+    {
+      "family": "hex_gzip_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b64_rev_gzip_xor2a",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "hex_gzip_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rev",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.875
+      }
+    },
+    {
+      "family": "b32_gzip_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.125,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "hex_zlib_xor2a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_xorc3",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 0.75
+      }
+    },
+    {
+      "family": "b85_xor13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.5
+      }
+    },
+    {
+      "family": "b32_xor13_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "b32_rev_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "b85_gzip",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0625,
+        "poison": 0.0625,
+        "both": 0.5
+      }
+    },
+    {
+      "family": "hex_rot13_zlib_xor2a",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "hex_rot13_zlib_xor99",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "hex_rot13_gzip_xor5a",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_xor13_bz2",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "hex_rev_bz2_xor99",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_bz2_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.1875,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b85_xor5a_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.8125
+      }
+    },
+    {
+      "family": "hex_rev_zlib_xor99",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "b32_rot13_gzip_rev",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rev_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.375,
+        "poison": 0.0,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "b85_rot13_xor6e",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_rev_bz2_xor42",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_xor7f_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.8125,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "b32_rot13_zlib_xor5a",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_rev_gzip_xor7f",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_rev_gzip_xor13",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_xor2a_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rot13_bz2",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.4375,
+        "poison": 0.0,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "b85_rev_bz2_xor13",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rev_zlib_rot13",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rot13_bz2_xor5a",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.1875,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rev_zlib_xor6e",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rot13_zlib_xor7f",
+      "solution_length": 4,
+      "budget": 6,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b64_rot13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.125,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor7f",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor6e",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "b64_bz2",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0625,
+        "helpful": 0.8125,
+        "poison": 0.0625,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "hex_rot13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0625,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xorc3",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.4375
+      }
+    },
+    {
+      "family": "hex_bz2",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.125,
+        "helpful": 0.5,
+        "poison": 0.125,
+        "both": 0.8125
+      }
+    },
+    {
+      "family": "hex_xor6e",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.375,
+        "poison": 0.0,
+        "both": 0.75
+      }
+    },
+    {
+      "family": "hex_xor99",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.3125,
+        "poison": 0.0,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor2a_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.75,
+        "poison": 0.0,
+        "both": 0.5
+      }
+    },
+    {
+      "family": "b64_rot13_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.4375
+      }
+    },
+    {
+      "family": "hex_xor42",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.25,
+        "poison": 0.0,
+        "both": 0.375
+      }
+    },
+    {
+      "family": "b64_xor99_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "b64_rev_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.125,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "hex_xor13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "b64_gzip_xor7f",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b64_bz2_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b64_xor5a_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0625,
+        "poison": 0.0,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "b32_rot13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.5,
+        "poison": 0.125,
+        "both": 1.0
+      }
+    },
+    {
+      "family": "b64_xor6e_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_xor13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.375
+      }
+    },
+    {
+      "family": "hex_rot13_xor6e",
+      "error": "'int' object has no attribute 'get'"
+    },
+    {
+      "family": "hex_zlib_rot13",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_xor2a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.4375
+      }
+    },
+    {
+      "family": "b32_xor6e",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "hex_xor2a_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.1875,
+        "poison": 0.0,
+        "both": 0.75
+      }
+    },
+    {
+      "family": "b32_xor5a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "b32_bz2",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.1875,
+        "poison": 0.0625,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "hex_rot13_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "b32_xorc3",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.3125
+      }
+    },
+    {
+      "family": "hex_xor6e_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_xor99",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.9375,
+        "poison": 0.0,
+        "both": 0.375
+      }
+    },
+    {
+      "family": "b85_rot13",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "easy",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.875
+      }
+    },
+    {
+      "family": "b85_xor2a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 0.5625
+      }
+    },
+    {
+      "family": "hex_xor5a_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_xor5a_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "b85_xor42",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.9375,
+        "poison": 0.0,
+        "both": 0.625
+      }
+    },
+    {
+      "family": "hex_gzip_xor7f",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b85_xor6e",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 0.9375
+      }
+    },
+    {
+      "family": "b85_xor5a",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.875,
+        "poison": 0.0,
+        "both": 0.3125
+      }
+    },
+    {
+      "family": "hex_xor42_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_xor99",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 1.0,
+        "poison": 0.0,
+        "both": 0.4375
+      }
+    },
+    {
+      "family": "b85_xor7f",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.9375,
+        "poison": 0.0,
+        "both": 0.75
+      }
+    },
+    {
+      "family": "b85_bz2",
+      "solution_length": 2,
+      "budget": 4,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.375,
+        "poison": 0.0625,
+        "both": 0.5625
+      }
+    },
+    {
+      "family": "b32_rot13_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b32_rev_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.8125,
+        "poison": 0.0,
+        "both": 0.125
+      }
+    },
+    {
+      "family": "b32_rot13_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.6875,
+        "poison": 0.0,
+        "both": 0.0625
+      }
+    },
+    {
+      "family": "b32_gzip_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_gzip_xor7f",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rot13_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.25,
+        "poison": 0.0,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "b32_xor5a_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b32_zlib_rot13",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_xor99_zlib",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.8125,
+        "poison": 0.0,
+        "both": 0.3125
+      }
+    },
+    {
+      "family": "b85_gzip_xor5a",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rev_xorc3",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.9375,
+        "poison": 0.0,
+        "both": 0.1875
+      }
+    },
+    {
+      "family": "b85_xor5a_gzip",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.125,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_rev_rot13",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.75,
+        "poison": 0.0,
+        "both": 0.25
+      }
+    },
+    {
+      "family": "b85_gzip_rot13",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "medium",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.0,
+        "poison": 0.0,
+        "both": 0.0
+      }
+    },
+    {
+      "family": "b85_zlib_rev",
+      "solution_length": 3,
+      "budget": 5,
+      "difficulty": "hard",
+      "n": 16,
+      "solve": {
+        "none": 0.0,
+        "helpful": 0.4375,
+        "poison": 0.0,
+        "both": 0.6875
+      }
+    }
+  ],
+  "slack": 2,
+  "criterion": {
+    "max_none": 0.5,
+    "min_helpful": 0.4,
+    "min_lift": 0.3
+  }
+}

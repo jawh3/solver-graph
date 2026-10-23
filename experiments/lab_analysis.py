@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 """
-experiments/lab_analysis.py — frozen, CI-bearing analysis for the lab-scale study.
+experiments/lab_analysis.py - frozen, CI-bearing analysis for the lab-scale study.
 
 Re-scores ALREADY-logged campaign runs (ZERO extra inference) to produce, with bootstrap
-CIs + p-values on EVERY number, the pre-registered quantities:
+CIs + p-values on EVERY number, the pre-specified quantities:
 
   H1  outcome credit banks poison: learned Q by label, label-level CI over lessons.
   H2  the free experiment flips it: observational ATE sign-flip, BOTH (a) per-lesson CIs
-      (resample over a lesson's runs — well-powered) and (b) label-level CI (resample over
-      LESSONS — the generalization claim), under SNIPW and AIPW(DR).
+      (resample over a lesson's runs - well-powered) and (b) label-level CI (resample over
+      LESSONS - the generalization claim), under SNIPW and AIPW(DR).
   H3  propagation gap: promote-if-(value>0) rate, outcome-Q vs causal-ATE, paired over
       lessons, with CI.
   H4  solve-rate parity is structural: paired contrasts + a power/MDE analysis showing the
       minimum gap the study could have detected.
-  PREREG robustness ablations (each must leave the H2 sign-flip intact):
+  the plan robustness ablations (each must leave the H2 sign-flip intact):
       propensity MC seeds {0..9} x n_mc {400,1000}; clip range; ESS frac; propensity source
       {confounded-Q, prior-only/Q=0}; estimator {SNIPW, AIPW}; promotion-theta sweep.
   A.6 ESS/positivity diagnostics table.
 
 Emits results/<dir>/lab_analysis.json, results/<dir>/lab_analysis.md, paper/numbers_lab.tex.
-This file is FROZEN before any headline (scaled) run — same code scores pilot and scaled
+This file is FROZEN before any headline (scaled) run - same code scores pilot and scaled
 logs; only the corpus size changes. n=4 pilot label-level CIs are flagged anti-conservative.
 """
 
@@ -109,7 +109,7 @@ def signflip(runs, truth, n_boot_lesson=2000, mc_seed=0, n_mc=400, clip=0.05, es
              response_key="R_final"):
     """H2: SNIPW + AIPW per-lesson values with CIs, label-level CIs, and the verdict
     (poison CI upper < 0 < helpful CI lower, non-overlapping). response_key selects the
-    estimand: "outcome" (binary solve — budget/step-rescaling INVARIANT, the headline) or
+    estimand: "outcome" (binary solve - budget/step-rescaling INVARIANT, the headline) or
     "R_final" (full reward, secondary)."""
     snipw = observational_lesson_values(runs, truth=truth, n_boot=n_boot_lesson,
                                         mc_seed=mc_seed, n_mc=n_mc, clip=clip, ess_frac=ess_frac,
@@ -150,7 +150,7 @@ def promotion(qval, ateval, label_map, theta=0.0):
 
 
 # --------------------------------------------------------------------------- #
-# H4 — power / MDE behind solve-rate parity                                    #
+# H4 - power / MDE behind solve-rate parity                                    #
 # --------------------------------------------------------------------------- #
 
 def _eval_vec(cond_prog):
@@ -203,7 +203,7 @@ def ablations(runs, truth):
         s = summarize_by_label_ci(vals, n_boot=2000)
         return {k: s[k]["mean"] for k in s}, {k: (s[k]["ci_lo"], s[k]["ci_hi"]) for k in s}
 
-    # 1. propensity MC seeds x n_mc — sign stability of the LABEL-level poison/true ATE
+    # 1. propensity MC seeds x n_mc - sign stability of the LABEL-level poison/true ATE
     seed_grid = {}
     for n_mc in (400, 1000):
         for sd in range(10):
@@ -338,8 +338,8 @@ def run(dir_, headline_cond="outcome"):
     out["meta"]["n_runs_headline"] = len(runs)
 
     # Report BOTH estimands (which is "headline" depends on the run regime, per the design
-    # panel + PREREG): full reward R=o(1+λe) is valid for the FIXED-budget pilot (the harm
-    # is the step-efficiency penalty — latent, surfaces via write-back); binary SOLVE is the
+    # panel + the plan): full reward R=o(1+λe) is valid for the FIXED-budget pilot (the harm
+    # is the step-efficiency penalty - latent, surfaces via write-back); binary SOLVE is the
     # budget/step-rescaling-INVARIANT headline for the GRADED scaled run (where poison teeth
     # show on solve itself). Promotion/ESS/H1 use the reward estimand (pilot anchor).
     sf_reward = signflip(runs, truth, response_key="R_final")
@@ -349,14 +349,14 @@ def run(dir_, headline_cond="outcome"):
     out["H2_signflip"] = sf_reward
     out["H2_signflip_solve"] = sf_solve
     out["meta"]["estimands"] = {
-        "H2_signflip": "R=o(1+lambda*e) full reward — fixed-budget pilot headline",
-        "H2_signflip_solve": "binary solve — budget-invariant; headline for the graded scaled run",
+        "H2_signflip": "R=o(1+lambda*e) full reward - fixed-budget pilot headline",
+        "H2_signflip_solve": "binary solve - budget-invariant; headline for the graded scaled run",
     }
 
     # H1 = the OUTCOME bandit's learned Q (the deployed write-back signal). lab_merge
     # namespaces each shard's context ids so per-node Q POOLS across replicate shards here.
     qval = _outcome_q_by_node(root / "state" / headline_cond, truth)
-    # cross-check: the log-derived outcome-credit advantage (E[R|cited&sampled] − E[R]).
+    # cross-check: the log-derived outcome-credit advantage (E[R|cited&sampled] - E[R]).
     from ope.causal_value import outcome_credit_values
     cit_path = root / "logs" / f"campaign_{headline_cond}" / "citations.jsonl"
     citations = ([json.loads(l) for l in open(cit_path) if l.strip()]
@@ -367,16 +367,36 @@ def run(dir_, headline_cond="outcome"):
         nid: {"adv": d["value"] - global_R, "label": d["label"], "n": d["n"]}
         for nid, d in ocv.items()}
     ateval = {k: d["ate"] for k, d in snipw_vals.items()}
+    # F8 (FIX_CATALOG 2026-09): `ateval` above is the MARGINAL, R_final SNIPW (pooled over all
+    # families' runs). The pre-specified primary estimand is the ON-TARGET binary-outcome
+    # SNIPW; compute it here too so node_values carries BOTH, explicitly named.
+    _fam_of = lambda cid: cid.rsplit("_", 1)[0]
+    _by_fam = defaultdict(list)
+    for r in runs:
+        _by_fam[_fam_of(r["challenge_id"])].append(r)
+    ontarget_o = {}
+    for f, fr in _by_fam.items():
+        v = observational_lesson_values(fr, truth=truth, response_key="outcome", n_boot=0)
+        for nid, d in v.items():
+            if truth.get(nid, ("?", "?"))[1] == f and d.get("ate") is not None:
+                ontarget_o[nid] = d["ate"]
     # H1: outcome Q by label (label-level CI over lessons)
     out["H1_outcome_Q"] = {
         lab_: summarize_by_label_ci(
             {k: {"ate": v, "label": lab.get(k)} for k, v in qval.items()}, n_boot=N_BOOT).get(lab_)
         for lab_ in ("helpful", "poison", "distractor")}
     out["H3_promotion"] = promotion(qval, ateval, lab, theta=0.0)
-    # per-node values for the H5 transfer experiment (promotion decisions)
+    out["H3_promotion"]["_value_column"] = "causal_ATE_marginal_R (legacy)"
+    out["H3_promotion_ontarget_o"] = promotion(qval, ontarget_o, lab, theta=0.0)
+    out["H3_promotion_ontarget_o"]["_value_column"] = "causal_ATE_ontarget_o (pre-specified primary)"
+    # per-node values for the H5 transfer experiment (promotion decisions). F8: three named
+    # columns; `causal_ATE` is kept == the legacy marginal-R value for backward compatibility.
     node_values = {nid: {"label": lab.get(nid), "family": truth.get(nid, ("?", "?"))[1],
-                         "outcome_Q": qval.get(nid), "causal_ATE": ateval.get(nid)}
-                   for nid in set(qval) | set(ateval)}
+                         "outcome_Q": qval.get(nid),
+                         "causal_ATE": ateval.get(nid),
+                         "causal_ATE_marginal_R": ateval.get(nid),
+                         "causal_ATE_ontarget_o": ontarget_o.get(nid)}
+                   for nid in set(qval) | set(ateval) | set(ontarget_o)}
     (root / "node_values.json").write_text(json.dumps(node_values, indent=2, default=str))
     out["H4_power"] = power_mde(prog)
     out["ablations"] = ablations(runs, truth)
@@ -385,7 +405,7 @@ def run(dir_, headline_cond="outcome"):
 
     (root / "lab_analysis.json").write_text(json.dumps(out, indent=2, default=str))
     _emit_md(out, root / "lab_analysis.md")
-    _emit_tex(out, Path("paper/numbers_lab.tex"))
+    _emit_tex(out, Path("paper_final/numbers_lab.tex"))
     _print(out)
     return out
 
@@ -393,7 +413,7 @@ def run(dir_, headline_cond="outcome"):
 def _print(out):
     m = out["meta"]
     print("=" * 78)
-    print(f"LAB ANALYSIS — {m['dir']}  (headline cond={m['headline_cond']}, "
+    print(f"LAB ANALYSIS - {m['dir']}  (headline cond={m['headline_cond']}, "
           f"n_runs={m['n_runs_headline']}, lessons/label={m['n_lessons_per_label']})")
     if m["anti_conservative_warning"]:
         print("  ⚠ <20 lessons/label: label-level bootstrap CIs are ANTI-CONSERVATIVE "
@@ -417,7 +437,7 @@ def _print(out):
                 print(f"    per-lesson sig [{labk}]: {s['neg']} neg / {s['pos']} pos of {s['total']} (CI excl 0)")
     sv = out.get("H2_signflip_solve", {}).get("snipw", {}).get("label_level", {})
     if sv:
-        print("  [binary-SOLVE estimand — budget-invariant; the GRADED scaled-run headline]")
+        print("  [binary-SOLVE estimand - budget-invariant; the GRADED scaled-run headline]")
         for labk in ("helpful", "poison", "distractor"):
             d = sv.get(labk)
             if d:
@@ -468,14 +488,14 @@ def _print(out):
 
 def _emit_md(out, path):
     m = out["meta"]; L = []
-    L.append(f"# Lab analysis — `{m['dir']}`\n")
+    L.append(f"# Lab analysis - `{m['dir']}`\n")
     L.append(f"headline condition **{m['headline_cond']}**, {m['n_runs_headline']} runs, "
              f"lessons/label = {m['n_lessons_per_label']}.\n")
     if m["anti_conservative_warning"]:
         L.append("> ⚠ **<20 lessons/label** → label-level bootstrap CIs are anti-conservative "
                  "(pilot scale). Per-lesson CIs are the trustworthy current evidence; the "
                  "label-level generalization claim awaits the scaled corpus.\n")
-    L.append("## H2 — observational ATE sign-flip\n")
+    L.append("## H2 - observational ATE sign-flip\n")
     L.append("| estimator | label | mean ATE | 95% CI | p | excl 0 |")
     L.append("|---|---|---|---|---|---|")
     for est in ("snipw", "aipw"):
@@ -491,7 +511,7 @@ def _emit_md(out, path):
             L.append(f"\n**{est.upper()} verdict:** sign-flip = `{v['signflip']}` "
                      f"(poison CI<0: {v['poison_neg']}, helpful CI>0: {v['helpful_pos']}, "
                      f"non-overlapping: {v['non_overlapping']}).")
-    L.append("\n## H3 — promotion gap (promote-if value>0)\n")
+    L.append("\n## H3 - promotion gap (promote-if value>0)\n")
     g = out["H3_promotion"]["gap_Q_minus_ATE"]
     L.append("| label | outcome-Q rate | causal-ATE rate | gap | 95% CI | p |")
     L.append("|---|---|---|---|---|---|")
@@ -502,7 +522,7 @@ def _emit_md(out, path):
                      f"[{d['ci_lo']:+.2f}, {d['ci_hi']:+.2f}] | {d['p']:.3f} |")
     mde = out["H4_power"].get("mde", {})
     if mde:
-        L.append("\n## H4 — power / MDE\n")
+        L.append("\n## H4 - power / MDE\n")
         L.append(f"observed paired SD = {mde['observed_paired_sd']:.3f}, n_pairs = {mde['n_pairs']} "
                  f"→ **MDE = {100*mde['mde_at_n']:.1f} pp** at {int(100*mde['power'])}% power. "
                  f"n for 5pp = {mde['n_for_5pp']}, for 10pp = {mde['n_for_10pp']}.\n")
@@ -523,7 +543,7 @@ def _emit_md(out, path):
 def _emit_tex(out, path):
     if not path.parent.exists():
         return
-    L = ["% Auto-generated by experiments/lab_analysis.py — do not edit by hand.", ""]
+    L = ["% Auto-generated by experiments/lab_analysis.py - do not edit by hand.", ""]
 
     def mac(n, v):
         L.append(f"\\providecommand{{\\{n}}}{{}}\\renewcommand{{\\{n}}}{{{v}}}")

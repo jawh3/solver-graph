@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-experiments/lab_probe.py — calibration probe for the scaled run (real solver, concurrent).
+experiments/lab_probe.py - calibration probe for the scaled run (real solver, concurrent).
 
 For each candidate family, solve fresh instances under FORCED retrieval sets:
   none      (no lesson)         -> base solve rate
   helpful   (true recipe)       -> in-band check: keep families with helpful solve in [lo,hi]
   poison    (wrong recipe only) -> TEETH check: poison-only should solve < helpful-only
   both      (helpful+poison)    -> displacement/distraction check
-Emits a probe artifact not retained with per-family rates and a label-BLIND in-band family
+Emits results/lab/probe/probe.json with per-family rates and a label-BLIND in-band family
 selection (decided on solve rate, before any ATE/causal analysis). Concurrent via threads
 (each solve is network-bound on vLLM; every (family,set,seed) gets an isolated working dir).
 Resumable: completed families are skipped.
@@ -27,13 +27,7 @@ import numpy as np
 import os as _os, importlib as _il
 hard = _il.import_module(_os.environ.get("CTF_DOMAIN", "benchmark.hard_ctf"))  # T2-7 domain switch
 from retrieval.embedder import MockEmbedder
-try:
-    from batch_test.real_adapters import real_solve_fn
-except ModuleNotFoundError:  # not shipped in the public release
-    def real_solve_fn(*a, **k):
-        raise RuntimeError(
-            "real-GPU backend adapters (batch_test/) are not included in "
-            "this release; supply your own solve_fn")
+from batch_test.real_adapters import real_solve_fn
 from ope.causal_value import _stable_seed
 
 _LOCK = threading.Lock()
@@ -55,8 +49,10 @@ def _nodes_for(name):
 
 
 def _isolate(challenge, tag, seed, workroot):
-    """Copy the challenge artifact into a unique dir so concurrent solves never collide."""
-    d = Path(workroot) / f"{challenge['name']}_{tag}_s{seed}"
+    """Copy the challenge artifact into a unique dir so concurrent solves never collide.
+    F1: the dir is the solver's cwd, so it is a hash of (name, tag, seed), not the family name."""
+    import hashlib as _hl
+    d = Path(workroot) / ("iso-" + _hl.sha1(f"{challenge['name']}_{tag}_s{seed}".encode()).hexdigest()[:10])
     d.mkdir(parents=True, exist_ok=True)
     ch = json.loads(json.dumps(challenge))   # deep copy (plain dict)
     lf = ch["local_files"][0]
@@ -78,7 +74,9 @@ def probe_family(name, n_inst, seeds, slack, solve, workroot, corpus_root):
         for s, nodes in sets.items():
             for sd in range(seeds):
                 cj = _isolate(ch, s, sd, workroot)
-                res = solve(cj, [n for n in nodes if n is not None], budget, seed=sd)
+                # F4c: platform checker so a wrong candidate does not end the probe run early
+                res = solve(cj, [n for n in nodes if n is not None], budget, seed=sd,
+                            flag_checker=(lambda f, _c=ch: hard.check_flag(_c, f)))
                 rec[s].append(1 if hard.check_flag(ch, res.get("flag")) else 0)
     out = {"family": name, "solution_length": sl, "budget": budget,
            "difficulty": hard._BY_NAME[name].difficulty,
@@ -92,9 +90,11 @@ def main():
     ap.add_argument("--difficulty", default=None, help="comma band filter, e.g. easy,medium")
     ap.add_argument("--max-families", type=int, default=None)
     ap.add_argument("--families", default=None, help="explicit comma family list (overrides grid selection)")
-    ap.add_argument("--shard", default=None, help="k/N — process only families[k::N] (split across servers)")
-    ap.add_argument("--n-inst", type=int, default=2)
-    ap.add_argument("--seeds", type=int, default=3)
+    ap.add_argument("--shard", default=None, help="k/N - process only families[k::N] (split across servers)")
+    # F11 (FIX_CATALOG 2026-09): 4 x 4 = 16 solves per arm (was 2 x 3 = 6): selecting families on
+    # six Bernoulli draws per arm made the "in-band" set a noisy, winner's-curse selection.
+    ap.add_argument("--n-inst", type=int, default=4)
+    ap.add_argument("--seeds", type=int, default=4)
     ap.add_argument("--slack", type=int, default=2)
     ap.add_argument("--workers", type=int, default=24)
     # in-band = headroom (base solve low) + lesson enables solving (not floor) + real lift.

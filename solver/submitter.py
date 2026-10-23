@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Flag Submitter — types a flag into the PicoCTF challenge modal and reads the result.
+Flag Submitter - types a flag into the PicoCTF challenge modal and reads the result.
 """
 
 
@@ -162,7 +162,7 @@ async def submit_flag(page, challenge_name: str, flag: str, page_num: int = None
 
             if new_text:
                 print(f"      📋  Feedback text: {new_text[:200]}")
-                # Check rejected FIRST — "incorrect" contains "correct"
+                # Check rejected FIRST - "incorrect" contains "correct"
                 if any(phrase in new_text for phrase in _reject_phrases):
                     rejected = True
                 elif any(phrase in new_text for phrase in _accept_phrases):
@@ -186,7 +186,7 @@ async def submit_flag(page, challenge_name: str, flag: str, page_num: int = None
             print(f"      ❌  Flag rejected")
             message = "rejected"
         else:
-            print(f"      ❓  Unclear result — check manually")
+            print(f"      ❓  Unclear result - check manually")
             message = "unclear"
 
         await _close(page, modal)

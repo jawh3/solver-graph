@@ -129,7 +129,7 @@ class SentenceTransformerEmbedder(Embedder):
 
     The lab uses a dedicated vLLM embedding endpoint (`VLLMEmbedder`); on the
     laptop a small local bi-encoder (default all-MiniLM-L6-v2, 384-d, ~90 MB) is a
-    disclosed substitution — it is NOT the solver model (spec §7 keeps the
+    disclosed substitution - it is NOT the solver model (spec §7 keeps the
     retrieval embedder separate). Runs on GPU if available, else CPU.
     """
 

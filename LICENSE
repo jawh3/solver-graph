@@ -1,11 +1,19 @@
 Scope
 -----
 The MIT license below applies to the SOURCE CODE and DATA ARTIFACTS in this
-repository (everything except the paper manuscript). The paper manuscript —
-the LaTeX sources, text, and figures under paper/ — is Copyright (c) 2026
-James Hugglestone, Samuel Jacob Chacko, and Xiuwen Liu, all rights reserved,
-pending journal submission; the preprint is distributed via arXiv under the
-arXiv.org perpetual, non-exclusive license 1.0.
+repository, except as noted here:
+
+- The poster and abstract PDFs under poster/ are Copyright (c) 2026 James
+  Hugglestone, Samuel Jacob Chacko, and Xiuwen Liu, all rights reserved (the
+  Florida State University logo on the poster is FSU's).
+- The NYU CTF Bench run records (results/realbench_nyu_v2/) quote challenge
+  files and tool output from NYU CTF Bench
+  (https://github.com/NYU-LLM-CTF/NYU_CTF_Bench), and the lessons written from
+  its development tasks (results/realbench_nyu_mem/) quote short fragments of
+  their reference files. NYU CTF Bench is licensed under the GNU General Public
+  License v2.0 (copy in LICENSES/GPL-2.0.txt); a few of its challenges carry
+  their own licenses. Those excerpts remain under their original licenses. The
+  benchmark itself is not included.
 
 MIT License
 -----------

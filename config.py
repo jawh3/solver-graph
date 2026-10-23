@@ -1,5 +1,5 @@
 """
-config.py — Single source of truth for swept/ablated parameters.
+config.py - Single source of truth for swept/ablated parameters.
 
 This mirrors CTF_SOLVER_ARCHITECTURE_v2.md §15 ("Configuration & swept
 parameters"). Every default here is the spec default; the *range* of each
@@ -12,7 +12,7 @@ RULE (BUILD_CHECKLIST global rules): do not silently change a `[SWEEP]`/
 the deviation in OPEN_DECISIONS.md. `policy_config_hash` (see `.hash()`) makes
 every logged run attributable to the exact config that produced it (§12).
 
-Paper-citation map for individual knobs lives in internal design notes (not included in this release).
+Paper-citation map for individual knobs lives in docs/DESIGN_CITATIONS.md.
 """
 
 from __future__ import annotations
@@ -46,27 +46,28 @@ class DistanceScaling(str, Enum):
     """Embedding-distance scaling of credit (spec §9.3, A-04)."""
     SYMMETRIC = "symmetric"
     ASYMMETRIC = "asymmetric"      # blame near on failure, reward far on success
+    NONE = "none"                  # F41: no distance scaling (scale = 1; needed for an exact running mean)
 
 
 class WritebackMode(str, Enum):
     """Which trajectories get decomposed into new nodes (spec §9.4, A-03)."""
     OFF = "off"
     SUCCESSFUL = "successful"
-    BOTH = "both"                  # default — FORGE supports failure decomposition
+    BOTH = "both"                  # default - FORGE supports failure decomposition
 
 
 class CreditSignal(str, Enum):
     """WHAT the bandit credit is computed from (spec §9.3 + C9 causal credit).
 
-    OUTCOME: credit = the run reward R (cheap, but confounded by recovery masking —
+    OUTCOME: credit = the run reward R (cheap, but confounded by recovery masking -
              a cited lesson on a recovered success is credited as if it helped).
-    CAUSAL:  credit = the LEAVE-ONE-OUT marginal value — re-roll the solve without
+    CAUSAL:  credit = the LEAVE-ONE-OUT marginal value - re-roll the solve without
              the lesson (shared seed) and credit the marginal flag difference. This
              is uncfounded: a poison the agent recovers from yields ~0 marginal and
              is driven down. Expensive (extra re-rolls), but a verifiable-reward
              domain can afford it (re-roll + check the flag is oracle-free).
     HYBRID:  outcome for the first `n` exposures (cheap warm-up), then causal for
-             nodes that become suspicious (high Q + cited) — bounds cost.
+             nodes that become suspicious (high Q + cited) - bounds cost.
     """
     OUTCOME = "outcome"
     CAUSAL = "causal"
@@ -75,13 +76,17 @@ class CreditSignal(str, Enum):
 
 
 class CreditMode(str, Enum):
-    """Credit assignment scope (spec §9.3, C-4 — the recovery-masking lever)."""
-    CITED_ONLY = "cited_only"      # default — only action-grounded cited nodes
+    """Credit assignment scope (spec §9.3, C-4 - the recovery-masking lever)."""
+    CITED_ONLY = "cited_only"      # default - only action-grounded cited nodes
     ALL_M = "all_m"                # uniform credit (recovery-masking baseline)
+    # F40 (mock ladder 2026-09-05): credit ONLY the cited nodes, but give every other sampled node an
+    # EXPOSURE update with zero advantage so its cold-start similarity prior decays (spec §6.2: "keep
+    # similarity as a DECAYING prior"). Under plain cited_only an ignored lesson kept its prior forever.
+    CITED_ONLY_DECAY = "cited_only_decay"
 
 
 class RefreshMode(str, Enum):
-    """Context refresh policy (spec §8 — future; static is the only built one)."""
+    """Context refresh policy (spec §8 - future; static is the only built one)."""
     STATIC = "static"
     PERIODIC_L = "periodic_L"
     HYBRID_K = "hybrid_K"
@@ -101,19 +106,27 @@ class SolverConfig:
     """
 
     # --- Retrieval pipeline (§7) ---
-    N: int = 200                   # [SWEEP 100–500] recall pool; NOT grown to fight lures (C-3)
-    R: int = 50                    # [SWEEP 20–100] cross-encoder rerank keep
-    lambda_mmr: float = 0.5        # [SWEEP 0.3–0.8] MMR diversity/relevance trade-off
-    M: int = 8                     # [SWEEP 4–16] nodes entering context per run
+    N: int = 200                   # [SWEEP 100-500] recall pool; NOT grown to fight lures (C-3)
+    R: int = 50                    # [SWEEP 20-100] cross-encoder rerank keep
+    lambda_mmr: float = 0.5        # [SWEEP 0.3-0.8] MMR diversity/relevance trade-off
+    M: int = 8                     # [SWEEP 4-16] nodes entering context per run
 
     # --- Exploration / sampling (§6.2) ---
-    tau: float = 1.0               # [SWEEP 0.5–2.0] softmax temperature
-    tau_min: float = 0.3           # [SWEEP 0.1–0.5] exploration floor
-    kappa: float = 5.0             # [SWEEP 1–20] sim-prior strength (pseudo-count, C-2)
+    tau: float = 1.0               # [SWEEP 0.5-2.0] softmax temperature
+    tau_min: float = 0.0           # exploration floor; 0 = none (F3: 0.3 made deployed tau impossible)
+    epsilon_explore: float = 0.0   # F3: fraction of runs drawn from the exploration stream (mixture propensity)
+    tau_explore: float = 1.0       # F3: temperature of the exploration stream (design="softmax" only)
+    # review 2026-09-04: the exploration stream must be a FIXED randomized design (history-free) -
+    #   "softmax"    legacy: softmax(score/tau_explore) over bandit-blended scores (adaptive)
+    #   "uniform"    uniform M-subset of the pool; pi = M/|pool| exactly
+    #   "stratified" each ON-TARGET lesson (same `_family` as the challenge) included w.p. 0.5,
+    #                rest uniform; pi(on-target) = 0.5 exactly -> per-lesson identification power
+    exploration_design: str = "stratified"
+    kappa: float = 5.0             # [SWEEP 1-20] sim-prior strength (pseudo-count, C-2)
 
     # --- Bandit update (§9.1, §9.3) ---
-    alpha: float = 0.1             # [SWEEP 0.02–0.3] bandit learning rate
-    lam: float = 0.5               # [SWEEP 0–1.0] efficiency weight λ in R=o(1+λe)
+    alpha: float = 0.1             # [SWEEP 0.02-0.3] bandit learning rate
+    lam: float = 0.5               # [SWEEP 0-1.0] efficiency weight λ in R=o(1+λe)
     failure_reward: float = 0.0    # [ABLATION 0 | small negative] reward on failure
     use_baseline_b: bool = True    # center target by running mean reward in context c
 
@@ -121,7 +134,7 @@ class SolverConfig:
     tau0: float = 5.0              # [SWEEP] partial-pooling pseudo-count toward global
 
     # --- Context / init / scaling ablations (§6, §9) ---
-    n_clusters: int = 32           # [SWEEP 20–50] k for cluster context nodes
+    n_clusters: int = 32           # [SWEEP 20-50] k for cluster context nodes
     context_resolution: ContextResolution = ContextResolution.CLUSTER
     init_mode: InitMode = InitMode.OPTIMISTIC
     optimistic_q0: float = 0.5     # [SWEEP] optimistic init value
@@ -130,13 +143,17 @@ class SolverConfig:
     # --- Write-back gate (§9.4) ---
     writeback_mode: WritebackMode = WritebackMode.BOTH
     credit_mode: CreditMode = CreditMode.CITED_ONLY
+    citation_mode: str = "distinctive"   # F2: "distinctive" | "any" (legacy matcher)
+    prior_source: str = "cosine"         # review 2026-09-05 F-2: "cosine" (legacy) | "rerank" | "none" (F41: prior = 0, Q-only)
+    alpha_schedule: str = "ema"          # F41: "ema" (legacy, step = alpha) | "mean" (step = 1/(n+1): exact running mean)
     # C9 causal credit (the fix for recovery masking): credit signal + re-roll budget
     credit_signal: CreditSignal = CreditSignal.OUTCOME
     causal_reroll_seeds: int = 1          # re-rolls per cited node to estimate marginal value
+    causal_parallel_workers: int = 6      # 2026-09-07: re-rolls of one node run concurrently (1 = sequential)
     causal_warmup_n: float = 2            # HYBRID: use outcome credit until n exposures, then causal
     causal_q_gate: float = 0.3            # HYBRID: only causal-credit nodes whose Q exceeds this
-    k_promote: int = 3             # [SWEEP 2–5] distinct successful cited runs to promote
-    c_promote: int = 2             # [SWEEP 1–3] distinct challenges to promote
+    k_promote: int = 3             # [SWEEP 2-5] distinct successful cited runs to promote
+    c_promote: int = 2             # [SWEEP 1-3] distinct challenges to promote
     provisional_weight_cap: float = 0.3   # provisional nodes capped in score (§9.4)
 
     # --- Graph hygiene: retraction / decay (§10, built in C9) ---
@@ -144,7 +161,7 @@ class SolverConfig:
     k_retract: int = 5            # [SWEEP] exposures below θ before demotion
     cited_failure_retract_rate: float = 0.6  # cited-failure rate that triggers retraction
 
-    # --- Refresh (future; instrument only — §8) ---
+    # --- Refresh (future; instrument only - §8) ---
     refresh_mode: RefreshMode = RefreshMode.STATIC
 
     # --- Solver run limits (§3, C3) ---

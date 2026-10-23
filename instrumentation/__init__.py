@@ -1,5 +1,5 @@
 """
-instrumentation/ — paper-grade logging (CTF_SOLVER_ARCHITECTURE_v2.md §12).
+instrumentation/ - paper-grade logging (CTF_SOLVER_ARCHITECTURE_v2.md §12).
 
 Append-only JSONL, one file per record type per experiment run. These logs ARE
 the paper data; propensities and action-grounded citations are

@@ -1,12 +1,12 @@
 """
-benchmark/micro_ctf.py — generator for the controlled micro-CTF corpus.
+benchmark/micro_ctf.py - generator for the controlled micro-CTF corpus.
 
 Each FAMILY encodes a fresh random flag into an artifact a small LLM can decode
 with the *present* shell tools (base64, xxd, tr, rev, zcat, strings, python3).
 The family defines:
   - true_sig:   the invocation signature of the CORRECT method (clean citation).
   - poison:     a planted FALSE lesson naming a plausible-but-wrong method, with
-                its own (wrong) signature — if the model follows it, that wrong
+                its own (wrong) signature - if the model follows it, that wrong
                 tool shows up in the executed actions (cited) yet does not cause
                 the solve. This is the ground-truth false lesson.
   - difficulty/points: ground-truth labels for reward standardization (§9.2).
@@ -156,7 +156,7 @@ FAMILIES: List[Family] = [
 
 _FAMILY_BY_NAME = {f.name: f for f in FAMILIES}
 
-# Broad CTF category per family — this is the bandit CONTEXT node (spec §6, C-1).
+# Broad CTF category per family - this is the bandit CONTEXT node (spec §6, C-1).
 # It deliberately does NOT leak the exact method (that would defeat lesson value):
 # many crypto methods share the "crypto" context, so the bandit must learn from
 # OUTCOMES which lessons help, not from the context label alone.
@@ -172,7 +172,7 @@ def _static_metrics(path: Path) -> str:
 
     This is what makes retrieval discoverable WITHOUT leaking the method in the
     prompt: a gzip file's `file` output says 'gzip compressed', a base64 file's
-    head shows base64 characters — real signal the embedder can use.
+    head shows base64 characters - real signal the embedder can use.
     """
     import subprocess
     try:
@@ -217,7 +217,7 @@ def generate_corpus(
             fpath = cdir / fam.filename
             fpath.write_bytes(content)
             # NEUTRAL description: never name the transform. The point of the
-            # experiment is whether the RETRIEVED LESSON carries the method — a
+            # experiment is whether the RETRIEVED LESSON carries the method - a
             # description that telegraphs "this is gzip" removes lesson headroom.
             neutral_desc = (f"Recover the flag hidden in the file `{fam.filename}`. "
                             f"The flag is in the form picoCTF{{...}}.")

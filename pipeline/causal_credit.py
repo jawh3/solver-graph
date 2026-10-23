@@ -1,5 +1,5 @@
 """
-pipeline/causal_credit.py — leave-one-out re-rollout causal credit (spec §9.3, §11, C9).
+pipeline/causal_credit.py - leave-one-out re-rollout causal credit (spec §9.3, §11, C9).
 
 The oracle-free causal probe. Action-grounded citation (§9.3) tells us a lesson was
 *used*; it does not prove the lesson was *causal*. To measure that without a human
@@ -15,12 +15,12 @@ expensive on the real path (each is a solve), so the suspicious-set gate keeps t
 GPU budget bounded.
 
 In mock mode the "shared pre-lesson state" is the fixed RNG seed; with/without the
-node are two seeded mock solves whose only difference is the node's presence —
+node are two seeded mock solves whose only difference is the node's presence -
 exactly the counterfactual. On the real path, the shared state is a checkpoint of
 the agent/container just before the lesson would first be used.
 
-Design citation: process-reward without human labels via re-rollout —
-MathShepherd 2312.08935; marginal/segment credit — MemoryR2 2605.21768,
+Design citation: process-reward without human labels via re-rollout -
+MathShepherd 2312.08935; marginal/segment credit - MemoryR2 2605.21768,
 SegmentCredit 2605.27788, GraphCreditAssignment 2605.26684.
 """
 
@@ -41,8 +41,8 @@ from bandit.bandit import TabularBandit
 class MarginalValue:
     node_id: str
     challenge_id: str
-    marginal_solve: float       # E[outcome | with] − E[outcome | without]
-    marginal_steps: float       # E[steps | without] − E[steps | with]  (positive = node saves steps)
+    marginal_solve: float       # E[outcome | with] - E[outcome | without]
+    marginal_steps: float       # E[steps | without] - E[steps | with]  (positive = node saves steps)
     n_rollouts: int
     is_false_lesson: bool       # credited but ~0 marginal causal value
 

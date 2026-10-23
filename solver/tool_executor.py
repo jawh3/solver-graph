@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tool Executor — sandboxed shell command runner for CTF challenge analysis.
+Tool Executor - sandboxed shell command runner for CTF challenge analysis.
 
 Executes commands requested by the LLM against downloaded challenge artifacts,
 with an allowlist of safe tools and resource limits.
@@ -13,12 +13,13 @@ import shlex
 import base64 as b64module
 import resource
 import tempfile
+import threading
 import time
 from pathlib import Path
 
 # Hard cap on the size of ANY file a tool command may create (RLIMIT_FSIZE). CTF decode
 # outputs are tiny (a flag is ~30 bytes); a legit gunzip/zlib output is well under this.
-# This prevents a decompression bomb / runaway write from filling the disk — one such
+# This prevents a decompression bomb / runaway write from filling the disk - one such
 # command wrote a 681 GB file overnight (2026-06-02) and filled the shared drive.
 MAX_FILE_BYTES = 64 * 1024 * 1024  # 64 MB
 
@@ -35,12 +36,12 @@ def _limit_child_resources():
 # Safety configuration
 # ---------------------------------------------------------------------------
 
-# No command allowlist — all commands are permitted.
+# No command allowlist - all commands are permitted.
 # Only truly destructive patterns are blocked below.
 
 # Patterns that are always blocked (even inside allowed commands)
 BLOCKED_PATTERNS = [
-    r"\brm\s+-rf\s+/(\s|$|\*)",  # rm -rf / (root) or /* only — trailing \b failed at EOS (fixed 2026-05-31)
+    r"\brm\s+-rf\s+/(\s|$|\*)",  # rm -rf / (root) or /* only - trailing \b failed at EOS (fixed 2026-05-31)
     r"\brm\b.*--no-preserve-root",
     r"\bmkfs\b",
     r"\bdd\b\s+.*of=/dev",
@@ -67,7 +68,7 @@ def _kill_process_group(proc, pgid: int | None, grace: float = KILL_GRACE_S) -> 
     `shell=True` means the direct child is `/bin/sh`; the real tool, every member of a
     pipeline, and anything backgrounded with `&` are GRANDCHILDREN. Killing only the
     child (what `subprocess.run(timeout=...)` does) leaves those reparented to init,
-    where they accumulate indefinitely — this machine collected 35 such orphans, the
+    where they accumulate indefinitely - this machine collected 35 such orphans, the
     oldest running 55 days, before this was fixed (2026-07-26).
 
     `pgid` must be captured at SPAWN time (it equals `proc.pid`, because
@@ -93,7 +94,7 @@ def _kill_process_group(proc, pgid: int | None, grace: float = KILL_GRACE_S) -> 
     try:
         os.killpg(pgid, signal.SIGTERM)
     except ProcessLookupError:
-        return                             # group already empty — clean exit, no survivors
+        return                             # group already empty - clean exit, no survivors
     except Exception:
         return
     try:
@@ -152,7 +153,7 @@ def _split_pipeline(cmd: str) -> list[str]:
     while i < len(cmd):
         ch = cmd[i]
 
-        # Track quote state (no nesting — shell rules)
+        # Track quote state (no nesting - shell rules)
         if ch == "'" and not in_double and not in_backtick:
             in_single = not in_single
             current.append(ch)
@@ -212,7 +213,7 @@ def _extract_base_command(segment: str) -> str | None:
     try:
         tokens = shlex.split(segment)
     except ValueError:
-        # Unbalanced quotes — fall back to naive split
+        # Unbalanced quotes - fall back to naive split
         tokens = segment.split()
 
     for token in tokens:
@@ -248,7 +249,15 @@ def validate_command(cmd: str) -> tuple[bool, str]:
 
 
 def get_available_tools() -> list[str]:
-    """Return a list of common CTF tools found in the PATH."""
+    """Return a list of common CTF tools found in the PATH (of this thread's container backend, if any)."""
+    backend = get_backend()
+    if backend is not None and hasattr(backend, "available_tools"):
+        try:
+            return list(backend.available_tools())
+        except Exception:
+            return []
+    if _SANDBOX_REQUIRED:
+        return []                                 # never describe the host's PATH to a solver that must be sandboxed
     common_tools = [
         "exiftool", "binwalk", "zsteg", "steghide", "strings", "grep",
         "find", "nasm", "gcc", "g++", "nc", "ssh", "python3", "identify",
@@ -276,6 +285,101 @@ def get_tool_hint(cmd_name: str) -> str | None:
     return hints.get(cmd_name)
 
 
+# ---------------------------------------------------------------------------
+# Execution backend (Phase 3, 2026-09-14): a registered backend (solver.container_executor.ContainerSession)
+# receives every command whose working directory lies inside its mounted tree; with none registered the host
+# subprocess path below runs unchanged (the reproducibility anchor).
+#
+# 2026-10-19 (audit N1): the backend used to be ONE module global. The realbench runners solve 3 tasks at once in
+# threads, so each solve's `use_backend` overwrote the others' and a command whose working directory did not match
+# the current backend fell through to a HOST subprocess (~30% of commands in the Phase-3 campaigns). Now:
+#   - the backend is per thread (`threading.local`), so concurrent solves cannot see each other's session;
+#   - inside `use_backend` a command outside the session's tree is BLOCKED, never run on the host;
+#   - `require_sandbox()` (set by the realbench runners) blocks any command in a thread with no backend at all;
+#   - `use_backend.stats` counts what was dispatched / blocked, so a solve can check every command ran in its container.
+# The Phase-2 host path (no backend, sandbox not required) is unchanged.
+# ---------------------------------------------------------------------------
+_LOCAL = threading.local()
+_SANDBOX_REQUIRED = False
+_VIOLATIONS_LOCK = threading.Lock()
+_SANDBOX_VIOLATIONS = 0
+
+
+def set_backend(backend) -> None:
+    _LOCAL.backend = backend
+
+
+def get_backend():
+    return getattr(_LOCAL, "backend", None)
+
+
+def require_sandbox(on: bool = True) -> None:
+    """Process-wide: when on, a command in a thread without a backend is blocked instead of run on the host."""
+    global _SANDBOX_REQUIRED
+    _SANDBOX_REQUIRED = bool(on)
+
+
+def sandbox_violations() -> int:
+    """Commands blocked because the sandbox was required and the thread had no backend (should stay 0)."""
+    return _SANDBOX_VIOLATIONS
+
+
+def _note_violation() -> None:
+    global _SANDBOX_VIOLATIONS
+    with _VIOLATIONS_LOCK:
+        _SANDBOX_VIOLATIONS += 1
+
+
+class use_backend:
+    """Context manager: `with use_backend(session): ...` routes this thread's commands through `session`, then restores.
+    `stats` = {"dispatched": commands sent to the session, "rejected": commands blocked because their working directory
+    was outside the session's tree} for the commands run inside the block."""
+
+    def __init__(self, backend):
+        self.backend, self._prev, self._prev_stats = backend, None, None
+        self.stats = {"dispatched": 0, "rejected": 0}
+
+    def __enter__(self):
+        self._prev, self._prev_stats = get_backend(), getattr(_LOCAL, "stats", None)
+        self.stats = {"dispatched": 0, "rejected": 0}
+        set_backend(self.backend)
+        _LOCAL.stats = self.stats
+        return self.backend
+
+    def __exit__(self, *exc):
+        set_backend(self._prev)
+        _LOCAL.stats = self._prev_stats
+
+
+def _finalize_result(result: dict, cmd: str, stdout: str, stderr: str, returncode: int) -> dict:
+    """Command-aware truncation, hard caps and missing-tool hints (shared by the host and container paths)."""
+    base_cmd = _extract_base_command(cmd)
+    if base_cmd in ("ls", "find", "dir"):
+        lines = stdout.splitlines()
+        if len(lines) > 100:
+            stdout = "\n".join(lines[:50]) + f"\n\n... [{len(lines) - 100} lines truncated for brevity] ...\n\n" + "\n".join(lines[-50:])
+    elif base_cmd in ("xxd", "hexdump"):
+        lines = stdout.splitlines()
+        if len(lines) > 60:
+            stdout = "\n".join(lines[:30]) + f"\n\n... [{len(lines) - 60} lines of hex dump truncated] ...\n\n" + "\n".join(lines[-30:])
+    if len(stdout) > MAX_OUTPUT_BYTES:
+        stdout = stdout[:MAX_OUTPUT_BYTES] + f"\n... [truncated at {MAX_OUTPUT_BYTES} bytes]"
+    if len(stderr) > MAX_OUTPUT_BYTES:
+        stderr = stderr[:MAX_OUTPUT_BYTES] + f"\n... [truncated at {MAX_OUTPUT_BYTES} bytes]"
+    result["stdout"] = stdout
+    result["stderr"] = stderr
+    result["returncode"] = returncode
+    is_not_found = (returncode == 127 or
+                    "command not found" in stderr.lower() or
+                    f"{base_cmd}: not found" in stderr.lower() or
+                    f"{base_cmd}: command not found" in stderr.lower())
+    if is_not_found:
+        hint = get_tool_hint(base_cmd)
+        if hint:
+            result["stderr"] = (result["stderr"] + f"\n[HINT] {hint}").strip()
+    return result
+
+
 def run_command(cmd: str, working_dir: str | Path) -> dict:
     """Execute a single shell command in the given working directory.
 
@@ -298,6 +402,26 @@ def run_command(cmd: str, working_dir: str | Path) -> dict:
 
     working_dir = str(working_dir)
 
+    backend = get_backend()
+    if backend is not None:
+        stats = getattr(_LOCAL, "stats", None)
+        if not backend.matches(working_dir):
+            # fail closed: inside a sandboxed solve nothing runs on the host (audit N1)
+            if stats is not None:
+                stats["rejected"] += 1
+            result["error"] = "BLOCKED: working directory is outside the sandbox container (no host fallback)"
+            return result
+        if stats is not None:
+            stats["dispatched"] += 1
+        raw = backend.run(cmd, working_dir)
+        if raw.get("error"):
+            result["error"] = raw["error"]
+        return _finalize_result(result, cmd, raw.get("stdout", ""), raw.get("stderr", ""), int(raw.get("returncode", -1)))
+    if _SANDBOX_REQUIRED:
+        _note_violation()
+        result["error"] = "BLOCKED: sandbox required but no container backend is registered for this solve"
+        return result
+
     try:
         # Scrub sensitive environment variables from the subprocess
         safe_env = {k: v for k, v in os.environ.items() if "TOKEN" not in k and "PASS" not in k and "KEY" not in k}
@@ -305,7 +429,7 @@ def run_command(cmd: str, working_dir: str | Path) -> dict:
         
         # Capture to temp FILES, not pipes. `subprocess.run(capture_output=True)` calls
         # communicate() after a timeout kill, which blocks until every writer closes the
-        # pipe — an orphaned grandchild holding the inherited fd hangs the parent forever,
+        # pipe - an orphaned grandchild holding the inherited fd hangs the parent forever,
         # so the nominal 60s timeout was not actually enforced. Files cannot hang.
         with tempfile.TemporaryFile() as fout, tempfile.TemporaryFile() as ferr:
             proc = subprocess.Popen(
@@ -333,38 +457,8 @@ def run_command(cmd: str, working_dir: str | Path) -> dict:
         if timed_out:
             result["error"] = f"TIMEOUT after {COMMAND_TIMEOUT}s"
 
-        # Command-Aware Truncation (ls, find, xxd)
-        base_cmd = _extract_base_command(cmd)
-        if base_cmd in ("ls", "find", "dir"):
-            lines = stdout.splitlines()
-            if len(lines) > 100:
-                stdout = "\n".join(lines[:50]) + f"\n\n... [{len(lines) - 100} lines truncated for brevity] ...\n\n" + "\n".join(lines[-50:])
-        elif base_cmd in ("xxd", "hexdump"):
-            lines = stdout.splitlines()
-            if len(lines) > 60:
-                stdout = "\n".join(lines[:30]) + f"\n\n... [{len(lines) - 60} lines of hex dump truncated] ...\n\n" + "\n".join(lines[-30:])
-
-        # Hard Truncate if still too long
-        if len(stdout) > MAX_OUTPUT_BYTES:
-            stdout = stdout[:MAX_OUTPUT_BYTES] + f"\n... [truncated at {MAX_OUTPUT_BYTES} bytes]"
-        if len(stderr) > MAX_OUTPUT_BYTES:
-            stderr = stderr[:MAX_OUTPUT_BYTES] + f"\n... [truncated at {MAX_OUTPUT_BYTES} bytes]"
-
         returncode = proc.returncode if proc.returncode is not None else -1
-        result["stdout"] = stdout
-        result["stderr"] = stderr
-        result["returncode"] = returncode
-
-        # Add hints if tool not found
-        is_not_found = (returncode == 127 or
-                        "command not found" in stderr.lower() or 
-                        f"{base_cmd}: not found" in stderr.lower() or
-                        f"{base_cmd}: command not found" in stderr.lower())
-        
-        if is_not_found:
-            hint = get_tool_hint(base_cmd)
-            if hint:
-                result["stderr"] = (result["stderr"] + f"\n[HINT] {hint}").strip()
+        _finalize_result(result, cmd, stdout, stderr, returncode)
 
     except subprocess.TimeoutExpired:
         result["error"] = f"TIMEOUT after {COMMAND_TIMEOUT}s"
@@ -468,7 +562,7 @@ _FLAG_RE = re.compile(r'picoCTF\{[^\s}]{3,100}\}')
 def extract_encoded_flags(text: str) -> list[str]:
     """Scan text for base64/hex/URL-encoded strings, decode them, and return any flags found.
 
-    This bypasses the LLM entirely — flags come straight from decoded bytes.
+    This bypasses the LLM entirely - flags come straight from decoded bytes.
     """
     from urllib.parse import unquote
     flags = []

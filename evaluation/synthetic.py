@@ -1,8 +1,8 @@
 """
-evaluation/synthetic.py — a controllable synthetic CTF world for GPU-free validation.
+evaluation/synthetic.py - a controllable synthetic CTF world for GPU-free validation.
 
 Why this exists: the existing `MockEmbedder` is hash-based, so semantically related
-texts get *independent* random vectors — retrieval similarity is meaningless. To
+texts get *independent* random vectors - retrieval similarity is meaningless. To
 exercise the WHOLE pipeline (retrieval actually surfacing the right lesson, the
 bandit learning to prefer it, write-back growing the graph) without a GPU, we need
 (a) an embedder where content-related items are genuinely close, and (b) a world
@@ -10,7 +10,7 @@ whose ground truth (which lesson helps which challenge, which lessons are
 false/poison) is known so suppression can be *measured*.
 
 This module provides both. It is test/eval infrastructure, NOT part of the real
-solve path — the real path uses VLLMEmbedder + Qwen. Everything here is seeded and
+solve path - the real path uses VLLMEmbedder + Qwen. Everything here is seeded and
 deterministic so paired/common-random-seed evaluation (§14.4) is exact.
 
 Ground-truth labels embedded in the world (so §14.3 false-lesson metrics have a

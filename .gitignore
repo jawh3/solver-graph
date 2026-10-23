@@ -1,5 +1,5 @@
-# Build and environment noise only. Every result artifact the
-# paper cites is tracked deliberately -- do not add /results/ rules here.
+# Build and environment noise only. Every result artifact the release
+# reports is tracked deliberately -- do not add /results/ rules here.
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -7,7 +7,6 @@ venv/
 .venv/
 .env
 .env.*
-!.env.example
 *.log
 /logs/
 *.aux
@@ -17,3 +16,6 @@ venv/
 *.synctex.gz
 .DS_Store
 .claude/
+# written by the mock test suite
+/results/logs_test*/
+/results/_solve_work/

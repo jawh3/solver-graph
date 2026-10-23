@@ -1,5 +1,5 @@
 """
-instrumentation/records.py — the §12 logging schema as typed dataclasses.
+instrumentation/records.py - the §12 logging schema as typed dataclasses.
 
 One dataclass per record type in CTF_SOLVER_ARCHITECTURE_v2.md §12. Each is a
 plain, JSON-serializable record; `ExperimentLogger` (jsonl_logger.py) writes them
@@ -13,7 +13,7 @@ the contract.
 Design-citation notes for the *fields that matter for the research claim*:
   - `per_draw_propensity` / `set_logprob`: mandatory for unbiased OPE
     (Dudík et al., Doubly-Robust 1103.4601; OfflineEval/replay 1003.5956). The
-    sequential without-replacement set probability — NOT a plain per-item softmax
+    sequential without-replacement set probability - NOT a plain per-item softmax
     (BUILD_CHECKLIST C2 pitfall).
   - `CitationRecord.cited` via `match_evidence` from executed actions, not
     self-report: the recovery-masking lever (§9.3; MemoryR2 2605.21768).
@@ -59,17 +59,26 @@ class RunRecord:
     # ^ [{node_id, cosine, rerank_score, mmr_kept}]
     sampled_set: List[str] = field(default_factory=list)
     per_draw_propensity: List[Dict[str, Any]] = field(default_factory=list)
-    # ^ [{node_id, p}] in realized draw order — the conditional p at each draw
+    # ^ [{node_id, p}] in realized draw order - the conditional p at each draw
     set_logprob: float = 0.0       # log P(realized set | c) under logging policy
     temperature: float = 1.0
+    policy: Dict[str, Any] = field(default_factory=dict)   # F3: {tau_deploy, tau_explore, epsilon, deterministic}
+    exploration: bool = False      # F3: drawn from the exploration stream
 
     # outcome (§9.1)
     outcome: int = 0               # 1 = flag verified, 0 otherwise
+    llm_seed: Optional[int] = None    # review 2026-09-08 F10: the solver's sampling seed (campaign-chosen); `seed` is the config seed
+    phase: str = ""                   # "train" | "eval" (frozen) - recoverable without progress.json
+    reroll_solves: int = 0            # causal credit: extra solves spent on leave-one-out re-rolls
+    reroll_tokens: int = 0            # their tokens (prompt+completion as billed)
+    reroll_wall_s: float = 0.0        # their summed wall clock (re-rolls run in parallel)
+    gave_up_reason: str = ""       # F4b: why the run ended (rounds_exhausted | wrong_flag | llm_error | ...)
+    error: bool = False            # F4b: True when the solver itself failed (llm_error) - NOT a solve failure
     non_exploit_capture: bool = False   # reward-hacking guard (§11)
     steps: int = 0
     tokens: int = 0
     total_commands: int = 0        # executed shell commands (effort signal, D1; real solver fills it)
-    wall_clock_s: float = 0.0      # SECONDARY only — never a bandit signal (C-5)
+    wall_clock_s: float = 0.0      # SECONDARY only - never a bandit signal (C-5)
     time_to_flag_steps: Optional[int] = None
 
     # reward (§9.1)
@@ -101,6 +110,8 @@ class StepRecord:
     observation_hash: str = ""
     would_have_retrieved: List[str] = field(default_factory=list)  # counterfactual (§8)
     stagnation_flag: bool = False
+    finish_reason: str = ""        # F4d: LLM stop reason for the step ("stop" | "length" | ...)
+    llm_response_head: str = ""    # F4d: first 240 chars of the raw reply, parse_error steps only
     ts: str = field(default_factory=_now_iso)
 
     def to_dict(self) -> Dict[str, Any]:
@@ -114,8 +125,10 @@ class CitationRecord:
     node_id: str
     cited: bool = False
     match_evidence: str = ""       # the command/keyword that grounded the citation
-    confidence: str = "deterministic"   # "deterministic" | "llm"
+    confidence: str = "deterministic"   # "deterministic" | "llm" | "ambiguous" (F2: no distinctive token)
     sampled: bool = True           # was it in the M set (vs only in pool)?
+    mode: str = "any"              # F2: matcher mode used ("any" legacy | "distinctive")
+    n_distinctive: int = -1        # F2: distinctive tokens available to the matcher (-1 = n/a)
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)

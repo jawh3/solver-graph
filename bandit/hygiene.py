@@ -1,5 +1,5 @@
 """
-bandit/hygiene.py — retraction & decay of false lessons (spec §10, C9).
+bandit/hygiene.py - retraction & decay of false lessons (spec §10, C9).
 
 Bounds graph growth AND removes confirmed false lessons. A node is a retraction
 candidate when, in a context, its learned Q stays below `theta_retract` across
@@ -10,10 +10,10 @@ provenance/audit, §10):
     trusted  →  provisional  →  archived
 
 `graph_quality_over_time` is reported as a first-class metric (§14.3): mean Q of
-trusted nodes, count by tier, and #retractions — tracked across snapshots so the
+trusted nodes, count by tier, and #retractions - tracked across snapshots so the
 paper can show the graph getting *cleaner*, not just bigger.
 
-Design citation: forgetting/decay to remove poisoned experience — FadeMem
+Design citation: forgetting/decay to remove poisoned experience - FadeMem
 2601.18642, MemoryPoisoningDefense 2601.05504; never-hard-delete for audit
 mirrors provenance (MemoryGraft 2512.16962).
 """

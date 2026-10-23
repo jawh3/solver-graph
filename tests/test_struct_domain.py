@@ -1,4 +1,4 @@
-"""struct_domain (PREREG_INTERFERENCE 2nd domain) must be NON-degenerate: own method recovers the flag,
+"""struct_domain must be NON-degenerate: own method recovers the flag,
 sibling method gives a clean-but-WRONG non-empty string, and the flag is NOT readable without the
 tag-filter (no printable-column shortcut -> avoids the SQL ceiling). Pure CPU."""
 import numpy as np
@@ -6,7 +6,7 @@ import benchmark.struct_domain as sd
 
 
 def test_grid_size_and_widths():
-    assert len(sd.GRID_FAMILIES) >= 75            # PREREG needs 75 in-band (50 floor) -> ample pool
+    assert len(sd.GRID_FAMILIES) >= 75            # the plan needs 75 in-band (50 floor) -> ample pool
     assert {f.width for f in sd.GRID_FAMILIES} == {20, 24, 28, 32}
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""benchmark/sql_domain.py — a SECOND verifiable domain (T2-7) to show the identifiability/asymmetry
+"""benchmark/sql_domain.py - a SECOND verifiable domain (T2-7) to show the identifiability/asymmetry
 result generalizes beyond crypto byte-decode. Here a "challenge" is a SQLite DB and the flag lives in
 the `secret` column of the ONE row matching a family-specific predicate (category+region[+tier]). A
 "lesson" is the WHERE clause:
@@ -21,6 +21,8 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 import numpy as np
+
+from benchmark.hard_ctf import neutral_display_name, lesson_display_name  # F1 / review
 
 from knowledge_graph.models import Node, NodeType
 from knowledge_graph.store import KnowledgeGraphStore
@@ -158,10 +160,15 @@ def generate_corpus(out_dir, n_per_family: int = 6, seed: int = 424242,
         for i in range(n_per_family):
             flag = _rand_flag(rng)
             content = fam.encode(flag, rng)
-            cdir = out_dir / f"{fam.name}_{i:02d}"; cdir.mkdir(parents=True, exist_ok=True)
+            # F1 (FIX_CATALOG 2026-09): neutral solver-visible id + working dir; `name` stays the
+            # family-encoding LOGGING id (see benchmark.hard_ctf.neutral_display_name).
+            display = neutral_display_name(fam.name, seed, i)
+            cdir = out_dir / (f"{fam.name}_{i:02d}" if leak_names else display)
+            cdir.mkdir(parents=True, exist_ok=True)
             fpath = cdir / shown; fpath.write_bytes(content)
             corpus.append({
                 "name": f"{fam.name}_{i:02d}", "category": CATEGORY_OF[fam.name],
+                "_display_name": (f"{fam.name}_{i:02d}" if leak_names else display),
                 "points": fam.points, "difficulty": fam.difficulty,
                 "description": f"A SQLite database `{shown}`. Recover the flag (picoCTF{{...}}) stored in "
                                f"the `secret` column of the correct record.",
@@ -192,15 +199,18 @@ def _nid(kind, fam):
 
 def build_seed_graph(embedder, families: Optional[List[str]] = None,
                      malignant_arms: Optional[List[str]] = None,
-                     distractor_arm: bool = False
+                     distractor_arm: bool = False,
+                     poison_kind: str = "sibling",
                      ) -> Tuple[KnowledgeGraphStore, Dict[str, Tuple[str, str]]]:
+    if poison_kind != "sibling":
+        raise ValueError(f"{__name__} supports poison_kind='sibling' only (got {poison_kind!r})")
     store = KnowledgeGraphStore(); truth = {}
     fams = _resolve_families(families)
     for fam in fams:
         htext, hsig = _recipe_text(fam)
         hid = _nid("true", fam.name)
         store.add_node(Node(id=hid, type=NodeType.TECHNIQUE, attributes={
-            "canonical_name": f"{fam.name}_h{hashlib.sha1(htext.encode()).hexdigest()[:4]}",
+            "canonical_name": lesson_display_name(htext),
             "invocation_signature": hsig, "keywords": hsig, "text": htext, "category": "forensics",
             "tier": "trusted", "source": "seed", "_truth": "helpful", "_family": fam.name,
             "applicability": {"categories": ["forensics"], "confidence": 0.9}}),
@@ -209,7 +219,7 @@ def build_seed_graph(embedder, families: Optional[List[str]] = None,
         ptext, psig = _recipe_text(_sibling(fam))           # poison = sibling's (wrong) query
         pid = _nid("poison", fam.name)
         store.add_node(Node(id=pid, type=NodeType.TECHNIQUE, attributes={
-            "canonical_name": f"{fam.name}_p{hashlib.sha1(ptext.encode()).hexdigest()[:4]}",
+            "canonical_name": lesson_display_name(ptext),
             "invocation_signature": psig, "keywords": psig, "text": ptext, "category": "forensics",
             "tier": "trusted", "source": "seed", "_truth": "poison", "_poison": True, "_family": fam.name,
             "applicability": {"categories": ["forensics"], "confidence": 0.9}}),

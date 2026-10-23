@@ -1,0 +1,21 @@
+# Running the agent. The analysis and the tests need only numpy, scipy, networkx, pyyaml,
+# python-dotenv, openai and pytest.
+openai>=1.0.0
+python-dotenv>=1.0.1
+pyyaml>=6.0.1
+numpy>=1.24.0
+scipy>=1.10
+networkx>=3.0
+pytest>=8.0
+sentence-transformers>=5.5   # embedder and cross-encoder reranker
+transformers
+vllm==0.19.1                 # the version the reported runs were served with
+requests>=2.31.0
+httpx>=0.27.0
+mcp>=1.0.0                   # legacy dynamic-memory path
+# legacy PicoCTF tooling (solver/main.py, scrapers)
+playwright>=1.45
+beautifulsoup4>=4.12.3
+trafilatura>=1.8.0
+rapidfuzz
+pymongo>=4.6.1

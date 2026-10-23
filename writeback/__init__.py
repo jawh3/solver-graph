@@ -1,5 +1,5 @@
 """
-writeback/ — gated lifelong write-back (spec §9.4, C-8/C7).
+writeback/ - gated lifelong write-back (spec §9.4, C-8/C7).
 
 The LLM abstraction step is where false lessons are BORN, so write-back is gated:
 new nodes enter `provisional` (weight-capped, flagged in-context) and are promoted

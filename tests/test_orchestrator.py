@@ -1,4 +1,4 @@
-"""End-to-end orchestrator tests over the synthetic world (spec §7–§9, §12)."""
+"""End-to-end orchestrator tests over the synthetic world (spec §7-§9, §12)."""
 
 import numpy as np
 
@@ -133,7 +133,7 @@ def test_recovery_masking_denied_credit():
     orch = _orch(world, cfg, system, bandit=bandit)
     run = orch.run_one(world.challenges[0], rng=np.random.RandomState(0))
     # nodes sampled but never executed cannot have accrued n>0 in this single run
-    # (they were not cited) — verify at least one sampled-but-not-cited node exists
+    # (they were not cited) - verify at least one sampled-but-not-cited node exists
     # and has no bandit observation.
     from solver.citation import match_citations
     # rebuild citation set is internal; instead check: number of cells with n>0

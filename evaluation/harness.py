@@ -1,20 +1,20 @@
 """
-evaluation/harness.py — the locked measurement layer (spec §14, C4).
+evaluation/harness.py - the locked measurement layer (spec §14, C4).
 
 Runs each SystemSpec over a dataset with a PAIRED, common-random-seed design and
 emits paper-ready tables: per-system solve rate, paired lift over B0 with bootstrap
 CIs, median step-to-flag, recovery-masking rate, and the non-exploit-capture rate.
 
-Built BEFORE the bandit/write-back are *trusted* (build order §16) — but it can
+Built BEFORE the bandit/write-back are *trusted* (build order §16) - but it can
 evaluate them too, because it just consumes the orchestrator + the §12 logs.
 
 Design rules honored:
   - Lift is reported over B0, NOT raw solve rate (public challenges are in Qwen's
-    pretraining — contamination). Headline = HELD-OUT-NOVEL + TRANSFORMED-FAMILIES.
+    pretraining - contamination). Headline = HELD-OUT-NOVEL + TRANSFORMED-FAMILIES.
   - Paired / within-challenge: every system sees the SAME challenges with the SAME
     per-challenge eval seed, so paired bootstrap (stats.py) applies.
-  - Learning systems (B4–B6) get `train_epochs` passes first, then a fixed eval
-    pass; non-learning systems (B0–B3) ignore training.
+  - Learning systems (B4-B6) get `train_epochs` passes first, then a fixed eval
+    pass; non-learning systems (B0-B3) ignore training.
   - Each system runs on a FRESH graph/bandit (via a graph_factory) so write-back in
     one system can't leak into another.
   - B5 vs B3 is flagged loudly: if gated write-back does not beat episodic-only,
@@ -112,7 +112,7 @@ class EvalHarness:
         """Run one system over the dataset (paired eval pass) and report metrics."""
         orch = self._build_orchestrator(system, graph_factory, experiment_id)
 
-        # training passes for learning systems (B4–B6); ignored if no bandit/writeback
+        # training passes for learning systems (B4-B6); ignored if no bandit/writeback
         if train_epochs and (system.use_bandit or system.use_writeback):
             for ep in range(train_epochs):
                 for i, ch in enumerate(challenges):

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Baseline PicoCTF Solver — Main Orchestrator.
+Baseline PicoCTF Solver - Main Orchestrator.
 
 Logs into PicoCTF, scrapes challenges from the Gym, feeds each to a local LLM,
 and submits the proposed flag.  Results are logged to results.jsonl.
@@ -220,7 +220,7 @@ async def run(
             print("   transfer a fresh cookies.json to this directory.")
             sys.exit(1)
 
-        print("✓  Session valid — proceeding to solve challenges\n")
+        print("✓  Session valid - proceeding to solve challenges\n")
 
         # ---- Process challenges page by page ----
         stats = {"attempted": 0, "flags_found": 0, "submitted": 0, "accepted": 0}
@@ -438,7 +438,7 @@ def main():
     parser.add_argument("--no-tools", action="store_true",
                         help="Disable tool-augmented solving (single-shot LLM only, for ablation)")
     parser.add_argument("--memory", action="store_true",
-                        help="Enable memory MCP server — retrieve past knowledge and record results")
+                        help="Enable memory MCP server - retrieve past knowledge and record results")
     parser.add_argument("--compare", action="store_true",
                         help="Run each challenge twice: baseline (no memory) then with memory. "
                              "Results saved to results_compare.jsonl")

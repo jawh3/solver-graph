@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Evaluation Harness — measures distributed solver performance.
+Evaluation Harness - measures distributed solver performance.
 
 Runs scaling experiments across different worker counts and configurations,
 then generates metrics and charts for the paper.
@@ -111,7 +111,7 @@ def analyze_results(results: list[dict]) -> dict:
 def print_analysis(stats: dict, label: str = ""):
     """Pretty-print analysis results."""
     print(f"\n{'=' * 60}")
-    print(f"  EVALUATION RESULTS{f' — {label}' if label else ''}")
+    print(f"  EVALUATION RESULTS{f' - {label}' if label else ''}")
     print(f"{'=' * 60}")
     print(f"  Total attempted:  {stats['total_attempted']}")
     print(f"  Flags found:      {stats['flags_found']}")
@@ -253,7 +253,7 @@ def main():
         )
 
     elif args.experiment == "rag-lift":
-        print("RAG-lift experiment: run master.py twice —")
+        print("RAG-lift experiment: run master.py twice -")
         print("  1. python master.py --limit N --dry-run         (with RAG)")
         print("  2. python master.py --limit N --dry-run --no-rag (without RAG)")
         print("Then analyze both results files:")

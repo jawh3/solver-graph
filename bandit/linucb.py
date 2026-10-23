@@ -1,5 +1,5 @@
 """
-bandit/linucb.py — optional parametric contextual bandit (spec §6.3, [ABLATION]).
+bandit/linucb.py - optional parametric contextual bandit (spec §6.3, [ABLATION]).
 
 Hybrid LinUCB (Li et al., "A Contextual-Bandit Approach to Personalized News
 Article Recommendation", 1003.0146). Context feature for arm (candidate node) v
@@ -13,7 +13,7 @@ score (UCB):
     p(v) = θ̂ᵀx + alpha_ucb * sqrt(xᵀ A⁻¹ x)
 
 This generalizes smoothly across nodes (no sparsity cliff), which is the reason
-it is the spec's "likely target" — but it is built AFTER the tabular default
+it is the spec's "likely target" - but it is built AFTER the tabular default
 works and is a planned *comparison*, not the first cut (§6.3). The tabular bandit
 remains the load-bearing default.
 

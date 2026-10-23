@@ -49,9 +49,9 @@ def test_mcnemar_and_power():
     assert pw["required_challenges"] > 0
 
 
-def test_b2_beats_b0_on_synthetic_world():
+def test_b2_beats_b0_on_synthetic_world(tmp_path):
     cfg = _cfg()
-    h = EvalHarness(cfg, results_root="results/logs_test", base_seed=999)
+    h = EvalHarness(cfg, results_root=str(tmp_path / "logs_test"), base_seed=999)
     world = build_world(n_challenges=24, dim=64, seed=4)
     challenges = world.challenges
     systems = get_baselines(["B0", "B1", "B2", "B3"])
@@ -64,12 +64,12 @@ def test_b2_beats_b0_on_synthetic_world():
     assert "lift" in out["paired_lift_over_B0"]["B2"]
 
 
-def test_eval_is_reproducible_across_reruns():
+def test_eval_is_reproducible_across_reruns(tmp_path):
     cfg = _cfg()
     systems = get_baselines(["B0", "B2"])
     world = build_world(n_challenges=18, dim=64, seed=4)
-    h1 = EvalHarness(cfg, results_root="results/logs_test1", base_seed=42)
-    h2 = EvalHarness(cfg, results_root="results/logs_test2", base_seed=42)
+    h1 = EvalHarness(cfg, results_root=str(tmp_path / "logs_test1"), base_seed=42)
+    h2 = EvalHarness(cfg, results_root=str(tmp_path / "logs_test2"), base_seed=42)
     o1 = h1.evaluate(systems, world.challenges, _factory(seed=4), "rep", train_epochs=0, n_seeds=2)
     o2 = h2.evaluate(systems, world.challenges, _factory(seed=4), "rep", train_epochs=0, n_seeds=2)
     assert o1["systems"]["B2"]["solve_rate"] == o2["systems"]["B2"]["solve_rate"]

@@ -1,7 +1,7 @@
 """
-retrieval/reranker.py — cross-encoder reranker (spec §7 step 3, C-3).
+retrieval/reranker.py - cross-encoder reranker (spec §7 step 3, C-3).
 
-Precision is fixed *downstream* of the high-recall pool, NOT by growing N — a
+Precision is fixed *downstream* of the high-recall pool, NOT by growing N - a
 larger N admits more lures (long-context RAG degradation; LongContextMeetsRAG
 2410.05983, DynamicContextSelection 2512.14313). The reranker is a
 CROSS-ENCODER, not an LLM reranker: cross-encoders are cheaper and at least as

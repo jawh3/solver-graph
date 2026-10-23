@@ -1,5 +1,5 @@
 """
-Phase 1c tests — the scalable family generator must (a) reach >=150 lessons/label,
+Phase 1c tests - the scalable family generator must (a) reach >=150 lessons/label,
 (b) round-trip every family (self-verified codecs), (c) carry a wrong-but-plausible
 poison, and (d) NOT change the default (families=None) scope so campaign_v2 still
 reproduces from the original 6 core families.

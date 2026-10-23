@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Memory MCP Client — connects to the custom memory server over SSE.
+Memory MCP Client - connects to the custom memory server over SSE.
 
 Provides:
   - get_tools()              List retrieval tools available on the server.
@@ -81,7 +81,7 @@ async def _call_tool(tool_name: str, arguments: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Sync wrappers — safe to call from non-async contexts
+# Sync wrappers - safe to call from non-async contexts
 # ---------------------------------------------------------------------------
 
 def _run_async(coro):
@@ -126,7 +126,7 @@ def record_attempt_sync(
 ) -> None:
     """Record a solve attempt result back into memory (lifelong learning).
 
-    This is a fire-and-forget call — failures are silently logged.
+    This is a fire-and-forget call - failures are silently logged.
     """
     args: dict[str, Any] = {
         "challenge_id": challenge_id,
@@ -162,7 +162,7 @@ def format_tools_for_prompt(tools: list[dict]) -> str:
         return ""
 
     lines = [
-        "\n**Memory Tools** — query your knowledge base of past CTF challenges:",
+        "\n**Memory Tools** - query your knowledge base of past CTF challenges:",
         "To call a memory tool, respond with:",
         '{"action": "query_memory", "tool": "TOOL_NAME", "args": {...}}',
         "",
@@ -178,7 +178,7 @@ def format_tools_for_prompt(tools: list[dict]) -> str:
             )
             lines.append(f"  Params: {param_str}")
     lines.append(
-        "\nCall memory tools early — they give you techniques, tools, and key insights from similar past challenges."
+        "\nCall memory tools early - they give you techniques, tools, and key insights from similar past challenges."
     )
     return "\n".join(lines)
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ChallengeLogger — structured, readable console output for the CTF solver.
+ChallengeLogger - structured, readable console output for the CTF solver.
 
 Provides colored, phase-based logging so you can follow the solver's
 reasoning instead of staring at opaque emoji lines.
@@ -130,7 +130,7 @@ class ChallengeLogger:
     def llm_parse_error(self, detail: str = ""):
         msg = "Could not parse LLM response as JSON"
         if detail:
-            msg += f" — {detail}"
+            msg += f" - {detail}"
         print(f"{self.INDENT}    ⚠  {_col(msg, _C.YELLOW)}")
 
     def llm_error(self, error: str):
@@ -155,7 +155,7 @@ class ChallengeLogger:
         if stdout.strip():
             self._print_output(stdout, "stdout", max_lines)
 
-        # Print stderr (always show if non-empty — often contains clues)
+        # Print stderr (always show if non-empty - often contains clues)
         if stderr.strip():
             self._print_output(stderr, "stderr", max_lines=4, color=_C.YELLOW)
 
@@ -214,7 +214,7 @@ class ChallengeLogger:
         if accepted:
             print(f"{self.INDENT}  ✅  {_col('Flag ACCEPTED!', _C.BOLD, _C.GREEN)}")
         else:
-            detail = f" — {message}" if message else ""
+            detail = f" - {message}" if message else ""
             print(f"{self.INDENT}  ❌  {_col(f'Flag rejected{detail}', _C.RED)}")
 
     def submit_dry_run(self, flag: str):

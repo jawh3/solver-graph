@@ -21,7 +21,7 @@ def _simulate_runs(n_runs=600, m=4, tau=1.0, seed=0):
     """Generate logged RunRecords with COMPLEMENTARY true lessons + poison + distractors.
 
     Nodes: A,B = complementary true (solve iff BOTH sampled); P = poison (if sampled,
-    halves the success reward — wastes budget); D0..D4 = distractors (no effect).
+    halves the success reward - wastes budget); D0..D4 = distractors (no effect).
     Reward R = base_success * (0.4 if P present else 1.0), base_success=1 iff {A,B}⊆M.
     """
     rng = np.random.RandomState(seed)

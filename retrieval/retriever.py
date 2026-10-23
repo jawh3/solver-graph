@@ -1,5 +1,5 @@
 """
-retrieval/retriever.py — the §7 solve-time retrieval pipeline (Component 2).
+retrieval/retriever.py - the §7 solve-time retrieval pipeline (Component 2).
 
 Pipeline (spec §7), all instrumented for OPE:
     1. query construction (embed)            -> query_emb
@@ -13,13 +13,13 @@ Pipeline (spec §7), all instrumented for OPE:
 Backward-compatible: the original `get_top_n_candidates` and `sample_top_m`
 methods are preserved (used by `experiment_harness.py` and existing tests). The
 new `retrieve()` method runs the full pipeline and returns a `RetrievalResult`
-carrying everything `RunRecord` (§12) and OPE (§13) need — crucially the
+carrying everything `RunRecord` (§12) and OPE (§13) need - crucially the
 per-draw propensities and per-candidate score COMPONENTS so a counterfactual
 policy (different κ/τ/M) can be re-scored offline without a GPU.
 
 Design citations:
   - sim-prior pseudo-count blend (C-2): PURPLE 2601.12078; cold start by
-    similarity not uniform — JumpStartFalseStart 2604.02527.
+    similarity not uniform - JumpStartFalseStart 2604.02527.
   - rerank+MMR not bigger-N (C-3): LongContextMeetsRAG 2410.05983,
     CrossEncoderVsLLM 2403.10407.
   - propensity logging for OPE (C-7): DoublyRobust 1103.4601, OfflineEval 1003.5956.
@@ -41,9 +41,49 @@ from .embedder import Embedder
 from .reranker import Reranker, MockReranker
 from .context_resolution import ContextResolver
 from .diversity import mmr_select
-from .sampling import sample_without_replacement
+from .sampling import sample_without_replacement, stratified_design_marginals
 
 log = logging.getLogger(__name__)
+
+
+def fixed_design_draw(n: int, m: int, rng: np.random.RandomState, on_target_idx: List[int],
+                      stratified: bool):
+    """History-free exploration draw over a pool of n candidates (review 2026-09-04).
+
+    stratified: each on-target candidate is included independently w.p. 0.5; the remaining
+    slots are a uniform subset of the other candidates. uniform: a uniform M-subset.
+    Returns (order, per_item_pi, set_logprob, pi_by_index) with EXACT marginal inclusion
+    probabilities (no Monte-Carlo needed for these runs)."""
+    from math import comb, log as _log
+    ot = [i for i in on_target_idx if 0 <= i < n] if stratified else []
+    k = len(ot)
+    m = min(m, n)
+    chosen: List[int] = []
+    logp = 0.0
+    if k:
+        flips = rng.rand(k) < 0.5
+        flipped = [i for i, f in zip(ot, flips) if f]
+        logp += k * _log(0.5)
+        if len(flipped) > m:                     # keep a UNIFORM m-subset (not the first m)
+            keep = rng.choice(len(flipped), size=m, replace=False)
+            chosen = [flipped[int(i)] for i in keep]
+            logp += -_log(comb(len(flipped), m))
+        else:
+            chosen = list(flipped)
+    rest = [i for i in range(n) if i not in ot]
+    need = m - len(chosen)
+    if need > 0 and rest:
+        need = min(need, len(rest))
+        pick = rng.choice(len(rest), size=need, replace=False)
+        chosen += [rest[int(i)] for i in pick]
+        logp += -_log(comb(len(rest), need))
+    pi_ot, pi_rest = stratified_design_marginals(n, k, m)   # exact for every (n, k, m)
+    pi = np.full(n, pi_rest, dtype=np.float64)
+    if k:
+        pi[ot] = pi_ot
+    order = list(chosen)
+    per_item = [float(pi[i]) for i in order]
+    return order, per_item, float(logp), pi
 
 
 def _node_text(node: Node) -> str:
@@ -55,7 +95,7 @@ def _node_text(node: Node) -> str:
 
 
 def cosine_to_reward_scale(cosine: float) -> float:
-    """normalize_to_reward_scale(cosine) — map similarity into the reward range.
+    """normalize_to_reward_scale(cosine) - map similarity into the reward range.
 
     Reward R lives roughly in [0, ~1.5] (R = o*(1+λe)). We map cosine via
     max(0, cosine) so a similarity prior is commensurate with an observed Q and
@@ -78,6 +118,8 @@ class RetrievalResult:
     per_draw_propensity: List[Dict] = field(default_factory=list)  # [{node_id, p}]
     set_logprob: float = 0.0
     temperature: float = 1.0
+    policy: Dict = field(default_factory=dict)   # F3: {tau_deploy, tau_explore, epsilon, deterministic}
+    exploration: bool = False                    # F3: this run was drawn from the exploration stream
 
 
 class ContextRetriever:
@@ -158,7 +200,14 @@ class ContextRetriever:
         use_rerank: bool = True,
         use_mmr: bool = True,
         use_bandit: bool = True,
+        deterministic: bool = False,
+        explore: bool = True,
+        on_target_family: Optional[str] = None,
+        force_on_target: str = "",
     ) -> RetrievalResult:
+        """explore=False disables the exploration stream (eval / frozen runs - review 2026-09-04).
+        on_target_family: the challenge's family id, used ONLY by the stratified exploration
+        design (label-blind: it does not distinguish helpful from poison)."""
         """Run the retrieval pipeline for one challenge query.
 
         The stage toggles enact the §14.2 baselines:
@@ -202,18 +251,86 @@ class ContextRetriever:
         temperature = max(cfg.tau, cfg.tau_min)
         scored_pool: List[Tuple[Node, float, float, float]] = []
         # each entry: (node, sampling_score, prior, cosine)
+        # review 2026-09-05 F-2: under recall-all the cross-encoder only re-orders the pool, and the
+        # stochastic arms sample on (n·Q + κ·prior)/(n+κ) with prior = cosine - so the reranker was
+        # inert for them. `prior_source="rerank"` uses sigmoid(rerank logit) as the prior instead
+        # (legacy default "cosine" keeps every old log reproducible). Logged in `policy`.
+        prior_source = str(getattr(cfg, "prior_source", "cosine") or "cosine")
+        use_rerank_prior = (prior_source == "rerank" and use_rerank)
+        # F41 (mock ladder 2026-09-05): ms-marco logits for these pairs sit near -9, so the "rerank" prior is
+        # ~1e-4 for every lesson, i.e. effectively "none". `none` makes that explicit: prior = 0, the
+        # sampler runs on Q alone and exploration comes from the epsilon stream.
         for node, _rel in pool_d:
             cos = cosine_by_id.get(node.id, 0.0)
-            prior = cosine_to_reward_scale(cos)
+            if prior_source == "none":
+                prior = 0.0
+            elif use_rerank_prior:
+                rel = float(rerank_by_id.get(node.id, 0.0))
+                prior = float(1.0 / (1.0 + np.exp(-rel)))
+            else:
+                prior = cosine_to_reward_scale(cos)
             score, q, n = self._sampling_score(context_id, node, prior, query_emb,
                                                use_bandit=use_bandit)
             scored_pool.append((node, score, prior, cos))
 
         scores = [s for _, s, _, _ in scored_pool]
         m = min(cfg.M, len(scored_pool))
-        order, per_draw_p, set_logprob = sample_without_replacement(
-            scores, m=m, tau=temperature, rng=rng
-        )
+        # F3 (FIX_CATALOG 2026-09): three sampling regimes, all logged so OPE can reconstruct
+        # the inclusion propensity under the ACTUAL policy:
+        #   deterministic  -> top-M of the (rerank/MMR-ordered) pool, p=1 (the deployed static arm)
+        #   deployed       -> softmax at tau (with epsilon_explore=0)
+        #   mixture        -> with prob epsilon the run is drawn at tau_explore (exploration stream)
+        exploration = False
+        pi_exact = None
+        tau_deploy = max(cfg.tau, cfg.tau_min)
+        design = getattr(cfg, "exploration_design", "softmax")
+        eps = float(cfg.epsilon_explore) if explore else 0.0
+        if deterministic:
+            order = list(range(m)); per_draw_p = [1.0] * m; set_logprob = 0.0; temperature = 0.0
+        else:
+            temperature = tau_deploy
+            if eps > 0 and float(rng.rand()) < eps:
+                exploration = True
+                if design == "softmax":
+                    temperature = float(cfg.tau_explore)
+                    order, per_draw_p, set_logprob = sample_without_replacement(
+                        scores, m=m, tau=temperature, rng=rng)
+                else:
+                    ot_idx = [i for i, (node, _, _, _) in enumerate(scored_pool)
+                              if on_target_family and node.attributes.get("_family") == on_target_family]
+                    order, per_draw_p, set_logprob, pi_exact = fixed_design_draw(
+                        len(scored_pool), m, rng, ot_idx, stratified=(design == "stratified"))
+            else:
+                order, per_draw_p, set_logprob = sample_without_replacement(
+                    scores, m=m, tau=temperature, rng=rng)
+        policy = {"tau_deploy": float(tau_deploy), "tau_explore": float(cfg.tau_explore),
+                  "epsilon": float(eps), "deterministic": bool(deterministic),
+                  "design": ("softmax" if deterministic else design), "explore_enabled": bool(explore),
+                  "prior_source": ("none" if prior_source == "none" else ("rerank" if use_rerank_prior else "cosine")),
+                  "pool_order": ("mmr" if use_mmr else ("rerank" if use_rerank else "cosine"))}
+        if force_on_target and on_target_family:
+            # oracle-static / worst-static arms (review 2026-09-04 §8): the family's lesson with the
+            # given ground-truth label is forced into the M-set (replacing the last draw if absent).
+            # No randomization -> flagged in the policy and skipped by every observational estimator.
+            forced = [i for i, (node, _, _, _) in enumerate(scored_pool)
+                      if node.attributes.get("_family") == on_target_family
+                      and node.attributes.get("_truth") == force_on_target]
+            # review 2026-09-05 F-13: a clean bracket also keeps the OPPOSITE on-target label out
+            # (oracle = helpful in, poison out; worst = poison in, helpful out).
+            opposite = {"helpful": "poison", "poison": "helpful"}.get(force_on_target)
+            excluded = {i for i, (node, _, _, _) in enumerate(scored_pool)
+                        if node.attributes.get("_family") == on_target_family
+                        and node.attributes.get("_truth") == opposite}
+            order = [i for i in order if i not in excluded]
+            if forced and forced[0] not in order:
+                if len(order) >= m and order:
+                    order = order[:-1]
+                order = order + [forced[0]]
+            fill = [i for i in range(len(scored_pool)) if i not in order and i not in excluded]
+            while len(order) < m and fill:
+                order.append(fill.pop(0))
+            per_draw_p = [1.0] * len(order); set_logprob = 0.0
+            policy["forced"] = force_on_target; policy["deterministic"] = True
         sampled_nodes = [scored_pool[i][0] for i in order]
         sampled_ids = [n.id for n in sampled_nodes]
         per_draw_propensity = [
@@ -227,7 +344,7 @@ class ContextRetriever:
             cell = None
             if self.bandit is not None:
                 cell = self.bandit.cells.get(context_id, {}).get(node.id)
-            candidate_pool.append({
+            entry = {
                 "node_id": node.id,
                 "cosine": cos,
                 "rerank_score": rerank_by_id.get(node.id, 0.0),
@@ -237,7 +354,12 @@ class ContextRetriever:
                 "n": (cell.n if cell else 0.0),
                 "score": score,
                 "tier": node.attributes.get("tier", "trusted"),
-            })
+            }
+            if on_target_family:
+                entry["on_target"] = bool(node.attributes.get("_family") == on_target_family)
+            if pi_exact is not None:
+                entry["pi_explore"] = float(pi_exact[len(candidate_pool)])   # exact design propensity
+            candidate_pool.append(entry)
 
         return RetrievalResult(
             context_node_id=context_id,
@@ -250,6 +372,8 @@ class ContextRetriever:
             per_draw_propensity=per_draw_propensity,
             set_logprob=set_logprob,
             temperature=temperature,
+            policy=policy,
+            exploration=exploration,
         )
 
     # ------------------------------------------------------------------

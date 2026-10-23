@@ -1,5 +1,9 @@
 # evaluation
 
+> Early component notes (May 2026). They describe the first design and may be out of date; see the root
+> README and RESULTS.md for the current state.
+
+
 Metrics, analysis, and experiment harness.
 
 ## Purpose
@@ -20,5 +24,5 @@ Provides tools for measuring and analyzing solver performance:
 
 ## Provenance
 
-- Analysis functions extracted from `the superseded baseline solver (not in this release)`
-- Architecture per a superseded design note (not included in this release) §Update Loop (reward computation)
+- Analysis functions extracted from `baseline-solver/evaluate.py`
+- Architecture per `system_description.md` §Update Loop (reward computation)

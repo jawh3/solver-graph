@@ -1,8 +1,8 @@
 """
-ope/sweep.py — offline policy sweep from logged runs (spec §13, §16 C8).
+ope/sweep.py - offline policy sweep from logged runs (spec §13, §16 C8).
 
 Consumes JSONL RunRecords (the logging policy's runs) and ranks counterfactual
-policies π′ over a grid of (τ, κ, M′) using IPS/SNIPS + DR with bootstrap CIs —
+policies π′ over a grid of (τ, κ, M′) using IPS/SNIPS + DR with bootstrap CIs -
 BEFORE committing any real-run sweep on the scarce GPU. The sweep runner emits a
 ranked table; the top candidates are the only ones worth spending a coordinated
 vLLM event on.

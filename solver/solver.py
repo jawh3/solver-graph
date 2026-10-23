@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LLM Solver — multi-turn tool-augmented CTF solving.
+LLM Solver - multi-turn tool-augmented CTF solving.
 
 The LLM can request shell commands to analyze challenge files (strings, exiftool,
 base64, python3, etc.).  Commands are executed in a sandbox and results fed back
@@ -33,7 +33,7 @@ def _init_memory_tools():
     if _MEMORY_TOOLS:
         print(f"✓ Memory server: {len(_MEMORY_TOOLS)} retrieval tool(s) available")
     else:
-        print("ℹ  Memory server not reachable — solving without memory context")
+        print("ℹ  Memory server not reachable - solving without memory context")
 
 load_dotenv()
 
@@ -53,24 +53,18 @@ DEFAULT_MAX_OUTPUT_TOKENS = int(os.getenv("MAX_OUTPUT_TOKENS", "4096"))
 # Prompts
 # ---------------------------------------------------------------------------
 
-# System prompt template — {memory_tools_section} is filled in at solve time.
+# System prompt template - {memory_tools_section} is filled in at solve time.
 _SYSTEM_PROMPT_TEMPLATE = """You are an expert CTF solver with access to a Linux shell.
 
-You will be given a PicoCTF challenge. You can either:
-1. Solve it directly if you know the answer, OR
-2. Request shell commands to analyze the provided files, OR
-3. Query your memory of past CTF challenges for helpful techniques and insights.
+{options_section}
 
-**Response format — you MUST respond with valid JSON only (no markdown, no extra text):**
+**Response format - you MUST respond with valid JSON only (no markdown, no extra text):**
 
 To run commands:
-{{"action": "run_commands", "commands": ["strings file.bin | grep picoCTF", "pdftotext file.pdf -"]}}
+{{"action": "run_commands", "commands": ["strings file.bin | grep {flag_prefix}", "pdftotext file.pdf -"]}}
 
-To query memory:
-{{"action": "query_memory", "tool": "memory_search", "args": {{"query": "RSA small exponent", "category": "crypto", "k": 3}}}}
-
-To submit a flag you have computed/found:
-{{"action": "submit_flag", "flag": "picoCTF{{the_actual_flag}}"}}
+{query_memory_section}To submit a flag you have computed/found:
+{{"action": "submit_flag", "flag": "{flag_prefix}{{the_actual_flag}}"}}
 
 If you truly cannot solve it:
 {{"action": "give_up", "reason": "explanation"}}{memory_tools_section}
@@ -84,44 +78,39 @@ unzip, tar, gzip, curl, wget, nc, ncat, nmap, socat,
 r2, rabin2, objdump, readelf, nm, gdb, ltrace, strace,
 john, hashcat, ssh, sshpass, git, scp, sftp, sudo, expect, mkdir, cp, mv, chmod
 
-**Strategy — use memory tools wisely:**
-- Start with `memory_search` or `memory_search_failures` to check what worked (or failed) for similar challenges.
-- Use `memory_by_technique` or `memory_by_vulnerability` once you have a hypothesis.
-- Then pivot to shell commands to apply what you learned.
-
-**Available Python libraries (use via `python3 -c "..."`):**
+{strategy_section}**Available Python libraries (use via `python3 -c "..."`):**
 pytesseract, PIL/Pillow, pyzbar, pycryptodome (Crypto), gmpy2, z3 (z3-solver),
 angr, capstone, ropper, struct, binascii, hashlib, itertools, codecs
 
 **Critical rules:**
-- ALWAYS use shell commands to decode data. NEVER decode base64/hex/rot13 in your head — you WILL get it wrong.
+- ALWAYS use shell commands to decode data. NEVER decode base64/hex/rot13 in your head - you WILL get it wrong.
   Example: if you see base64 like "cGljb0NURns...", run: echo "cGljb0NURns..." | base64 -d
 - ONLY submit a flag you have ACTUALLY SEEN in command output. Never guess or reconstruct.
-- Real picoCTF flags contain unique identifiers (hex hashes, random strings). If it looks generic, it's wrong.
-- Files are in the current working directory — reference them by filename.
-- You can run up to 6 commands per round, with up to 7 rounds total.
+- Real {flag_prefix} flags contain unique identifiers (hex hashes, random strings). If it looks generic, it's wrong.
+- Files are in the current working directory - reference them by filename.
+{budget_line}
 - **CRITICAL: `cd` does NOT persist between commands!** Each command runs in its own subprocess. Use `cd DIR && command` to run a command in a subdirectory. Example: `cd challenge && cat flag.txt` NOT `cd challenge` then `cat flag.txt` as separate commands.
-- **CRITICAL: Do NOT explore your local filesystem (ls ~/, find ~/ etc.) — that is the SOLVER machine, NOT the challenge. Challenge files are ONLY in the working directory or on the remote server.**
+- **CRITICAL: Do NOT explore your local filesystem (ls ~/, find ~/ etc.) - that is the SOLVER machine, NOT the challenge. Challenge files are ONLY in the working directory or on the remote server.**
 - **CRITICAL: NEVER run `git push` unless the remote points to the challenge server (picoctf.net). Check with `cd REPO && git remote -v` first.**
 - If you see ROT13/encoded text in HTML comments, DECODE IT FIRST before using the information.
 
-**Tips — File Analysis:**
+**Tips - File Analysis:**
 - For PDFs: `pdftotext file.pdf -`
 - For metadata: `exiftool file`
-- For binaries: `strings file | grep picoCTF`
-- For encoding: `echo "encoded" | base64 -d` — ALWAYS use commands to decode
+- For binaries: `strings file | grep {flag_prefix}`
+- For encoding: `echo "encoded" | base64 -d` - ALWAYS use commands to decode
 - For ROT13: `echo "text" | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
 - For hidden data: `binwalk file`, `xxd file | head`
 - For multi-part flags: use `grep -n FLAGPART file` to preserve order. Do NOT sort.
 - For corrupted files: use `python3 -c "data=open('file','rb').read(); ..."` to fix headers/bytes
 
-**Tips — Images & Stego:**
+**Tips - Images & Stego:**
 - For OCR (text in images): `python3 -c "import pytesseract; from PIL import Image; print(pytesseract.image_to_string(Image.open('img.png')))"`
 - For QR codes: `python3 -c "from pyzbar.pyzbar import decode; from PIL import Image; print(decode(Image.open('img.png')))"`
 - For steghide: first decode the passphrase with a command, then: `steghide extract -sf img.jpg -p 'PASSPHRASE'`
 - For zsteg: `zsteg img.png`
 
-**Tips — SSH/Git Challenges (VERY IMPORTANT):**
+**Tips - SSH/Git Challenges (VERY IMPORTANT):**
 - For SSH with a password: `sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no user@host -p PORT 'COMMAND'`
 - Run commands on the remote server by appending them: `sshpass -p 'PASSWORD' ssh -o StrictHostKeyChecking=no user@host -p PORT 'ls -la; cat flag.txt'`
 - Chain multiple remote commands: `sshpass -p 'PASSWORD' ssh ... 'cmd1 && cmd2 && cmd3'`
@@ -131,10 +120,10 @@ angr, capstone, ropper, struct, binascii, hashlib, itertools, codecs
 - For git clone with password: `GIT_SSH_COMMAND="sshpass -p PASSWORD ssh -o StrictHostKeyChecking=no" git clone ssh://git@HOST:PORT/path/repo.git`
 - **CRITICAL:** If a Git repository requires `sshpass` for cloning, you **MUST** ALSO use `GIT_SSH_COMMAND` for ALL other network operations (`push`, `pull`, `fetch`). If you forget it, the command WILL hang forever. Example: `cd repo && GIT_SSH_COMMAND="sshpass -p PASSWORD ssh -o StrictHostKeyChecking=no" git push origin master`
 - After cloning: `cd repo && cat README.md && git log --oneline && git show HEAD`
-- **DO NOT try to SSH without sshpass** — interactive password entry will hang.
+- **DO NOT try to SSH without sshpass** - interactive password entry will hang.
 - **DO NOT explore ~/**, that is the solver machine. Everything you need is on the REMOTE server.
 
-**Tips — Web Exploitation (VERY IMPORTANT for Web challenges):**
+**Tips - Web Exploitation (VERY IMPORTANT for Web challenges):**
 - ALWAYS use `curl` to interact with web services. You have full HTTP access.
 - For source code: `curl -s URL`
 - For headers: `curl -sI URL`
@@ -144,7 +133,7 @@ angr, capstone, ropper, struct, binascii, hashlib, itertools, codecs
 - **Cookie jar for multi-step flows**: `curl -s -c /tmp/cookies.txt -L URL` then `curl -s -b /tmp/cookies.txt URL2`
 - For login + access pattern: `curl -s -c /tmp/cookies.txt -L -X POST -d 'username=X&password=Y' URL/login && curl -s -b /tmp/cookies.txt URL/flag`
 - **CRITICAL**: Always use `curl -L` to follow redirects when POSTing to forms
-- For SSTI (Jinja2): first test with `curl -s -L -X POST -d 'content={{7*7}}' URL` — if you see 49 in output, it's vulnerable
+- For SSTI (Jinja2): first test with `curl -s -L -X POST -d 'content={{7*7}}' URL` - if you see 49 in output, it's vulnerable
   Then: `curl -s -L -X POST -d 'content={{config}}' URL`
   Then: `curl -s -L -X POST -d 'content={{request.application.__globals__.__builtins__.__import__("os").popen("cat flag.txt").read()}}' URL`
   Or try: `curl -s -L -X POST -d 'content={{lipsum.__globals__["os"].popen("cat flag*").read()}}' URL`
@@ -153,8 +142,8 @@ angr, capstone, ropper, struct, binascii, hashlib, itertools, codecs
 - **CRITICAL**: If HTML comments contain ROT13 text, ALWAYS decode with `echo 'TEXT' | tr 'A-Za-z' 'N-ZA-Mn-za-m'` BEFORE using the information
 - If you find dev headers/bypass hints, USE THEM with curl immediately
 
-**Tips — Binary Exploitation & Networking:**
-- Read the source code FIRST if provided — `cat source.c`
+**Tips - Binary Exploitation & Networking:**
+- Read the source code FIRST if provided - `cat source.c`
 - For reversing: `r2 -q -c 'aaa; pdf @ main' binary` or `objdump -d binary | head -200`
 - For symbols: `nm binary` or `objdump -t binary | grep -i flag`
 - **Networking/Netcat:** `nc HOST PORT` WILL HANG and time out if you just use it interactively. 
@@ -162,17 +151,17 @@ angr, capstone, ropper, struct, binascii, hashlib, itertools, codecs
   - To send a simple string and get a response: `echo 'INPUT' | nc -w 3 HOST PORT`
 - For PIE/ASLR with a leaked address: write a Python script that connects, reads the leak, computes the target, and sends it:
   `python3 -c "import socket; s=socket.create_connection(('HOST',PORT)); data=s.recv(4096).decode(); print(data); addr=int(data.split('0x')[1].split()[0],16); win=addr-MAIN_OFFSET+WIN_OFFSET; s.sendall((hex(win)+'\n').encode()); print(s.recv(4096).decode()); print(s.recv(4096).decode())"`
-- Do the ENTIRE exploit in ONE python command — connect, read, compute, send, read flag
+- Do the ENTIRE exploit in ONE python command - connect, read, compute, send, read flag
 
-**Tips — Missing Tools:**
+**Tips - Missing Tools:**
 - If a Linux command-line tool you need is missing (like `smbclient`, `exiftool`, `steghide`), you can install it yourself:
   `sudo apt-get update && sudo apt-get install -y smbclient`
 
-**Tips — Crypto:**
+**Tips - Crypto:**
 - For crypto: `python3 -c "from Crypto.Cipher import AES; ..."` or `python3 -c "import gmpy2; ..."`
 - For constraint solving: `python3 -c "from z3 import *; ..."`
     - To obtain the flag, you may need to use tools or write python scripts.
-    - If you see a flag format like picoCTF{{...}}, ALWAYS output it clearly!
+    - If you see a flag format like {flag_prefix}{{...}}, ALWAYS output it clearly!
     - Available tools on this system: {available_tools}
 """
 
@@ -229,12 +218,12 @@ FALLBACK_PROMPT = """You are an expert CTF solver. Solve this PicoCTF challenge 
 
 **CRITICAL INSTRUCTIONS:**
 1. Only output a flag if you have ACTUALLY COMPUTED or DECODED it from the data above.
-2. Real picoCTF flags contain unique random identifiers like hex hashes (e.g. picoCTF{{s0me_w0rds_a1b2c3d4}}).
-3. NEVER guess a flag based on the challenge theme. Flags like picoCTF{{hidden_in_comment}} or picoCTF{{fixed_the_header}} are WRONG — they are generic descriptions, not real flags.
+2. Real {flag_prefix} flags contain unique random identifiers like hex hashes (e.g. {flag_prefix}{{s0me_w0rds_a1b2c3d4}}).
+3. NEVER guess a flag based on the challenge theme. Flags like {flag_prefix}{{hidden_in_comment}} or {flag_prefix}{{fixed_the_header}} are WRONG - they are generic descriptions, not real flags.
 4. If the challenge requires interacting with a server, running commands, or performing steps you cannot do here, say CANNOT_SOLVE.
 5. If you cannot determine the EXACT flag with certainty, say CANNOT_SOLVE.
 
-Provide the flag in format picoCTF{{...}} ONLY if you have computed it. Otherwise say CANNOT_SOLVE."""
+Provide the flag in format {flag_prefix}{{...}} ONLY if you have computed it. Otherwise say CANNOT_SOLVE."""
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -243,14 +232,48 @@ Provide the flag in format picoCTF{{...}} ONLY if you have computed it. Otherwis
 def _extract_thinking(content: str) -> tuple[str, str]:
     """Extract <think>...</think> content and return (thinking_text, cleaned_content)."""
     thinking = ""
+    # Seed-OSS writes <seed:think>…</seed:think>; normalise every think-tag family to the plain form first
+    content = re.sub(r'<(/?)(?:seed:|reasoning_)?think(?:ing)?>', r'<\1think>', content)
     match = re.search(r'<think>(.*?)</think>', content, flags=re.DOTALL)
     if match:
         thinking = match.group(1).strip()
     cleaned = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL).strip()
+    if "</think>" in cleaned and "<think>" not in content:
+        # 2026-09-15 (Phase 3): Qwen3.x chat templates prefill the opening tag, so the reply carries only the
+        # closing one; everything before the LAST closing tag is the reasoning.
+        head, _, tail = cleaned.rpartition("</think>")
+        thinking = (thinking + "\n" + head.strip()).strip()
+        cleaned = tail.strip()
     return thinking, cleaned
 
 # Flag must: no whitespace inside braces, 3-100 chars long
 FLAG_PATTERN = re.compile(r'picoCTF\{[^\s}]{3,100}\}')
+_ANY_FLAG_PATTERN = re.compile(r'[A-Za-z0-9_]{2,24}\{[^\s}]{3,100}\}')
+
+
+def compile_flag_pattern(flag_format=None):
+    """Flag regex for a challenge (2026-09-05, user request: real benchmarks use HTB{..}, flag{..}, gctf{..}).
+    None / "picoCTF" -> the legacy pattern (byte-identical behaviour); "any" or "*" -> any `prefix{...}`;
+    otherwise the given prefix (e.g. "flag", "HTB")."""
+    if not flag_format or flag_format == "picoCTF":
+        return FLAG_PATTERN
+    if flag_format in ("any", "*"):
+        return _ANY_FLAG_PATTERN
+    return re.compile(re.escape(flag_format) + r'\{[^\s}]{3,100}\}')
+
+
+def flag_prefix_text(flag_format=None) -> str:
+    """The prefix shown in prompts for a flag format ("flag" for the generic format)."""
+    if not flag_format or flag_format == "picoCTF":
+        return "picoCTF"
+    return "flag" if flag_format in ("any", "*") else str(flag_format)
+
+
+def _flag_inner(flag: str) -> str:
+    """Content between the first '{' and the last '}' (any prefix)."""
+    if "{" in flag and flag.endswith("}"):
+        return flag.split("{", 1)[1][:-1]
+    return flag
 
 PLACEHOLDER_FLAGS = {
     "picoCTF{flag_here}", "picoCTF{FLAG}", "picoCTF{flag}",
@@ -266,6 +289,8 @@ PLACEHOLDER_FLAGS = {
     "picoCTF{{{result}", "picoCTF{{result}}", "picoCTF{result}",
 }
 
+_PLACEHOLDER_INNER = {_f.split("{", 1)[1][:-1] for _f in PLACEHOLDER_FLAGS if "{" in _f and _f.endswith("}")}
+
 # Common English words that appear in hallucinated flags but never in real ones
 _GENERIC_WORDS = {
     "flag", "hidden", "found", "secret", "answer", "solution", "correct",
@@ -279,9 +304,9 @@ def _is_likely_placeholder(flag: str) -> bool:
     """Heuristic: reject flags that are just common English words or dummy patterns.
 
     Real picoCTF flags typically contain unique hex suffixes, leet-speak, or
-    random-looking character sequences — not plain English words.
+    random-looking character sequences - not plain English words.
     """
-    if flag in PLACEHOLDER_FLAGS:
+    if flag in PLACEHOLDER_FLAGS or _flag_inner(flag) in _PLACEHOLDER_INNER:
         return True
     # Extract content inside braces
     inner = flag.split('{', 1)[-1].rstrip('}')
@@ -297,7 +322,7 @@ def _is_likely_placeholder(flag: str) -> bool:
         return True
 
     # Check for dummy pattern: all parts are simple leet-substitutions of generic words
-    # e.g. "s0me_w0rds_a1b2c3d4" — the last part looks like dummy hex
+    # e.g. "s0me_w0rds_a1b2c3d4" - the last part looks like dummy hex
     if len(parts) >= 2:
         last = parts[-1]
         # If the last part is exactly 8 hex chars with a running pattern (a1b2c3d4, abc123, etc.)
@@ -351,7 +376,7 @@ def _get_server_urls(challenge: dict) -> str:
         url = f.get("url", "")
         # Challenge server URLs have a high port number and are NOT file downloads
         if _re.match(r'https?://[^/]+:\d{4,}', url):
-            # Strip path — we want the base URL
+            # Strip path - we want the base URL
             from urllib.parse import urlparse
             parsed = urlparse(url)
             base = f"{parsed.scheme}://{parsed.netloc}"
@@ -406,9 +431,9 @@ def _read_file_contents(local_files: list, max_bytes: int = 8000) -> str:
     return "\n".join(parts) if parts else "No readable files."
 
 
-def extract_flag(text: str) -> Optional[str]:
-    """Extract a picoCTF{...} flag from text, rejecting placeholders."""
-    matches = FLAG_PATTERN.findall(text)
+def extract_flag(text: str, pattern=None) -> Optional[str]:
+    """Extract a flag from text (legacy picoCTF{...} pattern unless `pattern` is given), rejecting placeholders."""
+    matches = (pattern or FLAG_PATTERN).findall(text)
     for flag in matches:
         if not _is_likely_placeholder(flag):
             return flag
@@ -422,10 +447,10 @@ def _normalize_action(obj):
 
     STRICT NO-OP when 'action' is already present: Qwen/Llama emit the canonical form and are
     byte-identical under this path (so their frozen campaign results are unaffected). This only
-    triggers for models that emit reasonable-but-variant schemas — e.g. Gemma's
+    triggers for models that emit reasonable-but-variant schemas - e.g. Gemma's
     {'run_commands': [{'command': '...', 'shell': 'bash'}]} or a bare {'commands': [...]} without
     an 'action' key. Without this, such models lose ~1-in-4 rounds to schema-mismatch nudges and
-    floor on multi-round tasks — a harness artifact, not a capability limit. Lenient parser is a
+    floor on multi-round tasks - a harness artifact, not a capability limit. Lenient parser is a
     SUPERSET of the strict one (it accepts more valid actions; it never reinterprets a strict one)."""
     if not isinstance(obj, dict) or obj.get("action"):
         return obj
@@ -468,9 +493,12 @@ def _parse_llm_json(content: str) -> Optional[dict]:
 
     Routes every successful parse through _normalize_action so valid-but-variant action schemas
     (common in non-Qwen models) are accepted; canonical {'action': ...} output is unchanged."""
-    # Strip <think>...</think> tags if present
+    # Strip <think>...</think> tags if present (any think-tag family, see _extract_thinking)
+    content = re.sub(r'<(/?)(?:seed:|reasoning_)?think(?:ing)?>', r'<\1think>', content)
     content = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL)
     content = content.strip()
+    if "</think>" in content:                       # orphan closing tag (template-prefilled opening tag)
+        content = content.rpartition("</think>")[2].strip()
 
     candidates = [content]
     # markdown code fence
@@ -486,11 +514,18 @@ def _parse_llm_json(content: str) -> Optional[dict]:
     if m:
         candidates.append(m.group(0))
 
+    # 2026-09-15 (Phase 3): two frequent near-misses become candidates too - an object whose "commands" key was
+    # dropped ({"action": "run_commands", ["ls"]}, 177 of Qwen3.6-27B's rounds) and JSON whose strings carry literal
+    # newlines (accepted with strict=False). Canonical output still parses first, byte-identically.
+    repaired = [re.sub(r'("action"\s*:\s*"run_commands"\s*,)\s*\[', r'\1 "commands": [', c) for c in candidates]
+    candidates += [r for r in repaired if r not in candidates]
+
     for cand in candidates:
-        try:
-            return _normalize_action(json.loads(cand))
-        except (json.JSONDecodeError, TypeError):
-            continue
+        for strict in (True, False):
+            try:
+                return _normalize_action(json.loads(cand, strict=strict))
+            except (json.JSONDecodeError, TypeError, ValueError):
+                continue
 
     return None
 
@@ -507,6 +542,55 @@ def _get_working_dir(challenge: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# System-prompt rendering (F4a, FIX_CATALOG 2026-09)
+#
+# `advertise_memory_tools=True` reproduces the legacy prompt BYTE-FOR-BYTE (the
+# reproducibility anchor for the real-PicoCTF baseline). `False` removes the phantom
+# memory tool that campaigns never served (22% of 14B runs burned a round on it) and
+# renders the real round/command budget instead of the hard-coded "6 / 7".
+# ---------------------------------------------------------------------------
+
+_LEGACY_OPTIONS = """You will be given a PicoCTF challenge. You can either:
+1. Solve it directly if you know the answer, OR
+2. Request shell commands to analyze the provided files, OR
+3. Query your memory of past CTF challenges for helpful techniques and insights."""
+_NOMEM_OPTIONS = """You will be given a CTF challenge. You can either:
+1. Solve it directly if you know the answer, OR
+2. Request shell commands to analyze the provided files."""
+_LEGACY_QUERY = """To query memory:
+{"action": "query_memory", "tool": "memory_search", "args": {"query": "RSA small exponent", "category": "crypto", "k": 3}}
+
+"""
+_LEGACY_STRATEGY = """**Strategy - use memory tools wisely:**
+- Start with `memory_search` or `memory_search_failures` to check what worked (or failed) for similar challenges.
+- Use `memory_by_technique` or `memory_by_vulnerability` once you have a hypothesis.
+- Then pivot to shell commands to apply what you learned.
+
+"""
+_LEGACY_BUDGET = "- You can run up to 6 commands per round, with up to 7 rounds total."
+
+
+def render_system_prompt(memory_tools_section: str, available_tools: str,
+                         advertise_memory_tools: bool = True,
+                         max_rounds: Optional[int] = None, flag_prefix: str = "picoCTF") -> str:
+    """Render the system prompt. Legacy call (advertise=True, max_rounds=None) is byte-identical
+    to the pre-2026-09 prompt; campaigns pass advertise=False + the real max_rounds."""
+    if advertise_memory_tools:
+        options, query, strategy = _LEGACY_OPTIONS, _LEGACY_QUERY, _LEGACY_STRATEGY
+    else:
+        options, query, strategy = _NOMEM_OPTIONS, "", ""
+    if max_rounds is None:
+        budget = _LEGACY_BUDGET
+    else:
+        budget = (f"- You can run up to {MAX_COMMANDS_PER_ROUND} commands per round, "
+                  f"with up to {int(max_rounds)} rounds total.")
+    return _SYSTEM_PROMPT_TEMPLATE.format(
+        memory_tools_section=memory_tools_section, available_tools=available_tools,
+        options_section=options, query_memory_section=query, strategy_section=strategy,
+        budget_line=budget, flag_prefix=flag_prefix)
+
+
+# ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
@@ -520,12 +604,80 @@ def check_llm() -> bool:
             print(f"✓ vLLM server healthy at {base}")
             return True
         models = client.models.list()
-        print(f"✓ vLLM server responding — models: {[m.id for m in models.data]}")
+        print(f"✓ vLLM server responding - models: {[m.id for m in models.data]}")
         return True
     except Exception as e:
         print(f"✗ vLLM server not reachable: {e}")
         return False
 
+
+
+def _coerce_commands(raw):
+    """Normalise the `commands` field of a run_commands action to a flat list of non-empty strings.
+    The model occasionally emits a bare string, a nested list (`[["a", "b"]]`) or non-string items; the loop
+    detector did `";".join(sorted(commands))` on the raw value and raised TypeError on a nested list (LOO re-run
+    2026-09-08 00:31, one job). Anything that is not a string or a list is treated as no commands."""
+    if isinstance(raw, str):
+        raw = [raw]
+    if not isinstance(raw, list):
+        return []
+    out = []
+    for c in raw:
+        if isinstance(c, list):
+            out.extend(str(x).strip() for x in c if isinstance(x, (str, int, float)) and str(x).strip())
+        elif isinstance(c, (str, int, float)) and str(c).strip():
+            out.append(str(c).strip())
+    return out
+
+
+_CTX_OVERFLOW_RE = re.compile(r"maximum context length is (\d+) tokens.*?requested (\d+) output tokens.*?at least (\d+) input tokens", re.S)
+
+
+def _create_with_context_retry(client, create_kwargs: dict, messages: list, log=None, max_retries: int = 3):
+    """Call the chat endpoint; on a 400 'maximum context length' rejection, drop the oldest exchange pairs (the
+    same in-place trimming the estimator does) and retry, up to `max_retries` times, before letting the error
+    through. Returns (response, number_of_retrims).
+
+    2026-09-15 (Phase 3): the pre-call trimmer estimates 4 chars/token, but hex dumps, disassembly and decompiler
+    output tokenize at 2-3 chars/token, so on the 16k-context bake-off 25 of 51 runs were rejected by the server in
+    rounds 5-8 and ended as `llm_bad_request`. The retry uses the server's own count to decide how much to drop.
+    Runs that never overflow are byte-identical to before (the reproducibility anchor)."""
+    retrims = 0
+    for _ in range(max_retries + 1):
+        try:
+            return client.chat.completions.create(**create_kwargs), retrims
+        except Exception as e:  # noqa
+            m = _CTX_OVERFLOW_RE.search(str(e))
+            is_400 = type(e).__name__ in ("BadRequestError", "UnprocessableEntityError") or getattr(e, "status_code", None) in (400, 413, 422)
+            if not (m and is_400) or retrims >= max_retries or len(messages) <= 4:
+                raise
+            limit, want_out, have_in = (int(x) for x in m.groups())
+            need = have_in + want_out - limit + 256                     # tokens to shed, with a margin
+            total_chars = sum(len(mm.get("content", "")) for mm in messages) or 1
+            ratio = total_chars / max(have_in, 1)                        # actual chars per token of THIS prompt
+            shed = 0
+            while shed < need * ratio and len(messages) > 4:
+                shed += len(messages[2].get("content", "")); messages.pop(2)
+                if len(messages) > 2:
+                    shed += len(messages[2].get("content", "")); messages.pop(2)
+            create_kwargs["messages"] = messages
+            retrims += 1
+            if log:
+                log.warn(f"context overflow ({have_in}+{want_out} > {limit} tokens): dropped oldest exchanges, retry {retrims}")
+            else:
+                print(f"      ⚠  Context overflow ({have_in}+{want_out} > {limit}); dropped oldest exchanges, retry {retrims}")
+    raise RuntimeError("unreachable")
+
+
+# OpenAI function-calling form of the three actions (Phase 3, `tool_calling=True`); mirrors the JSON-in-text schema.
+_ACTION_TOOLS = [
+    {"type": "function", "function": {"name": "run_commands", "description": "Run up to 5 shell commands in the challenge working directory and see their output.",
+                                      "parameters": {"type": "object", "properties": {"commands": {"type": "array", "items": {"type": "string"}, "description": "shell commands, run in order"}}, "required": ["commands"]}}},
+    {"type": "function", "function": {"name": "submit_flag", "description": "Submit a flag you have SEEN in command output.",
+                                      "parameters": {"type": "object", "properties": {"flag": {"type": "string"}}, "required": ["flag"]}}},
+    {"type": "function", "function": {"name": "give_up", "description": "Stop working on this challenge.",
+                                      "parameters": {"type": "object", "properties": {"reason": {"type": "string"}}}}},
+]
 
 def solve_challenge(
     challenge: dict,
@@ -538,8 +690,27 @@ def solve_challenge(
     context_window: int = 32768,
     working_dir: str = None,
     llm_seed: int = None,
+    advertise_memory_tools: Optional[bool] = None,
+    flag_checker=None,
+    trim_fraction: float = 0.60,
+    flag_format: Optional[str] = None,
+    tool_calling: bool = False,
 ) -> dict:
     """Solve a challenge using multi-turn tool-augmented LLM interaction.
+
+    tool_calling (2026-09-15, Phase 3): offer the three actions as OpenAI function-calling tools and accept a tool
+    call as the action (synthesised into the same JSON the text path parses). For models whose format answers through
+    function calls rather than text (gpt-oss's harmony format: 507/510 rounds returned an empty final answer under the
+    text path). Default off; the message history is identical in shape either way.
+
+    F4 (FIX_CATALOG 2026-09) additions, all default-off so the legacy path is unchanged:
+      advertise_memory_tools: None = legacy prompt (advertises the memory tool, "6/7" budget);
+                              False = no phantom tool, real budget rendered.
+      flag_checker:           callable(flag)->bool. If given, a candidate flag that the checker
+                              rejects does NOT end the run (platform semantics): the model is
+                              told it was wrong and the loop continues.
+      trim_fraction:          fraction of context_window kept for history (legacy 0.60).
+    gave_up_reason is "llm_error" when the LLM call itself failed (never a plain failure).
 
     If use_tools is False, uses single-shot LLM only (for ablation).
     If use_memory is True, memory MCP tools are available to the LLM.
@@ -561,14 +732,19 @@ def solve_challenge(
 
     trace = []           # per-round records
     total_commands = 0
-    total_tokens = 0     # cumulative LLM tokens (effort signal, D1; additive — does not affect solving)
+    total_tokens = 0     # cumulative LLM tokens (effort signal, D1; additive - does not affect solving)
     gave_up_reason = None
     recent_commands: list[str] = []  # loop detection: track last N commands
     flags_seen_in_output: set[str] = set()  # anti-hallucination: track flags from command output
+    # flag format: explicit kwarg > challenge["flag_format"] > legacy picoCTF (byte-identical behaviour)
+    _fmt = flag_format or challenge.get("flag_format")
+    _flag_pat = compile_flag_pattern(_fmt)
+    _flag_prefix = flag_prefix_text(_fmt)
     rejected_flag_attempts: dict[str, int] = {}  # track how many times each flag was rejected
+    rejected_by_checker: set[str] = set()        # F4c: candidates the platform checker rejected
     effective_max_tokens = max_output_tokens if max_output_tokens > 0 else DEFAULT_MAX_OUTPUT_TOKENS
 
-    # Ablation mode: skip tools entirely — no flag submission (high hallucination risk)
+    # Ablation mode: skip tools entirely - no flag submission (high hallucination risk)
     if not use_tools:
         if log:
             log.warn("No-tools mode: skipping (high hallucination risk without tool verification)")
@@ -583,11 +759,15 @@ def solve_challenge(
     if log:
         log.phase("SOLVE", f"up to {MAX_TOOL_ROUNDS} rounds, {MAX_COMMANDS_PER_ROUND} cmds/round")
 
-    # Build system prompt — memory tools section only included when use_memory is on
+    # Build system prompt - memory tools section only included when use_memory is on
     memory_tools_section = ("\n" + _MEMORY_TOOLS_PROMPT) if (use_memory and _MEMORY_TOOLS_PROMPT) else ""
-    system_prompt = _SYSTEM_PROMPT_TEMPLATE.format(
+    _adv = True if advertise_memory_tools is None else bool(advertise_memory_tools)
+    system_prompt = render_system_prompt(
+        flag_prefix=_flag_prefix,
         memory_tools_section=memory_tools_section,
-        available_tools=", ".join(get_available_tools())
+        available_tools=", ".join(get_available_tools()),
+        advertise_memory_tools=_adv,
+        max_rounds=(None if advertise_memory_tools is None else max_rounds),
     )
 
     # --- Pre-fetch memory context so the LLM sees it on its first turn ---
@@ -618,7 +798,7 @@ def solve_challenge(
         if parts:
             memory_context = (
                 "\n\n---\n**Memory context from past CTF challenges "
-                "(use as background — do NOT copy flags from this):**\n\n"
+                "(use as background - do NOT copy flags from this):**\n\n"
                 + "\n\n".join(parts)
             )
             if log:
@@ -635,6 +815,7 @@ def solve_challenge(
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": CHALLENGE_PROMPT.format(
+            flag_prefix=_flag_prefix,
             name=name, category=category, points=points,
             difficulty=difficulty, description=description,
             hints=hints, code_blocks=code_blocks,
@@ -656,7 +837,7 @@ def solve_challenge(
 
         # --- Context window management: token-estimation based trimming ---
         # Estimate tokens at ~4 chars/token, keep under 60% of context window
-        max_input_tokens = int(context_window * 0.60)
+        max_input_tokens = int(context_window * trim_fraction)
         total_chars = sum(len(m.get("content", "")) for m in messages)
         estimated_tokens = total_chars // 4
         while estimated_tokens > max_input_tokens and len(messages) > 4:
@@ -682,20 +863,49 @@ def solve_challenge(
                 messages=messages,
                 temperature=0.3,
                 max_tokens=effective_max_tokens,
-                extra_body={"chat_template_kwargs": {"enable_thinking": True}},
             )
-            # llm_seed makes generation reproducible per-call — required for the
+            # 2026-09-16: vLLM's Mistral tokenizer mode rejects any chat_template_kwargs (400); for models without a
+            # thinking switch the kwarg is inert, so CTF_NO_CHAT_TEMPLATE_KWARGS=1 omits it. Default: unchanged.
+            if os.environ.get("CTF_NO_CHAT_TEMPLATE_KWARGS") != "1":
+                _create_kwargs["extra_body"] = {"chat_template_kwargs": {"enable_thinking": True}}
+            if tool_calling:
+                _create_kwargs["tools"] = _ACTION_TOOLS
+                _create_kwargs["tool_choice"] = "auto"
+            # llm_seed makes generation reproducible per-call - required for the
             # causal-credit re-rolls (vary the seed to sample distinct trajectories).
             if llm_seed is not None:
                 _create_kwargs["seed"] = int(llm_seed)
-            response = client.chat.completions.create(**_create_kwargs)
-            raw_content = response.choices[0].message.content
+            response, _retrims = _create_with_context_retry(client, _create_kwargs, messages, log=log)
+            if _retrims:
+                round_record["context_retrims"] = _retrims
+            _msg = response.choices[0].message
+            raw_content = _msg.content
+            _tcs = getattr(_msg, "tool_calls", None) if tool_calling else None
+            if _tcs:
+                _fn = _tcs[0].function
+                try:
+                    _args = json.loads(_fn.arguments or "{}")
+                except (json.JSONDecodeError, TypeError):
+                    _args = {}
+                raw_content = json.dumps({"action": _fn.name, **(_args if isinstance(_args, dict) else {})})
+                round_record["tool_call"] = True
+            # 2026-09-15 (Phase 3): a server-side reasoning parser (gpt-oss, Gemma 4) puts the reasoning in
+            # `reasoning_content`; keep it as the round's thinking. `content` is None when the reply holds no final
+            # answer (or only a tool call): treat that as an empty reply (-> parse error + nudge), never a crash.
+            _reasoning_fallback = str(getattr(_msg, "reasoning_content", None) or getattr(_msg, "reasoning", None) or "")[:3000]
+            if raw_content is None:
+                raw_content = ""
+            # F4d (smoke 2026-09-05): keep the stop reason so parse errors can be split into
+            # truncation ("length") vs. genuinely malformed output. Additive field only.
+            round_record["finish_reason"] = str(getattr(response.choices[0], "finish_reason", "") or "")
             _usage = getattr(response, "usage", None)
             if _usage is not None:
                 total_tokens += int(getattr(_usage, "total_tokens", 0) or 0)
 
             # Extract thinking BEFORE stripping it
             thinking, content = _extract_thinking(raw_content)
+            if not thinking and _reasoning_fallback:
+                thinking = _reasoning_fallback
             round_record["thinking"] = thinking
 
             if log and thinking:
@@ -708,6 +918,14 @@ def solve_challenge(
                 print(f"      ✗ LLM error: {e}")
             round_record["action"] = "error"
             round_record["results_summary"] = str(e)
+            # F4b + review #7: a deterministic client error (400/413/422, e.g. prompt too long) is
+            # NOT retryable -> "llm_bad_request" (logged with error=True, excluded from analysis);
+            # everything else (connection/timeout/rate limit/5xx) -> "llm_error" (retry, then abort).
+            _status = getattr(e, "status_code", None)
+            if type(e).__name__ in ("BadRequestError", "UnprocessableEntityError") or _status in (400, 413, 422):
+                gave_up_reason = "llm_bad_request"
+            else:
+                gave_up_reason = "llm_error"
             trace.append(round_record)
             break
 
@@ -715,6 +933,10 @@ def solve_challenge(
         parsed = _parse_llm_json(content)
         round_record["llm_response"] = content[:3000]  # store for tracing
 
+        # Phase-2 2026-09-06: a reply that is valid JSON but not an object (e.g. the bare number `5`
+        # the exhaust lesson provoked) crashed the run with AttributeError; it is a parse error.
+        if parsed and not isinstance(parsed, dict):
+            parsed = None
         if parsed:
             action = parsed.get("action", "")
             round_record["action"] = action
@@ -724,7 +946,7 @@ def solve_challenge(
                 round_record["flag"] = flag
 
                 # Gate 1: basic format and placeholder check
-                if not flag or _is_likely_placeholder(flag) or not FLAG_PATTERN.match(flag):
+                if not flag or _is_likely_placeholder(flag) or not _flag_pat.match(flag):
                     if log:
                         log.llm_invalid_flag(flag)
                     else:
@@ -737,16 +959,16 @@ def solve_challenge(
                     trace.append(round_record)
                     continue
 
-                # Gate 2: anti-hallucination — check if flag was seen in output
+                # Gate 2: anti-hallucination - check if flag was seen in output
                 # Relaxed: accept exact match, substring match, or inner-content match
                 flag_verified = False
                 if flag in flags_seen_in_output:
                     flag_verified = True
                 else:
                     # Check if the flag's inner content appears in any seen flag
-                    flag_inner = flag[len('picoCTF{'):-1] if flag.startswith('picoCTF{') else flag
+                    flag_inner = _flag_inner(flag)
                     for seen in flags_seen_in_output:
-                        seen_inner = seen[len('picoCTF{'):-1] if seen.startswith('picoCTF{') else seen
+                        seen_inner = _flag_inner(seen)
                         if flag_inner and (flag_inner in seen_inner or seen_inner in flag_inner):
                             flag_verified = True
                             break
@@ -764,6 +986,15 @@ def solve_challenge(
                         if log:
                             log.info(f"Soft-verified flag after {rejected_flag_attempts[flag]} attempts: {flag}")
 
+                if flag_verified and flag_checker is not None and not flag_checker(flag):
+                    # F4c: platform semantics -- a wrong submission is rejected, the run continues
+                    rejected_by_checker.add(flag)
+                    messages.append({"role": "assistant", "content": content})
+                    messages.append({"role": "user", "content":
+                        f"The flag '{flag}' was submitted and REJECTED as incorrect. Do not resubmit it. "
+                        "Re-examine your decoding steps and try a different approach. Respond with JSON only."})
+                    trace.append(round_record)
+                    continue
                 if flag_verified:
                     if log:
                         log.llm_action("submit_flag")
@@ -776,7 +1007,7 @@ def solve_challenge(
                             "gave_up_reason": None,
                             "total_commands": total_commands, "tokens": total_tokens}
                 else:
-                    # Flag not seen in any prior command output — likely hallucinated
+                    # Flag not seen in any prior command output - likely hallucinated
                     if log:
                         log.warn(f"Flag not found in any command output (possible hallucination): {flag}")
                     else:
@@ -785,14 +1016,14 @@ def solve_challenge(
                     messages.append({"role": "user", "content":
                         f"The flag '{flag}' was NOT found in any of your previous command outputs. "
                         "You may be hallucinating. Run a command that will print the actual flag "
-                        "(e.g. `strings file | grep picoCTF` or `echo encoded | base64 -d`). "
+                        f"(e.g. `strings file | grep {_flag_prefix}` or `echo encoded | base64 -d`). "
                         "ONLY submit a flag you see printed in command output. "
                         "Respond with JSON only."})
                     trace.append(round_record)
                     continue
 
             elif action == "run_commands":
-                commands = parsed.get("commands", [])
+                commands = _coerce_commands(parsed.get("commands", []))   # 2026-09-08: nested list crashed `sorted(commands)`
                 if not commands:
                     if log:
                         log.warn("LLM requested run_commands but provided no commands")
@@ -811,9 +1042,9 @@ def solve_challenge(
                 recent_commands.append(cmd_key)
                 if len(recent_commands) >= 3 and recent_commands[-1] == recent_commands[-2] == recent_commands[-3]:
                     if log:
-                        log.warn("Loop detected — LLM repeated the same commands 3 times. Breaking.")
+                        log.warn("Loop detected - LLM repeated the same commands 3 times. Breaking.")
                     else:
-                        print("      ⚠  Loop detected — same commands repeated 3x")
+                        print("      ⚠  Loop detected - same commands repeated 3x")
                     gave_up_reason = "loop_detected"
                     trace.append(round_record)
                     break
@@ -845,13 +1076,16 @@ def solve_challenge(
                     output_text = (r.get("stdout", "") or "") + (r.get("stderr", "") or "")
                     
                     # Track all raw flag strings seen in output
-                    for m in FLAG_PATTERN.finditer(output_text):
+                    for m in _flag_pat.finditer(output_text):
                         flags_seen_in_output.add(m.group(0))
 
                     found_flags = extract_encoded_flags(output_text)
                     for flag in found_flags:
                         if flag not in PLACEHOLDER_FLAGS:
                             flags_seen_in_output.add(flag)
+                            if flag_checker is not None and not flag_checker(flag):
+                                rejected_by_checker.add(flag)   # F4c: wrong candidate, keep going
+                                continue
                             if log:
                                 log.flag_found(flag, source="command output")
                             else:
@@ -868,6 +1102,11 @@ def solve_challenge(
 
                 # Feed results back to LLM
                 formatted = format_results_for_llm(results)
+                if flag_checker is not None:
+                    _rej = sorted(f for f in flags_seen_in_output if f in rejected_by_checker)
+                    if _rej:
+                        formatted += ("\n\n[SYSTEM] Candidate flag(s) " + ", ".join(_rej) +
+                                      " were checked and are INCORRECT. Do not submit them; the decoding is not right yet.")
                 messages.append({"role": "assistant", "content": content})
                 
                 # Build prompt for the LLM
@@ -922,17 +1161,17 @@ def solve_challenge(
                 trace.append(round_record)
                 break
 
-        # JSON parse failed — try extracting flag from raw text
+        # JSON parse failed - try extracting flag from raw text
         round_record["action"] = "parse_error"
         round_record["llm_response"] = content[:3000]
-        flag = extract_flag(content)
+        flag = extract_flag(content, _flag_pat)
         if flag:
             # Use the same relaxed matching as the structured path
             flag_verified = flag in flags_seen_in_output
             if not flag_verified:
-                flag_inner = flag[len('picoCTF{'):-1] if flag.startswith('picoCTF{') else flag
+                flag_inner = _flag_inner(flag)
                 for seen in flags_seen_in_output:
-                    seen_inner = seen[len('picoCTF{'):-1] if seen.startswith('picoCTF{') else seen
+                    seen_inner = _flag_inner(seen)
                     if flag_inner and (flag_inner in seen_inner or seen_inner in flag_inner):
                         flag_verified = True
                         break
@@ -946,6 +1185,15 @@ def solve_challenge(
                     flag_verified = True
                     if log:
                         log.info(f"Soft-verified raw flag after {rejected_flag_attempts[flag]} attempts: {flag}")
+            if flag_verified and flag_checker is not None and not flag_checker(flag):
+                rejected_by_checker.add(flag)   # F4c
+                flag_verified = False
+                messages.append({"role": "assistant", "content": content})
+                messages.append({"role": "user", "content":
+                    f"The flag '{flag}' was submitted and REJECTED as incorrect. Do not resubmit it. "
+                    "Re-examine your decoding steps and try a different approach. Respond with JSON only."})
+                trace.append(round_record)
+                continue
             if flag_verified:
                 if log:
                     log.flag_found(flag, source="raw text (verified)")
@@ -970,17 +1218,17 @@ def solve_challenge(
         messages.append({"role": "user", "content":
             "Your response was not valid JSON. You MUST respond with ONLY a JSON object. "
             "Either: {\"action\": \"run_commands\", \"commands\": [\"...\"]}, "
-            "{\"action\": \"submit_flag\", \"flag\": \"picoCTF{...}\"}, or "
+            "{\"action\": \"submit_flag\", \"flag\": \"" + _flag_prefix + "{...}\"}, or "
             "{\"action\": \"give_up\", \"reason\": \"...\"}. "
             "Respond with JSON only."})
         trace.append(round_record)
         continue
 
-    # All rounds exhausted — give up cleanly (no fallback to avoid hallucination)
+    # All rounds exhausted - give up cleanly (no fallback to avoid hallucination)
     if log:
-        log.warn("All rounds exhausted — no verified flag found")
+        log.warn("All rounds exhausted - no verified flag found")
     else:
-        print("      ⏭  All rounds exhausted — no verified flag found")
+        print("      ⏭  All rounds exhausted - no verified flag found")
     return {"flag": None, "trace": trace,
             "rounds_used": rounds_used,
             "gave_up_reason": gave_up_reason or "rounds_exhausted",
@@ -999,7 +1247,9 @@ def _fallback_solve(challenge: dict,
     code_blocks = _format_code_blocks(challenge.get("code_blocks", []))
     file_contents = _read_file_contents(challenge.get("local_files", []))
 
+    _flag_prefix = flag_prefix_text(challenge.get("flag_format"))
     prompt = FALLBACK_PROMPT.format(
+        flag_prefix=_flag_prefix,
         name=name, category=category, points=points,
         difficulty=difficulty, description=description,
         hints=hints, code_blocks=code_blocks,

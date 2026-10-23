@@ -117,7 +117,7 @@ class TestValidateCommand:
         ok, _ = validate_command("rm -rf /")
         assert not ok
 
-    @pytest.mark.xfail(reason="Legacy baseline INTENTIONALLY allows sudo — the solver "
+    @pytest.mark.xfail(reason="Legacy baseline INTENTIONALLY allows sudo - the solver "
                               "prompt uses sudo for SSH/privesc CTF challenges. Test "
                               "predates that design (pre-existing drift, not in build scope).",
                        strict=True)
@@ -126,7 +126,7 @@ class TestValidateCommand:
         assert not ok
 
     @pytest.mark.xfail(reason="Legacy baseline moved to an allow-all command policy "
-                              "('No command allowlist — all commands are permitted'), since "
+                              "('No command allowlist - all commands are permitted'), since "
                               "CTF needs arbitrary tools. Unknown commands are allowed by "
                               "design; this test predates that change.",
                        strict=True)

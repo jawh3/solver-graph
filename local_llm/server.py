@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-local_llm/server.py — minimal OpenAI-compatible server for the laptop pilot.
+local_llm/server.py - minimal OpenAI-compatible server for the laptop pilot.
 
 The lab runs Qwen3.5-27B-FP8 on dual A5000s via vLLM. On an 8 GB laptop GPU that
 model is impossible, so the pilot substitutes a small instruct model
 (Qwen2.5-7B/3B-Instruct) loaded in 4-bit (bitsandbytes NF4) and serves it behind
 the SAME OpenAI `/v1/chat/completions` API the real solver (`solver/solver.py`)
-already speaks. Nothing in the solver changes — only `VLLM_URL`/`MODEL_NAME`.
+already speaks. Nothing in the solver changes - only `VLLM_URL`/`MODEL_NAME`.
 
 This is a *disclosed model substitution* (documented in the paper's limitations):
 the method is model-agnostic; the pilot demonstrates the learning dynamics and the

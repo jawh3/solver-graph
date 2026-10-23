@@ -6,7 +6,7 @@
 
 **Why:** The `baseline-solver` used a simple JSON file. We need to ensure that the new split JSON/NPY schema does not introduce prohibitive I/O bottlenecks when the graph scales to a realistic size for a lifelong-learning agent.
 
-**Pre-registered conditions:**
+**Pre-specified conditions:**
 - Graph sizes ($N$ nodes): 100, 1,000, 10,000.
 - Edges: Roughly $3 \times N$ random edges per graph.
 - Embedding dimension: 1536 (typical vLLM dense vector size).

@@ -1,6 +1,6 @@
-# Development Log — Knowledge Graph
+# Development Log - Knowledge Graph
 
-## 2026-05-29 — Plan: Knowledge Graph Storage and CRUD
+## 2026-05-29 - Plan: Knowledge Graph Storage and CRUD
 
 **What:** Implementing the core storage backend for the knowledge graph.
 **Interfaces Exposed:**
@@ -30,14 +30,14 @@
 - ~300 lines of code.
 - 1 session.
 
-## 2026-05-29 — Implementation: Knowledge Graph Storage
+## 2026-05-29 - Implementation: Knowledge Graph Storage
 
 **What:** Implemented `KnowledgeGraphStore` using NetworkX and NumPy, along with data models (`Node`, `Edge`, `NodeType`) and a deterministic `MockEmbeddingGenerator`.
 **Why:** To provide a robust, deterministic, zero-external-dependency graph storage backend for the retrieval system.
 **Decisions:**
 - NetworkX + NumPy backend chosen for simple file-based serialization and exact vector similarity without heavy DB instances (see `OPEN_DECISIONS.md`).
 - Standard `dataclasses` used over Pydantic to minimize external dependencies.
-**Experiments produced:** Created `experiment_harness.py` to sweep scalability ($N \in \{100, 1000, 10000\}$). Pre-registered in `SWEEPS.md`.
+**Experiments produced:** Created `experiment_harness.py` to sweep scalability ($N \in \{100, 1000, 10000\}$). Pre-specified in `SWEEPS.md`.
 **Results (if any):** 
 - Standard scalability sweep passed successfully. For $N=10,000$ nodes (with $D=1536$): save time was ~0.32s, load time was ~0.18s, and total disk size was ~63.6MB. The split JSON/NPY schema easily satisfies the <1.0s I/O prediction and proves viable for the lifelong-learning agent scale.
 - Extreme scalability sweep ran for $N \in \{50000, 100000, 250000\}$. At $N=250,000$ nodes (~750,000 edges), save time was ~9.9s, load time was ~11.2s, and total disk size was ~1.59GB. Even at a quarter million nodes, the schema manages without crashing, though load times pass the 10-second mark.

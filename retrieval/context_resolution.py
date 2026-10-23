@@ -1,17 +1,17 @@
 """
-retrieval/context_resolution.py — map a query to a bandit context node (spec §6, §7 step 5).
+retrieval/context_resolution.py - map a query to a bandit context node (spec §6, §7 step 5).
 
 C-1, the most important change: the bandit context is a COARSE node (Category or
 k-means Cluster over Challenge embeddings), NOT a per-challenge analog. Per the
-§6.1 budget calc, per-challenge contexts get <1 update/edge and cannot learn —
+§6.1 budget calc, per-challenge contexts get <1 update/edge and cannot learn -
 the most likely cause of the prior non-significant result. Category (~6) and
-Cluster (k≈20–50) pass the budget.
+Cluster (k≈20-50) pass the budget.
 
 Three resolvers (the `context_resolution` ablation):
   - CategoryResolver: context node = the challenge's CTF category.
   - ClusterResolver: context node = nearest k-means centroid over Challenge
     embeddings (default, k=n_clusters). Deterministic k-means++ seeding.
-  - (parametric LinUCB has no discrete context node — handled in retriever.)
+  - (parametric LinUCB has no discrete context node - handled in retriever.)
 
 `bootstrap` node is returned when the graph is empty / clusters unfit, giving a
 uniform prior so the very first runs still have a valid context_id (§7 step 5).

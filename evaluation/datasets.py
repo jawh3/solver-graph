@@ -1,20 +1,20 @@
 """
-evaluation/datasets.py — dataset partitions controlling contamination (spec §14.1).
+evaluation/datasets.py - dataset partitions controlling contamination (spec §14.1).
 
 Three partitions, each tagged on every challenge so the eval can separate them:
 
-  SEED-PUBLIC        contamination_flag=True  — picoCTF + scraped write-ups.
+  SEED-PUBLIC        contamination_flag=True  - picoCTF + scraped write-ups.
                      Diagnostic ONLY; never the headline (Qwen likely memorized).
-  HELD-OUT-NOVEL     contamination_flag=False — challenges not public / not in
+  HELD-OUT-NOVEL     contamination_flag=False - challenges not public / not in
                      pretraining. The headline solve-rate number.
   TRANSFORMED-FAMILIES  semantics-preserving variants of public challenges
                      (Evolve-CTF style; CaptureTheFlags 2602.05523). Separates
-                     *method learned* from *write-up memorized* — the headline
+                     *method learned* from *write-up memorized* - the headline
                      robustness number.
 
 For the synthetic world, TRANSFORMED-FAMILIES is produced by `transform_family`:
 it rewords/renames a challenge and the SURFACE form of its lessons while keeping
-the underlying solution tools fixed — so a system that merely memorized the
+the underlying solution tools fixed - so a system that merely memorized the
 write-up text fails, but one that learned the method still solves.
 """
 

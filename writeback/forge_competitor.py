@@ -1,9 +1,9 @@
 """
-writeback/forge_competitor.py — FORGE-style champion-broadcast memory (baseline BC, §14.2, C9).
+writeback/forge_competitor.py - FORGE-style champion-broadcast memory (baseline BC, §14.2, C9).
 
 FORGE (2605.16233) is the strongest external competitor: a self-evolving agent
 memory that, per task family, keeps the BEST trajectory as a "champion" and
-broadcasts it — adopted immediately and trusted, with no provisional gate. That is
+broadcasts it - adopted immediately and trusted, with no provisional gate. That is
 precisely the design choice this project argues against (the birth-defect lever,
 §11): an N=1 champion is trusted before its true success rate is known.
 

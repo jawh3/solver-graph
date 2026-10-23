@@ -1,0 +1,1 @@
+b32_gzip,b32_xor42,b32_rev,b32_xor13,b32_xorc3,b32_xor5a,b64_xor13_rev,b64_xor99,b64_rot13,b64_xor7f,b64_xor99_zlib,b64_xor2a_rev,b85_xor13,b85_zlib_rev,b85_rot13_bz2,b85_xor5a,b85_xorc3,b85_rev_xorc3,hex_rot13,hex_xor7f,hex_bz2,hex_xorc3

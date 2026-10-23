@@ -1,8 +1,8 @@
 """
-solver/mock_solver.py — deterministic mock solver + synthetic CTF world (C3, §2 mock duality).
+solver/mock_solver.py - deterministic mock solver + synthetic CTF world (C3, §2 mock duality).
 
 The real solver (`solver/solver.py::solve_challenge`) calls Qwen3.5 over vLLM and
-is the reproducibility anchor — untouched. This mock is its GPU-free twin: it
+is the reproducibility anchor - untouched. This mock is its GPU-free twin: it
 returns the SAME result shape `{flag, trace, rounds_used, gave_up_reason,
 total_commands}` so the orchestrator, eval harness, bandit, and write-back can be
 exercised and tested end-to-end with no GPU.
@@ -24,10 +24,10 @@ A sampled lesson node interacts with the world by its attributes:
                executed command carrying its invocation signature), cuts steps,
                raises solve prob.
   - POISON   : attribute `_poison=True`. It IS used (cited) but routes the agent
-               the long way: solve prob rises slightly yet steps INCREASE — the
+               the long way: solve prob rises slightly yet steps INCREASE - the
                latent-poison signature that only a step-count reward can see (§9.1).
   - DISTRACTOR/FALSE: not in solution and not poison. Sits in context; with some
-               probability wastes a step but is NOT cited (no command emitted) —
+               probability wastes a step but is NOT cited (no command emitted) -
                the recovery-masking case (in-context, non-causal).
 
 Determinism: outcome/steps are drawn from a seeded RNG keyed by

@@ -1,24 +1,24 @@
 """
-reward/reward.py — step-count reward with partial-pooled standardization (spec §9.1–9.2).
+reward/reward.py - step-count reward with partial-pooled standardization (spec §9.1-9.2).
 
 Reward (§9.1):
     o  ∈ {0,1}                 verified flag (the verifiable oracle)
-    z_steps = (steps − μ_cell)/σ_cell      standardized within (category×difficulty)
-    e  = −z_steps              efficiency (faster → higher)
+    z_steps = (steps - μ_cell)/σ_cell      standardized within (category×difficulty)
+    e  = -z_steps              efficiency (faster → higher)
     R  = o · (1 + λ·e)         λ = config.lam
         - fast success  (e>0) → R>1
         - slow success  (e<0) → R<1   ← the latent-poison down-weight
         - failure             → R=config.failure_reward (default 0)
 
-Standardization (§9.2) uses PARTIAL POOLING so 1–3-run cells don't produce garbage
+Standardization (§9.2) uses PARTIAL POOLING so 1-3-run cells don't produce garbage
 z-scores (the documented weak point that would make the bandit chase noise):
     μ_cell_hat = (n_cell·mean_cell + τ0·μ_global) / (n_cell + τ0)
     var_cell_hat analogous (shrink toward global var)
 τ0 = config.tau0. This is a James-Stein / empirical-Bayes shrinkage; with n_cell≫τ0
 the cell speaks for itself, with n_cell≈0 it borrows the global distribution.
 
-Design citations: step-count efficiency / verifiable≠correct — SpuriousRewards
-2601.11061, LLMsGamingVerifiers 2604.15149. Partial pooling for sparse cells —
+Design citations: step-count efficiency / verifiable≠correct - SpuriousRewards
+2601.11061, LLMsGamingVerifiers 2604.15149. Partial pooling for sparse cells -
 standard hierarchical-Bayes shrinkage (ErrorBarsToEvals 2411.00640 motivates the
 variance discipline).
 """
@@ -51,7 +51,7 @@ class RewardStandardizer:
 
     Stateful: feed it every run's (category, difficulty, steps) via `observe`,
     then `reward(...)` uses the current pooled stats. In an eval, observe the
-    whole dataset's step distribution first (or update online) — both are
+    whole dataset's step distribution first (or update online) - both are
     supported. Serializable so an experiment's standardization is reproducible.
     """
 

@@ -1,0 +1,189 @@
+{
+ "seed": 424244,
+ "families": [
+  "b32_gzip",
+  "b32_xor42",
+  "b32_rev",
+  "b32_xor13",
+  "b32_xorc3",
+  "b32_xor5a",
+  "b64_xor13_rev",
+  "b64_xor99",
+  "b64_rot13",
+  "b64_xor7f",
+  "b64_xor99_zlib",
+  "b64_xor2a_rev",
+  "b85_xor13",
+  "b85_zlib_rev",
+  "b85_rot13_bz2",
+  "b85_xor5a",
+  "b85_xorc3",
+  "b85_rev_xorc3",
+  "hex_rot13",
+  "hex_xor7f",
+  "hex_bz2",
+  "hex_xorc3"
+ ],
+ "per_outer": {
+  "b32": 6,
+  "b64": 6,
+  "b85": 6,
+  "hex": 4
+ },
+ "dose": {
+  "b32_gzip": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "codec_swap",
+   "depth": 1,
+   "sibling": "b32_zlib"
+  },
+  "b32_xor42": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b32_xor99"
+  },
+  "b32_rev": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 1,
+   "sibling": "b32_rot13"
+  },
+  "b32_xor13": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b32_xor7f"
+  },
+  "b32_xorc3": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b32_xor6e"
+  },
+  "b32_xor5a": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b32_xor2a"
+  },
+  "b64_xor13_rev": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 2,
+   "sibling": "b64_gzip_xor7f"
+  },
+  "b64_xor99": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b64_xorc3"
+  },
+  "b64_rot13": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 1,
+   "sibling": "b64_xor5a"
+  },
+  "b64_xor7f": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b64_xor42"
+  },
+  "b64_xor99_zlib": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "codec_swap",
+   "depth": 2,
+   "sibling": "b64_rot13_bz2"
+  },
+  "b64_xor2a_rev": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 2,
+   "sibling": "b64_bz2_xor5a"
+  },
+  "b85_xor13": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b85_xor7f"
+  },
+  "b85_zlib_rev": {
+   "first_wrong_decode_step": 2,
+   "correct_inner_steps_before": 1,
+   "wrong_class": "codec_swap",
+   "depth": 2,
+   "sibling": "b85_bz2_rev"
+  },
+  "b85_rot13_bz2": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 2,
+   "sibling": "b85_xor13_rev"
+  },
+  "b85_xor5a": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b85_xor2a"
+  },
+  "b85_xorc3": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "b85_xor6e"
+  },
+  "b85_rev_xorc3": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 2,
+   "sibling": "b85_rot13_xor6e"
+  },
+  "hex_rot13": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 1,
+   "sibling": "hex_xor5a"
+  },
+  "hex_xor7f": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "hex_xor42"
+  },
+  "hex_bz2": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "class_change",
+   "depth": 1,
+   "sibling": "hex_rev"
+  },
+  "hex_xorc3": {
+   "first_wrong_decode_step": 1,
+   "correct_inner_steps_before": 0,
+   "wrong_class": "key_swap",
+   "depth": 1,
+   "sibling": "hex_xor6e"
+  }
+ }
+}

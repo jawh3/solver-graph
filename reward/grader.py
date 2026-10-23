@@ -1,9 +1,9 @@
 """
-reward/grader.py — difficulty grading: ground-truth-first, calibrated grader fallback (§9.2, C-6).
+reward/grader.py - difficulty grading: ground-truth-first, calibrated grader fallback (§9.2, C-6).
 
 Difficulty/category drive the standardization cells (§9.2). Source priority:
-  (1) GROUND TRUTH  — picoCTF point value / CTF difficulty tag. Always preferred.
-  (2) CALIBRATED GRADER — a *blind* difficulty estimate, used ONLY when no ground
+  (1) GROUND TRUTH  - picoCTF point value / CTF difficulty tag. Always preferred.
+  (2) CALIBRATED GRADER - a *blind* difficulty estimate, used ONLY when no ground
       truth exists, and validated against observed solve rate.
 
 Two hard rules from the design review (C-6):
@@ -81,7 +81,7 @@ class MockDifficultyGrader(DifficultyGrader):
 
     Estimates difficulty from cheap surface features (description length, presence
     of high-difficulty keywords, number of artifacts). It is intentionally a
-    *different* estimator than the solver model — satisfying the "grader ≠ solver"
+    *different* estimator than the solver model - satisfying the "grader ≠ solver"
     rule without a GPU.
     """
 
@@ -157,11 +157,11 @@ class GraderCalibration:
         return {b: self._solved[b] / self._n[b] for b in self._n if self._n[b] > 0}
 
     def monotonic_agreement(self) -> float:
-        """+1 if solve rate strictly decreases across easy→expert, −1 if increases.
+        """+1 if solve rate strictly decreases across easy→expert, -1 if increases.
 
         Fraction of adjacent ordered bucket pairs whose solve-rate ordering is
         consistent with 'harder solves less' (a simple calibration score in
-        [−1, 1]).
+        [-1, 1]).
         """
         rates = self.solve_rate_by_bucket()
         order = [b for b in DIFFICULTY_BUCKETS if b in rates]

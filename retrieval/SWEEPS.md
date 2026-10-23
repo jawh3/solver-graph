@@ -1,6 +1,6 @@
 # Retrieval Sweeps
 
-Pre-registered parameters and expected outcomes for Component 2 experiments.
+Pre-specified parameters and expected outcomes for Component 2 experiments.
 
 ## Diversity vs Temperature (`retrieval_sweep.json`)
 

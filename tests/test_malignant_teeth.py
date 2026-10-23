@@ -1,8 +1,8 @@
 """T1-1 teeth proof (RIGOR_LEDGER): a malignant lesson, when FOLLOWED, must drop solve BELOW base.
 
 These tests SIMULATE following each malignant recipe on a real corpus artifact (no GPU, no LLM) and
-assert the family's normal decode then FAILS to recover the flag — i.e. the recipe has teeth (violates
-the A1 floor by construction). This validates the pre-registered prediction before any campaign spend.
+assert the family's normal decode then FAILS to recover the flag - i.e. the recipe has teeth (violates
+the A1 floor by construction). This validates the pre-specified prediction before any campaign spend.
 """
 import subprocess
 import tempfile

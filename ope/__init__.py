@@ -1,9 +1,9 @@
 """
-ope/ — off-policy evaluation from logged propensities (spec §13, C8).
+ope/ - off-policy evaluation from logged propensities (spec §13, C8).
 
 Because per-draw propensities + set log-probs are logged (C-7, non-reconstructable),
 alternative policies π′ (different M, τ, κ, scaling, init) can be scored on
-ALREADY-collected runs without new GPU. This multiplies effective sample size —
+ALREADY-collected runs without new GPU. This multiplies effective sample size -
 essential given the scarce, coordinated vLLM. The sweep runner emits OPE estimates
 with bootstrap CIs BEFORE any real-run sweep is committed.
 """

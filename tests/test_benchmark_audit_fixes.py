@@ -3,7 +3,7 @@
 Guards the bugs the audit found so they cannot silently return:
 - build_seed_graph poison nodes carry `_poison` AND classify into the POISON bucket
   (the mock `_poison` contract divergence that would have demoted them to DISTRACTOR).
-- POISON raises mock steps (effort teeth fire) while HELPFUL cuts them — the
+- POISON raises mock steps (effort teeth fire) while HELPFUL cuts them - the
   effort-channel detection the thesis rests on (previously untested end-to-end).
 - generated grid family names are unique (duplicate `('rev','bz2')` _TWO_LAYER entry removed).
 - canonical_name does NOT telegraph correctness ('_wrong'/'_recipe' leak removed).

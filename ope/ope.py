@@ -1,16 +1,16 @@
 """
-ope/ope.py — IPS / SNIPS / doubly-robust off-policy estimators (spec §13).
+ope/ope.py - IPS / SNIPS / doubly-robust off-policy estimators (spec §13).
 
 These score a counterfactual policy π′ on ALREADY-logged runs. The logged
 `candidate_pool` carries each candidate's score COMPONENTS (cosine→prior, Q, n),
 so π′'s per-candidate score can be recomputed for a new κ (prior strength) and the
-realized ordered draw re-scored at a new τ — yielding log P_{π′}(realized set | c)
+realized ordered draw re-scored at a new τ - yielding log P_{π′}(realized set | c)
 WITHOUT a GPU (the whole point of logging propensities, C-7).
 
 Estimators:
   - IPS:   V = mean_i [ w_i · R_i ],            w_i = P_{π'}/P_{π_log} (per-decision PL ratio)
   - SNIPS: V = Σ w_i R_i / Σ w_i               (self-normalized; lower variance)
-  - DR:    V = DM(π') + mean_i [ w_i (R_i − q̂(c, a_i)) ]
+  - DR:    V = DM(π') + mean_i [ w_i (R_i - q̂(c, a_i)) ]
            where q̂ is a fitted reward model and DM(π') is its expectation under π'
            estimated by sampling π' from the SAME logged pool (π' is fully known
            offline). (DoublyRobust 1103.4601; OfflineEval/replay 1003.5956.)
@@ -208,7 +208,7 @@ def dr_estimate(runs: List[Dict], tau: Optional[float] = None, kappa: Optional[f
 
     # direct-method term: q̂ at the logged action is our per-run baseline; the
     # IPS correction reweights the residual. (For a τ/κ sweep the realized set is
-    # unchanged, so DM(π') ≈ mean q̂(logged action) — a valid, low-variance control
+    # unchanged, so DM(π') ≈ mean q̂(logged action) - a valid, low-variance control
     # variate; the correction term carries the policy-shift signal.)
     w, r, idx = _weights(runs, tau, kappa, m_prime, use_bandit, clip)
     if len(w) == 0:

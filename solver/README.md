@@ -1,5 +1,9 @@
 # solver
 
+> Early component notes (May 2026). They describe the first design and may be out of date; see the root
+> README and RESULTS.md for the current state.
+
+
 Multi-turn tool-augmented LLM solver for CTF challenges.
 
 ## Purpose
@@ -12,16 +16,16 @@ The core solve loop:
 4. Flag extraction and verification
 5. Flag submission to PicoCTF via Playwright
 
-This module is the **reproducibility anchor** — its behavior defines the baseline against which knowledge-graph-augmented performance is measured.
+This module is the **reproducibility anchor** - its behavior defines the baseline against which knowledge-graph-augmented performance is measured.
 
 ## Key Files
 
-- `solver.py` — Multi-turn tool-augmented LLM solver
-- `tool_executor.py` — Sandboxed shell command runner
-- `scraper.py` — PicoGym challenge scraper (Playwright)
-- `submitter.py` — Flag submission via Playwright
-- `main.py` — CLI orchestrator
-- `logger.py` — Structured console logging
+- `solver.py` - Multi-turn tool-augmented LLM solver
+- `tool_executor.py` - Sandboxed shell command runner
+- `scraper.py` - PicoGym challenge scraper (Playwright)
+- `submitter.py` - Flag submission via Playwright
+- `main.py` - CLI orchestrator
+- `logger.py` - Structured console logging
 
 ## Provenance
 

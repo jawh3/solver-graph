@@ -1,5 +1,5 @@
 """
-evaluation/stats.py — paired bootstrap CIs + power analysis (spec §14.4).
+evaluation/stats.py - paired bootstrap CIs + power analysis (spec §14.4).
 
 The prior result was non-significant; this module is the discipline that prevents
 a repeat. Three tools:
@@ -10,12 +10,12 @@ a repeat. Three tools:
      between-subjects (PairedBootstrap 2511.19794; ErrorBarsToEvals 2411.00640).
 
   2. mcnemar_exact: for the binary solve/no-solve paired outcome, the exact
-     McNemar test (discordant pairs) — a complement to the bootstrap for the
+     McNemar test (discordant pairs) - a complement to the bootstrap for the
      solve-rate lift.
 
   3. power_analysis: BEFORE spending GPU, how many challenges×seeds are needed to
      detect a target effect (default 10pp) at the observed variance? (§14.4
-     pre-registered power analysis.)
+     pre-specified power analysis.)
 
 Everything is seeded; two runs with the same seed give identical CIs.
 """
@@ -46,7 +46,7 @@ def paired_bootstrap_ci(
     alpha: float = 0.05,
     seed: int = 0,
 ) -> PairedResult:
-    """Bootstrap CI of mean(a − b) over paired observations (a,b aligned).
+    """Bootstrap CI of mean(a - b) over paired observations (a,b aligned).
 
     `a` = treatment per-challenge metric (e.g. solved∈{0,1} or steps), `b` =
     control, same challenges in the same order. Returns the paired difference CI.

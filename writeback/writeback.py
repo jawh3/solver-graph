@@ -1,5 +1,5 @@
 """
-writeback/writeback.py — trajectory decomposition + gated promotion (spec §9.4).
+writeback/writeback.py - trajectory decomposition + gated promotion (spec §9.4).
 
 Two pieces:
 
@@ -19,11 +19,11 @@ show gating matters.
 
 Mandatory comparison (§9.4): the full gated system (B5) must beat the
 raw/episodic-only baseline (B3, no decomposition). If it does not, write-back is
-unjustified (the Faulty-Memory null) — the eval harness flags this loudly.
+unjustified (the Faulty-Memory null) - the eval harness flags this loudly.
 
-Design citations: gated abstraction / episodic-only null — FaultyMemory
+Design citations: gated abstraction / episodic-only null - FaultyMemory
 2605.12978, ExperienceFollowing 2505.16067; failure decomposition + champion
-broadcast — FORGE 2605.16233; provenance against poisoned experience —
+broadcast - FORGE 2605.16233; provenance against poisoned experience -
 MemoryGraft 2512.16962, PoisonedRAG 2402.07867.
 """
 
@@ -44,7 +44,7 @@ from instrumentation.records import WriteBackRecord
 
 
 _CMD_TOOL_RE = re.compile(r"^\s*([A-Za-z0-9_\-./]+)")
-# tokens that are not real tools (shell noise) — never decompose these
+# tokens that are not real tools (shell noise) - never decompose these
 _NON_TOOLS = {"echo", "cd", "ls", "cat", "true", "false", ":", "#"}
 
 
@@ -127,7 +127,7 @@ class PromotionTracker:
             return False  # already trusted (or seed)
 
         if ungated:
-            # B6: no gate — promote on first cited success (shows gating matters)
+            # B6: no gate - promote on first cited success (shows gating matters)
             if success:
                 self._promote(store, node)
                 return True
